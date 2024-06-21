@@ -2,7 +2,6 @@
     var app = angular.module('RefGameShapesGazeFeedbackExperimentApp', ["Lingoturk"]);
 
     app.controller('RenderController', ['$http', '$timeout', '$scope', function ($http, $timeout, $scope) {
-        console.log(webgazer);
         var self = this;
         self.state = "";
         self.allStates = [];
@@ -22,6 +21,7 @@
         self.showMessage = "none";
         self.redirectUrl = null;
         self.IsEnabled = true;
+        self.gazeData = {};
 
         self.shuffleQuestions = true;
         self.shuffleSublists = true;
@@ -332,6 +332,31 @@
 
         };
 
+        this.startCalibration = async function(){
+            //start the webgazer tracker
+            await webgazer.setRegression('ridge') /* currently must set regression and tracker */
+                //.setTracker('clmtrackr')
+                .setGazeListener(function(data, clock) {
+                    self.gazeData[clock] = data;
+                })
+                .saveDataAcrossSessions(true)
+                .begin();
+                webgazer.showVideoPreview(true) /* shows all video previews */
+                    .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
+                    .applyKalmanFilter(true); /* Kalman Filter defaults to on. Can be toggled by user. */
+
+            //Set up the webgazer video feedback.
+            var setup = function() {
+
+                //Set up the main canvas. The main canvas is used to calibrate the webgazer.
+                var canvas = document.getElementById("plotting_canvas");
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                canvas.style.position = 'fixed';
+            };
+            setup();
+        }
+
         $(document).ready(function () {
             self.questionId = ($("#questionId").length > 0) ? $("#questionId").val() : null;
             self.partId = ($("#partId").length > 0) ? $("#partId").val() : null;
@@ -346,7 +371,7 @@
                 self.load();
             }
             //  "calibrationSlide", 
-            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","calibrationSlide","practiceQuestionSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){
