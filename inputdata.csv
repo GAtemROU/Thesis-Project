@@ -1,0 +1,36 @@
+1,critical simple,tr,tr_bl,tr_re,sq_gr
+2,critical simple,tr,tr_bl,tr_gr,ci_re
+3,critical simple,ci,ci_bl,ci_re,tr_gr
+4,critical simple,ci,ci_bl,ci_gr,sq_re
+5,critical simple,re,sq_re,ci_re,tr_bl
+6,critical simple,re,sq_re,tr_re,ci_gr
+7,critical simple,gr,sq_gr,ci_gr,tr_re
+8,critical simple,gr,sq_gr,tr_gr,ci_bl
+9,critical complex,tr,tr_gr,tr_re,sq_gr
+10,critical complex,tr,tr_re,tr_gr,sq_re
+11,critical complex,ci,ci_gr,ci_re,sq_gr
+12,critical complex,ci,ci_re,ci_gr,sq_re
+13,critical complex,re,tr_re,ci_re,tr_bl
+14,critical complex,re,ci_re,tr_re,ci_bl
+15,critical complex,gr,tr_gr,ci_gr,tr_bl
+16,critical complex,gr,ci_gr,tr_gr,ci_bl
+17,filler type a,re,tr_re,tr_bl,sq_gr
+18,filler type a,gr,ci_gr,ci_bl,sq_re
+19,filler type a,ci,ci_re,sq_re,tr_bl
+20,filler type a,tr,tr_gr,sq_gr,ci_bl
+21,filler type b,re,ci_re,tr_bl,tr_gr
+22,filler type b,gr,tr_gr,ci_bl,ci_re
+23,filler type b,ci,ci_gr,sq_re,tr_re
+24,filler type b,tr,tr_re,sq_gr,ci_gr
+25,filler type c,re,tr_re,tr_gr,sq_gr
+26,filler type c,gr,tr_gr,tr_re,sq_re
+27,filler type c,re,ci_re,ci_gr,sq_gr
+28,filler type c,gr,ci_gr,ci_re,sq_re
+29,filler type c,ci,ci_re,tr_re,tr_bl
+30,filler type c,tr,tr_re,ci_re,ci_bl
+31,filler type c,ci,ci_gr,tr_gr,tr_bl
+32,filler type c,tr,tr_gr,ci_gr,ci_bl
+33,filler unambiguous,tr,tr_re,ci_bl,sq_gr
+34,filler unambiguous,ci,ci_bl,sq_gr,tr_re
+35,filler unambiguous,re,ci_re,tr_bl,sq_gr
+36,filler unambiguous,gr,sq_gr,ci_bl,tr_re
