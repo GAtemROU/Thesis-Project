@@ -332,12 +332,14 @@
 
         };
 
-        this.startCalibration = async function(){
+        this.startCalibration = function(){
             //start the webgazer tracker
-            await webgazer.setRegression('ridge') /* currently must set regression and tracker */
-                //.setTracker('clmtrackr')
+            webgazer.setRegression('ridge') /* currently must set regression and tracker */
+                .setTracker('TFFacemesh')
                 .setGazeListener(function(data, clock) {
-                    self.gazeData[clock] = data;
+                    // self.gazeData[clock] = data;
+                    console.log(data);
+                    console.log(clock);
                 })
                 .saveDataAcrossSessions(true)
                 .begin();
@@ -355,6 +357,7 @@
                 canvas.style.position = 'fixed';
             };
             setup();
+            docLoad();
         }
 
         $(document).ready(function () {
@@ -371,7 +374,7 @@
                 self.load();
             }
             //  "calibrationSlide", 
-            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","calibrationSlide","practiceQuestionSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["calibrationSlide","instructionsSlide","workerIdSlide","specificInstructionsSlide","calibrationSlide","practiceQuestionSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){

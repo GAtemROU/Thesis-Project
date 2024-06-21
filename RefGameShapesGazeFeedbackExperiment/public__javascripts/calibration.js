@@ -19,7 +19,6 @@ function ClearCanvas(){
  * Show the instruction of using calibration at the start up screen.
  */
 function PopUpInstruction(){
-  ClearCanvas();
   swal({
     title:"Calibration",
     text: "Please click on each of the 9 points on the screen. You must click on each point 5 times till it goes yellow. This will calibrate your eye movements.",
@@ -30,17 +29,17 @@ function PopUpInstruction(){
   }).then(isConfirm => {
     ShowCalibrationPoint();
   });
-
+  console.log("instructions shown");
 }
 /**
   * Show the help instructions right at the start.
   */
-function helpModalShow() {
-    if(!helpModal) {
-        helpModal = new bootstrap.Modal(document.getElementById('helpModal'))
-    }
-    helpModal.show();
-}
+// function helpModalShow() {
+//     if(!helpModal) {
+//         helpModal = new bootstrap.Modal(document.getElementById('helpModal'))
+//     }
+//     helpModal.show();
+// }
 
 function calcAccuracy() {
     // show modal
@@ -125,16 +124,10 @@ function calPointClick(node) {
     }
 }
 
-/**
- * Load this function when the index page starts.
-* This function listens for button clicks on the html page
-* checks that all buttons have been clicked 5 times each, and then goes on to measuring the precision
-*/
-//$(document).ready(function(){
+
 function docLoad() {
   ClearCanvas();
-  helpModalShow();
-    
+  PopUpInstruction();
     // click event on the calibration buttons
     document.querySelectorAll('.Calibration').forEach((i) => {
         i.addEventListener('click', () => {
@@ -142,7 +135,6 @@ function docLoad() {
         })
     })
 };
-window.addEventListener('load', docLoad);
 
 /**
  * Show the Calibration Points
