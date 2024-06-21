@@ -1,0 +1,21 @@
+ /*Fill in your CSS code here */
+
+#myProgress {
+  width: 20%;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: thin;
+}
+
+#myBar {
+/*  width: 10%;*/
+  height: 20px;
+  background-color: #327ba8;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+#smallTable, #smallTh, #smallTd {
+  border: 2px solid black;
+}/* Fill in your CSS code here */
