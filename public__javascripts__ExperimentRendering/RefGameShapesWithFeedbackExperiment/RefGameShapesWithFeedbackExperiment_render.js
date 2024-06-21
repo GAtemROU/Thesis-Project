@@ -1,9 +1,5 @@
-// import webgazer from 'webgazer';
-
-
-
 (function () {
-    var app = angular.module('RefGameShapesWithFeedbackExperimentApp', ["Lingoturk"]);
+    var app = angular.module('RefGameShapesGazeFeedbackExperimentApp', ["Lingoturk"]);
 
     app.controller('RenderController', ['$http', '$timeout', '$scope', function ($http, $timeout, $scope) {
         console.log(webgazer);
@@ -150,7 +146,7 @@
         self.failedTries = 0;
         this.submitResults = function (successCallback, errorCallback) {
             var results = {
-                experimentType : "RefGameShapesWithFeedbackExperiment",
+                experimentType : "RefGameShapesGazeFeedbackExperiment",
                 results : self.questions,
                 expId : self.expId,
                 origin : self.origin,
