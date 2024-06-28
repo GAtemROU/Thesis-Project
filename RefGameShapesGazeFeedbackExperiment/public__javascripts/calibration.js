@@ -29,7 +29,6 @@ function PopUpInstruction(){
   }).then(isConfirm => {
     ShowCalibrationPoint();
   });
-  console.log("instructions shown");
 }
 /**
   * Show the help instructions right at the start.
@@ -126,14 +125,15 @@ function calPointClick(node) {
 
 
 function docLoad() {
-  ClearCanvas();
-  PopUpInstruction();
+    ClearCanvas();
+    PopUpInstruction();
     // click event on the calibration buttons
     document.querySelectorAll('.Calibration').forEach((i) => {
         i.addEventListener('click', () => {
             calPointClick(i);
         })
     })
+    console.log("docLoad done");
 };
 
 /**

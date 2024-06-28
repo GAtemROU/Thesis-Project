@@ -57,12 +57,13 @@ body {
 /* Calibration point position */
 #Pt1{
   top: 70px;
-  left:170px;
+  left:340px;
 }
 #Pt2{
   top: 70px;
   left:50vw;
   margin-left: 340;
+  margin-right: 10vw;
 }
 #Pt3{
   top: 70px;
