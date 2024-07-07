@@ -164,7 +164,7 @@
         };
 
         this.next = function(){
-            if(self.state == "calibrationSlide"){
+            if(self.state == "workerIdSlide"){
                 if(self.questionId == null && self.partId == null){
                     self.load(function(){
                         self.state = self.allStates[++self.slideIndex];
@@ -359,8 +359,7 @@
                 canvas.style.position = 'fixed';
             };
             setup();
-            calibrate();
-            this.next();
+            calibrate(self.next);
         }
 
         $(document).ready(function () {

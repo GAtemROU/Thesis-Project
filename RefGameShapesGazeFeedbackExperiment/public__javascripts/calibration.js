@@ -15,6 +15,10 @@ function ClearCanvas(){
   var canvas = document.getElementById("plotting_canvas");
   canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
 }
+function removeCanvas(){
+  var canvas = document.getElementById("plotting_canvas");
+  canvas.style.setProperty('display', 'none');
+}
 
 /**
  * Show the instruction of using calibration at the start up screen.
@@ -61,21 +65,22 @@ function calcAccuracy() {
                     }
                   }).then(isConfirm => {
                     if (isConfirm) {
-                      ClearCanvas();
-                      webgazer.showPredictionPoints(false);
-                      callback();
-                    } else {
                       //use restart function to restart the calibration
                       webgazer.clearData();
                       ClearCalibration();
                       ClearCanvas();
                       ShowCalibrationPoint();
+                    } else {
+                      ClearCanvas();
+                      webgazer.showPredictionPoints(false);
+                      stopResizing();
+                      callback();
                     }
                   });
                 } else {
                   swal({
                       title: "Your accuracy measure is " + precision_measurement + "%",
-                      text: "You can continue with the experiment",
+                      text: "You can continue with the experiment.",
                       allowOutsideClick: false,
                       buttons: {
                         cancel: "Recalibrate",
@@ -86,6 +91,7 @@ function calcAccuracy() {
                               //clear the calibration & hide the last middle button
                               ClearCanvas();
                               webgazer.showPredictionPoints(false);
+                              stopResizing();
                               callback();
                           } else {
                               //use restart function to restart the calibration
@@ -141,15 +147,16 @@ function calPointClick(node) {
 
 
 function calibrate(callback_f) {
-    ClearCanvas();
-    PopUpInstruction();
-    // click event on the calibration buttons
-    document.querySelectorAll('.Calibration').forEach((i) => {
-        i.addEventListener('click', () => {
-            calPointClick(i);
-        })
-    })
-    callback = callback_f;
+  startResizing();
+  ClearCanvas();
+  PopUpInstruction();
+  // click event on the calibration buttons
+  document.querySelectorAll('.Calibration').forEach((i) => {
+      i.addEventListener('click', () => {
+          calPointClick(i);
+      })
+  })
+  callback = callback_f;
 };
 
 /**
