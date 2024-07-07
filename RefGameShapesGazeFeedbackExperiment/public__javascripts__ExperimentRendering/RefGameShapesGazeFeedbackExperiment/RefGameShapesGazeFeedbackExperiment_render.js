@@ -164,7 +164,7 @@
         };
 
         this.next = function(){
-            if(self.state == "workerIdSlide"){
+            if(self.state == "calibrationSlide"){
                 if(self.questionId == null && self.partId == null){
                     self.load(function(){
                         self.state = self.allStates[++self.slideIndex];

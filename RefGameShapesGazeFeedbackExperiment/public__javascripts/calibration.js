@@ -1,5 +1,6 @@
 var PointCalibrate = 0;
 var CalibrationPoints={};
+var callback = null;
 
 // Find the help modal
 var helpModal;
@@ -55,18 +56,26 @@ function calcAccuracy() {
                     text: "Unfortunately, it is too low to continue, please consider chaging your setup and redo the calibration.",
                     allowOutsideClick: false,
                     buttons: {
-                      confirm: "Recalibrate"
+                      confirm: "Recalibrate",
+                      cancel: "skip"
                     }
                   }).then(isConfirm => {
-                    //use restart function to restart the calibration
-                    webgazer.clearData();
-                    ClearCalibration();
-                    ClearCanvas();
-                    ShowCalibrationPoint();
+                    if (isConfirm) {
+                      ClearCanvas();
+                      webgazer.showPredictionPoints(false);
+                      callback();
+                    } else {
+                      //use restart function to restart the calibration
+                      webgazer.clearData();
+                      ClearCalibration();
+                      ClearCanvas();
+                      ShowCalibrationPoint();
+                    }
                   });
                 } else {
                   swal({
                       title: "Your accuracy measure is " + precision_measurement + "%",
+                      text: "You can continue with the experiment",
                       allowOutsideClick: false,
                       buttons: {
                         cancel: "Recalibrate",
@@ -77,6 +86,7 @@ function calcAccuracy() {
                               //clear the calibration & hide the last middle button
                               ClearCanvas();
                               webgazer.showPredictionPoints(false);
+                              callback();
                           } else {
                               //use restart function to restart the calibration
                               webgazer.clearData();
@@ -130,7 +140,7 @@ function calPointClick(node) {
 }
 
 
-function calibrate() {
+function calibrate(callback_f) {
     ClearCanvas();
     PopUpInstruction();
     // click event on the calibration buttons
@@ -139,6 +149,7 @@ function calibrate() {
             calPointClick(i);
         })
     })
+    callback = callback_f;
 };
 
 /**
