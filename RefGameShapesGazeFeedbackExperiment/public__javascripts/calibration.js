@@ -74,6 +74,7 @@ function calcAccuracy() {
                       ClearCanvas();
                       webgazer.showPredictionPoints(false);
                       stopResizing();
+                      removeCanvas();
                       callback();
                     }
                   });
@@ -92,6 +93,7 @@ function calcAccuracy() {
                               ClearCanvas();
                               webgazer.showPredictionPoints(false);
                               stopResizing();
+                              removeCanvase();
                               callback();
                           } else {
                               //use restart function to restart the calibration
