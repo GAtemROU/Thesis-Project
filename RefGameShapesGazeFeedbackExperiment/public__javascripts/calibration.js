@@ -30,15 +30,6 @@ function PopUpInstruction(){
     ShowCalibrationPoint();
   });
 }
-/**
-  * Show the help instructions right at the start.
-  */
-// function helpModalShow() {
-//     if(!helpModal) {
-//         helpModal = new bootstrap.Modal(document.getElementById('helpModal'))
-//     }
-//     helpModal.show();
-// }
 
 function calcAccuracy() {
     // show modal
@@ -58,25 +49,43 @@ function calcAccuracy() {
                 stop_storing_points_variable(); // stop storing the prediction points
                 var past50 = webgazer.getStoredPoints(); // retrieve the stored points
                 var precision_measurement = calculatePrecision(past50);
-                swal({
+                if (precision_measurement < 60) {
+                  swal({
                     title: "Your accuracy measure is " + precision_measurement + "%",
+                    text: "Unfortunately, it is too low to continue, please consider chaging your setup and redo the calibration.",
                     allowOutsideClick: false,
                     buttons: {
-                        cancel: "Recalibrate",
-                        confirm: true,
+                      confirm: "Recalibrate"
                     }
-                }).then(isConfirm => {
-                        if (isConfirm){
-                            //clear the calibration & hide the last middle button
-                            ClearCanvas();
-                        } else {
-                            //use restart function to restart the calibration
-                            webgazer.clearData();
-                            ClearCalibration();
-                            ClearCanvas();
-                            ShowCalibrationPoint();
-                        }
-                });
+                  }).then(isConfirm => {
+                    //use restart function to restart the calibration
+                    webgazer.clearData();
+                    ClearCalibration();
+                    ClearCanvas();
+                    ShowCalibrationPoint();
+                  });
+                } else {
+                  swal({
+                      title: "Your accuracy measure is " + precision_measurement + "%",
+                      allowOutsideClick: false,
+                      buttons: {
+                        cancel: "Recalibrate",
+                        confirm: true
+                      }
+                  }).then(isConfirm => {
+                          if (isConfirm){
+                              //clear the calibration & hide the last middle button
+                              ClearCanvas();
+                              webgazer.showPredictionPoints(false);
+                          } else {
+                              //use restart function to restart the calibration
+                              webgazer.clearData();
+                              ClearCalibration();
+                              ClearCanvas();
+                              ShowCalibrationPoint();
+                          }
+                  });
+                }
         });
     });
 }

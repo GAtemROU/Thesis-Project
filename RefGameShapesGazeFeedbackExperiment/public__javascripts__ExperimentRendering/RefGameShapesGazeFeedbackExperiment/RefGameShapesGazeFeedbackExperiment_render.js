@@ -175,6 +175,8 @@
 
             if(self.slideIndex + 1 < self.allStates.length){
                 self.state = self.allStates[++self.slideIndex];
+                if (self.state == "generalQuestionsSlide")
+                    webgazer.end();
             }else{
                 self.submitResults(self.resultsSubmitted, self.handleError);
             }
@@ -186,12 +188,14 @@
             question.answer['trialId'] = self.questionIndex+1;
             question.answer['choicePos'] = ans;
             question.answer['choice'] = question.answer['presOrder'][ans];
+            question.answer['gazeData'] = self.gazeData;
+            self.gazeData = {};
 
             var content = document.getElementById('question_slide_content');
 
             // console.log('comparing correctness',question.answer['choicePos'],question.answer['targetPos']);
 
-            if (question.answer['choicePos'] ==  question.answer['targetPos']){
+            if (question.answer['choicePos'] == question.answer['targetPos']){
                 question.answer['correct'] = 1;
                 var feedback = document.getElementById('feedback_correct');
             }
@@ -333,17 +337,11 @@
         };
 
         this.startCalibration = function(){
-            tmp = [1];
-            for (var n in tmp) {
-                console.log(n);
-            }
             //start the webgazer tracker
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 // .setTracker('TFFacemesh')
                 .setGazeListener(function(data, clock) {
-                    // self.gazeData[clock] = data;
-                    console.log(data);
-                    console.log(clock);
+                    self.gazeData[clock-self.trialStartTime] = data;
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
@@ -377,8 +375,8 @@
             if(self.questionId != null || self.partId != null){
                 self.load();
             }
-            //  "calibrationSlide", 
-            self.allStates = ["calibrationSlide","instructionsSlide","workerIdSlide","specificInstructionsSlide","calibrationSlide","practiceQuestionSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+
+            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","calibrationSlide","practiceQuestionSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){
