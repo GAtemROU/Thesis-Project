@@ -130,7 +130,7 @@ function calPointClick(node) {
 }
 
 
-function docLoad() {
+function calibrate() {
     ClearCanvas();
     PopUpInstruction();
     // click event on the calibration buttons
