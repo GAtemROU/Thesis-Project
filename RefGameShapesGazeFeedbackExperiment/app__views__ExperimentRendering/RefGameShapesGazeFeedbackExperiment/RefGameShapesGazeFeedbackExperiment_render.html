@@ -135,7 +135,7 @@
 
             <div id="experiment_content" ng-init="RC.startTimer()" ng-if="RC.state == 'questionSlide' && RC.questionIndex == $index" ng-repeat="question in RC.questions" style="width:90%; height:90%; margin:auto">
                 <!-- the main content of the experiment goes here -->
-                <div id="experiment_panel_1" class="panel panel-primary" style="height:100%; width:90%; margin-bottom:0px">
+                <div id="experiment_panel_1" class="panel panel-primary" style="height:100%; width:100%; margin-bottom:0px">
                     <!-- <div id="experiment_heading_1" class="panel-heading" style="font-weight: bolder ;"></div> --> 
                     <div align="right" style="margin-right:20px;margin-top:10px;"> Progress:
                         <div id="myProgress" align="left">
@@ -154,7 +154,7 @@
                     </div> 
 
                     <div id="question_slide_content" style="height:100%;width:100%">
-                        <div align="center" style="margin: bottom 15%;">
+                        <div align="center" style="margin-bottom: 10%;">
                         <b>The previous participant said:</b><img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.msg}}.png" style="max-width: 100px ; max-height:100px ; display: inline ; margin: 0 auto; margin-left: 7px; margin-bottom:15px">
                         </div>
                         
@@ -185,17 +185,17 @@
 
                         <div align="center" style="margin-top:15px"><b>Click on the object you think the previous participant intended you to pick.</b></div>
 
-                        <table align="center" style="margin-top:30px; border-spacing: 2px;">
+                        <table align="center" style="height: 50%; width:100%; margin-top:30px; border-spacing: 2px;">
                             <tbody>
                                 <tr>
                                     <td>
-                        <div style="width: 100%; margin-top:10px; margin-left:10px; margin-right:10px">
-                        </div align="center"><b>These were the messages available to the previous participant:</b></div>
-                            <div align="center" style="margin-top:15%">
-                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/ci.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin: right 5vw; margin-bottom:15px; margin-top: 5px">
-                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/tr.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin: right 5vw; margin-bottom:15px; margin-top: 5px">
-                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/gr.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin: right 5vw; margin-bottom:15px; margin-top: 5px">
-                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/re.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin: right 5vw; margin-bottom:15px; margin-top: 5px">
+                        <div style="width: 100%; height:50%; margin-top:10px; margin-left:10px; margin-right:10px">
+                        <div align="center"><b>These were the messages available to the previous participant:</b></div>
+                            <div align="center" style="height:90%">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/ci.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin-right: 5vw; margin-bottom:15px; margin-top: 5px">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/tr.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin-right: 5vw; margin-bottom:15px; margin-top: 5px">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/gr.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin-right: 5vw; margin-bottom:15px; margin-top: 5px">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/re.png" style="max-width: 85px ; max-height:85px ; display: inline ; margin: 0 auto; margin-left:5vw; margin-right: 5vw; margin-bottom:15px; margin-top: 5px">
                             </div>
                         </div>
 
