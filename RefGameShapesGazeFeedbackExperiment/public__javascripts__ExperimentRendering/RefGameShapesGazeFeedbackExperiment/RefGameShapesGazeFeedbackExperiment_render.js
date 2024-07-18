@@ -359,7 +359,7 @@
                 canvas.style.position = 'fixed';
             };
             setup();
-            calibrate(self.next);
+            calibrate(function() {return self.next();});
         }
 
         $(document).ready(function () {
