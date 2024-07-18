@@ -5,6 +5,10 @@ var callback = null;
 // Find the help modal
 var helpModal;
 
+function try_callback(callback) {
+  callback();
+}
+
 /**
  * Clear the canvas and the calibration button.
  */
