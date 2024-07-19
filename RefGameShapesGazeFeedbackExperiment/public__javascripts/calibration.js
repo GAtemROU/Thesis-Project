@@ -4,12 +4,6 @@ var callback = null;
 
 // Find the help modal
 var helpModal;
-
-async function try_callback(callback) {
-  await PopUpInstruction();
-  document.getElementById('calbration_next').style.setProperty('visibility', 'visible');
-}
-
 /**
  * Clear the canvas and the calibration button.
  */
@@ -80,7 +74,7 @@ function calcAccuracy() {
                       webgazer.showPredictionPoints(false);
                       stopResizing();
                       removeCanvas();
-                      callback();
+                      document.getElementById('calbration_next').style.setProperty('visibility', 'visible');
                     }
                   });
                 } else {
@@ -99,8 +93,8 @@ function calcAccuracy() {
                               webgazer.showPredictionPoints(false);
                               stopResizing();
                               removeCanvas();
-                              callback();
-                          } else {
+                              document.getElementById('calbration_next').style.setProperty('visibility', 'visible');
+                            } else {
                               //use restart function to restart the calibration
                               webgazer.clearData();
                               ClearCalibration();

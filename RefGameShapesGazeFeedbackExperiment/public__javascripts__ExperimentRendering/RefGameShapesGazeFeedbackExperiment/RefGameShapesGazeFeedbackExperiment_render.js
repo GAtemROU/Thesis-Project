@@ -163,14 +163,7 @@
                 .error(errorCallback);
         };
 
-        this.strict_next = function(){
-            self.state = self.allStates[++self.slideIndex];
-        };
-
         this.next = function(){
-            if (self.state == this.allStates[0]) {
-                try_callback(function() {return strict_next()});
-            }
             if(self.state == "workerIdSlide"){
                 if(self.questionId == null && self.partId == null){
                     self.load(function(){
@@ -366,7 +359,7 @@
                 canvas.style.position = 'fixed';
             };
             setup();
-            calibrate(function() {return next();});
+            calibrate(self.next);
         }
 
         $(document).ready(function () {
