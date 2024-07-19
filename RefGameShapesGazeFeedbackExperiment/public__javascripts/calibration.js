@@ -5,8 +5,9 @@ var callback = null;
 // Find the help modal
 var helpModal;
 
-function try_callback(callback) {
-  callback();
+async function try_callback(callback) {
+  await PopUpInstruction();
+  document.getElementById('calbration_next').style.setProperty('visibility', 'visible');
 }
 
 /**
@@ -120,7 +121,7 @@ function calPointClick(node) {
     }
     CalibrationPoints[id]++; // increments values
 
-    if (CalibrationPoints[id]==5){ //only turn to yellow after 5 clicks
+    if (CalibrationPoints[id]==1){ //only turn to yellow after 5 clicks
         node.style.setProperty('background-color', 'yellow');
         node.setAttribute('disabled', 'disabled');
         PointCalibrate++;

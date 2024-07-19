@@ -44,6 +44,13 @@
                     <input type="button" class="Calibration" id="Pt8"></input>
                     <input type="button" class="Calibration" id="Pt9"></input>
                 </div>
+                <div id="calibration_next" style="visibility: hidden;">
+                    <div class="panel-heading" style="font-weight: bolder ;">Calibration done</div>
+                    <div class="panel-body">
+                        <p>Calibration is done. Click on 'Next' to continue.</p>
+                        <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
+                    </div>
+                </div>
             </div>
 
             <div id="experiment_content" ng-if="RC.state == 'practiceQuestionSlide' && RC.practiceQuestionIndex == $index" ng-repeat="pquestion in RC.practiceQuestions" style="width:100%; margin:auto">
