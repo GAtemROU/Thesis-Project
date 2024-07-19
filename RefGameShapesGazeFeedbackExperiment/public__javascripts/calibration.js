@@ -74,7 +74,7 @@ function calcAccuracy() {
                       webgazer.showPredictionPoints(false);
                       stopResizing();
                       removeCanvas();
-                      document.getElementById('calbration_next').style.setProperty('visibility', 'visible');
+                      document.getElementById('calibration_next').style.setProperty('visibility', 'visible');
                     }
                   });
                 } else {
@@ -93,7 +93,7 @@ function calcAccuracy() {
                               webgazer.showPredictionPoints(false);
                               stopResizing();
                               removeCanvas();
-                              document.getElementById('calbration_next').style.setProperty('visibility', 'visible');
+                              document.getElementById('calibration_next').style.setProperty('visibility', 'visible');
                             } else {
                               //use restart function to restart the calibration
                               webgazer.clearData();
