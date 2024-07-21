@@ -7,7 +7,7 @@ function startResizing() {
 }
 
 function stopResizing() {
-    window.removeEventListener('resize', resize, true);
+    window.removeEventListener('resize', resize, false);
 }
 
 function resize() {
