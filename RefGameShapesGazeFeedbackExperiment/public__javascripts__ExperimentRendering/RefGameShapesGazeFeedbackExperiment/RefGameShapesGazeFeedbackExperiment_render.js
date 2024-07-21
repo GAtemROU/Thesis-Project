@@ -250,6 +250,30 @@
 
         };
 
+        this.findPos = function findPos(obj) {
+            var curleft = curtop = 0;
+            if (obj.offsetParent) {
+                do {
+                    curleft += obj.offsetLeft;
+                    curtop += obj.offsetTop;
+                } while (obj = obj.offsetParent);
+                return { x: curleft, y: curtop };
+            }
+        }
+
+        this.savePositions = function(){
+            var positions = {};
+            positions['msg_sent'] = self.findPos(document.getElementById('msg_sent'));
+            for (int i = 0; i < 3; i++){
+                positions['img'+i] = self.findPos(document.getElementById('img'+i));
+            }
+            let msgs = ['ci','tr','gr','re'];
+            for (int i = 0; i < 4; i++){
+                positions['msg_'+msgs[i]] = self.findPos(document.getElementById('msg_'+msgs[i]));
+            }
+            console.log(positions);
+        }
+
         this.nextPracticeQuestion = function(ans){
             var question = self.practiceQuestions[self.practiceQuestionIndex];
             question.answer = {};
@@ -260,7 +284,9 @@
             }else{
                 self.next();
             }
+            self.savePositions();
         };
+        
 
         this.load = function(callback){
             var subListMap = self.subListMap;
@@ -361,6 +387,8 @@
             setup();
             calibrate(self.next);
         }
+
+        
 
         $(document).ready(function () {
             self.questionId = ($("#questionId").length > 0) ? $("#questionId").val() : null;
