@@ -179,8 +179,10 @@
 
             if(self.slideIndex + 1 < self.allStates.length){
                 self.state = self.allStates[++self.slideIndex];
-                if (self.state == "generalQuestionsSlide")
+                if (self.state == "generalQuestionsSlide"){
                     webgazer.end();
+                MediaRecorder.stop();
+                }
             }else{
                 self.submitResults(self.resultsSubmitted, self.handleError);
             }
@@ -211,6 +213,7 @@
         }
 
         this.nextQuestion = function(ans){
+            webgazer.pause();
             var question = self.questions[self.questionIndex];
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['trialId'] = self.questionIndex+1;
@@ -235,12 +238,12 @@
 
             content.style.display = 'none';
             feedback.style.display = 'flex';
-
             $timeout(function () {
                 if(self.questionIndex + 1 < self.questions.length){
                     content.style.display = 'flex';
                     feedback.style.display = 'none';
                     ++self.questionIndex;
+                    webgazer.resume();
                 }else{
                     self.SIs = self.questions.filter(obj => obj.itemid === "4");
                     self.CIs = self.questions.filter(obj => obj.itemid === "13");
@@ -253,7 +256,6 @@
                 }
 
             }, 1200);   
-
         };
 
 
