@@ -21,7 +21,9 @@
         self.showMessage = "none";
         self.redirectUrl = null;
         self.IsEnabled = true;
-        self.gazeData = {};
+        self.curGazeData = {};
+        self.gazeData = [];
+        self.itemPositions = [];
 
         self.shuffleQuestions = true;
         self.shuffleSublists = true;
@@ -154,7 +156,9 @@
                 assignmentId : self.assignmentId,
                 hitId : self.hitId,
                 workerId : self.workerId,
-                partId : (self.partId == null ? -1 : self.partId)
+                partId : (self.partId == null ? -1 : self.partId),
+                gaze : self.gazeData,
+                itemPositions : self.itemPositions
             };
 
 
@@ -203,7 +207,7 @@
             for (let i = 0; i < 4; i++){
                 positions['msg_'+msgs[i]] = self.findPos(document.getElementById('msg_'+msgs[i]));
             }
-            console.log(positions);
+            this.itemPositions.push(positions);
         }
 
         this.nextQuestion = function(ans){
@@ -212,8 +216,8 @@
             question.answer['trialId'] = self.questionIndex+1;
             question.answer['choicePos'] = ans;
             question.answer['choice'] = question.answer['presOrder'][ans];
-            question.answer['gazeData'] = self.gazeData;
-            self.gazeData = {};
+            self.gazeData.push(self.curGazeData);
+            self.curGazeData = {};
 
             var content = document.getElementById('question_slide_content');
 
@@ -237,7 +241,6 @@
                     content.style.display = 'flex';
                     feedback.style.display = 'none';
                     ++self.questionIndex;
-                    // self.savePositions();
                 }else{
                     self.SIs = self.questions.filter(obj => obj.itemid === "4");
                     self.CIs = self.questions.filter(obj => obj.itemid === "13");
@@ -367,7 +370,7 @@
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 // .setTracker('TFFacemesh')
                 .setGazeListener(function(data, clock) {
-                    self.gazeData[clock-self.trialStartTime] = data;
+                    self.curGazeData[clock-self.trialStartTime] = data;
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
