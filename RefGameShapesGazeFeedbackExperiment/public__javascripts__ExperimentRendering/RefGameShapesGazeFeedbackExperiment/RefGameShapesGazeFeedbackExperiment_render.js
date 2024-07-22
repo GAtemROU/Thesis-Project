@@ -181,7 +181,6 @@
                 self.state = self.allStates[++self.slideIndex];
                 if (self.state == "generalQuestionsSlide"){
                     webgazer.end();
-                MediaRecorder.stop();
                 }
             }else{
                 self.submitResults(self.resultsSubmitted, self.handleError);
