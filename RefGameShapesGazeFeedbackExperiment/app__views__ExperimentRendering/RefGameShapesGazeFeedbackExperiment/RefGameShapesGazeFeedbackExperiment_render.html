@@ -126,7 +126,7 @@
             </div>
         </div>
 
-            <div id="experiment_content" ng-init="RC.startTimer(); RC.savePositions();" ng-if="RC.state == 'questionSlide' && RC.questionIndex == $index" ng-repeat="question in RC.questions" style="margin:auto; width:90%; height:90%">
+            <div id="experiment_content" ng-init="RC.savePositions();" ng-if="RC.state == 'questionSlide' && RC.questionIndex == $index" ng-repeat="question in RC.questions" style="margin:auto; width:90%; height:90%">
                 <!-- the main content of the experiment goes here -->
                 <div id="experiment_panel_1" class="panel panel-primary" style="width: 100%; height: 100%; display: flex; flex-direction: column; margin-bottom:0px">
                     <!-- <div id="experiment_heading_1" class="panel-heading" style="font-weight: bolder ;"></div> --> 

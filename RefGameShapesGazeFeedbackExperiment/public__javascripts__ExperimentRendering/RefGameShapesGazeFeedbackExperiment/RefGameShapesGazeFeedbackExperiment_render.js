@@ -33,6 +33,7 @@
         self.strategyQuestionIndex = 0;
         self.practiceQuestionIndex = 0;
 
+        self.experimentStartTime = null;
         self.trialStartTime = null;
 
 
@@ -174,6 +175,10 @@
                     return;
                 }
             }
+            if(self.state == "calibrationSlide") {
+                self.startTimer();
+                self.curGazeData = {};
+            }
 
             if(self.slideIndex + 1 < self.allStates.length){
                 self.state = self.allStates[++self.slideIndex];
@@ -210,6 +215,7 @@
         }
 
         this.nextQuestion = function(ans){
+
             webgazer.pause();
             var question = self.questions[self.questionIndex];
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
@@ -219,6 +225,7 @@
             question.answer['positions'] = self.itemPositions;
             question.answer['gaze'] = self.curGazeData;
             self.curGazeData = {};
+            console.log(self.trialStartTime);
             console.log(question.answer);
             var content = document.getElementById('question_slide_content');
 
@@ -241,6 +248,7 @@
                     content.style.display = 'flex';
                     feedback.style.display = 'none';
                     ++self.questionIndex;
+                    self.startTimer();
                     webgazer.resume();
                 }else{
                     self.SIs = self.questions.filter(obj => obj.itemid === "4");
@@ -367,10 +375,11 @@
 
         this.startCalibration = function(){
             //start the webgazer tracker
+            self.experimentStartTime = Date.now();
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 // .setTracker('TFFacemesh')
                 .setGazeListener(function(data, clock) {
-                    self.curGazeData[clock-self.trialStartTime] = data;
+                    self.curGazeData[clock + self.experimentStartTime - self.trialStartTime] = data;
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
