@@ -8,6 +8,14 @@
             <div ng-if="RC.state == 'instructionsSlide'" class="panel panel-primary" style="width:90%; margin:auto">
                 <div class="panel-heading" style="font-weight: bolder ;">General instructions</div>
                 <div class="panel-body">
+                    This experiment contains tracking your eye gaze. Please follow following instructions. <br><br>
+
+                    1. Choose a quiet, well-lit room with minimal distractions. Use a stable chair. <br>
+
+                    2. Place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face. <br>
+
+                    3. Keep your head as still as possible during the experiment. Take short breaks if needed, returning to the same position. <br>
+                    
                     @_SHOW_INSTRUCTIONS_@
                     <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
                 </div>
@@ -48,7 +56,7 @@
                     <div id="calibration_next" class="panel panel-primary" style="width:90%; visibility: hidden; margin: auto;">
                         <div class="panel-heading" style="font-weight: bolder ;">Calibration</div>
                         <div class="panel-body">
-                            <p>Calibration is done. Click on 'Next' to continue.</p>
+                            <p>Calibration is done. Let's get back to the experiment. Click on 'Next' to continue.</p>
                             <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
                         </div>
                     </div>

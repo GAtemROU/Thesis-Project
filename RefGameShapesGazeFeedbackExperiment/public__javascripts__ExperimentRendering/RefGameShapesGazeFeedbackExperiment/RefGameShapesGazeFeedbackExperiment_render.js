@@ -21,9 +21,9 @@
         self.showMessage = "none";
         self.redirectUrl = null;
         self.IsEnabled = true;
+        
         self.curGazeData = {};
-        self.gazeData = [];
-        self.itemPositions = [];
+        self.itemPositions = {};
 
         self.shuffleQuestions = true;
         self.shuffleSublists = true;
@@ -157,9 +157,7 @@
                 hitId : self.hitId,
                 workerId : self.workerId,
                 partId : (self.partId == null ? -1 : self.partId),
-                gaze : self.gazeData,
-                itemPositions : self.itemPositions
-            };
+                };
 
 
             $http.post("/submitResults", results)
@@ -208,7 +206,7 @@
             for (let i = 0; i < 4; i++){
                 positions['msg_'+msgs[i]] = self.findPos(document.getElementById('msg_'+msgs[i]));
             }
-            this.itemPositions.push(positions);
+            self.itemPositions = positions;
         }
 
         this.nextQuestion = function(ans){
@@ -218,9 +216,10 @@
             question.answer['trialId'] = self.questionIndex+1;
             question.answer['choicePos'] = ans;
             question.answer['choice'] = question.answer['presOrder'][ans];
-            self.gazeData.push(self.curGazeData);
+            question.answer['positions'] = self.itemPositions;
+            question.answer['gaze'] = self.curGazeData;
             self.curGazeData = {};
-
+            console.log(question.answer);
             var content = document.getElementById('question_slide_content');
 
             // console.log('comparing correctness',question.answer['choicePos'],question.answer['targetPos']);
@@ -408,7 +407,7 @@
                 self.load();
             }
 
-            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","calibrationSlide","practiceQuestionSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){
