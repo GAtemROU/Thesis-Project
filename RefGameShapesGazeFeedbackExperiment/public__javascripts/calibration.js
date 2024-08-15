@@ -25,7 +25,7 @@ function removeCanvas(){
 function PopUpInstruction(){
   swal({
     title:"Calibration",
-    text: "Now we will do the calibration procedure. Please allow access to your webcamera. We will not store any video of you directly, only the estimated coordinates of your eye gaze. Make sure your face is located in the center of the video in the upper left corner. \nPlease click on each of the 9 points on the screen. You must click on each point 5 times till it goes yellow. This will calibrate your eye movements.",
+    text: "Now we will do the calibration procedure. Please allow access to your webcamera. We will not store any video of you directly, only the estimated coordinates of your eye gaze. Make sure your face is located in the center of the video in the upper left corner. \n\nPlease click on each of the 9 points on the screen. You must click on each point 5 times till it goes yellow. This will calibrate your eye movements.",
     buttons:{
       cancel: false,
       confirm: true
@@ -115,7 +115,7 @@ function calPointClick(node) {
     }
     CalibrationPoints[id]++; // increments values
 
-    if (CalibrationPoints[id]==1){ //only turn to yellow after 5 clicks
+    if (CalibrationPoints[id]==5){ //only turn to yellow after 5 clicks
         node.style.setProperty('background-color', 'yellow');
         node.setAttribute('disabled', 'disabled');
         PointCalibrate++;
