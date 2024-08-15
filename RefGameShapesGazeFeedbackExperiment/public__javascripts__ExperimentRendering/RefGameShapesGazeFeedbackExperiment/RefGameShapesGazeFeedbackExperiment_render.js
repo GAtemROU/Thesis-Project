@@ -204,12 +204,18 @@
         this.savePositions = function(){
             var positions = {};
             positions['msg_sent'] = self.findPos(document.getElementById('msg_sent'));
+            positions['msg_sent']['width'] = document.getElementById('msg_sent').naturalWidth;
+            positions['msg_sent']['height'] = document.getElementById('msg_sent').naturalHeight;
             for (let i = 1; i < 4; i++){
                 positions['img'+i] = self.findPos(document.getElementById('img'+i));
+                positions['img'+i]['width'] = document.getElementById('img'+i).naturalWidth;
+                positions['img'+i]['height'] = document.getElementById('img'+i).naturalHeight;
             }
             let msgs = ['ci','tr','gr','re'];
             for (let i = 0; i < 4; i++){
                 positions['msg_'+msgs[i]] = self.findPos(document.getElementById('msg_'+msgs[i]));
+                positions['msg_'+msgs[i]]['width'] = document.getElementById('msg_'+msgs[i]).naturalWidth;
+                positions['msg_'+msgs[i]]['height'] = document.getElementById('msg_'+msgs[i]).naturalHeight;
             }
             self.itemPositions = positions;
         }
@@ -223,10 +229,11 @@
             question.answer['choicePos'] = ans;
             question.answer['choice'] = question.answer['presOrder'][ans];
             question.answer['positions'] = self.itemPositions;
-            question.answer['gaze'] = self.curGazeData;
+            var encoded = btoa(JSON.stringify(obj));
+            question.answer['gaze'] = encoded;
             self.curGazeData = {};
-            console.log(self.trialStartTime);
             console.log(question.answer);
+            console.log(JSON.parse(atob(encoded)));
             var content = document.getElementById('question_slide_content');
 
             // console.log('comparing correctness',question.answer['choicePos'],question.answer['targetPos']);
