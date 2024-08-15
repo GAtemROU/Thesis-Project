@@ -204,8 +204,9 @@
         this.savePositions = function(){
             var positions = {};
             positions['msg_sent'] = self.findPos(document.getElementById('msg_sent'));
-            positions['msg_sent']['width'] = document.getElementById('msg_sent').naturalWidth;
-            positions['msg_sent']['height'] = document.getElementById('msg_sent').naturalHeight;
+            let img = document.getElementById('msg_sent');
+            positions['msg_sent']['width'] = img.offsetWidth;
+            positions['msg_sent']['height'] = img.offsetHeight;
             for (let i = 1; i < 4; i++){
                 positions['img'+i] = self.findPos(document.getElementById('img'+i));
                 positions['img'+i]['width'] = document.getElementById('img'+i).naturalWidth;
@@ -229,7 +230,7 @@
             question.answer['choicePos'] = ans;
             question.answer['choice'] = question.answer['presOrder'][ans];
             question.answer['positions'] = self.itemPositions;
-            var encoded = btoa(JSON.stringify(obj));
+            var encoded = btoa(JSON.stringify(self.curGazeData));
             question.answer['gaze'] = encoded;
             self.curGazeData = {};
             console.log(question.answer);
