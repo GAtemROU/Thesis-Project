@@ -8,6 +8,9 @@ colors = ['red', 'green', 'blue']
 
 simple_trials = []
 complex_trials = []
+unambiguous_trials = []
+
+
 id_to_obj = ['trgt', 'comp', 'dist']
                  # feature 1
              #trgt #comp #distr
@@ -26,8 +29,17 @@ complex_matrix = [[1, 1, 0],
                   [0, 1, 0],
                   [1, 0, 1],
                   [0, 0, 0]]
-available_msgs_ids_complex = [0, 1, 3, 4]
+available_msgs_ids_complex = [0, 1, 3, 4] 
 avaialble_msgs_ids_complexer = [0, 2, 3, 4]
+
+unambiguous_matrix = [[1, 0, 0],
+                      [0, 1, 1],
+                      [0, 0, 0],
+                      [1, 1, 0],
+                      [0, 0, 0],
+                      [0, 0, 1]]
+
+available_msgs_ids_unambiguous = [0, 1, 3, 4]
 
 
 def gen_trials(shapes, colors, matrix, available_msgs_ids, id_to_obj_type):
@@ -61,10 +73,11 @@ def gen_trials(shapes, colors, matrix, available_msgs_ids, id_to_obj_type):
     return trials
 
 simple_trials = gen_trials(shapes, colors, simple_matrix, available_msgs_ids_simple, id_to_obj)
-complex_trials = gen_trials(shapes, colors, complex_matrix, available_msgs_ids_complex, id_to_obj)
+complex_trials = gen_trials(shapes, colors, complex_matrix, avaialble_msgs_ids_complexer, id_to_obj)
 
 final_simple = []
 final_complex = []
+final_unambiguous = []
 
 counter = 1
 for i in range(len(simple_trials)):
@@ -73,11 +86,18 @@ for i in range(len(simple_trials)):
         final_simple.append(simple_trials[i+counter])
         final_complex.append(complex_trials[i])
         final_complex.append(complex_trials[i+counter])
+        final_unambiguous.append(simple_trials[i])
+        final_unambiguous.append(simple_trials[i+6])
+        final_unambiguous.append(simple_trials[i+counter])
+        final_unambiguous.append(simple_trials[i+counter%12+6])
         counter+=2
+# pp.pprint(complex_trials)
 
+# pp.pprint(len(final_simple))
+# pp.pprint(final_simple)
 
-pp.pprint(len(final_simple))
-pp.pprint(final_simple)
+# pp.pprint(len(final_complex))
+# pp.pprint(final_complex)
 
-pp.pprint(len(final_complex))
-pp.pprint(final_complex)
+pp.pprint(len(final_unambiguous))
+pp.pprint(final_unambiguous)

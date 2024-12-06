@@ -31,32 +31,36 @@ function PopUpInstruction(){
       confirm: true
     }
   }).then(isConfirm => {
-    ShowCalibrationPoint();
+    ShowCalibrationPoints();
   });
 }
 
-function calcAccuracy() {
+async function calcAccuracy(points) {
     // show modal
     // notification for the measurement process
-    swal({
+    for (let i = 0; i < points.length; i++) {
+    document.getElementById("PtAcc" + points[i].name).style.removeProperty('display');
+    await swal({
         title: "Calculating measurement",
-        text: "Please don't move your mouse & stare at the middle dot for the next 5 seconds. This will allow us to calculate the accuracy of our predictions.",
+        text: `Please don't move your mouse & stare at the ${points[i].name} dot for the next 5 seconds. This will allow us to calculate the accuracy of our predictions.`,
         closeOnEsc: false,
         allowOutsideClick: false,
         closeModal: true
-    }).then( () => {
+    }).then(async () => {
         // makes the variables true for 5 seconds & plots the points
-    
+        var windowHeight = window.innerHeight;
+        var windowWidth = window.innerWidth;
+        // Calculate the position of the point the user is staring at
         store_points_variable(); // start storing the prediction points
-    
-        sleep(5000).then(() => {
+        
+        await sleep(5000).then(async () => {
                 stop_storing_points_variable(); // stop storing the prediction points
                 var past50 = webgazer.getStoredPoints(); // retrieve the stored points
-                var precision_measurement = calculatePrecision(past50);
+                var precision_measurement = calculatePrecision(past50, points[i].x, points[i].y);
                 if (precision_measurement < 60) {
-                  swal({
-                    title: "Your accuracy measure is " + precision_measurement + "%",
-                    text: "Unfortunately, it is too low to continue, please consider chaging your setup and redo the calibration.",
+                  await swal({
+                    title: `Your accuracy measure is ${precision_measurement}%`,
+                    text: "Unfortunately, it is too low to continue, please consider adjusting your setup and redo the calibration.",
                     allowOutsideClick: false,
                     buttons: {
                       confirm: "Recalibrate",
@@ -68,19 +72,22 @@ function calcAccuracy() {
                       webgazer.clearData();
                       ClearCalibration();
                       ClearCanvas();
-                      ShowCalibrationPoint();
+                      ShowCalibrationPoints();
                     } else {
                       ClearCanvas();
                       webgazer.showPredictionPoints(false);
-                      stopResizing();
-                      removeCanvas();
-                      document.getElementById('calibration_next').style.setProperty('visibility', 'visible');
+                      document.getElementById("PtAcc" + points[i].name).style.setProperty('display', 'none');
+                      if (i == points.length - 1) {
+                        stopResizing();
+                        removeCanvas();
+                        document.getElementById('calibration_next').style.setProperty('visibility', 'visible');
+                      }
                     }
                   });
                 } else {
-                  swal({
-                      title: "Your accuracy measure is " + precision_measurement + "%",
-                      text: "You can continue with the experiment.",
+                  await swal({
+                      title: `Your accuracy measure is ${precision_measurement}%`,
+                      text: "This is satisfiable. " + (i == points.length-1) ? "You can continue with the experiment.": "We will now move to the next point.",
                       allowOutsideClick: false,
                       buttons: {
                         cancel: "Recalibrate",
@@ -88,23 +95,27 @@ function calcAccuracy() {
                       }
                   }).then(isConfirm => {
                           if (isConfirm){
-                              //clear the calibration & hide the last middle button
+                              //clear the calibration & hide the current accuracy check button
                               ClearCanvas();
                               webgazer.showPredictionPoints(false);
-                              stopResizing();
-                              removeCanvas();
-                              document.getElementById('calibration_next').style.setProperty('visibility', 'visible');
+                              document.getElementById("PtAcc" + points[i].name).style.setProperty('display', 'none');
+                              if (i == points.length - 1) {
+                                stopResizing();
+                                removeCanvas();
+                                document.getElementById('calibration_next').style.setProperty('visibility', 'visible');
+                              }
                             } else {
                               //use restart function to restart the calibration
                               webgazer.clearData();
                               ClearCalibration();
                               ClearCanvas();
-                              ShowCalibrationPoint();
+                              ShowCalibrationPoints();
                           }
                   });
                 }
         });
     });
+  }
 }
 
 function calPointClick(node) {
@@ -126,23 +137,26 @@ function calPointClick(node) {
     }
 
     //Show the middle calibration point after all other points have been clicked.
-    if (PointCalibrate == 8){
-        document.getElementById('Pt5').style.removeProperty('display');
+    if (PointCalibrate == 10){
+        document.getElementById('PtAccMiddle').style.removeProperty('display');
     }
 
-    if (PointCalibrate >= 9){ // last point is calibrated
+    if (PointCalibrate >= 11){ // last point is calibrated
         // grab every element in Calibration class and hide them except the middle point.
         document.querySelectorAll('.Calibration').forEach((i) => {
             i.style.setProperty('display', 'none');
         });
-        document.getElementById('Pt5').style.removeProperty('display');
+        document.getElementById('PtAccMiddle').style.removeProperty('display');
 
         // clears the canvas
         var canvas = document.getElementById("plotting_canvas");
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
 
+        points = [{"name" : "Middle", "x": window.innerWidth / 2, "y": window.innerHeight / 2},
+                  {"name" : "Left",   "x": window.innerWidth / 5, "y": window.innerHeight / 2},
+                  {"name" : "Right",  "x": window.innerWidth * 4 / 5, "y": window.innerHeight / 2}];
         // Calculate the accuracy
-        calcAccuracy();
+        calcAccuracy(points);
     }
 }
 
@@ -163,12 +177,12 @@ function calibrate(callback_f) {
 /**
  * Show the Calibration Points
  */
-function ShowCalibrationPoint() {
+function ShowCalibrationPoints() {
   document.querySelectorAll('.Calibration').forEach((i) => {
     i.style.removeProperty('display');
   });
   // initially hides the middle button
-  document.getElementById('Pt5').style.setProperty('display', 'none');
+  document.getElementById('PtAccMiddle').style.setProperty('display', 'none');
 }
 
 /**

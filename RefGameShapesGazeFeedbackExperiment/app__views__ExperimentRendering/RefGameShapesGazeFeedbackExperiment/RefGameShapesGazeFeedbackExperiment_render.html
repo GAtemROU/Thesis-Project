@@ -8,7 +8,15 @@
             <div ng-if="RC.state == 'instructionsSlide'" class="panel panel-primary" style="width:90%; margin:auto">
                 <div class="panel-heading" style="font-weight: bolder ;">General instructions</div>
                 <div class="panel-body">
-                    This experiment contains tracking your eye gaze. Please follow following instructions. <br><br>
+                    <b>Important</b>: You cannot return to previous pages in the experiment, not even to the instructions. Therefore, please read all the information carefully.<br><br>
+
+                    <b>Legal information</b>: This experiment is being conducted as part of ongoing research at Saarland University. If you have any questions or comments about the study, please contact us. You must be at least 18 years old to participate. Your participation in this research is voluntary. There are no risks or benefits to participating in this study. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Part of the data collections involves using your webcam to estimate your eye gaze. No video or audio is stored at any point during the experiment. We only use the the video to store the estimated position of your eye gaze, as well as estimated size of your pupil. All data will be anonymized prior to analysis. 
+                    
+                    <b>If you agree to participate, please read the below instructions before proceeding.</b><br><br>
+
+                    <b>Instructions:</b><br> In this experiment, you will see images of different situations and answer questions about them. The whole experiment should take no longer than 22 minutes in total. <b>Please note that sometimes the images take a second to load.</b><br><br>
+                    
+                    <b>Important</b> pieces of advice for the eyetracking part of the experiment.<br>
 
                     1. Choose a quiet, well-lit room with minimal distractions. Use a stable chair. <br>
 
@@ -16,6 +24,7 @@
 
                     3. Keep your head as still as possible during the experiment. Take short breaks if needed, returning to the same position. <br>
                     
+                    4. Make this window full screen size if not already.
                     @_SHOW_INSTRUCTIONS_@
                     <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
                 </div>
@@ -46,11 +55,14 @@
                     <input type="button" class="Calibration" id="Pt2"></input>
                     <input type="button" class="Calibration" id="Pt3"></input>
                     <input type="button" class="Calibration" id="Pt4"></input>
-                    <input type="button" class="Calibration" id="Pt5"></input>
+                    <input type="button" class="Calibration" id="PtAccMiddle"></input>
                     <input type="button" class="Calibration" id="Pt6"></input>
                     <input type="button" class="Calibration" id="Pt7"></input>
                     <input type="button" class="Calibration" id="Pt8"></input>
                     <input type="button" class="Calibration" id="Pt9"></input>
+                    <input type="button" class="Calibration" id="PtAccLeft"></input>
+                    <input type="button" class="Calibration" id="PtAccRight"></input>
+
                 </div>
                 <div style="display:flex; height: 100%; width: 100%; justify-content: center; align-items: center;">
                     <div id="calibration_next" class="panel panel-primary" style="width:90%; visibility: hidden; margin: auto;">
@@ -218,7 +230,7 @@
 
                         <div><b>Click on the object you think the previous participant intended you to pick.</b></div>
                         <div ng-if="question.answer.secondAnswer != undefined" style="display:flex; flex:1; flex-direction: column; justify-content: center; align-items: center;">
-                            <p class="centerStyle fontStyleBasic"><span class="questionFont"><b>Why did you choose this image?</b></span></p>
+                            <p class="centerStyle fontStyleBasic"><span class="questionFont"><b>We would like to know a little more about your strategy. Why did you choose this image?</b></span></p>
                             <p><textarea id="textArea" name="textArea" rows="4" cols="60" ng-model='question.answer.strategy'></textarea></p>
                             <button ng-click="RC.nextStrategyQuestion()" type="button" ng-disabled="question.answer.strategy === undefined || question.answer.strategy === ''" class="btn btn-default" style="float:center ; margin-top:20px;font-size:20;">Next</button>
                         </div>
@@ -240,9 +252,7 @@
         <div ng-if="RC.state == 'generalQuestionsSlide'" class="panel panel-primary" style="width:90%; margin:auto">
             <div class="panel-heading" style="font-weight: bolder ;">Finally, please answer some questions about the experiment:</div>
             <div class="panel-body">
-<!--                 What do you think this study was about?<span style="color:red">*</span><br>
-                <input ng-model="RC.questions[0].answer.what_about" ng-trim="false" id="generalQ_what_about" class="form-control" type="text" style="width: 50%;font-size:20;"/><br> -->
-
+                
                 Did you experience any technical difficulties during this task?<br>
                 <input ng-model="RC.questions[0].answer.tech_diffs" ng-trim="false" id="generalQ_tech_difficulties" class="form-control" type="text" style="width: 50%;font-size:20;"/><br>
 
@@ -263,8 +273,7 @@
 
         <!-- end of added section -->
 
-        <div ng-if="RC.showMessage == 'nextSubList'" style="height : 100% ; width : 100% ; display : table ; position: absolute; top: 0; left: 0">
-            <div style="height: 100% ; vertical-align: middle ;">
+        <div ng-if="RC.showMessage == 'nextSubList'" style="display: flex; width:100%; height: 100% ; vertical-align: middle ;">
                 <div style="width:90%; margin:auto">
                     <!-- <this message is shown if a user successfully finished a sublist> -->
                     <div class="panel panel-primary">
@@ -284,25 +293,21 @@
                     </div>
                     <!-- </this message is shown if a user successfully finished a sublist> -->
                 </div>
-            </div>
         </div>
 
 <!--         <div ng-if="RC.state == 'generalStatisticsSlide'">
             <statistics-slide statistics="RC.SurveyStatistics" click="RC.next()"></statistics-slide>
         </div> -->
 
-        <div ng-if="RC.showMessage == 'goodBye'" style="height : 100% ; width : 100% ; display : table ; position: absolute; top: 0; left: 0">
-            <div style="height: 100% ; vertical-align: middle ;">
-                <div style="width:90%; margin:auto">
-                    <div class="panel panel-primary">
-                        <div id="goodBye_title" class="panel-heading" style="font-weight: bolder ;">Attention:</div>
-                        <div class="panel-body">
-                            <div id="goodBye_message">
-                                You've successfully completed this task. To hand in your submission and be redirected to the next task, click on the "Submit" button below.
-                            </div>
-                            <hr/>
-                            <button ng-click="RC.finished()" style="float:right;font-size:20;" class="btn btn-default" type="button">Submit</button>
+        <div ng-if="RC.showMessage == 'goodBye'" style="display: flex; width:100%; height: 100% ; vertical-align: middle ;">
+            <div style="width:90%; margin:auto">
+                <div class="panel panel-primary">
+                    <div id="goodBye_title" class="panel-heading" style="font-weight: bolder ;">Attention:</div>
+                    <div class="panel-body">
+                        <div id="goodBye_message">
+                            You've successfully completed this task. To hand in your submission and be redirected to the next task, click on the "Submit" button below.
                         </div>
+                        <button ng-click="RC.finished()" style="float:right;font-size:20;" class="btn btn-default" type="button">Submit</button>
                     </div>
                 </div>
             </div>
