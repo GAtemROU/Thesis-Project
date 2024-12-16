@@ -97,7 +97,14 @@ body {
   top:50vh;
   left:20vw;
 }
+
 #PtAccRight{
   top:50vh;
   right:20vw;
+}
+
+#Instr {
+  display: flex;
+  margin-top: 75vh;
+  justify-content: center;
 }

@@ -617,7 +617,7 @@
             //start the webgazer tracker
             self.experimentStartTime = Date.now();
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
-                // .setTracker('TFFacemesh')
+                .setTracker('TFFacemesh')
                 .setGazeListener(function(data, clock) {
                     self.curGazeData[clock + self.experimentStartTime - self.trialStartTime] = data;
                 })

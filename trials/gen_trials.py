@@ -3,8 +3,8 @@ import pprint
 
 pp = pprint.PrettyPrinter(sort_dicts=False)
 
-shapes = ['circle', 'square', 'triangle']
-colors = ['red', 'green', 'blue']
+shapes = ['ci', 'sq', 'tr']
+colors = ['re', 'gr', 'bl']
 
 simple_trials = []
 complex_trials = []
@@ -66,7 +66,7 @@ def gen_trials(shapes, colors, matrix, available_msgs_ids, id_to_obj_type):
                             if (i > (msgs_len/2)-1 and not colors_first) or (i < msgs_len/2 and colors_first):
                                 trial[id_to_obj_type[j]] = all_msgs_order[i]
                             else:
-                                trial[id_to_obj_type[j]] += '_' + all_msgs_order[i]
+                                trial[id_to_obj_type[j]] = all_msgs_order[i] + '_' + trial[id_to_obj_type[j]]
                 msgs = [all_msgs_order[msg_id] for msg_id in available_msgs_ids]
                 trial['msgs'] = msgs
                 trials.append(trial)
@@ -74,30 +74,16 @@ def gen_trials(shapes, colors, matrix, available_msgs_ids, id_to_obj_type):
 
 simple_trials = gen_trials(shapes, colors, simple_matrix, available_msgs_ids_simple, id_to_obj)
 complex_trials = gen_trials(shapes, colors, complex_matrix, avaialble_msgs_ids_complexer, id_to_obj)
+unambiguous_trials = gen_trials(shapes, colors, unambiguous_matrix, available_msgs_ids_unambiguous, id_to_obj)
 
-final_simple = []
-final_complex = []
-final_unambiguous = []
+def gen_simple_trials():
+    return gen_trials(shapes, colors, simple_matrix, available_msgs_ids_simple, id_to_obj)
 
-counter = 1
-for i in range(len(simple_trials)):
-    if (i % 12 == 0):
-        final_simple.append(simple_trials[i])
-        final_simple.append(simple_trials[i+counter])
-        final_complex.append(complex_trials[i])
-        final_complex.append(complex_trials[i+counter])
-        final_unambiguous.append(simple_trials[i])
-        final_unambiguous.append(simple_trials[i+6])
-        final_unambiguous.append(simple_trials[i+counter])
-        final_unambiguous.append(simple_trials[i+counter%12+6])
-        counter+=2
-# pp.pprint(complex_trials)
+def gen_complex_trials():
+    return gen_trials(shapes, colors, complex_matrix, avaialble_msgs_ids_complexer, id_to_obj)
 
-# pp.pprint(len(final_simple))
-# pp.pprint(final_simple)
+def gen_unambiguous_trials():
+    return gen_trials(shapes, colors, unambiguous_matrix, available_msgs_ids_unambiguous, id_to_obj)
 
-# pp.pprint(len(final_complex))
-# pp.pprint(final_complex)
 
-pp.pprint(len(final_unambiguous))
-pp.pprint(final_unambiguous)
+
