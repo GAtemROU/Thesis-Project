@@ -50,7 +50,6 @@ async function calcAccuracy(points) {
     await swal({
         title: "Calculating measurement",
         text: `Please don't move your mouse & stare at the ${points[i].name} dot for the next 5 seconds. This will allow us to calculate the accuracy of our predictions.`,
-        imageUrl: "dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/ci.png",
         closeOnEsc: false,
         allowOutsideClick: false,
         closeModal: true  
@@ -82,6 +81,7 @@ async function calcAccuracy(points) {
                       ClearCalibration();
                       clearCanvas();
                       ShowCalibrationPoints();
+                      i = points.length;
                     } else {
                       clearCanvas();
                       webgazer.showPredictionPoints(false);
@@ -119,6 +119,7 @@ async function calcAccuracy(points) {
                               ClearCalibration();
                               clearCanvas();
                               ShowCalibrationPoints();
+                              i = points.length;
                           }
                   });
                 }

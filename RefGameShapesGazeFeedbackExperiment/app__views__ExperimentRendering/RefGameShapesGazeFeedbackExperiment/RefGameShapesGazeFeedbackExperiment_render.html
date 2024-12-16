@@ -39,12 +39,25 @@
             </div>
 
             <div ng-if="RC.state == 'specificInstructionsSlide'" class="panel panel-primary" style="width:90%; margin:auto">
-                <div class="panel-heading" style="font-weight: bolder ;">Instructions</div>
+                <div class="panel-heading" style=" font-weight: bolder ;">Instructions</div>
                 <div class="panel-body">
                     In this task, you will see images of different situations and answer questions about them.<br><br>
                     
                     This is how it works. On each trial you will see a display of three shapes (circles, squares and triangles) in different colors (red, green, or blue). At the top of the display you will see an image. This image is a message that was sent by a previous participant who saw the same display as you and was instructed to get you to pick out one of the objects. <b>Your task is to click on the object you think the previous participant intended you to pick.</b> You'll do a short tutorial first and then you'll see 36 repetitions of this task. Click on 'Next' to continue.
                     <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
+                </div>
+            </div>
+
+            <div ng-if="RC.state == 'calibrationInstructionsSlide'" class="panel panel-primary" style="width:90%; margin:auto">
+                <div class="panel-heading" style="font-weight: bolder ;">Instructions</div>
+                <div class="panel-body" style="display:flex;flex-direction: column; align-items:center; justify-content:center">
+                    <div id="instrtext" style="display:flex">
+                        In order to improve the quality of our data we would like you to follow the following pieces of advice. Please take your time to adjust your working place accordingly as the eyetracking part will begin from now on.
+                    </div>
+                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/webgazer_instructions.png" id="CalibrationInstructions" style="margin-top: 40px; margin-bottom: 40px; max-width:900px"></img>
+                    <div id="btn" style="margin-left:auto">
+                        <button ng-click="RC.next()" type="button" class="btn btn-default" style="margin-top:20px;font-size:20;">Next</button>
+                    </div>
                 </div>
             </div>
 
@@ -62,7 +75,7 @@
                     <input type="button" class="Calibration" id="Pt9"></input>
                     <input type="button" class="Calibration" id="PtAccLeft"></input>
                     <input type="button" class="Calibration" id="PtAccRight"></input>
-                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/webgazer_instructions.png" id="Instr"></img>
+                    
 
                 </div>
                 <div style="display:flex; height: 100%; width: 100%; justify-content: center; align-items: center;">
@@ -195,15 +208,9 @@
             </div>
 
 
-
-        <!-- start of added section -->
-        <!-- oh maybe have the two questions indexed as num_questions+1 and num_questions+2? -->
-        <!-- well, not initially - we'll just store them at [questions.length + ind]? -->
-        <!-- either that or put in the answer with an ';' to the index where it already is? that might be easier? -->
         <div ng-if="RC.state == 'strategySlide' && RC.strategyQuestionIndex == $index" ng-repeat="question in RC.strategyQuestions" ng-init="RC.startTimer()" style="width:90%; height:90%; margin:auto">
                 <!-- the main content of the experiment goes here -->
                 <div id="experiment_panel_1" class="panel panel-primary" style="width: 100%; height: 100%; display: flex; flex-direction: column; margin-bottom:0px">
-                    <!-- <div id="experiment_heading_1" class="panel-heading" style="font-weight: bolder ;"></div> --> 
                     <div style="width: 15%; margin-left: auto; margin-right:20px;margin-top:10px;"> Progress:
                         <div id="myProgress" style="width: 100%">
                             <div id="myBar" ng-style="{'width' : (((RC.practiceQuestions.length + RC.questionIndex) / (RC.questions.length + RC.practiceQuestions.length + 2)) * 100 ) + '%'}"></div>
@@ -265,14 +272,6 @@
             </div>
         </div>
     </div>
-
-
-            <!-- <button ng-click="RC.next()" type="button" ng-disabled="RC.workerId == ''" class="btn btn-default" style="float:right ; margin-top:20px">Next</button> -->
-
-            <!-- how do we add this? I guess we can make answer into an array for all, and have {"choice":"",strategy:""} - and then save the indices of these questions and add 'strategy' to them -->
-            <!-- <div ng-if="RC.disableButton == true" style="display:flex; flex-direction: column;">   -->
-
-        <!-- end of added section -->
 
         <div ng-if="RC.showMessage == 'nextSubList'" style="display: flex; width:100%; height: 100% ; vertical-align: middle ;">
                 <div style="width:90%; margin:auto">
