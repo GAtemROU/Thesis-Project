@@ -25,19 +25,21 @@
         self.device_info = {};
         
         self.curGazeData = {};
-        self.itemPositions = {};
+        self.itemCoordinates = {};
 
         self.shuffleQuestions = true;
         self.shuffleSublists = true;
         self.useGoodByeMessage = true;
         self.useStatistics = true;
 
+        self.strategyQuestionsLength = 2;
         self.strategyQuestionIndex = 0;
         self.practiceQuestionIndex = 0;
 
         self.experimentStartTime = null;
         self.trialStartTime = null;
 
+        self.trials = [];
 
         self.practiceQuestions = [
         {img1: "sq_re", img2: "ci_gr", img3: "tr_bl_target", text: "Imagine you have to get someone to pick out the highlighted object by sending only one of the following four messages."},
@@ -59,7 +61,7 @@
         // can do tmrw -- for today can just hand-pick one complex and one simple
         // self.simpleStrategyFinal = null;
         // self.compexStrategyFinal = null;
-        self.strategyQuestions = [];
+        self.strategyTrials = [];
         // dummies for now, change later
         self.strategyIds = ["2","3"];
 
@@ -96,26 +98,51 @@
         };
 
         this.prepareQuestions = function(){
-            // shuffling the order of img1, img2, img3
-            // console.log(self.questions.length);
-            for (var i = 0; i < self.questions.length; ++i){
-                var question = self.questions[i];
-                const target = question.img1;
-
-                var temp_array = [question.img1, question.img2, question.img3];
-                shuffleArray(temp_array);
-
-                question.answer = {};
-                question.answer['presOrder'] = temp_array;
-                question.answer['targetPos'] = temp_array.indexOf(target);
-
-                question.img1 = temp_array[0];
-                question.img2 = temp_array[1];
-                question.img3 = temp_array[2];
+            // take out the last two questions for the strategy trials
+            let strategyQuestions = self.questions.splice(self.questions.length - self.strategyQuestionsLength, self.strategyQuestionsLength);
+            
+            if (self.shuffleQuestions) {
+                shuffleArray(self.questions);
             }
+            // put the strategy trials back in 
+            self.questions = self.questions.concat(strategyQuestions);
 
+            for (var i = 0; i < self.questions.length; ++i){
+                let question = self.questions[i];
+                var objects = [question.trgt, question.comp, question.dist];
+                var msgs = [question.msg1, question.msg2, question.msg3, question.msg4];
+                shuffleArray(objects);
+                shuffleArray(msgs);
+                let trial = {
+                    id: question.trial_id,
+                    sent_msg: question.sent_msg,
+                    trgtPos: objects.indexOf(question.trgt),
+                    objects: objects,
+                    img1 : objects[0],
+                    img2 : objects[1],
+                    img3 : objects[2],
+                    msg1 : msgs[0],
+                    msg2 : msgs[1],
+                    msg3 : msgs[2],
+                    msg4 : msgs[3],
+                };
+                question.answer = {};
+                question.answer['userTrialId'] = i+1;
+                question.answer['sent_msg'] = question.sent_msg;
+                question.answer['objs'] = trial.objects;
+                question.answer['trgtPos'] = objects.indexOf(question.trgt);
+                question.answer['compPos'] = objects.indexOf(question.comp);
+                question.answer['distPos'] = objects.indexOf(question.dist);
+                question.answer['type'] = question.type;
+                question.answer['msgsOrder'] = msgs;
+
+                if (i < self.questions.length - self.strategyQuestionsLength){
+                    self.trials.push(trial);
+                } else {
+                    self.strategyTrials.push(trial);
+                }
+            }
             // console.log(self.questions);
-
         };
 
         this.startTimer = function(){
@@ -169,7 +196,7 @@
         };
 
         this.next = function(){
-            console.log(navigator.userAgent);
+            // console.log(navigator.userAgent);
             if(self.state == "workerIdSlide"){
                 if(self.questionId == null && self.partId == null){
                     self.load(function(){
@@ -215,13 +242,12 @@
                 positions['img'+i]['width'] = document.getElementById('img'+i).naturalWidth;
                 positions['img'+i]['height'] = document.getElementById('img'+i).naturalHeight;
             }
-            let msgs = ['ci','tr','gr','re'];
             for (let i = 0; i < 4; i++){
-                positions['msg_'+msgs[i]] = self.findPos(document.getElementById('msg_'+msgs[i]));
-                positions['msg_'+msgs[i]]['width'] = document.getElementById('msg_'+msgs[i]).naturalWidth;
-                positions['msg_'+msgs[i]]['height'] = document.getElementById('msg_'+msgs[i]).naturalHeight;
+                positions['msg'+String(i+1)] = self.findPos(document.getElementById('msg'+String(i+1)));
+                positions['msg'+String(i+1)]['width'] = document.getElementById('msg'+String(i+1)).naturalWidth;
+                positions['msg'+String(i+1)]['height'] = document.getElementById('msg'+String(i+1)).naturalHeight;
             }
-            self.itemPositions = positions;
+            self.itemCoordinates = positions;
         }
 
         /**
@@ -439,38 +465,30 @@
         this.nextQuestion = function(ans){
 
             webgazer.pause();
+            var trial = self.trials[self.questionIndex];
             var question = self.questions[self.questionIndex];
             if (self.questionIndex == 0) {
                 this.save_device_info();
                 question.answer['device_info'] = self.device_info;
             }
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
-            question.answer['trialId'] = self.questionIndex+1;
             question.answer['choicePos'] = ans;
-            question.answer['choice'] = question.answer['presOrder'][ans];
-            question.answer['positions'] = self.itemPositions;
+            question.answer['choice'] = trial.objects[ans];
+            question.answer['coordinates'] = self.itemCoordinates;
+
             let gazeData = {};
             for (let key in self.curGazeData){
                 let int_key = new Int32Array([key])[0];
                 gazeData[int_key] = self.prepare_to_save(self.curGazeData[key]);
             }
-            // const stream = new Blob([JSON.stringify(self.curGazeData)], {
-            //     type: 'application/json',
-            // }).stream();
-            // const compressedReadableStream = stream.pipeThrough(
-            //     new CompressionStream("gzip")
-            // );
             var encoded = btoa(JSON.stringify(gazeData));
             question.answer['gaze'] = encoded;
-            // const compressedResponse = new Response(compressedReadableStream);
             console.log(question.answer);
             console.log(JSON.parse(atob(encoded)));
 
             var content = document.getElementById('question_slide_content');
 
-            // console.log('comparing correctness',question.answer['choicePos'],question.answer['targetPos']);
-
-            if (question.answer['choicePos'] == question.answer['targetPos']){
+            if (question.answer['choicePos'] == trial.trgtPos){
                 question.answer['correct'] = 1;
                 var feedback = document.getElementById('feedback_correct');
             }
@@ -478,25 +496,17 @@
                 question.answer['correct'] = 0;
                 var feedback = document.getElementById('feedback_incorrect');
             }
-            // console.log(question.answer['correct']);
+            console.log(question.answer);
 
             content.style.display = 'none';
             feedback.style.display = 'flex';
             $timeout(function () {
                 if(self.questionIndex + 1 < self.questions.length){
-                    content.style.display = 'flex';
                     feedback.style.display = 'none';
                     ++self.questionIndex;
                     self.startTimer();
                     self.curGazeData = {};
                 }else{
-                    self.SIs = self.questions.filter(obj => obj.itemid === "4");
-                    self.CIs = self.questions.filter(obj => obj.itemid === "13");
-
-                    var SI = self.SIs[0];
-                    var CI = self.CIs[0];
-                    self.strategyQuestions = [SI, CI];
-
                     self.next();
                 }
 
@@ -506,9 +516,10 @@
 
 
         this.revealStrategyBox = function(ans){
-            var question = self.strategyQuestions[self.strategyQuestionIndex];
-            question.answer['secondAnswer'] = ans;
-            question.answer['secondResponseTime'] = Date.now() - self.trialStartTime;
+            var question = self.question[self.trials.length + self.strategyQuestionIndex];
+            question.answer['answerTime'] = Date.now() - self.trialStartTime;
+            question.answer['choicePos'] = ans;
+            question.answer['choice'] = trial.objects[ans];
 
             // document.getElementById("strategyTable").visibility = 'hidden';
             document.getElementById('img'+ans.slice(-1)).style.border = '2px solid blue'; 
@@ -517,7 +528,7 @@
         };
 
         this.nextStrategyQuestion = function(){
-            if(self.strategyQuestionIndex + 1 < self.strategyQuestions.length){
+            if(self.strategyQuestionIndex + 1 < self.strategyTrials.length){
                 ++self.strategyQuestionIndex;
                 self.IsEnabled = true;
             }else{
@@ -558,10 +569,6 @@
                     self.part = json;
                     self.questions = json.questions;
 
-                    if(self.shuffleQuestions){
-                        shuffleArray(self.part.questions);
-                    }
-
                     for(var i = 0; i < self.questions.length; ++i){
                         var q = self.questions[i];
                         if (subListMap.hasOwnProperty(q.subList)){
@@ -586,10 +593,6 @@
                     self.part = json;
                     self.partId = json.id;
                     self.questions = json.questions;
-
-                    if(self.shuffleQuestions){
-                        shuffleArray(self.part.questions);
-                    }
 
                     for(var i = 0; i < self.questions.length; ++i){
                         var q = self.questions[i];

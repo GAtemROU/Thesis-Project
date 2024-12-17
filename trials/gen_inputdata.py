@@ -1,5 +1,6 @@
 import pandas as pd
 import pprint as pp
+import copy
 
 from gen_trials import gen_simple_trials, gen_complex_trials, gen_unambiguous_trials
 
@@ -34,10 +35,20 @@ for i in range(len(final_simple)):
 
 trials = final_simple + final_complex + final_unambiguous
 
+for trial in trials:
+    trial['msg1'] = trial['msgs'][0]
+    trial['msg2'] = trial['msgs'][1]
+    trial['msg3'] = trial['msgs'][2]
+    trial['msg4'] = trial['msgs'][3]
+    trial.pop('msgs')
+trials.insert(len(trials), copy.deepcopy(trials[0]))
+trials.insert(len(trials), copy.deepcopy(trials[23]))
+trials[len(trials)-1]['type'] = 'strategy_complex'
+trials[len(trials)-2]['type'] = 'strategy_simple'
 df = pd.DataFrame(trials)
 df['trial_id'] = range(1, len(df) + 1)
-new_order = ['trial_id', 'type', 'sent_msg', 'trgt', 'comp', 'dist', 'msgs']
+new_order = ['trial_id', 'type', 'sent_msg', 'trgt', 'comp', 'dist', 'msg1', 'msg2', 'msg3', 'msg4']
 df = df.reindex(columns=new_order)
-df.to_csv('trials/inputdata.csv', index=False)
+df.to_csv('trials/inputdata.csv', index=False, header=False)
 
 # pp.pprint(df)
