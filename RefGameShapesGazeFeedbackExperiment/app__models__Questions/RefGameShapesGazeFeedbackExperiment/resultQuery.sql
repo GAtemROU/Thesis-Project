@@ -1,7 +1,7 @@
-SELECT fileName, listNumber, assignmentId, hitId, workerId, origin, timestamp, partId, questionId, answer::TEXT, (data->>'itemid') as itemid, (data->>'itemType') as itemType, (data->>'msg') as msg, (data->>'img1') as img1, (data->>'img2') as img2, (data->>'img3') as img3, id FROM (
+SELECT fileName, listNumber, assignmentId, hitId, workerId, origin, timestamp, partId, questionId, answer::TEXT, (data->>'trial') as trial, (data->>'type') as type, (data->>'sent') as sent, (data->>'trgt') as trgt, (data->>'comp') as comp, (data->>'dist') as dist, (data->>'msg1') as msg1, (data->>'msg2') as msg2, (data->>'msg3') as msg3, (data->>'msg4') as msg4, id FROM (
 	(SELECT * FROM Results WHERE experimentType='RefGameShapesGazeFeedbackExperiment') as tmp1
 	LEFT OUTER JOIN Questions USING (QuestionId)
 	LEFT OUTER JOIN Groups USING (PartId)
 ) as tmp
-WHERE LingoExpModelId = 1661
+WHERE LingoExpModelId = 121
 ORDER BY partId, questionId, workerId

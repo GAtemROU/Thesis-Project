@@ -85,5 +85,3 @@ def gen_complex_trials():
 def gen_unambiguous_trials():
     return gen_trials(shapes, colors, unambiguous_matrix, available_msgs_ids_unambiguous, id_to_obj)
 
-
-

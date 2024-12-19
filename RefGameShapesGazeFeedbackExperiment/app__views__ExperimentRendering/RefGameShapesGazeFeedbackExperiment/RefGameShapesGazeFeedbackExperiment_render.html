@@ -14,7 +14,7 @@
                     
                     <b>If you agree to participate, please read the below instructions before proceeding.</b><br><br>
 
-                    <b>Instructions:</b><br> In this experiment, you will see images of different situations and answer questions about them. The whole experiment should take no longer than 22 minutes in total. <b>Please note that sometimes the images take a second to load.</b><br><br>
+                    <b>Instructions:</b><br> In this experiment, you will see images of different situations and answer questions about them. The whole experiment should take no longer than 22(TESTING: 10) minutes in total. <b>Please note that sometimes the images take a second to load.</b><br><br>
                     
                     <b>Important</b> pieces of advice for the eyetracking part of the experiment.<br>
 
@@ -22,7 +22,7 @@
 
                     2. Place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face. <br>
 
-                    3. Keep your head as still as possible during the experiment. Take short breaks if needed, returning to the same position. <br>
+                    3. Keep your head as still as possible during the experiment. <br>
                     
                     4. Make this window full screen size if not already.
                     @_SHOW_INSTRUCTIONS_@
@@ -31,7 +31,7 @@
             </div>
 
             <div ng-if="RC.state == 'workerIdSlide'" class="panel panel-primary" style="width:90%; margin:auto">
-                <div class="panel-heading" style="font-weight: bolder ;">Please enter your Prolific ID into the box below:</div>
+                <div class="panel-heading" style="font-weight: bolder ;">Please enter your Prolific ID into the box below : (TESTING: Please enter some form of identifcation so I can contact you later just in case, your name would suffice)</div>
                 <div class="panel-body">
                     <input id="workerId" ng-model="RC.workerId" style="width:60%;font-size:20;" name="workerId" type="text" class="form-control" placeholder="enter here">
                     <button ng-click="RC.next()" type="button" ng-disabled="RC.workerId == ''" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
@@ -43,18 +43,21 @@
                 <div class="panel-body">
                     In this task, you will see images of different situations and answer questions about them.<br><br>
                     
-                    This is how it works. On each trial you will see a display of three shapes (circles, squares and triangles) in different colors (red, green, or blue). At the top of the display you will see an image. This image is a message that was sent by a previous participant who saw the same display as you and was instructed to get you to pick out one of the objects. <b>Your task is to click on the object you think the previous participant intended you to pick.</b> You'll do a short tutorial first and then you'll see 36 repetitions of this task. Click on 'Next' to continue.
+                    This is how it works. On each trial you will see a display of three shapes (circles, squares and triangles) in different colors (red, green, or blue). At the top of the display you will see an image. This image is a message that was sent by a previous participant who saw the same display as you and was instructed to get you to pick out one of the objects. <b>Your task is to click on the object you think the previous participant intended you to pick.</b> You'll do a short tutorial first and then you'll see 36(TESTING: 14) repetitions of this task. Click on 'Next' to continue.
                     <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
                 </div>
             </div>
 
-            <div ng-if="RC.state == 'calibrationInstructionsSlide'" class="panel panel-primary" style="width:90%; margin:auto">
+            <div ng-if="RC.state == 'calibrationInstructionsSlide'" ng-init="RC.initVideo()" class="panel panel-primary" style="width:90%; margin:auto">
                 <div class="panel-heading" style="font-weight: bolder ;">Instructions</div>
                 <div class="panel-body" style="display:flex;flex-direction: column; align-items:center; justify-content:center">
                     <div id="instrtext" style="display:flex">
-                        In order to improve the quality of our data we would like you to follow the following pieces of advice. Please take your time to adjust your working place accordingly as the eyetracking part will begin from now on.
+                        The eyetracking part of the experiment starts from now, so please allow access to your webcam. In order to improve the quality of our data we would like you to follow the following pieces of advice. Please take your time to adjust your working place accordingly.
                     </div>
-                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/webgazer_instructions.png" id="CalibrationInstructions" style="margin-top: 40px; margin-bottom: 40px; max-width:900px"></img>
+                    <figure style="text-align:center; margin-top: 40px; width:100%">
+                        <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/webgazer_instructions.png" style="width: 1000px; max-width:100%" id="CalibrationInstructions" ></img>
+                        <figcaption ><a href="https://link.springer.com/article/10.3758/s13428-017-0913-7"><small>Image taken from here</small></a></figcaption>
+                    </figure>
                     <div id="btn" style="margin-left:auto">
                         <button ng-click="RC.next()" type="button" class="btn btn-default" style="margin-top:20px;font-size:20;">Next</button>
                     </div>
@@ -141,18 +144,12 @@
 
                 <p>Now that you know what the previous participant's task was, let's get started!<br> Your task is to <b>click on the object you think the previous participant intended you to pick.</b><br><br></p>
 
-                <p align="center">These were the messages available to the previous participant:</p>
-                <div style="margin-top:20px; margin-bottom:5px; margin-left:10px; margin-right:10px" align="center">
-                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/ci.png" style="max-width: 100px ; max-height:100px ; display: inline ; margin: 0 auto; margin-bottom:15px; margin-top: 5px">
-                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/tr.png" style="max-width: 100px ; max-height:100px ; display: inline ; margin: 0 auto; margin-bottom:15px; margin-top: 5px">
-                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/gr.png" style="max-width: 100px ; max-height:100px ; display: inline ; margin: 0 auto; margin-bottom:15px; margin-top: 5px">
-                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/re.png" style="max-width: 100px ; max-height:100px ; display: inline ; margin: 0 auto; margin-bottom:15px; margin-top: 5px">
-                </div>
+                <p>On the bottom part of the page, there is information about what messages were available to the previous participant.</p>
                 <button ng-click="RC.nextPrepQuestions()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
             </div>
         </div>
 
-            <div id="experiment_content" ng-init="RC.savePositions();" ng-if="RC.state == 'questionSlide' && RC.questionIndex == $index" ng-repeat="trial in RC.trials" style="margin:auto; width:90%; height:90%">
+            <div id="experiment_content" ng-if="RC.state == 'questionSlide' && RC.questionIndex == $index" ng-repeat="question in RC.questions" style="margin:auto; width:90%; height:90%">
                 <!-- the main content of the experiment goes here -->
                 <div id="experiment_panel_1" class="panel panel-primary" style="width: 100%; height: 100%; display: flex; flex-direction: column; margin-bottom:0px">
                     <!-- <div id="experiment_heading_1" class="panel-heading" style="font-weight: bolder ;"></div> --> 
@@ -174,18 +171,19 @@
 
                         <div id="question_slide_content" style="height: 100%; width: 100%; display:flex; flex-direction: column; align-items: center; justify-content: space-between;">
                             <div id="previous_message" style="display: flex; height: 100px; width: 100%; justify-content: center; align-items: top; flex:1;">
-                                <div style="display: flex; margin-top: 40px"><b>The previous participant said:</b></div><img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.sent_msg}}.png" id="msg_sent" style="max-width: 100px ; max-height:100px ;">
+                                <div style="display: flex; margin-top: 40px"><b>The previous participant said:</b></div>
+                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.sent_msg}}.png" id="sent_msg_img" style="max-width: 100px ; max-height:100px ;">
                             </div>
 
                             <div id="referents" style="width: 100%; flex: 1; display:flex;">
                                 <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.img1}}.png" id="img1" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('0')">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img1}}.png" id="img1" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('0')">
                                 </div>
                                 <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.img2}}.png" id="img2" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('1')">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img2}}.png" id="img2" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('1')">
                                 </div>
                                 <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.img3}}.png" id="img3" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('2')">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img3}}.png" id="img3" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('2')">
                                 </div>
                             </div>
 
@@ -194,10 +192,10 @@
                             <div id="previous_messages" style="display:flex; width: 80%; flex:1; flex-direction: column; justify-content:end;">
                                 <div style="display:flex; justify-content: center;"><b>These were the messages available to the previous participant:</b></div>
                                 <div id="messages" style="display:flex; justify-content: space-between;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg1}}.png" id="msg1" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg2}}.png" id="msg2" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg3}}.png" id="msg3" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg4}}.png" id="msg4" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg1}}.png" id="msg1" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg2}}.png" id="msg2" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg3}}.png" id="msg3" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg4}}.png" id="msg4" style="max-width: 100px ; max-height:100px ; display: inline ;">
                                     
                                 </div>
                             </div>
@@ -208,7 +206,7 @@
             </div>
 
 
-        <div ng-if="RC.state == 'strategySlide' && RC.strategyQuestionIndex == $index" ng-repeat="trial in RC.strategyTrials" ng-init="RC.startTimer()" style="width:90%; height:90%; margin:auto">
+        <div ng-if="RC.state == 'strategySlide' && RC.strategyQuestionIndex == $index" ng-repeat="question in RC.strategyQuestions" ng-init="RC.startTimer()" style="width:90%; height:90%; margin:auto">
                 <!-- the main content of the experiment goes here -->
                 <div id="experiment_panel_1" class="panel panel-primary" style="width: 100%; height: 100%; display: flex; flex-direction: column; margin-bottom:0px">
                     <div style="width: 15%; margin-left: auto; margin-right:20px;margin-top:10px;"> Progress:
@@ -221,23 +219,23 @@
 
                     <div id="question_slide_content" style="height: 100%; width: 100%; display:flex; flex-direction: column; align-items: center; justify-content: space-between;">
                         <div id="previous_message" style="display: flex; height: 100px; width: 100%; justify-content: center; align-items: top; flex:1;">
-                            <div style="display: flex; margin-top: 40px"><b>The previous participant said:</b></div><img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.sent_msg}}.png" style="max-width: 100px ; max-height:100px ;">
+                            <div style="display: flex; margin-top: 40px"><b>The previous participant said:</b></div><img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.sent_msg}}.png" style="max-width: 100px ; max-height:100px ;">
                         </div>
 
                         <div id="referents" style="width: 100%; flex: 1; display:flex;">
                             <div id="strategy_img1" style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.img1}}.png" id="img1" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="!RC.IsEnabled || RC.revealStrategyBox(RC.strategyQuestionIndex+'_'+trial.img1+'1')" ng-disabled="!RC.IsEnabled">
+                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img1}}.png" id="img1" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="!RC.IsEnabled || RC.revealStrategyBox(RC.strategyQuestionIndex+'_'+question.trial.img1+'1')" ng-disabled="!RC.IsEnabled">
                             </div>
                             <div id="strategy_img2" style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.img2}}.png" id="img2" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="!RC.IsEnabled || RC.revealStrategyBox(RC.strategyQuestionIndex+'_'+trial.img2+'2')" ng-disabled="!RC.IsEnabled">
+                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img2}}.png" id="img2" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="!RC.IsEnabled || RC.revealStrategyBox(RC.strategyQuestionIndex+'_'+question.trial.img2+'2')" ng-disabled="!RC.IsEnabled">
                             </div>
                             <div id="strategy_img3" style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.img3}}.png" id="img3" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="!RC.IsEnabled || RC.revealStrategyBox(RC.strategyQuestionIndex+'_'+trial.img3+'3')" ng-disabled="!RC.IsEnabled">
+                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img3}}.png" id="img3" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="!RC.IsEnabled || RC.revealStrategyBox(RC.strategyQuestionIndex+'_'+question.trial.img3+'3')" ng-disabled="!RC.IsEnabled">
                             </div>
                         </div>
 
                         <div><b>Click on the object you think the previous participant intended you to pick.</b></div>
-                        <div ng-if="question.answer.secondAnswer != undefined" style="display:flex; flex:1; flex-direction: column; justify-content: center; align-items: center;">
+                        <div ng-if="question.answer.choicePos != undefined" style="display:flex; flex:1; flex-direction: column; justify-content: center; align-items: center;">
                             <p class="centerStyle fontStyleBasic"><span class="questionFont"><b>We would like to know a little more about your strategy. Why did you choose this image?</b></span></p>
                             <p><textarea id="textArea" name="textArea" rows="4" cols="60" ng-model='question.answer.strategy'></textarea></p>
                             <button ng-click="RC.nextStrategyQuestion()" type="button" ng-disabled="question.answer.strategy === undefined || question.answer.strategy === ''" class="btn btn-default" style="float:center ; margin-top:20px;font-size:20;">Next</button>
@@ -246,10 +244,10 @@
                         <div id="previous_messages" style="display:flex; width: 80%; flex:1; flex-direction: column; justify-content:end;">
                             <div style="display:flex; justify-content: center;"><b>These were the messages available to the previous participant:</b></div>
                                 <div id="messages" style="display:flex; justify-content: space-between;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg1}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg2}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg3}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{trial.msg4}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg1}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg2}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg3}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg4}}.png" style="max-width: 100px ; max-height:100px ; display: inline ;">
                                     
                                 </div>
                             </div>

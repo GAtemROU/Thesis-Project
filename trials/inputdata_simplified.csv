@@ -1,0 +1,14 @@
+1,simple,re,sq_re,ci_re,tr_bl,re,bl,tr,ci
+2,simple,ci,ci_re,ci_bl,sq_gr,ci,sq,gr,bl
+3,simple,gr,ci_gr,tr_gr,sq_re,gr,re,sq,tr
+4,simple,bl,sq_bl,ci_bl,tr_gr,bl,gr,tr,ci
+5,complex,gr,tr_gr,sq_gr,tr_re,gr,bl,sq,tr
+6,complex,bl,tr_bl,ci_bl,tr_gr,bl,re,ci,tr
+7,complex,tr,tr_re,tr_bl,sq_re,tr,ci,bl,re
+8,complex,sq,sq_bl,sq_gr,ci_bl,sq,tr,gr,bl
+9,unambiguous,ci,ci_gr,tr_gr,tr_re,ci,tr,gr,bl
+10,unambiguous,gr,sq_gr,sq_re,ci_re,gr,re,sq,tr
+11,unambiguous,sq,sq_gr,tr_gr,tr_re,sq,tr,gr,bl
+12,unambiguous,ci,ci_re,tr_re,tr_gr,ci,tr,re,bl
+13,strategy_simple,re,sq_re,ci_re,tr_bl,re,bl,tr,ci
+14,strategy_complex,sq,sq_bl,sq_gr,ci_bl,sq,tr,gr,bl

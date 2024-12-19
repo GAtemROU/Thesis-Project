@@ -39,8 +39,6 @@
         self.experimentStartTime = null;
         self.trialStartTime = null;
 
-        self.trials = [];
-
         self.practiceQuestions = [
         {img1: "sq_re", img2: "ci_gr", img3: "tr_bl_target", text: "Imagine you have to get someone to pick out the highlighted object by sending only one of the following four messages."},
         {img1: "tr_bl", img2: "ci_re_target", img3: "tr_gr", text: "What you just did was the previous participant's task. Let's do another one."},
@@ -57,14 +55,7 @@
 
         ];
 
-        // need to change text fields for this - add type
-        // can do tmrw -- for today can just hand-pick one complex and one simple
-        // self.simpleStrategyFinal = null;
-        // self.compexStrategyFinal = null;
-        self.strategyTrials = [];
-        // dummies for now, change later
-        self.strategyIds = ["2","3"];
-
+        self.strategyQuestions = [];
 
         this.resultsSubmitted = function(){
             self.subListsIds.splice(0,1);
@@ -98,15 +89,6 @@
         };
 
         this.prepareQuestions = function(){
-            // take out the last two questions for the strategy trials
-            let strategyQuestions = self.questions.splice(self.questions.length - self.strategyQuestionsLength, self.strategyQuestionsLength);
-            
-            if (self.shuffleQuestions) {
-                shuffleArray(self.questions);
-            }
-            // put the strategy trials back in 
-            self.questions = self.questions.concat(strategyQuestions);
-
             for (var i = 0; i < self.questions.length; ++i){
                 let question = self.questions[i];
                 var objects = [question.trgt, question.comp, question.dist];
@@ -114,7 +96,6 @@
                 shuffleArray(objects);
                 shuffleArray(msgs);
                 let trial = {
-                    id: question.trial_id,
                     sent_msg: question.sent_msg,
                     trgtPos: objects.indexOf(question.trgt),
                     objects: objects,
@@ -136,13 +117,15 @@
                 question.answer['type'] = question.type;
                 question.answer['msgsOrder'] = msgs;
 
-                if (i < self.questions.length - self.strategyQuestionsLength){
-                    self.trials.push(trial);
-                } else {
-                    self.strategyTrials.push(trial);
-                }
+                question['trial'] = trial;
             }
-            // console.log(self.questions);
+
+            // take out the last two questions for the strategy trials
+            self.strategyQuestions = self.questions.splice(self.questions.length - self.strategyQuestionsLength, self.strategyQuestionsLength);
+            
+            if (self.shuffleQuestions) {
+                shuffleArray(self.questions);
+            }
         };
 
         this.startTimer = function(){
@@ -222,32 +205,31 @@
 
         this.findPos = function (obj) {
             var curleft = curtop = 0;
-            if (obj.offsetParent) {
-                do {
-                    curleft += obj.offsetLeft;
-                    curtop += obj.offsetTop;
-                } while (obj = obj.offsetParent);
-                return { x: curleft, y: curtop };
-            }
+            do {
+                curleft += obj.offsetLeft;
+                curtop += obj.offsetTop;
+                obj = obj.offsetParent
+            } while (obj);
+            return { x: curleft, y: curtop };
         }
 
         this.savePositions = function(){
             var positions = {};
-            positions['msg_sent'] = self.findPos(document.getElementById('msg_sent'));
-            let img = document.getElementById('msg_sent');
-            positions['msg_sent']['width'] = img.offsetWidth;
-            positions['msg_sent']['height'] = img.offsetHeight;
+            positions['sent_msg'] = self.findPos(document.getElementById('sent_msg_img'));
+            let img = document.getElementById('sent_msg_img');
+            positions['sent_msg']['width'] = img.offsetWidth;
+            positions['sent_msg']['height'] = img.offsetHeight;
             for (let i = 1; i < 4; i++){
                 positions['img'+i] = self.findPos(document.getElementById('img'+i));
-                positions['img'+i]['width'] = document.getElementById('img'+i).naturalWidth;
-                positions['img'+i]['height'] = document.getElementById('img'+i).naturalHeight;
+                positions['img'+i]['width'] = document.getElementById('img'+i).offsetWidth;
+                positions['img'+i]['height'] = document.getElementById('img'+i).offsetHeight;
             }
             for (let i = 0; i < 4; i++){
                 positions['msg'+String(i+1)] = self.findPos(document.getElementById('msg'+String(i+1)));
-                positions['msg'+String(i+1)]['width'] = document.getElementById('msg'+String(i+1)).naturalWidth;
-                positions['msg'+String(i+1)]['height'] = document.getElementById('msg'+String(i+1)).naturalHeight;
+                positions['msg'+String(i+1)]['width'] = document.getElementById('msg'+String(i+1)).offsetWidth;
+                positions['msg'+String(i+1)]['height'] = document.getElementById('msg'+String(i+1)).offsetHeight;
             }
-            self.itemCoordinates = positions;
+            return positions;
         }
 
         /**
@@ -465,7 +447,6 @@
         this.nextQuestion = function(ans){
 
             webgazer.pause();
-            var trial = self.trials[self.questionIndex];
             var question = self.questions[self.questionIndex];
             if (self.questionIndex == 0) {
                 this.save_device_info();
@@ -473,8 +454,8 @@
             }
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['choicePos'] = ans;
-            question.answer['choice'] = trial.objects[ans];
-            question.answer['coordinates'] = self.itemCoordinates;
+            question.answer['choice'] = question.trial.objects[ans];
+            question.answer['coordinates'] = self.savePositions();
 
             let gazeData = {};
             for (let key in self.curGazeData){
@@ -483,12 +464,12 @@
             }
             var encoded = btoa(JSON.stringify(gazeData));
             question.answer['gaze'] = encoded;
-            console.log(question.answer);
+            // console.log(question.answer);
             console.log(JSON.parse(atob(encoded)));
 
             var content = document.getElementById('question_slide_content');
 
-            if (question.answer['choicePos'] == trial.trgtPos){
+            if (question.answer['choicePos'] == question.trial.trgtPos){
                 question.answer['correct'] = 1;
                 var feedback = document.getElementById('feedback_correct');
             }
@@ -508,6 +489,8 @@
                     self.curGazeData = {};
                 }else{
                     self.next();
+                    webgazer.end();
+                    return;
                 }
 
             }, 1200);   
@@ -516,10 +499,10 @@
 
 
         this.revealStrategyBox = function(ans){
-            var question = self.question[self.trials.length + self.strategyQuestionIndex];
+            var question = self.strategyQuestions[self.strategyQuestionIndex];
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['choicePos'] = ans;
-            question.answer['choice'] = trial.objects[ans];
+            question.answer['choice'] = question.trial.objects[ans];
 
             // document.getElementById("strategyTable").visibility = 'hidden';
             document.getElementById('img'+ans.slice(-1)).style.border = '2px solid blue'; 
@@ -528,10 +511,11 @@
         };
 
         this.nextStrategyQuestion = function(){
-            if(self.strategyQuestionIndex + 1 < self.strategyTrials.length){
+            if(self.strategyQuestionIndex + 1 < self.strategyQuestions.length){
                 ++self.strategyQuestionIndex;
                 self.IsEnabled = true;
             }else{
+                self.questions = self.questions.concat(self.strategyQuestions);
                 self.next();
             }
 
@@ -616,8 +600,16 @@
 
         };
 
+        this.initVideo = function(){
+            //start the webgazer just for the video preview
+            webgazer.saveDataAcrossSessions(false).begin();
+            webgazer.showVideoPreview(true) /* shows video preview */
+                .showPredictionPoints(false); 
+        };
+
         this.startCalibration = function(){
             //start the webgazer tracker
+            webgazer.end();
             self.experimentStartTime = Date.now();
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 .setTracker('TFFacemesh')
@@ -626,11 +618,10 @@
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
-                webgazer.showVideoPreview(false) /* shows all video previews */
-                    .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
-                    .applyKalmanFilter(true);
+            webgazer.showVideoPreview(true)
+                .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
+                .applyKalmanFilter(true);
 
-            //Set up the webgazer video feedback.
             var setup = function() {
 
                 //Set up the main canvas. The main canvas is used to calibrate the webgazer.
@@ -660,6 +651,7 @@
             }
 
             self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){
