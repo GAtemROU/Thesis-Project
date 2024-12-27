@@ -446,7 +446,7 @@
 
         this.nextQuestion = function(ans){
 
-            webgazer.pause();
+            // webgazer.pause();
             var question = self.questions[self.questionIndex];
             if (self.questionIndex == 0) {
                 this.save_device_info();
@@ -477,7 +477,7 @@
                 question.answer['correct'] = 0;
                 var feedback = document.getElementById('feedback_incorrect');
             }
-            console.log(question.answer);
+            // console.log(question.answer);
 
             content.style.display = 'none';
             feedback.style.display = 'flex';
@@ -489,20 +489,29 @@
                     self.curGazeData = {};
                 }else{
                     self.next();
-                    webgazer.end();
-                    return;
                 }
 
             }, 1200);   
-            webgazer.resume();
+            // webgazer.resume();
         };
 
 
         this.revealStrategyBox = function(ans){
+            webgazer.showPredictionPoints(false);
             var question = self.strategyQuestions[self.strategyQuestionIndex];
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['choicePos'] = ans;
             question.answer['choice'] = question.trial.objects[ans];
+            let gazeData = {};
+            for (let key in self.curGazeData){
+                let int_key = new Int32Array([key])[0];
+                gazeData[int_key] = self.prepare_to_save(self.curGazeData[key]);
+            }
+            var encoded = btoa(JSON.stringify(gazeData));
+            question.answer['gaze'] = encoded;
+            self.curGazeData = {};
+            // console.log(question.answer);
+            // console.log(JSON.parse(atob(encoded)));
 
             // document.getElementById("strategyTable").visibility = 'hidden';
             document.getElementById('img'+ans.slice(-1)).style.border = '2px solid blue'; 
@@ -512,6 +521,9 @@
 
         this.nextStrategyQuestion = function(){
             if(self.strategyQuestionIndex + 1 < self.strategyQuestions.length){
+                self.curGazeData = {};
+                self.startTimer();
+                webgazer.showPredictionPoints(true);
                 ++self.strategyQuestionIndex;
                 self.IsEnabled = true;
             }else{
@@ -609,7 +621,10 @@
 
         this.startCalibration = function(){
             //start the webgazer tracker
-            webgazer.end();
+            if (webgazer.IsEnabled) {
+                webgazer.clearData();
+                webgazer.end();
+            }
             self.experimentStartTime = Date.now();
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 .setTracker('TFFacemesh')
@@ -651,7 +666,7 @@
             }
 
             self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            // self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["workerIdSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){

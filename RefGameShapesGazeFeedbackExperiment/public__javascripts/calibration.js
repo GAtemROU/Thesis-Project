@@ -2,6 +2,7 @@ var pointCalibrate = 0;
 var calibrationPoints={};
 var callback = null;
 
+let requiredAccuracy = 65;
 let allowSkipCalibration = false;
 let simplifiedCalibration = false; // only set to true during testing, the calibration is not accurate enough when set to true
 let clicksPerPoint = simplifiedCalibration ? 1 : 5;
@@ -63,10 +64,10 @@ async function calcAccuracy(points) {
                 stop_storing_points_variable(); // stop storing the prediction points
                 var past50 = webgazer.getStoredPoints(); // retrieve the stored points
                 var precision_measurement = calculatePrecision(past50, points[i].x, points[i].y);
-                if (precision_measurement < 60) {
+                if (precision_measurement < requiredAccuracy) {
                   await swal({
                     title: `Your accuracy measure is ${precision_measurement}%`,
-                    text: "Unfortunately, it is too low to continue, please consider adjusting your setup and redo the calibration.",
+                    text: "Unfortunately, it is too low to continue, the desired accuracy is at least 65%. Please consider adjusting your setup and redo the calibration.",
                     allowOutsideClick: false,
                     buttons: allowSkipCalibration ?{
                       confirm: "Recalibrate",
@@ -84,7 +85,7 @@ async function calcAccuracy(points) {
                       i = points.length;
                     } else {
                       clearCanvas();
-                      webgazer.showPredictionPoints(false);
+                      //webgazer.showPredictionPoints(false);
                       document.getElementById("PtAcc" + points[i].name).style.setProperty('display', 'none');
                       if (i == points.length - 1) {
                         stopResizing();
@@ -106,7 +107,7 @@ async function calcAccuracy(points) {
                           if (isConfirm){
                               //clear the calibration & hide the current accuracy check button
                               clearCanvas();
-                              webgazer.showPredictionPoints(false);
+                              //webgazer.showPredictionPoints(false);
                               document.getElementById("PtAcc" + points[i].name).style.setProperty('display', 'none');
                               if (i == points.length - 1) {
                                 stopResizing();
