@@ -58,8 +58,8 @@ trials.insert(len(trials), copy.deepcopy(trials[simplified_amount*2-1]))
 trials[len(trials)-1]['type'] = 'strategy_complex'
 trials[len(trials)-2]['type'] = 'strategy_simple'
 df = pd.DataFrame(trials)
-df['trial_id'] = range(1, len(df) + 1)
-new_order = ['trial_id', 'type', 'sent_msg', 'trgt', 'comp', 'dist', 'msg1', 'msg2', 'msg3', 'msg4']
+df['trialid'] = range(1, len(df) + 1)
+new_order = ['trialid', 'type', 'sentmsg', 'trgt', 'comp', 'dist', 'msg1', 'msg2', 'msg3', 'msg4']
 df = df.reindex(columns=new_order)
 
 df.to_csv(f'trials/inputdata{"_simplified" if gen_simplified else ""}.csv', index=False, header=False)

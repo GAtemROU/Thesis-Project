@@ -57,7 +57,7 @@ def gen_trials(shapes, colors, matrix, available_msgs_ids, id_to_obj_type):
                     all_msgs_order = feature2 + feature1
                 else:
                     all_msgs_order = feature1 + feature2
-                trial = {'sent_msg' : all_msgs_order[0]}
+                trial = {'sentmsg' : all_msgs_order[0]}
                 for i in range(len(matrix)):
                     if not colors_first:
                         i = msgs_len-i-1
