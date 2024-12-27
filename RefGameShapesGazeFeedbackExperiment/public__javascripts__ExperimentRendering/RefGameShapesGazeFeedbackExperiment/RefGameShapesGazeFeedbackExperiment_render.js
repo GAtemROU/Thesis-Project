@@ -613,20 +613,6 @@
         };
 
         this.initVideo = function(){
-            //start the webgazer just for the video preview
-            webgazer.showVideoPreview(true) /* shows video preview */
-                .showPredictionPoints(false); 
-            webgazer.saveDataAcrossSessions(false).begin();
-
-        };
-
-        this.startCalibration = function(){
-            //start the webgazer tracker
-            if (webgazer.IsEnabled) {
-                webgazer.end();
-                webgazer.clearData();
-                clearCanvas();
-            }
             self.experimentStartTime = Date.now();
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 .setTracker('TFFacemesh')
@@ -636,9 +622,16 @@
                 .saveDataAcrossSessions(false)
                 .begin();
             webgazer.showVideoPreview(true)
-                .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
+                .showPredictionPoints(false) /* shows a square every 100 milliseconds where current prediction is */
                 .applyKalmanFilter(true);
 
+        };
+
+        this.startCalibration = function(){
+            //start the webgazer tracker
+            webgazer.showPredictionPoints(true);
+            webgazer.clearData();
+            
             var setup = function() {
 
                 //Set up the main canvas. The main canvas is used to calibrate the webgazer.
