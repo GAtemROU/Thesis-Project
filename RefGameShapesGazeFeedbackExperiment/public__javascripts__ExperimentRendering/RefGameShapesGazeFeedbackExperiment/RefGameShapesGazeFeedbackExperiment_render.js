@@ -614,16 +614,18 @@
 
         this.initVideo = function(){
             //start the webgazer just for the video preview
-            webgazer.saveDataAcrossSessions(false).begin();
             webgazer.showVideoPreview(true) /* shows video preview */
                 .showPredictionPoints(false); 
+            webgazer.saveDataAcrossSessions(false).begin();
+
         };
 
         this.startCalibration = function(){
             //start the webgazer tracker
             if (webgazer.IsEnabled) {
-                webgazer.clearData();
                 webgazer.end();
+                webgazer.clearData();
+                clearCanvas();
             }
             self.experimentStartTime = Date.now();
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
