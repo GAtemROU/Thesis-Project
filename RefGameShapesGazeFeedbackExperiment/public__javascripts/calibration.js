@@ -68,6 +68,7 @@ async function calcAccuracy(points) {
                   await swal({
                     title: `Your accuracy measure is ${precision_measurement}%`,
                     text: "Unfortunately, it is too low to continue, the desired accuracy is at least 65%. Please consider adjusting your setup and redo the calibration.",
+                    closeOnEsc: false,
                     allowOutsideClick: false,
                     buttons: allowSkipCalibration ?{
                       confirm: "Recalibrate",
@@ -98,6 +99,7 @@ async function calcAccuracy(points) {
                   await swal({
                       title: `Your accuracy measure is ${precision_measurement}%`,
                       text: "This is satisfiable. " + (i == points.length-1) ? "You can continue with the experiment.": "We will now move to the next point.",
+                      closeOnEsc: false,
                       allowOutsideClick: false,
                       buttons: {
                         cancel: "Recalibrate",
