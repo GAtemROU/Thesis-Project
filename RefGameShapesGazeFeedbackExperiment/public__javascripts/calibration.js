@@ -3,7 +3,7 @@ var calibrationPoints={};
 var callback = null;
 
 let requiredAccuracy = 65;
-let allowSkipCalibration = false;
+let allowSkipCalibration = true;
 let simplifiedCalibration = false; // only set to true during testing, the calibration is not accurate enough when set to true
 let clicksPerPoint = simplifiedCalibration ? 1 : 5;
 let totalPoints = simplifiedCalibration ? 1 : 11;

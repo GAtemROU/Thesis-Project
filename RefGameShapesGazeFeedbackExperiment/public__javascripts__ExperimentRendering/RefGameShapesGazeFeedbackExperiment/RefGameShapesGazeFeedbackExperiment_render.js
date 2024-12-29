@@ -96,7 +96,7 @@
                 shuffleArray(objects);
                 shuffleArray(msgs);
                 let trial = {
-                    sent_msg: question.sent_msg,
+                    sent_msg: question.sentmsg,
                     trgtPos: objects.indexOf(question.trgt),
                     objects: objects,
                     img1 : objects[0],
@@ -109,7 +109,7 @@
                 };
                 question.answer = {};
                 question.answer['userTrialId'] = i+1;
-                question.answer['sent_msg'] = question.sent_msg;
+                question.answer['sent_msg'] = question.sentmsg;
                 question.answer['objs'] = trial.objects;
                 question.answer['trgtPos'] = objects.indexOf(question.trgt);
                 question.answer['compPos'] = objects.indexOf(question.comp);
@@ -465,7 +465,7 @@
             var encoded = btoa(JSON.stringify(gazeData));
             question.answer['gaze'] = encoded;
             // console.log(question.answer);
-            console.log(JSON.parse(atob(encoded)));
+            // console.log(JSON.parse(atob(encoded)));
 
             var content = document.getElementById('question_slide_content');
 
@@ -661,7 +661,7 @@
             }
 
             self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            // self.allStates = ["workerIdSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){
