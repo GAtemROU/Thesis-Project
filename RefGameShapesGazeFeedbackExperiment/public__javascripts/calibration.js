@@ -8,6 +8,11 @@ let simplifiedCalibration = false; // only set to true during testing, the calib
 let clicksPerPoint = simplifiedCalibration ? 1 : 5;
 let totalPoints = simplifiedCalibration ? 1 : 11;
 let accuracyCheckDuration = simplifiedCalibration ? 1 : 5000;
+let precision_measurements = [];
+
+// weighted precision calculation for the calibration points
+x_ws = [1, 1, 1]
+y_ws = [1, 0.5, 0.5]
 
 
 // Find the help modal
@@ -63,7 +68,8 @@ async function calcAccuracy(points) {
         await sleep(accuracyCheckDuration).then(async () => {
                 stop_storing_points_variable(); // stop storing the prediction points
                 var past50 = webgazer.getStoredPoints(); // retrieve the stored points
-                var precision_measurement = calculatePrecision(past50, points[i].x, points[i].y);
+                var precision_measurement = calculatePrecision(past50, points[i].x, points[i].y, x_ws[i], y_ws[i]);
+                precision_measurements.push(precision_measurement);
                 if (precision_measurement < requiredAccuracy) {
                   await swal({
                     title: `Your accuracy measure is ${precision_measurement}%`,

@@ -2,7 +2,7 @@
  * This function calculates a measurement for how precise 
  * the eye tracker currently is which is displayed to the user
  */
-function calculatePrecision(past50Array, staringPointX, staringPointY) {
+function calculatePrecision(past50Array, staringPointX, staringPointY, x_w, y_w) {
     var windowHeight = window.innerHeight;
     var windowWidth = window.innerWidth;
     
@@ -11,7 +11,7 @@ function calculatePrecision(past50Array, staringPointX, staringPointY) {
     var y50 = past50Array[1];
   
     var precisionPercentages = new Array(50);
-    calculatePrecisionPercentages(precisionPercentages, windowHeight, x50, y50, staringPointX, staringPointY);
+    calculatePrecisionPercentages(precisionPercentages, windowHeight, x50, y50, staringPointX, staringPointY, x_w, y_w);
     var precision = calculateAverage(precisionPercentages);
   
     // Return the precision measurement as a rounded percentage
@@ -23,11 +23,11 @@ function calculatePrecision(past50Array, staringPointX, staringPointY) {
    * the prediction point from the centre point (uses the window height as
    * lower threshold 0%)
    */
-  function calculatePrecisionPercentages(precisionPercentages, windowHeight, x50, y50, staringPointX, staringPointY) {
+  function calculatePrecisionPercentages(precisionPercentages, windowHeight, x50, y50, staringPointX, staringPointY, x_w, y_w) {
     for (x = 0; x < 50; x++) {
       // Calculate distance between each prediction and staring point
-      var xDiff = staringPointX - x50[x];
-      var yDiff = staringPointY - y50[x];
+      var xDiff = x_w * (staringPointX - x50[x]);
+      var yDiff = y_w * (staringPointY - y50[x]);
       var distance = Math.sqrt((xDiff * xDiff) + (yDiff * yDiff));
   
       // Calculate precision percentage

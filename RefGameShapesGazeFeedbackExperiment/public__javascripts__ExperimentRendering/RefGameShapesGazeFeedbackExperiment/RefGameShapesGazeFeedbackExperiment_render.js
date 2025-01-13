@@ -38,6 +38,7 @@
 
         self.experimentStartTime = null;
         self.trialStartTime = null;
+        self.precision_measurements = null;
 
         self.practiceQuestions = [
         {img1: "sq_re", img2: "ci_gr", img3: "tr_bl_target", text: "Imagine you have to get someone to pick out the highlighted object by sending only one of the following four messages."},
@@ -451,6 +452,7 @@
             if (self.questionIndex == 0) {
                 this.save_device_info();
                 question.answer['device_info'] = self.device_info;
+                question.answer['calibration_precision'] = self.precision_measurements;
             }
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['choicePos'] = ans;
@@ -621,7 +623,7 @@
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
-            webgazer.showVideoPreview(true)
+            webgazer.showVideoPreview(false)
                 .showPredictionPoints(false) /* shows a square every 100 milliseconds where current prediction is */
                 .applyKalmanFilter(true);
 
@@ -641,7 +643,7 @@
                 canvas.style.position = 'fixed';
             };
             setup();
-            calibrate(self.next);
+            self.precision_measurements = calibrate(self.next);
         }
 
         
@@ -660,8 +662,8 @@
                 self.load();
             }
 
-            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            // self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["workerIdSlide","calibrationInstructionsSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){
