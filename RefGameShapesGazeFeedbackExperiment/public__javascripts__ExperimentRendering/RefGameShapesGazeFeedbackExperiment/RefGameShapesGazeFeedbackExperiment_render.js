@@ -58,6 +58,10 @@
 
         self.strategyQuestions = [];
 
+        this.setPrecisionMeasurements = function(precision_measurements){
+            self.precision_measurements = precision_measurements;
+            console.log(precision_measurements);
+        };
         this.resultsSubmitted = function(){
             self.subListsIds.splice(0,1);
             if(self.subListsIds.length > 0 ){
@@ -109,7 +113,6 @@
                     msg4 : msgs[3],
                 };
                 question.answer = {};
-                question.answer['userTrialId'] = i+1;
                 question.answer['sent_msg'] = question.sentmsg;
                 question.answer['objs'] = trial.objects;
                 question.answer['trgtPos'] = objects.indexOf(question.trgt);
@@ -126,6 +129,15 @@
             
             if (self.shuffleQuestions) {
                 shuffleArray(self.questions);
+                for (var i = 0; i < self.questions.length; ++i){
+                    let question = self.questions[i];
+                    question.answer['userTrialId'] = i;
+                }
+            }
+
+            for (var i = 0; i < self.strategyQuestions.length; ++i){
+                let question = self.strategyQuestions[i];
+                question.answer['userTrialId'] = i+self.questions.length;
             }
         };
 
@@ -180,7 +192,7 @@
         };
 
         this.next = function(){
-            // console.log(navigator.userAgent);
+            console.log(self.precision_measurements);
             if(self.state == "workerIdSlide"){
                 if(self.questionId == null && self.partId == null){
                     self.load(function(){
@@ -451,8 +463,8 @@
             var question = self.questions[self.questionIndex];
             if (self.questionIndex == 0) {
                 this.save_device_info();
-                question.answer['device_info'] = self.device_info;
-                question.answer['calibration_precision'] = self.precision_measurements;
+                question.answer['deviceInfo'] = self.device_info;
+                question.answer['calibrationPrecision'] = self.precision_measurements;
             }
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['choicePos'] = ans;
@@ -504,6 +516,15 @@
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['choicePos'] = ans;
             question.answer['choice'] = question.trial.objects[ans];
+            question.answer['coordinates'] = self.savePositions();
+            if (question.answer['choicePos'] == question.trial.trgtPos){
+                question.answer['correct'] = 1;
+                var feedback = document.getElementById('feedback_correct');
+            }
+            else{
+                question.answer['correct'] = 0;
+                var feedback = document.getElementById('feedback_incorrect');
+            }
             let gazeData = {};
             for (let key in self.curGazeData){
                 let int_key = new Int32Array([key])[0];
@@ -516,7 +537,7 @@
             // console.log(JSON.parse(atob(encoded)));
 
             // document.getElementById("strategyTable").visibility = 'hidden';
-            document.getElementById('img'+ans.slice(-1)).style.border = '2px solid blue'; 
+            document.getElementById('img'+(Number(ans)+1)).style.border = '2px solid blue'; 
             self.IsEnabled = false;
 
         };
@@ -623,8 +644,8 @@
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
-            webgazer.showVideoPreview(false)
-                .showPredictionPoints(false) /* shows a square every 100 milliseconds where current prediction is */
+            webgazer.showVideoPreview(true)
+                .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
                 .applyKalmanFilter(true);
 
         };
@@ -643,7 +664,7 @@
                 canvas.style.position = 'fixed';
             };
             setup();
-            self.precision_measurements = calibrate(self.next);
+            self.precision_measurements = calibrate(this);
         }
 
         
@@ -662,8 +683,8 @@
                 self.load();
             }
 
-            // self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            self.allStates = ["workerIdSlide","calibrationInstructionsSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["workerIdSlide","experimentStartSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){

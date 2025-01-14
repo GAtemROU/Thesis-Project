@@ -1,6 +1,6 @@
 var pointCalibrate = 0;
 var calibrationPoints={};
-var callback = null;
+var angObj = null;
 
 let requiredAccuracy = 65;
 let allowSkipCalibration = true;
@@ -69,11 +69,11 @@ async function calcAccuracy(points) {
                 stop_storing_points_variable(); // stop storing the prediction points
                 var past50 = webgazer.getStoredPoints(); // retrieve the stored points
                 var precision_measurement = calculatePrecision(past50, points[i].x, points[i].y, x_ws[i], y_ws[i]);
-                precision_measurements.push(precision_measurement);
+                precision_measurements[i] = precision_measurement;
                 if (precision_measurement < requiredAccuracy) {
                   await swal({
                     title: `Your accuracy measure is ${precision_measurement}%`,
-                    text: "Unfortunately, it is too low to continue, the desired accuracy is at least 65%. Please consider adjusting your setup and redo the calibration.",
+                    text: "Unfortunately, it is too low to continue, the desired accuracy is at least 65%. Please consider adjusting your setup and redo the calibration. Please consider moving closer/further from the screen, make sure your laptop is stable and the lighting is good.",
                     closeOnEsc: false,
                     allowOutsideClick: false,
                     buttons: allowSkipCalibration ?{
@@ -135,6 +135,9 @@ async function calcAccuracy(points) {
         });
     });
   }
+  console.log(angObj);  
+  angObj.setPrecisionMeasurements(precision_measurements);
+  console.log(precision_measurements);
 }
 
 function calPointClick(node) {
@@ -183,7 +186,7 @@ function calPointClick(node) {
 }
 
 
-function calibrate(callback_f) {
+function calibrate(obj) {
   startResizing();
   clearCanvas();
   PopUpInstruction();
@@ -193,7 +196,7 @@ function calibrate(callback_f) {
           calPointClick(i);
       })
   })
-  callback = callback_f;
+  angObj = obj;
 };
 
 /**
