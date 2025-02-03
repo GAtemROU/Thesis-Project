@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <b>Important</b>: You cannot return to previous pages in the experiment, not even to the instructions. Refreshing this page will result in the complete progress loss. Therefore, please read all the information carefully.<br><br>
 
-                    <b>Legal information</b>: This experiment is being conducted as part of ongoing research at Saarland University. If you have any questions or comments about the study, please contact us. You must be at least 18 years old to participate. Your participation in this research is voluntary. There are no risks or benefits to participating in this study. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Part of the data collections involves using your webcam to estimate your eye gaze. No video or audio is stored at any point during the experiment. We only use the the video to store the estimated position of your eye gaze, as well as estimated size of your pupil. All data will be anonymized prior to analysis. 
+                    <b>Legal information</b>: This experiment is being conducted as part of ongoing research at Saarland University. If you have any questions or comments about the study, please contact us. You must be at least 18 years old to participate. Your participation in this research is voluntary. There are no risks or benefits to participating in this study. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Part of the data collections involves using your webcam to estimate your eye gaze. No video or audio is stored at any point during the experiment. We only use the video to store the estimated position of your eye gaze, as well as estimated size of your pupil. All data will be anonymized prior to analysis. 
                     
                     <b>If you agree to participate, please read the below instructions before proceeding.</b><br><br>
 
@@ -140,70 +140,78 @@
 
     <div  ng-if="RC.state == 'experimentStartSlide'" class="panel panel-primary" style="width:90%; margin:auto">
         <div class="panel-heading" style="font-weight: bolder ;">Instructions</div> 
-            <div class="panel-body">
+        <div class="panel-body">
 
-                <p>Now that you know what the previous participant's task was, let's get started!<br> Your task is to <b>click on the object you think the previous participant intended you to pick.</b><br><br></p>
+            <p>Now that you know what the previous participant's task was, let's get started!<br> Your task is to <b>click on the object you think the previous participant intended you to pick.</b><br><br></p>
 
-                <p>On the bottom part of the page, there is information about what messages were available to the previous participant.</p>
-                <button ng-click="RC.nextPrepQuestions()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
-            </div>
+            <p>On the bottom part of the page, there is information about what messages were available to the previous participant.</p>
+            <button ng-click="RC.nextPrepQuestions()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
         </div>
+    </div>
 
-            <div id="experiment_content" ng-if="RC.state == 'questionSlide' && RC.questionIndex == $index" ng-repeat="question in RC.questions" style="margin:auto; width:90%; height:90%">
-                <!-- the main content of the experiment goes here -->
-                <div id="experiment_panel_1" class="panel panel-primary" style="width: 100%; height: 100%; display: flex; flex-direction: column; margin-bottom:0px">
-                    <!-- <div id="experiment_heading_1" class="panel-heading" style="font-weight: bolder ;"></div> --> 
-                    <div style="width: 15%; margin-left: auto; margin-right:20px;margin-top:10px;"> Progress:
-                        <div id="myProgress" style="width: 100%">
-                            <div id="myBar" ng-style="{'width' : (((RC.practiceQuestions.length + RC.questionIndex) / (RC.questions.length + RC.practiceQuestions.length + 2)) * 100 ) + '%'}"></div>
+    <div id="experiment_content" ng-if="RC.state == 'questionSlide' && RC.questionIndex == $index" ng-repeat="question in RC.questions" style="margin:auto; width:90%; height:90%">
+        <!-- the main content of the experiment goes here -->
+        <div id="experiment_panel_1" class="panel panel-primary" style="width: 100%; height: 100%; display: flex; flex-direction: column; margin-bottom:0px">
+            <!-- <div id="experiment_heading_1" class="panel-heading" style="font-weight: bolder ;"></div> --> 
+            <div style="width: 15%; margin-left: auto; margin-right:20px;margin-top:10px;"> Progress:
+                <div id="myProgress" style="width: 100%">
+                    <div id="myBar" ng-style="{'width' : (((RC.practiceQuestions.length + RC.questionIndex) / (RC.questions.length + RC.practiceQuestions.length + 2)) * 100 ) + '%'}"></div>
+                </div>
+            </div>
+
+            <div id="experiment_body_1" class="panel-body" style="width: 100%; height: 100%">
+
+                <div id="feedback_correct" style="display:none; font-size:35;justify-content:center;">
+                    Correct!
+                </div>
+
+                <div id="feedback_incorrect" style="display:none; font-size:35;justify-content:center;">
+                    Incorrect
+                </div> 
+
+                <div id="betweenCalibration" ng-if="RC.showBetweenCalibration" div="CalibrationDiv" style="display:flex">
+                    <input type="button" class="Calibration" id="PtAccMiddle" ng-click="betweenCalPointClick($event)"></input>
+                    <input type="button" class="Calibration" id="PtAccLeft"   ng-click="betweenCalPointClick($event)"></input>
+                    <input type="button" class="Calibration" id="PtAccRight"  ng-click="betweenCalPointClick($event)"></input>
+                    <input type="button" class="Calibration" id="PtAccTop"    ng-click="betweenCalPointClick($event)"></input>
+                    <input type="button" class="Calibration" id="PtAccBottom" ng-click="betweenCalPointClick($event)"></input>
+                </div>
+
+                <div ng-if="RC.showNextQuestion" id="question_slide_content" ng-init="RC.startTimer()" style="height: 100%; width: 100%; display:flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                    <div id="previous_message" style="display: flex; height: 100px; width: 100%; justify-content: center; align-items: top; flex:1;">
+                        <div style="display: flex; margin-top: 40px"><b>The previous participant said:</b></div>
+                        <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.sent_msg}}.png" id="sent_msg_img" style="max-width: 100px ; max-height:100px ;">
+                    </div>
+
+                    <div id="referents" style="width: 100%; flex: 1; display:flex;">
+                        <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img1}}.png" id="img1" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.revealFeedback('0')">
+                        </div>
+                        <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img2}}.png" id="img2" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.revealFeedback('1')">
+                        </div>
+                        <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img3}}.png" id="img3" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.revealFeedback('2')">
                         </div>
                     </div>
 
-                    <div id="experiment_body_1" class="panel-body" style="width: 100%; height: 100%">
+                    <div><b>Click on the object you think the previous participant intended you to pick.</b></div>
 
-                        <div id="feedback_correct" style="display:none; font-size:35;justify-content:center;">
-                            Correct!
-                        </div>
-
-                        <div id="feedback_incorrect" style="display:none; font-size:35;justify-content:center;">
-                            Incorrect
-                        </div> 
-
-                        <div id="question_slide_content" style="height: 100%; width: 100%; display:flex; flex-direction: column; align-items: center; justify-content: space-between;">
-                            <div id="previous_message" style="display: flex; height: 100px; width: 100%; justify-content: center; align-items: top; flex:1;">
-                                <div style="display: flex; margin-top: 40px"><b>The previous participant said:</b></div>
-                                <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.sent_msg}}.png" id="sent_msg_img" style="max-width: 100px ; max-height:100px ;">
-                            </div>
-
-                            <div id="referents" style="width: 100%; flex: 1; display:flex;">
-                                <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img1}}.png" id="img1" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('0')">
-                                </div>
-                                <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img2}}.png" id="img2" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('1')">
-                                </div>
-                                <div style="display:flex; flex: 1; border: 1px solid black; align-items: center;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.img3}}.png" id="img3" style="max-width: 200px ; max-height: 200px ; display: block ; margin: auto; cursor: pointer" ng-click="RC.nextQuestion('2')">
-                                </div>
-                            </div>
-
-                            <div><b>Click on the object you think the previous participant intended you to pick.</b></div>
-
-                            <div id="previous_messages" style="display:flex; width: 80%; flex:1; flex-direction: column; justify-content:end;">
-                                <div style="display:flex; justify-content: center;"><b>These were the messages available to the previous participant:</b></div>
-                                <div id="messages" style="display:flex; justify-content: center;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg1}}.png" id="msg1" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg2}}.png" id="msg2" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg3}}.png" id="msg3" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg4}}.png" id="msg4" style="max-width: 100px ; max-height:100px ; display: inline ;">
-                                    
-                                </div>
-                            </div>
+                    <div id="previous_messages" style="display:flex; width: 80%; flex:1; flex-direction: column; justify-content:end;">
+                        <div style="display:flex; justify-content: center;"><b>These were the messages available to the previous participant:</b></div>
+                        <div id="messages" style="display:flex; justify-content: center;">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg1}}.png" id="msg1" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg2}}.png" id="msg2" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg3}}.png" id="msg3" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                            <img ng-src="/dynamicAssets/images/Experiments/RefGameShapesGazeFeedbackExperiment/{{question.trial.msg4}}.png" id="msg4" style="max-width: 100px ; max-height:100px ; display: inline ;">
+                            
                         </div>
                     </div>
                 </div>
-                <!-- /the main content of the experiment goes here -->
             </div>
+        </div>
+        <!-- /the main content of the experiment goes here -->
+    </div>
 
 
         <div ng-if="RC.state == 'strategySlide' && RC.strategyQuestionIndex == $index" ng-repeat="question in RC.strategyQuestions" ng-init="RC.startTimer()" style="width:90%; height:90%; margin:auto">

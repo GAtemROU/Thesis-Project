@@ -3,8 +3,8 @@ var calibrationPoints={};
 var angObj = null;
 
 let requiredAccuracy = 65;
-let allowSkipCalibration = true;
-let simplifiedCalibration = false; // only set to true during testing, the calibration is not accurate enough when set to true
+let allowSkipCalibration = false;
+let simplifiedCalibration = true; // only set to true during testing, the calibration is not accurate enough when set to true
 let clicksPerPoint = simplifiedCalibration ? 1 : 5;
 let totalPoints = simplifiedCalibration ? 1 : 11;
 let accuracyCheckDuration = simplifiedCalibration ? 1 : 5000;
@@ -58,6 +58,7 @@ async function calcAccuracy(points) {
         text: `Please don't move your mouse & stare at the ${points[i].name} dot for the next 5 seconds. This will allow us to calculate the accuracy of our predictions.`,
         closeOnEsc: false,
         allowOutsideClick: false,
+        closeOnClickOutside: false,
         closeModal: true  
     }).then(async () => {
         // makes the variables true for 5 seconds & plots the points
@@ -76,6 +77,7 @@ async function calcAccuracy(points) {
                     text: "Unfortunately, it is too low to continue, the desired accuracy is at least 65%. Please consider adjusting your setup and redo the calibration. Please consider moving closer/further from the screen, make sure your laptop is stable and the lighting is good.",
                     closeOnEsc: false,
                     allowOutsideClick: false,
+                    closeOnClickOutside: false,
                     buttons: allowSkipCalibration ?{
                       confirm: "Recalibrate",
                       cancel: "skip"
@@ -107,6 +109,7 @@ async function calcAccuracy(points) {
                       text: "This is satisfiable. " + (i == points.length-1) ? "You can continue with the experiment.": "We will now move to the next point.",
                       closeOnEsc: false,
                       allowOutsideClick: false,
+                      closeOnClickOutside: false,
                       buttons: {
                         cancel: "Recalibrate",
                         confirm: true
@@ -135,9 +138,7 @@ async function calcAccuracy(points) {
         });
     });
   }
-  console.log(angObj);  
   angObj.setPrecisionMeasurements(precision_measurements);
-  console.log(precision_measurements);
 }
 
 function calPointClick(node) {

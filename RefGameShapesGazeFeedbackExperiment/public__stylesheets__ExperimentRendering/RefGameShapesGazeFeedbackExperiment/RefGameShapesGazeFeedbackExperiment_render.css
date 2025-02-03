@@ -102,3 +102,13 @@ body {
   top:50vh;
   right:20vw;
 }
+
+#PtAccTop{
+  top:10vh;
+  left:50vw;
+}
+
+#PtAccBottom{
+  bottom:10vh;
+  left:50vw;
+}

@@ -25,7 +25,11 @@
         self.device_info = {};
         
         self.curGazeData = {};
+        self.numBetweenCalPoints = 1;
+        self.betweenCalPoints = {};
         self.itemCoordinates = {};
+        self.showNextQuestion = true;
+        self.showBetweenCalibration = false;
 
         self.shuffleQuestions = true;
         self.shuffleSublists = true;
@@ -36,7 +40,7 @@
         self.strategyQuestionIndex = 0;
         self.practiceQuestionIndex = 0;
 
-        self.experimentStartTime = null;
+        self.webgazerStartTime = null;
         self.trialStartTime = null;
         self.precision_measurements = null;
 
@@ -60,7 +64,6 @@
 
         this.setPrecisionMeasurements = function(precision_measurements){
             self.precision_measurements = precision_measurements;
-            console.log(precision_measurements);
         };
         this.resultsSubmitted = function(){
             self.subListsIds.splice(0,1);
@@ -192,7 +195,6 @@
         };
 
         this.next = function(){
-            console.log(self.precision_measurements);
             if(self.state == "workerIdSlide"){
                 if(self.questionId == null && self.partId == null){
                     self.load(function(){
@@ -457,9 +459,9 @@
             }
         }
 
-        this.nextQuestion = function(ans){
-
-            // webgazer.pause();
+        this.revealFeedback = async function(ans){
+            // webgazer.pause(); // drastically kills performance of webgazer
+            var curGaze = self.curGazeData
             var question = self.questions[self.questionIndex];
             if (self.questionIndex == 0) {
                 this.save_device_info();
@@ -472,17 +474,27 @@
             question.answer['coordinates'] = self.savePositions();
 
             let gazeData = {};
+            var min_key = 100000000000000;
+            var max_key = 0;
             for (let key in self.curGazeData){
                 let int_key = new Int32Array([key])[0];
                 gazeData[int_key] = self.prepare_to_save(self.curGazeData[key]);
+                if (int_key < min_key){
+                    min_key = int_key;
+                }
+                if (int_key > max_key){
+                    max_key = int_key;
+                }
             }
+            // debug
+            // console.log(self.curGazeData);
+            // console.log(min_key);
+            // console.log(max_key);
             var encoded = btoa(JSON.stringify(gazeData));
             question.answer['gaze'] = encoded;
             // console.log(question.answer);
             // console.log(JSON.parse(atob(encoded)));
-
-            var content = document.getElementById('question_slide_content');
-
+            
             if (question.answer['choicePos'] == question.trial.trgtPos){
                 question.answer['correct'] = 1;
                 var feedback = document.getElementById('feedback_correct');
@@ -491,23 +503,40 @@
                 question.answer['correct'] = 0;
                 var feedback = document.getElementById('feedback_incorrect');
             }
-            // console.log(question.answer);
-
-            content.style.display = 'none';
+            self.showNextQuestion = false;
             feedback.style.display = 'flex';
-            $timeout(function () {
+            await $timeout(function(){
                 if(self.questionIndex + 1 < self.questions.length){
+                    self.showBetweenCalibration = true;
                     feedback.style.display = 'none';
+                    self.betweenCalPoints = {};
                     ++self.questionIndex;
-                    self.startTimer();
-                    self.curGazeData = {};
                 }else{
                     self.next();
                 }
-
-            }, 1200);   
-            // webgazer.resume();
+            }, 1200);            
         };
+
+        $scope.betweenCalPointClick = function(event) {
+            var node = event.target;
+            const id = node.id;
+            if (!self.betweenCalPoints[id]){
+                self.betweenCalPoints[id]=1;
+                node.style.setProperty('background-color', 'yellow');
+            }
+            if (Object.keys(self.betweenCalPoints).length == self.numBetweenCalPoints){
+                self.nextQuestion();
+            }
+        };
+
+        this.nextQuestion = function(){
+            self.startTimer();
+            self.curGazeData = {};
+            self.showBetweenCalibration = false;
+            self.showNextQuestion = true;
+        };
+
+
 
 
         this.revealStrategyBox = function(ans){
@@ -636,11 +665,11 @@
         };
 
         this.initVideo = function(){
-            self.experimentStartTime = Date.now();
+            self.webgazerStartTime = Date.now();
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 .setTracker('TFFacemesh')
                 .setGazeListener(function(data, clock) {
-                    self.curGazeData[clock + self.experimentStartTime - self.trialStartTime] = data;
+                    self.curGazeData[clock + self.webgazerStartTime - self.trialStartTime] = data;
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
@@ -652,9 +681,9 @@
 
         this.startCalibration = function(){
             //start the webgazer tracker
+            self.webgazerStartTime = Date.now();
             webgazer.showPredictionPoints(true);
             webgazer.clearData();
-            
             var setup = function() {
 
                 //Set up the main canvas. The main canvas is used to calibrate the webgazer.
@@ -665,9 +694,7 @@
             };
             setup();
             self.precision_measurements = calibrate(this);
-        }
-
-        
+        }        
 
         $(document).ready(function () {
             self.questionId = ($("#questionId").length > 0) ? $("#questionId").val() : null;
@@ -683,8 +710,8 @@
                 self.load();
             }
 
-            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            // self.allStates = ["workerIdSlide","experimentStartSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){
