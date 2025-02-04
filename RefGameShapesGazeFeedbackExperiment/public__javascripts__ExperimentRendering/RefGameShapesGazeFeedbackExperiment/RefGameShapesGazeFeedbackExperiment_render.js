@@ -25,11 +25,13 @@
         self.device_info = {};
         
         self.curGazeData = {};
-        self.numBetweenCalPoints = 1;
+        self.numBetweenCalPoints = 5;
+        self.clicksPerPoint = 3;
         self.betweenCalPoints = {};
         self.itemCoordinates = {};
         self.showNextQuestion = true;
         self.showBetweenCalibration = false;
+        self.showTopPoint = false;
 
         self.shuffleQuestions = true;
         self.shuffleSublists = true;
@@ -521,10 +523,24 @@
             var node = event.target;
             const id = node.id;
             if (!self.betweenCalPoints[id]){
-                self.betweenCalPoints[id]=1;
-                node.style.setProperty('background-color', 'yellow');
+                self.betweenCalPoints[id]=0;
             }
-            if (Object.keys(self.betweenCalPoints).length == self.numBetweenCalPoints){
+            if (self.betweenCalPoints[id] < self.clicksPerPoint){
+                var opacity = (1/self.clicksPerPoint)*self.betweenCalPoints[id]+1/self.clicksPerPoint;
+                node.style.setProperty('opacity', opacity);
+                self.betweenCalPoints[id]++;
+            }
+            if (self.betweenCalPoints[id] == self.clicksPerPoint){
+                node.style.setProperty('background-color', 'green');
+            }
+            var sum = 0;
+            for (let key in self.betweenCalPoints){
+                sum += self.betweenCalPoints[key];
+            }
+            if (sum == (self.numBetweenCalPoints-1)*self.clicksPerPoint){
+                self.showTopPoint = true;
+            }
+            if (sum == self.numBetweenCalPoints*self.clicksPerPoint){
                 self.nextQuestion();
             }
         };
@@ -533,7 +549,13 @@
             self.startTimer();
             self.curGazeData = {};
             self.showBetweenCalibration = false;
+            self.showTopPoint = false;
             self.showNextQuestion = true;
+            document.querySelectorAll('.Calibration').forEach((i) => {
+                i.style.setProperty('background-color', 'red');
+                i.style.setProperty('opacity', '0.2');
+            });
+
         };
 
 
@@ -710,8 +732,9 @@
                 self.load();
             }
 
-            // self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["workerIdSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
             if(!self.useStatistics){

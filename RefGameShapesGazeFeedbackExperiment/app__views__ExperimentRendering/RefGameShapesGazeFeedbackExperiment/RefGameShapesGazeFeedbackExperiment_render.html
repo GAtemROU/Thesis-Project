@@ -173,8 +173,8 @@
                     <input type="button" class="Calibration" id="PtAccMiddle" ng-click="betweenCalPointClick($event)"></input>
                     <input type="button" class="Calibration" id="PtAccLeft"   ng-click="betweenCalPointClick($event)"></input>
                     <input type="button" class="Calibration" id="PtAccRight"  ng-click="betweenCalPointClick($event)"></input>
-                    <input type="button" class="Calibration" id="PtAccTop"    ng-click="betweenCalPointClick($event)"></input>
                     <input type="button" class="Calibration" id="PtAccBottom" ng-click="betweenCalPointClick($event)"></input>
+                    <input type="button" ng-if="RC.showTopPoint" class="Calibration" id="PtAccTop"    ng-click="betweenCalPointClick($event)"></input>
                 </div>
 
                 <div ng-if="RC.showNextQuestion" id="question_slide_content" ng-init="RC.startTimer()" style="height: 100%; width: 100%; display:flex; flex-direction: column; align-items: center; justify-content: space-between;">

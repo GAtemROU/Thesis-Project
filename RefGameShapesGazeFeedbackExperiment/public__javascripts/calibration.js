@@ -3,8 +3,8 @@ var calibrationPoints={};
 var angObj = null;
 
 let requiredAccuracy = 65;
-let allowSkipCalibration = false;
-let simplifiedCalibration = true; // only set to true during testing, the calibration is not accurate enough when set to true
+let allowSkipCalibration = true;
+let simplifiedCalibration = false; // only set to true during testing, the calibration is not accurate enough when set to true
 let clicksPerPoint = simplifiedCalibration ? 1 : 5;
 let totalPoints = simplifiedCalibration ? 1 : 11;
 let accuracyCheckDuration = simplifiedCalibration ? 1 : 5000;
@@ -38,7 +38,7 @@ function removeCanvas(){
 function PopUpInstruction(){
   swal({
     title:"Calibration",
-    text: "Now we will do the calibration procedure. We will not store any video of you directly, only the estimated coordinates of your eye gaze. Make sure your face is located in the center of the video in the upper left corner. \n\nPlease click on each of the 11 points on the screen. You must click on each point 5 times till it goes yellow. This will calibrate your eye movements.",
+    text: "Now we will do the calibration procedure. We will not store any video of you directly, only the estimated coordinates of your eye gaze. Make sure your face is located in the center of the video in the upper left corner. \n\nPlease click on each of the 11 points on the screen. You must click on each point 5 times till it goes green. This will calibrate your eye movements.",
     buttons:{
       cancel: false,
       confirm: true
@@ -149,8 +149,8 @@ function calPointClick(node) {
     }
     calibrationPoints[id]++; // increments values
 
-    if (calibrationPoints[id]==clicksPerPoint){ //only turn to yellow after 5 clicks
-        node.style.setProperty('background-color', 'yellow');
+    if (calibrationPoints[id]==clicksPerPoint){ //only turn to green after 5 clicks
+        node.style.setProperty('background-color', 'green');
         node.setAttribute('disabled', 'disabled');
         pointCalibrate++;
     }else if (calibrationPoints[id]<5){
