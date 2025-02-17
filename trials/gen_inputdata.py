@@ -8,8 +8,9 @@ from gen_trials import gen_simple_trials, gen_complex_trials, gen_unambiguous_tr
 random.seed(42)
 pp = pp.PrettyPrinter(sort_dicts=False)
 
-simplified_amount = 4
+simplified_amount = 4 # amount of trials per condition
 gen_simplified = True
+
 simple_trials = gen_simple_trials()
 complex_trials = gen_complex_trials()
 unambiguous_trials = gen_unambiguous_trials()
