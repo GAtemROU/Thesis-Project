@@ -1,0 +1,30 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{hyperref}
+\title{Project Description}
+\author{Tymur Mykhalievskyi}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Aim of the Project}
+The project is an extension of previous work. The studies before included series of questions. Each question is a particular instance of a reference game. This game is structured of 8 images. 3 being  subjects to reference, those are geometric objects with color, i.e.\ green triangle. 4 objects of available messages, each describes a single feature, i.e.\ green. 1 particular message chosen by referent. The task asks participant which object a referent was trying to refer to. The only data being collected are the answers to each task. As well as a unique id of participant from prolific account.
+
+On the other hand, this project extends on the existing knowledge by adding an eye tracking data collection functionality. Participants will complete the experiment on their laptop's. Eye gaze is known to be a very insightful source of information when one wants to understand where the attention is directed. In this particular case, it helps to reason about possible strategies people apply. 
+
+In conclusion, the aim of the project is to see if there is any correlation between one's eye gaze and the way they solve the specific kind of problems.
+
+\section{Kind of Collected Data}
+The eye gaze data is collected via the library \href{https://webgazer.cs.brown.edu/}{WebGazer}. The functionality is nothing but a linear regression model predicting x and y coordinates in pixels. It also provides information about the position and size of the face and eyes on the input video. In addition, the library provides a calibration procedure to adjust the predictions for the particular environment. 
+
+The only data we are interested in from the library is the estimation of gaze position on the screen described by two coordinates, as well as the size  and position of participant's pupil. No video or audio is saved at any point during the procedure.
+
+We also store the participants prolific id, their answers to the series of questions mentioned before, as well as non mandatory fields asking about the strategy that a participant used during the experiment to solve the tasks. All data is stored on a private server. Once data is collected and participants have been compensated, we will anonymize data by replacing the Prolific ID with an anonymous subject code. Data will be shared upon publication using only these anonymous subject codes.
+
+
+\section{Project Details}
+The type of test person is described as follows. Native English-speakers in the UK between the ages of 18 and 40, who are experienced users of Prolific (more than 20 Prolific tasks completed).
+
+At first a participant is asked to enter their prolific id. The experiment starts with a general information about the procedure, as well as what data is collected. The participant's consent is obtained by them proceeding with the experiment, they are informed of that. At any point in time, if a participant decides to withdraw their consent, it is done by simply quitting, no information will be stored. In particular, it is explicitly stated that we use their webcam to make and later store predictions of their eye gaze. If a specific request is made, their data can be completely deleted from the study. There are some training questions in the beginning to familiarize participants with the tasks. Then, the calibration procedure begins. That is a participant is asked to click on certain objects on the screen. Then the accuracy of predictions is assessed. Depending on the accuracy of predictions this results either in repeating the calibration or in the continuation of the experiment. The calibration is followed by a series of questions asking participants to solve reference games. In the end, all data is stored on the private server. Finally, there are a few optional open questions at the end. These ask participants about the strategy used to solve the tasks.
+
+
+\end{document}
