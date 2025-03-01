@@ -1,3 +1,15 @@
 *.zip
 **/__pycache__/
 .ipynb_checkpoints
+.__pycache__
+analysis/data
+saved_models
+tex/*.aux
+tex/*.bbl 
+tex/*.blg  
+tex/*.fdb_latexmk 
+tex/*.fls
+tex/*.log
+tex/*.out
+tex/*.synctex.gz
+tex/*.toc 

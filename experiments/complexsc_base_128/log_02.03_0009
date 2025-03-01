@@ -1,0 +1,76 @@
+Fold 1
+['iza_test3_11february']
+Epoch [1], Loss: 0.6648, Val acc: 0.80
+Epoch [2], Loss: 13.5675, Val acc: 0.80
+Epoch [3], Loss: 3.9076, Val acc: 0.20
+Epoch [4], Loss: 0.8434, Val acc: 0.60
+Epoch [5], Loss: 3.0128, Val acc: 0.20
+Epoch [6], Loss: 0.0000, Val acc: 0.20
+Epoch [7], Loss: 0.0000, Val acc: 0.20
+Epoch [8], Loss: 0.0000, Val acc: 0.20
+Epoch [9], Loss: 0.0002, Val acc: 0.20
+Epoch [10], Loss: 0.0000, Val acc: 0.20
+Epoch [11], Loss: 10.1373, Val acc: 0.10
+Epoch [12], Loss: 20.9159, Val acc: 0.20
+Epoch [13], Loss: 23.0718, Val acc: 0.10
+Epoch [14], Loss: 0.0000, Val acc: 0.10
+Epoch [15], Loss: 0.0000, Val acc: 0.10
+Epoch [16], Loss: 0.0000, Val acc: 0.10
+Epoch [17], Loss: 0.0000, Val acc: 0.10
+Epoch [18], Loss: 0.0000, Val acc: 0.10
+Epoch [19], Loss: 0.0000, Val acc: 0.10
+Epoch [20], Loss: 0.0000, Val acc: 0.10
+Test accuracy: 1.0000, F1 score: 1.0000
+Confusion matrices:
+{'iza_test3_11february': array([[5]])}
+Fold 2
+['j']
+Epoch [1], Loss: 0.8191, Val acc: 1.00
+Epoch [2], Loss: 17.9028, Val acc: 1.00
+Epoch [3], Loss: 7.3137, Val acc: 0.10
+Epoch [4], Loss: 0.0003, Val acc: 0.00
+Epoch [5], Loss: 0.0002, Val acc: 0.00
+Epoch [6], Loss: 0.0005, Val acc: 0.00
+Epoch [7], Loss: 0.0050, Val acc: 0.00
+Epoch [8], Loss: 0.0000, Val acc: 0.00
+Epoch [9], Loss: 0.0000, Val acc: 0.00
+Epoch [10], Loss: 0.0000, Val acc: 0.00
+Epoch [11], Loss: 0.0000, Val acc: 0.20
+Epoch [12], Loss: 0.0000, Val acc: 0.20
+Epoch [13], Loss: 0.0000, Val acc: 0.20
+Epoch [14], Loss: 0.0000, Val acc: 0.20
+Epoch [15], Loss: 0.0000, Val acc: 0.20
+Epoch [16], Loss: 0.0000, Val acc: 0.20
+Epoch [17], Loss: 0.0000, Val acc: 0.50
+Epoch [18], Loss: 0.0000, Val acc: 0.50
+Epoch [19], Loss: 0.0000, Val acc: 0.60
+Epoch [20], Loss: 0.0000, Val acc: 0.60
+Test accuracy: 0.6000, F1 score: 0.4500
+Confusion matrices:
+{'j': array([[0, 2],
+       [0, 3]])}
+Fold 3
+['jack_0402']
+Epoch [1], Loss: 0.5247, Val acc: 0.80
+Epoch [2], Loss: 8.8347, Val acc: 0.80
+Epoch [3], Loss: 0.6841, Val acc: 0.20
+Epoch [4], Loss: 4.5850, Val acc: 0.60
+Epoch [5], Loss: 4.3168, Val acc: 0.20
+Epoch [6], Loss: 0.0000, Val acc: 0.20
+Epoch [7], Loss: 0.0000, Val acc: 0.20
+Epoch [8], Loss: 0.0000, Val acc: 0.20
+Epoch [9], Loss: 0.0000, Val acc: 0.20
+Epoch [10], Loss: 0.0000, Val acc: 0.20
+Epoch [11], Loss: 8.8734, Val acc: 0.10
+Epoch [12], Loss: 22.9750, Val acc: 0.90
+Epoch [13], Loss: 29.8361, Val acc: 1.00
+Epoch [14], Loss: 0.5707, Val acc: 0.10
+Epoch [15], Loss: 9.3301, Val acc: 0.90
+Epoch [16], Loss: 32.7858, Val acc: 1.00
+Epoch [17], Loss: 7.7196, Val acc: 0.30
+Epoch [18], Loss: 0.0000, Val acc: 0.30
+Epoch [19], Loss: 0.0000, Val acc: 0.30
+Epoch [20], Loss: 0.0004, Val acc: 0.30
+Test accuracy: 1.0000, F1 score: 1.0000
+Confusion matrices:
+{'jack_0402': array([[5]])}
