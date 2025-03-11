@@ -14,24 +14,25 @@
                     
                     <b>If you agree to participate, please read the below instructions before proceeding.</b><br><br>
 
-                    <b>Instructions:</b><br> In this experiment, you will see images of different situations and answer questions about them. The whole experiment should take no longer than 22(TESTING: 10) minutes in total. <b>Please note that sometimes the images take a second to load.</b><br><br>
+                    <b>Instructions:</b><br> In this experiment, you will see images of different situations and answer questions about them. The whole experiment should take no longer than 22 minutes in total. <b>Please note that sometimes the images take a second to load.</b><br><br>
                     
                     <b>Important</b> pieces of advice for the eyetracking part of the experiment.<br>
+                    1. Please keep your laptop on charging during the whole experiment.<br>
 
-                    1. Choose a quiet, well-lit room with minimal distractions. Use a stable chair. <br>
-
-                    2. Place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face. <br>
-
-                    3. Keep your head as still as possible during the experiment. <br>
+                    2. Choose a quiet, well-lit room with minimal distractions. Use a stable chair. <br>
                     
-                    4. Make this window full screen size if not already.
+                    3. Place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face. <br>
+                    
+                    4. Keep your head as still as possible during the experiment. <br>
+                    
+                    5. Make this window full screen size if not already.
                     @_SHOW_INSTRUCTIONS_@
                     <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
                 </div>
             </div>
 
             <div ng-if="RC.state == 'workerIdSlide'" class="panel panel-primary" style="width:90%; margin:auto">
-                <div class="panel-heading" style="font-weight: bolder ;">Please enter your Prolific ID into the box below : (TESTING: Please enter some form of identifcation so I can contact you later just in case, your name would suffice)</div>
+                <div class="panel-heading" style="font-weight: bolder ;">Please enter your Prolific ID into the box below : </div>
                 <div class="panel-body">
                     <input id="workerId" ng-model="RC.workerId" style="width:60%;font-size:20;" name="workerId" type="text" class="form-control" placeholder="enter here">
                     <button ng-click="RC.next()" type="button" ng-disabled="RC.workerId == ''" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
@@ -43,7 +44,7 @@
                 <div class="panel-body">
                     In this task, you will see images of different situations and answer questions about them.<br><br>
                     
-                    This is how it works. On each trial you will see a display of three shapes (circles, squares and triangles) in different colors (red, green, or blue). At the top of the display you will see an image. This image is a message that was sent by a previous participant who saw the same display as you and was instructed to get you to pick out one of the objects. <b>Your task is to click on the object you think the previous participant intended you to pick.</b> You'll do a short tutorial first and then you'll see 36(TESTING: 14) repetitions of this task. Click on 'Next' to continue.
+                    This is how it works. On each trial you will see a display of three shapes (circles, squares and triangles) in different colors (red, green, or blue). At the top of the display you will see an image. This image is a message that was sent by a previous participant who saw the same display as you and was instructed to get you to pick out one of the objects. <b>Your task is to click on the object you think the previous participant intended you to pick.</b> You'll do a short tutorial first and then you'll see 36 repetitions of this task. Click on 'Next' to continue.
                     <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
                 </div>
             </div>
@@ -85,7 +86,7 @@
                     <div id="calibration_next" class="panel panel-primary" style="width:90%; visibility: hidden; margin: auto;">
                         <div class="panel-heading" style="font-weight: bolder ;">Calibration</div>
                         <div class="panel-body">
-                            <p>Calibration is done. Let's get back to the experiment. Click on 'Next' to continue.</p>
+                            <p>Calibration is done. There are simplified calibration procedures after each trial, please, click on the calibration points until they become green, when you get to that point. Let's get back to the experiment. Click on 'Next' to continue.</p>
                             <button ng-click="RC.next()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
                         </div>
                     </div>
@@ -142,8 +143,11 @@
         <div class="panel-heading" style="font-weight: bolder ;">Instructions</div> 
         <div class="panel-body">
 
-            <p>Now that you know what the previous participant's task was, let's get started!<br> Your task is to <b>click on the object you think the previous participant intended you to pick.</b><br><br></p>
-
+            <p>Now that you know what the previous participant's task was, let's get started!
+                
+            <br> 
+            Your task is to <b>click on the object you think the previous participant intended you to pick.</b>
+            <br><br></p>
             <p>On the bottom part of the page, there is information about what messages were available to the previous participant.</p>
             <button ng-click="RC.nextPrepQuestions()" type="button" class="btn btn-default" style="float:right ; margin-top:20px;font-size:20;">Next</button>
         </div>

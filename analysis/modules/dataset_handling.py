@@ -14,10 +14,11 @@ class DatasetHandler:
     """
     def __init__(self, root, transform, targets=None):
         if targets is None:
-            targets = ['C', 'P']
+            targets = [0, 1]
         self.dataset = ImageFolder(root, transform)
         self.participants = []
         for t in targets:
+            t = str(t)
             t_participants = [f.name for f in sorted(Path(join(root, t)).iterdir())
                               if f.is_dir()]
             self.participants = list(set(self.participants).union(set(t_participants)))
