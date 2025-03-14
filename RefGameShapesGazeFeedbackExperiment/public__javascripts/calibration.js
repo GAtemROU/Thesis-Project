@@ -3,7 +3,7 @@ var calibrationPoints={};
 var angObj = null;
 
 let requiredAccuracy = 65;
-let allowSkipCalibration = true;
+let allowSkipCalibration = false;
 let simplifiedCalibration = false; // only set to true during testing, the calibration is not accurate enough when set to true
 let clicksPerPoint = simplifiedCalibration ? 1 : 5;
 let totalPoints = simplifiedCalibration ? 1 : 11;
@@ -94,7 +94,7 @@ async function calcAccuracy(points) {
                       i = points.length;
                     } else {
                       clearCanvas();
-                      //webgazer.showPredictionPoints(false);
+                      // webgazer.showPredictionPoints(false);
                       document.getElementById("PtAcc" + points[i].name).style.setProperty('display', 'none');
                       if (i == points.length - 1) {
                         stopResizing();
@@ -118,9 +118,9 @@ async function calcAccuracy(points) {
                           if (isConfirm){
                               //clear the calibration & hide the current accuracy check button
                               clearCanvas();
-                              //webgazer.showPredictionPoints(false);
                               document.getElementById("PtAcc" + points[i].name).style.setProperty('display', 'none');
                               if (i == points.length - 1) {
+                                webgazer.showPredictionPoints(false);
                                 stopResizing();
                                 removeCanvas();
                                 document.getElementById('calibration_next').style.setProperty('visibility', 'visible');

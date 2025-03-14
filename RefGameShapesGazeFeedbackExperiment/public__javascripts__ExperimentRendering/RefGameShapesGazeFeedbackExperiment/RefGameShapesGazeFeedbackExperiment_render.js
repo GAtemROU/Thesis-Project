@@ -562,7 +562,7 @@
 
 
         this.revealStrategyBox = function(ans){
-            webgazer.showPredictionPoints(false);
+            // webgazer.showPredictionPoints(false);
             var question = self.strategyQuestions[self.strategyQuestionIndex];
             question.answer['answerTime'] = Date.now() - self.trialStartTime;
             question.answer['choicePos'] = ans;
@@ -597,7 +597,7 @@
             if(self.strategyQuestionIndex + 1 < self.strategyQuestions.length){
                 self.curGazeData = {};
                 self.startTimer();
-                webgazer.showPredictionPoints(true);
+                // webgazer.showPredictionPoints(true);
                 ++self.strategyQuestionIndex;
                 self.IsEnabled = true;
             }else{
@@ -688,26 +688,34 @@
 
         this.initVideo = function(){
             self.webgazerStartTime = Date.now();
+            self.last_pred = null;
+            self.counter = 100;
             webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 .setTracker('TFFacemesh')
                 .setGazeListener(function(data, clock) {
                     self.curGazeData[clock + self.webgazerStartTime - self.trialStartTime] = data;
+                    if (clock != null){
+                        self.counter--;
+                        if (self.counter == 1) {
+                            self.last_pred = clock;
+                        } else if (self.counter == 0) {
+                            console.log(Math.abs(self.last_pred - clock));
+                            self.counter = 100;
+                            // webgazer.clearData();
+                        }
+                    }   
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
-            webgazer.showVideoPreview(true)
-                .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
+            webgazer.showVideoPreview(false)
+                // .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
                 .applyKalmanFilter(true);
 
         };
 
         this.startCalibration = function(){
-            //start the webgazer tracker
-            self.webgazerStartTime = Date.now();
-            webgazer.showPredictionPoints(true);
             webgazer.clearData();
             var setup = function() {
-
                 //Set up the main canvas. The main canvas is used to calibrate the webgazer.
                 var canvas = document.getElementById("plotting_canvas");
                 canvas.width = window.innerWidth;

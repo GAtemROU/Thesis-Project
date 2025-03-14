@@ -6,21 +6,17 @@ pp = pprint.PrettyPrinter(sort_dicts=False)
 shapes = ['ci', 'sq', 'tr']
 colors = ['re', 'gr', 'bl']
 
-simple_trials = []
-complex_trials = []
-unambiguous_trials = []
-
-
 id_to_obj = ['trgt', 'comp', 'dist']
                  # feature 1
              #trgt #comp #distr
 simple_matrix = [[1, 1, 0], # sent msg
-                 [0, 0, 0], # not available msg
+                 [0, 0, 0], # not in available msg
                  [0, 0, 1],
                  # feature 2
                  [0, 0, 1],
                  [0, 1, 0],
-                 [1, 0, 0]] # not available msg
+                 [1, 0, 0]] # not in available msg
+
 available_msgs_ids_simple = [0, 2, 3, 4]
 
 complex_matrix = [[1, 1, 0],
@@ -29,8 +25,8 @@ complex_matrix = [[1, 1, 0],
                   [0, 1, 0],
                   [1, 0, 1],
                   [0, 0, 0]]
-available_msgs_ids_complex = [0, 1, 3, 4] 
-avaialble_msgs_ids_complexer = [0, 2, 3, 4]
+
+avaialble_msgs_ids_complex = [0, 2, 3, 4]
 
 unambiguous_matrix = [[1, 0, 0],
                       [0, 1, 1],
@@ -72,15 +68,11 @@ def gen_trials(shapes, colors, matrix, available_msgs_ids, id_to_obj_type):
                 trials.append(trial)
     return trials
 
-simple_trials = gen_trials(shapes, colors, simple_matrix, available_msgs_ids_simple, id_to_obj)
-complex_trials = gen_trials(shapes, colors, complex_matrix, avaialble_msgs_ids_complexer, id_to_obj)
-unambiguous_trials = gen_trials(shapes, colors, unambiguous_matrix, available_msgs_ids_unambiguous, id_to_obj)
-
 def gen_simple_trials():
     return gen_trials(shapes, colors, simple_matrix, available_msgs_ids_simple, id_to_obj)
 
 def gen_complex_trials():
-    return gen_trials(shapes, colors, complex_matrix, avaialble_msgs_ids_complexer, id_to_obj)
+    return gen_trials(shapes, colors, complex_matrix, avaialble_msgs_ids_complex, id_to_obj)
 
 def gen_unambiguous_trials():
     return gen_trials(shapes, colors, unambiguous_matrix, available_msgs_ids_unambiguous, id_to_obj)
