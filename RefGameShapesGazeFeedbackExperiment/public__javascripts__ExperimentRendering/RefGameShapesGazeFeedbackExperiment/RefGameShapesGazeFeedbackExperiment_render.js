@@ -707,8 +707,8 @@
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
-            webgazer.showVideoPreview(false)
-                // .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
+            webgazer.showVideoPreview(true)
+                .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
                 .applyKalmanFilter(true);
 
         };
@@ -740,8 +740,8 @@
                 self.load();
             }
 
-            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            // self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
             // self.allStates = ["workerIdSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
