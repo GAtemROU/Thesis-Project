@@ -686,12 +686,12 @@
 
         };
 
-        this.initVideo = function(){
+        this.initVideo = async function(){
             self.webgazerStartTime = Date.now();
             self.last_pred = null;
             self.counter = 100;
-            webgazer.setRegression('ridge') /* currently must set regression and tracker */
-                .setTracker('TFFacemesh')
+            await webgazer.setRegression('ridge') /* currently must set regression and tracker */
+                .setTracker('clmtrackr')
                 .setGazeListener(function(data, clock) {
                     self.curGazeData[clock + self.webgazerStartTime - self.trialStartTime] = data;
                     if (clock != null){
