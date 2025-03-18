@@ -693,17 +693,7 @@
             await webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 .setTracker('clmtrackr')
                 .setGazeListener(function(data, clock) {
-                    self.curGazeData[clock + self.webgazerStartTime - self.trialStartTime] = data;
-                    if (clock != null){
-                        self.counter--;
-                        if (self.counter == 1) {
-                            self.last_pred = clock;
-                        } else if (self.counter == 0) {
-                            console.log(Math.abs(self.last_pred - clock));
-                            self.counter = 100;
-                            // webgazer.clearData();
-                        }
-                    }   
+                    self.curGazeData[clock + self.webgazerStartTime - self.trialStartTime] = data;  
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
@@ -740,8 +730,8 @@
                 self.load();
             }
 
-            // self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
-            self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            self.allStates = ["instructionsSlide","workerIdSlide","specificInstructionsSlide","practiceQuestionSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
+            // self.allStates = ["workerIdSlide","calibrationInstructionsSlide","calibrationSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
             // self.allStates = ["workerIdSlide","experimentStartSlide","questionSlide","strategySlide","generalQuestionsSlide"];
 
 
