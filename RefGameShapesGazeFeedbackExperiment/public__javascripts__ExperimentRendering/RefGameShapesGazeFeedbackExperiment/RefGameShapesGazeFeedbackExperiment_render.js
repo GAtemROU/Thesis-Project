@@ -480,7 +480,10 @@
             var max_key = 0;
             for (let key in self.curGazeData){
                 let int_key = new Int32Array([key])[0];
-                gazeData[int_key] = self.prepare_to_save(self.curGazeData[key]);
+                preped = self.prepare_to_save(self.curGazeData[key]);
+                if (preped['x'] != null){
+                    gazeData[int_key] = preped;
+                }
                 if (int_key < min_key){
                     min_key = int_key;
                 }
@@ -579,7 +582,10 @@
             let gazeData = {};
             for (let key in self.curGazeData){
                 let int_key = new Int32Array([key])[0];
-                gazeData[int_key] = self.prepare_to_save(self.curGazeData[key]);
+                let preped = self.prepare_to_save(self.curGazeData[key]);
+                if (preped['x'] != null){
+                    gazeData[int_key] = preped;
+                }
             }
             var encoded = btoa(JSON.stringify(gazeData));
             question.answer['gaze'] = encoded;
@@ -693,7 +699,9 @@
             await webgazer.setRegression('ridge') /* currently must set regression and tracker */
                 .setTracker('clmtrackr')
                 .setGazeListener(function(data, clock) {
-                    self.curGazeData[clock + self.webgazerStartTime - self.trialStartTime] = data;  
+                    if (data != null) {
+                        self.curGazeData[clock + self.webgazerStartTime - self.trialStartTime] = data;  
+                    }
                 })
                 .saveDataAcrossSessions(false)
                 .begin();
