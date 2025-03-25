@@ -1,0 +1,110 @@
+!!! Convergence Failure !!!
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: 
+Correct ~ Condition + TrgtPos + Trial.c + PropTimeOnTrgt + PropTimeOnComp +  
+    PropTimeOnDist + PropTimeOnSentMsg + PropTimeOnAvailableMsgs +  
+    PropTimeOnNonAOI + MsgType + (1 + Condition + TrgtPos + Trial.c +  
+    PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +  
+    PropTimeOnAvailableMsgs + MsgType | Subject)
+   Data: df_correct
+
+     AIC      BIC   logLik deviance df.resid 
+  2521.2   3084.8  -1170.6   2341.2     3786 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-8.8634  0.0048  0.0807  0.2963  4.8908 
+
+Random effects:
+ Groups  Name                    Variance Std.Dev. Corr                   
+ Subject (Intercept)             1.611052 1.26927                         
+         Condition1              0.644358 0.80272   0.85                  
+         Condition2              0.830776 0.91147   0.78  0.71            
+         TrgtPos2                1.157041 1.07566   0.09  0.38  0.04      
+         TrgtPos3                1.410290 1.18756   0.04  0.29  0.14  0.70
+         Trial.c                 0.001206 0.03473   0.72  0.55  0.64  0.36
+         PropTimeOnTrgt          8.820545 2.96994   0.15  0.48  0.25  0.42
+         PropTimeOnComp          2.523563 1.58857   0.59  0.57  0.58  0.16
+         PropTimeOnDist          1.143309 1.06926   0.18  0.01  0.39 -0.57
+         PropTimeOnSentMsg       3.289779 1.81377  -0.07 -0.31  0.05 -0.12
+         PropTimeOnAvailableMsgs 2.090306 1.44579   0.37  0.28  0.46  0.24
+         MsgType1                0.228004 0.47750  -0.20 -0.02  0.22 -0.05
+                                          
+                                          
+                                          
+                                          
+                                          
+                                          
+  0.54                                    
+  0.48  0.16                              
+  0.27  0.52  0.12                        
+ -0.25  0.02 -0.07  0.61                  
+  0.15  0.28 -0.70  0.12  0.14            
+  0.08  0.44  0.21  0.17 -0.06 -0.16      
+ -0.01 -0.22  0.49 -0.22  0.10 -0.43  0.30
+Number of obs: 3876, groups:  Subject, 102
+
+Fixed effects:
+                         Estimate Std. Error z value Pr(>|z|)    
+(Intercept)              0.022365   1.430164   0.016   0.9875    
+Condition1               0.615469   0.119169   5.165 2.41e-07 ***
+Condition2               2.192524   0.424039   5.171 2.33e-07 ***
+TrgtPos2                 2.436157   0.336232   7.245 4.31e-13 ***
+TrgtPos3                 2.273424   0.335797   6.770 1.29e-11 ***
+Trial.c                  0.043364   0.007817   5.547 2.90e-08 ***
+PropTimeOnTrgt           8.023674   1.573034   5.101 3.38e-07 ***
+PropTimeOnComp          -1.708649   1.518168  -1.125   0.2604    
+PropTimeOnDist           0.377641   1.512092   0.250   0.8028    
+PropTimeOnSentMsg        1.811607   1.468665   1.234   0.2174    
+PropTimeOnAvailableMsgs  3.066173   1.553345   1.974   0.0484 *  
+MsgType1                -0.171736   0.088145  -1.948   0.0514 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Cndtn1 Cndtn2 TrgtP2 TrgtP3 Tril.c PrpTOT PrpTOC PrpTOD
+Condition1   0.061                                                        
+Condition2   0.227  0.147                                                 
+TrgtPos2     0.036  0.103  0.225                                          
+TrgtPos3     0.037  0.095  0.227  0.823                                   
+Trial.c     -0.006  0.240  0.091  0.078  0.108                            
+PrpTmOnTrgt -0.870  0.106  0.138  0.186  0.185  0.073                     
+PropTmOnCmp -0.905  0.062  0.008 -0.226 -0.220  0.057  0.837              
+PropTmOnDst -0.910  0.023  0.009 -0.236 -0.223  0.039  0.843  0.963       
+PrpTmOnSntM -0.914 -0.030  0.014 -0.089 -0.078  0.038  0.809  0.895  0.897
+PrpTmOnAvlM -0.876  0.051  0.076 -0.050 -0.058  0.072  0.826  0.872  0.876
+MsgType1     0.011  0.004  0.020 -0.060 -0.048 -0.134  0.031 -0.015 -0.005
+            PrTOSM PrTOAM
+Condition1               
+Condition2               
+TrgtPos2                 
+TrgtPos3                 
+Trial.c                  
+PrpTmOnTrgt              
+PropTmOnCmp              
+PropTmOnDst              
+PrpTmOnSntM              
+PrpTmOnAvlM  0.876       
+MsgType1    -0.059 -0.024
+fit warnings:
+fixed-effect model matrix is rank deficient so dropping 1 column / coefficient
+optimizer (Nelder_Mead) convergence code: 4 (failure to converge in 10000 evaluations)
+unable to evaluate scaled gradient
+Model failed to converge: degenerate  Hessian with 7 negative eigenvalues
+failure to converge in 10000 evaluations
+
+Warning messages:
+1: In commonArgs(par, fn, control, environment()) :
+  maxfun < 10 * length(par)^2 is not recommended.
+2: In optwrap(optimizer, devfun, start, rho$lower, control = control,  :
+  convergence code 1 from bobyqa: bobyqa -- maximum number of function evaluations exceeded
+3: In (function (fn, par, lower = rep.int(-Inf, n), upper = rep.int(Inf,  :
+  failure to converge in 10000 evaluations
+4: In optwrap(optimizer, devfun, start, rho$lower, control = control,  :
+  convergence code 4 from Nelder_Mead: failure to converge in 10000 evaluations
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  unable to evaluate scaled gradient
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge: degenerate  Hessian with 7 negative eigenvalues

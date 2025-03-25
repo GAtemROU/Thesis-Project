@@ -1,3 +1,6 @@
 {
-    "latex-workshop.latex.build.forceRecipeUsage": false
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+    "files.watcherExclude": {
+        "**/target": true
+    }
 }
