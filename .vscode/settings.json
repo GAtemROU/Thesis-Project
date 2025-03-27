@@ -2,5 +2,9 @@
     "latex-workshop.latex.build.forceRecipeUsage": false,
     "files.watcherExclude": {
         "**/target": true
-    }
+    },
+    "cSpell.words": [
+        "distractor",
+        "saccade"
+    ]
 }

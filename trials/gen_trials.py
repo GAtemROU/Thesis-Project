@@ -26,7 +26,7 @@ complex_matrix = [[1, 1, 0],
                   [1, 0, 1],
                   [0, 0, 0]]
 
-avaialble_msgs_ids_complex = [0, 2, 3, 4]
+available_msgs_ids_complex = [0, 2, 3, 4]
 
 unambiguous_matrix = [[1, 0, 0],
                       [0, 1, 1],
@@ -72,7 +72,7 @@ def gen_simple_trials():
     return gen_trials(shapes, colors, simple_matrix, available_msgs_ids_simple, id_to_obj)
 
 def gen_complex_trials():
-    return gen_trials(shapes, colors, complex_matrix, avaialble_msgs_ids_complex, id_to_obj)
+    return gen_trials(shapes, colors, complex_matrix, available_msgs_ids_complex, id_to_obj)
 
 def gen_unambiguous_trials():
     return gen_trials(shapes, colors, unambiguous_matrix, available_msgs_ids_unambiguous, id_to_obj)
