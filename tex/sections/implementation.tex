@@ -14,25 +14,61 @@ The trials were generated using 3 colors: red, green and blue, and 3 shapes: squ
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{images/example_trial.png}
+    \includegraphics[width=0.8\textwidth]{images/example_trial_webcam.png}
     \caption{Example trial}
-    \label{fig:example_trial}
+    \label{fig:example_trial_webcam}
 \end{figure}
 
-Before the main part of the experiment with 36 + 2 trials, the participants were asked to do a speaker's job in reference games with 3 Unambiguous trials and 1 completely ambiguous one. The participants were asked to describe the object in the ambiguous trial in a way that the listener would be able to pick the correct object. Later they were told that a previous participant had already done the speaker's job and they were to do the listener's job, which was the main part of the experiment with 36 + 2 trials. An example trial can be seen in \autoref{fig:example_trial}.
+Before the main part of the experiment with 36 + 2 trials, the participants were asked to do a speaker's job in reference games with 3 Unambiguous trials and 1 completely ambiguous one. The participants were asked to describe the object in the ambiguous trial in a way that the listener would be able to pick the correct object. Later they were told that a previous participant had already done the speaker's job and they were to do the listener's job, which was the main part of the experiment with 36 + 2 trials. An example trial can be seen in \autoref{fig:example_trial_webcam}.
 
 \subsection{Eye Tracking}
 \label{sec:data:eyetr}
-The eye tracking was done via library \cite{wegbazer}. The library was used to track participants' gaze on the screen. There was a calibration in the beginning of the experiment after the practice trials where participants did the speaker's job, this allowed to put the calibration as close to the main experiment as possible. The calibration was adapted from the one used in the demo of \cite{wegbazer}. Although, we included 11 points instead of 9, the additional points were put on the objects' places. Each point had to be clicked 5 times. In addition, the calibration accuracy assessment in the end was done not with 1 point but 3: middle, left and right. Where left and right again correspond to the positions of the main objects on the screen. 
+The eye tracking was done via library WebGazer \cite{wegbazer}. The library was used to track participants' gaze on the screen. There was a calibration in the beginning of the experiment after the practice trials where participants did the speaker's job, this allowed to put the calibration as close to the main experiment as possible. The calibration was adapted from the one used in the demo of WebGazer \cite{wegbazer}. Although, we included 11 points instead of 9, the additional points were put on the objects' places. Each point had to be clicked 5 times. The setup can be seen in \autoref{fig:calibration_webcam}.In addition, the calibration accuracy assessment in the end was done not with 1 point but 3: middle, left and right. Where left and right again correspond to the positions of the main objects on the screen. Furthermore, an in-between trial calibration was incorporated to ensure that the calibration was still accurate. The number of points were reduced to 5 each point corresponding to one of the areas of interest. No accuracy assessment was done during the in-between trial calibration. The setup can be seen in \autoref{fig:inbetween_calibration_webcam}.
 
-In order to successfully pass the calibration assessment, the participants must reach at least 65\% accuracy on each of the three calibration points. However, during the testing phase we noticed that the calibration assessment was too strict and difficult to pass. Therefore, it was decided to make the left and right points easier to calibrate via adjusting the calculation of the accuracy. A weighted accuracy calibration procedure was implemented. While the distance between for the accuracy of the middle point was calculated via euclidean distance, the left and right points were calculated via the following formula: $\sqrt{(w_x\cdot(calib\_point\_x - gaze\_x))^2 + (w_y\cdot(calib\_point\_y - gaze\_y))^2}$. Where $w_x$ and $w_y$ are the coefficients that were adjusted during the testing phase. The final values were $w_x = 1$ and $w_y = 0.5$. The values were chosen based on the fact that left and right objects do not have any other objects on the vertical axes this can be seen in \autoref{fig:example_trial}. Therefore a slightly inaccurate result on the vertical axes would be relatively easy to correct during the analysis.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/calibration_webcam.png}
+    \caption{Calibration setup}
+    \label{fig:calibration_webcam}
+\end{figure}
+
+In order to successfully pass the calibration assessment, the participants must reach at least 65\% accuracy on each of the three calibration points. However, during the testing phase we noticed that the calibration assessment was too strict and difficult to pass. Therefore, it was decided to make the left and right points easier to calibrate via adjusting the calculation of the accuracy. A weighted accuracy calibration procedure was implemented. While the distance between for the accuracy of the middle point was calculated via euclidean distance, the left and right points were calculated via the following formula: $\sqrt{(w_x\cdot(calib\_point\_x - gaze\_x))^2 + (w_y\cdot(calib\_point\_y - gaze\_y))^2}$. Where $w_x$ and $w_y$ are the coefficients that were adjusted during the testing phase. The final values were $w_x = 1$ and $w_y = 0.5$. The values were chosen based on the fact that left and right objects do not have any other objects on the vertical axes this can be seen in \autoref{fig:example_trial_webcam}. Therefore a slightly inaccurate result on the vertical axes would be relatively easy to correct during the analysis.
 
 The images were located on the screen as far as possible to reduce the errors as much as possible. For the same reason, the sent message were kept as a single block instead of being spread further apart. 
 
-Furthermore, a performance issue arised during the pilot phase. The issues was that the eye tracking became very slow and laggy towards the end of the second half of the experiment. The more clicks were made, the worse the performance became. The issue was resolved by reducing the \text{DataWindow} size from 700 to 50 in source code and recreating the webgazer source file afterwards.
+Furthermore, a performance issue arised during the pilot phase. The issues was that the eye tracking became very slow and laggy towards the the second half of the experiment. The more clicks were made, the worse the performance became. Due to a drastic drop in sampling rate and increase in response time, the pilot data was clearly unacceptable. The issue was resolved by reducing the \text{DataWindow} size from 700 to 50 in source code and recreating the WebGazer source file afterwards. The issue was resolved and the performance was stable throughout the experiment. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/inbetween_calibration_webcam.png}
+    \caption{In-between trial calibration}
+    \label{fig:inbetween_calibration_webcam}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/calibration_instr.png}
+    \caption{Calibration instructions taken from \cite{Semmelmann_2018}}
+    \label{fig:calibration_instr}
+\end{figure}
+
+Even with all the optimizations in place, the calibration procedure was still highly dependent on the setup of the participants. Therefore, the following pieces of advice were given to the participants to increase chances of successful calibration: keep the laptop on charging during the whole experiment (to make sure the eye tracking does not suffer from battery saving features); choose a quiet, well-lit room with minimal distractions and use a stable chair; place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face; keep your head sas still as possible during the experiment; make this window full screen size if not already. In addition, right before the calibration the participants were shown their webcam feed to make sure they are centered and the lighting is good as well as some visual advice on how to improve the calibration. The visuals can be seen in \autoref{fig:calibration_instr}. They were taken from a different experiment \cite{Semmelmann_2018} that was conducted with use of WebGazer \cite{wegbazer}.
+
+\subsection{Consent}
+The participants were told about the eye tracking right in the beginning of the experiment. They were informed that no video of them will be stored at any point of time. The participants were informed that they can stop the experiment at any point by exiting the website and none of their data will be saved. The exact formulation was: 
+
+\begin{quote}
+    This experiment is being conducted as part of ongoing research at Saarland University. If you have any questions or comments about the study, please contact us. You must be at least 18 years old to participate. Your participation in this research is voluntary. There are no risks or benefits to participating in this study. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Part of the data collections involves using your webcam to estimate your eye gaze. No video or audio is stored at any point during the experiment. We only use the video to store the estimated position of your eye gaze, as well as estimated size of your pupil. All data will be anonymized prior to analysis. 
+
+    If you agree to participate, please read the below instructions before proceeding.
+\end{quote}
+
 
 \section{Analysis}
 \label{sec:analysis}
+
+\subsection{Data Preprocessing}
+\label{sec:analysis:preprocessing}
 
 \subsection{Pairwise Correlations}
 \label{sec:analysis:corr}
