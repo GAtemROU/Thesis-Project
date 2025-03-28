@@ -19,7 +19,7 @@ The trials were generated using 3 colors: red, green and blue, and 3 shapes: squ
     \label{fig:example_trial_webcam}
 \end{figure}
 
-Before the main part of the experiment with 36 + 2 trials, the participants were asked to do a speaker's job in reference games with 3 Unambiguous trials and 1 completely ambiguous one. The participants were asked to describe the object in the ambiguous trial in a way that the listener would be able to pick the correct object. Later they were told that a previous participant had already done the speaker's job and they were to do the listener's job, which was the main part of the experiment with 36 + 2 trials. An example trial can be seen in \autoref{fig:example_trial_webcam}.
+Before the main part of the experiment with 36 + 2 trials, the participants were asked to do a speaker's job in reference games with 3 Unambiguous trials and 1 completely ambiguous one. The participants were asked to describe the object in the ambiguous trial in a way that the listener would be able to pick the correct object. Later they were told that a previous participant had already done the speaker's job and they were to do the listener's job, which was the main part of the experiment with 36 + 2 trials. An example trial can be seen in \autoref{fig:example_trial_webcam}. Depending on the zoom and resolution on the page the sizes and absolute positions of the images would vary a lot. Hence, the absolute positions in pixels as well as sizes of the images were saved during the experiment. 
 
 \subsection{Eye Tracking}
 \label{sec:data:eyetr}
@@ -52,7 +52,9 @@ Furthermore, a performance issue arised during the pilot phase. The issues was t
     \label{fig:calibration_instr}
 \end{figure}
 
-Even with all the optimizations in place, the calibration procedure was still highly dependent on the setup of the participants. Therefore, the following pieces of advice were given to the participants to increase chances of successful calibration: keep the laptop on charging during the whole experiment (to make sure the eye tracking does not suffer from battery saving features); choose a quiet, well-lit room with minimal distractions and use a stable chair; place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face; keep your head sas still as possible during the experiment; make this window full screen size if not already. In addition, right before the calibration the participants were shown their webcam feed to make sure they are centered and the lighting is good as well as some visual advice on how to improve the calibration. The visuals can be seen in \autoref{fig:calibration_instr}. They were taken from a different experiment \cite{Semmelmann_2018} that was conducted with use of WebGazer \cite{wegbazer}.
+The calibration is highly dependent on the setup. Hence, the following pieces of advice were given to the participants to increase chances of successful calibration: keep the laptop on charging during the whole experiment (to make sure the eye tracking does not suffer from battery saving features); choose a quiet, well-lit room with minimal distractions and use a stable chair; place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face; keep your head sas still as possible during the experiment; make this window full screen size if not already. In addition, right before the calibration the participants were shown their webcam feed to make sure they are centered and the lighting is good as well as some visual advice on how to improve the calibration. The visuals can be seen in \autoref{fig:calibration_instr}. They were taken from a different experiment \cite{Semmelmann_2018} that was conducted with use of WebGazer \cite{wegbazer}.
+
+Even with all the optimizations in place, the calibration procedure was still relatively difficult to pass. The participants were not restricted in number of attempts to calibrate. However, the participants were informed that the approval is only possible after successfully completing the calibration and the rest of the experiment. The resulting rate of successful completions was only around 30\%. However, that resulted in a good quality of data.
 
 \subsection{Consent}
 The participants were told about the eye tracking right in the beginning of the experiment. They were informed that no video of them will be stored at any point of time. The participants were informed that they can stop the experiment at any point by exiting the website and none of their data will be saved. The exact formulation was: 
@@ -67,8 +69,15 @@ The participants were told about the eye tracking right in the beginning of the 
 \section{Analysis}
 \label{sec:analysis}
 
+\subsection{Features}
+\label{sec:analysis:features}
+Considering the related eye tracking study \cite{Vigneau_2006}, the analysis will be around the defined eye tracking features. \cite{Vigneau_2006} defined mainly 5 types of features: absolute time on an area of interest, proportional time on an area of interest, toggling (between the Raven's matrix and the available messages), item latency (time to complete the trial) and latency to first toggle and matrix distribution index (how equally the attention was spread across the matrix items). In this study on the other hand, we are mainly focused on the proportional time on the areas of interest. The decision was made for multiple reasons. First of all the sampling rate of WebGazer is highly dependent on the participants' computer, making the absolute time on the areas of interest and latency to first fixation not comparable between participants. Second of all, we do not have such a strong hypothesis about what exactly people do during the task solving process as \cite{Vigneau_2006} had. We are rather interested in the general profile of attention, hence, no toggling features were included in the analysis. 
+
+In addition to the eye tracking features, we included some general features about the trial. The features are: trial number, condition (Simple, Complex, Unambiguous), type of sent message feature (shape or color), correct (whether the trial was solved correctly or not) and target position (left, center or right). The condition and correct features play crucial role in the analysis. While the other features such as trial number, type of sent message and target position were included due to the fact that they were shown to have a significant effect on the participants' performance in the previous studies \cite{Mayn_2023, Mayn_2025}.
+
 \subsection{Data Preprocessing}
 \label{sec:analysis:preprocessing}
+
 
 \subsection{Pairwise Correlations}
 \label{sec:analysis:corr}
