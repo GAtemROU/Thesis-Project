@@ -23,7 +23,7 @@ Before the main part of the experiment with 36 + 2 trials, the participants were
 
 \subsection{Eye Tracking}
 \label{sec:data:eyetr}
-The eye tracking was done via library WebGazer \cite{wegbazer}. The library was used to track participants' gaze on the screen. There was a calibration in the beginning of the experiment after the practice trials where participants did the speaker's job, this allowed to put the calibration as close to the main experiment as possible. The calibration was adapted from the one used in the demo of WebGazer \cite{wegbazer}. Although, we included 11 points instead of 9, the additional points were put on the objects' places. Each point had to be clicked 5 times. The setup can be seen in \autoref{fig:calibration_webcam}.In addition, the calibration accuracy assessment in the end was done not with 1 point but 3: middle, left and right. Where left and right again correspond to the positions of the main objects on the screen. Furthermore, an in-between trial calibration was incorporated to ensure that the calibration was still accurate. The number of points were reduced to 5 each point corresponding to one of the areas of interest. No accuracy assessment was done during the in-between trial calibration. The setup can be seen in \autoref{fig:inbetween_calibration_webcam}.
+The eye tracking was done via library WebGazer \cite{webgazer}. The library was used to track participants' gaze on the screen. There was a calibration in the beginning of the experiment after the practice trials where participants did the speaker's job, this allowed to put the calibration as close to the main experiment as possible. The calibration was adapted from the one used in the demo of WebGazer \cite{webgazer}. Although, we included 11 points instead of 9, the additional points were put on the objects' places. Each point had to be clicked 5 times. The setup can be seen in \autoref{fig:calibration_webcam}.In addition, the calibration accuracy assessment in the end was done not with 1 point but 3: middle, left and right. Where left and right again correspond to the positions of the main objects on the screen. Furthermore, an in-between trial calibration was incorporated to ensure that the calibration was still accurate. The number of points were reduced to 5 each point corresponding to one of the areas of interest. No accuracy assessment was done during the in-between trial calibration. The setup can be seen in \autoref{fig:inbetween_calibration_webcam}.
 
 \begin{figure}
     \centering
@@ -52,7 +52,7 @@ Furthermore, a performance issue arised during the pilot phase. The issues was t
     \label{fig:calibration_instr}
 \end{figure}
 
-The calibration is highly dependent on the setup. Hence, the following pieces of advice were given to the participants to increase chances of successful calibration: keep the laptop on charging during the whole experiment (to make sure the eye tracking does not suffer from battery saving features); choose a quiet, well-lit room with minimal distractions and use a stable chair; place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face; keep your head sas still as possible during the experiment; make this window full screen size if not already. In addition, right before the calibration the participants were shown their webcam feed to make sure they are centered and the lighting is good as well as some visual advice on how to improve the calibration. The visuals can be seen in \autoref{fig:calibration_instr}. They were taken from a different experiment \cite{Semmelmann_2018} that was conducted with use of WebGazer \cite{wegbazer}.
+The calibration is highly dependent on the setup. Hence, the following pieces of advice were given to the participants to increase chances of successful calibration: keep the laptop on charging during the whole experiment (to make sure the eye tracking does not suffer from battery saving features); choose a quiet, well-lit room with minimal distractions and use a stable chair; place your laptop on a stable surface, screen directly in front of you. Later during the calibration, ensure the webcam is centered with your face; keep your head sas still as possible during the experiment; make this window full screen size if not already. In addition, right before the calibration the participants were shown their webcam feed to make sure they are centered and the lighting is good as well as some visual advice on how to improve the calibration. The visuals can be seen in \autoref{fig:calibration_instr}. They were taken from a different experiment \cite{Semmelmann_2018} that was conducted with use of WebGazer \cite{webgazer}.
 
 Even with all the optimizations in place, the calibration procedure was still relatively difficult to pass. The participants were not restricted in number of attempts to calibrate. However, the participants were informed that the approval is only possible after successfully completing the calibration and the rest of the experiment. The resulting rate of successful completions was only around 30\%. However, that resulted in a good quality of data.
 
@@ -73,11 +73,38 @@ The participants were told about the eye tracking right in the beginning of the 
 \label{sec:analysis:features}
 Considering the related eye tracking study \cite{Vigneau_2006}, the analysis will be around the defined eye tracking features. \cite{Vigneau_2006} defined mainly 5 types of features: absolute time on an area of interest, proportional time on an area of interest, toggling (between the Raven's matrix and the available messages), item latency (time to complete the trial) and latency to first toggle and matrix distribution index (how equally the attention was spread across the matrix items). In this study on the other hand, we are mainly focused on the proportional time on the areas of interest. The decision was made for multiple reasons. First of all the sampling rate of WebGazer is highly dependent on the participants' computer, making the absolute time on the areas of interest and latency to first fixation not comparable between participants. Second of all, we do not have such a strong hypothesis about what exactly people do during the task solving process as \cite{Vigneau_2006} had. We are rather interested in the general profile of attention, hence, no toggling features were included in the analysis. 
 
-In addition to the eye tracking features, we included some general features about the trial. The features are: trial number, condition (Simple, Complex, Unambiguous), type of sent message feature (shape or color), correct (whether the trial was solved correctly or not) and target position (left, center or right). The condition and correct features play crucial role in the analysis. While the other features such as trial number, type of sent message and target position were included due to the fact that they were shown to have a significant effect on the participants' performance in the previous studies \cite{Mayn_2023, Mayn_2025}.
+In addition to the eye tracking features, we included some general features about the trial. The features are: trial number, condition (Simple, Complex, Unambiguous), type of sent message feature (shape or color), correct (whether the trial was solved correctly or not) and target position (left, center or right). The condition and correct features play crucial role in the analysis. While the other features such as trial number, type of sent message and target position were included due to the fact that they were shown to sometimes have a significant effect on the participants' performance in the previous studies \cite{Mayn_2023, Mayn_2025}.
 
 \subsection{Data Preprocessing}
 \label{sec:analysis:preprocessing}
+The data preprocessing was done in Python using the pandas library \cite{pandas}. Firstly, due to how LingoTurk \cite{lingoturk} is implemented, we had to parse the data from string into the dictionary and create a data frame from it. As was mentioned before, the WebGazer \cite{webgazer} library was used to track the eye gaze. The WebGazer predicts the x and y coordinates of the current gaze point on the screen. Hence, we had to define a certain boundaries for the areas of interest in order to assign the predicted gaze points to them. Taking into account the weighted calibration \autoref{sec:data:eyetr} implemented for the left and right objects we had to make the margin a little larger for the left and right objects comparing to the center one. We settled on defining four point polygons for each of the interest areas. 
 
+The polygons were defined using the following variables: 
+\begin{itemize}
+    \item $x_{12}$ - x coordinate equally distant between the left and the center images of the objects.
+    \item $x_{23}$ - x coordinate equally distant between the center and the right images of the objects.
+    \item $y_{12}$ - y coordinate equally distant between the sent message image and the center object image.
+    \item $y_{23}$ - y coordinate equally distant between the center object image and the available messages images.
+\end{itemize}
+I is worth to note that the values of the variables can be easily computed using the coordinates of left top corner of an image and its' width and height. Finally, the polygons were defined via four points as follows:
+\begin{itemize}
+    \item sent message - $((\frac{x_{23}+x_{12}}{2}, 0), (\frac{x_{12}}{2}, 0), (x_{12}, y_{12}), (x_{23}, y_{12}))$
+    \item left object  - $((0, \frac{y_{12}}{2}), (x_{12}, y_{12}), (x_{12}, y_{23}), (0, \frac{y_{23}+y_{12}}{2}))$
+    \item center object - $((x_{12}, y_{12}), (x_{23}, y_{12}), (x_{23}, y_{23}), (x_{12}, y_{23}))$
+    \item right object - $((x_{23}, y_{12}), (x_{12}+x_{23}, \frac{y_{12}}{2}), (x_{12}+x_{23}, y_{23}+\frac{y_{12}}{2}), (x_{23}, y_{23}))$
+    \item available messages - $((x_{12}, y_{23}), (x_{23}, y_{23}), (\frac{x_{23}+x_{12}}{2}, y_{12}+y_{23}), (\frac{x_{12}}{2}, y_{12}+y_{23}))$
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/polygons.png}
+    \caption{Polygons for the areas of interest}
+    \label{fig:polygons}
+\end{figure}
+The visualization is shown in \autoref{fig:polygons}. 
+
+\subsection{Eye Tracking Features}
+\label{sec:analysis:eyetr}
+Based on whether a point was inside a certain polygon or none of them it was assigned to the corresponding area of interest or to the non-area of interest category. Each point was not represented by the time between the current and the previous point as the rate of sampling was not the same across participants. In order to mitigate this issue a fixation detection algorithm was tried out. The algorithm is implemented in R \cite{fixation_detection}. 
 
 \subsection{Pairwise Correlations}
 \label{sec:analysis:corr}
