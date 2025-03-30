@@ -172,7 +172,7 @@ The main analysis will be done using mixed effects logistic regressions. The mod
     AnswerCorrect ~ Condition + TrgtPosition + Trial + 
     PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + 
     PropTimeOnSentMsg + PropTimeOnAvailableMsgs + 
-    PropTimeOnNonAOI + MsgType + 
+    PropTimeOnNonAOI + MsgType +
     (1 + Condition + TrgtPosition + Trial + PropTimeOnTrgt + 
     PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + 
     PropTimeOnAvailableMsgs + MsgType | Subject)
@@ -181,12 +181,14 @@ The main analysis will be done using mixed effects logistic regressions. The mod
 However, we quickly realized that the model is missing interaction between the condition of the trial and the eye tracking features. The interaction is important because the first two hypothesis are based on the differences of the accuracy and eye tracking feature based on different trial conditions. Therefore the starting model for the first two hypothesis was changed to the following:
 
 \begin{verbatim}
-    AnswerCorrect ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
-    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
-    PropTimeOnAvailableMsgs + PropTimeOnNonAOI + MsgType +
+    AnswerCorrect ~ Condition + TrgtPosition + Trial + 
+    PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + 
+    PropTimeOnSentMsg + PropTimeOnAvailableMsgs + 
+    PropTimeOnNonAOI + MsgType +
     Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
-    Condition:PropTimeOnAvailableMsgs + Condition:PropTimeOnNonAOI +
+    Condition:PropTimeOnAvailableMsgs + 
+    Condition:PropTimeOnNonAOI +
     (1 + Condition + TrgtPosition + Trial + PropTimeOnTrgt + 
     PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + 
     PropTimeOnAvailableMsgs + MsgType | Subject)
