@@ -8,7 +8,7 @@ While the participants were recruited via Prolific \cite{prolific} - a subject p
 
 \subsection{Reference Games}
 \label{sec:data:ref_games}
-There are 3 conditions of the reference games: Simple, Complex and Unambiguous. In the \autoref{sec:rsa} we mainly talked about the Simple and Complex conditions. The Unambiguous condition suits two main purposes. First of all, it acts as a sort of filler, so that participants do not get used to the same type of problems. Second of all, it acts as a control check, that is, participants who do not reach over 50\% accuracy on the Unambiguous trials are excluded from the analysis.
+There are 3 conditions of the reference games: Simple, Complex and Unambiguous. In the \autoref{sec:rsa} we mainly talked about the Simple and Complex conditions. The Unambiguous condition suits two main purposes. First of all, it acts as a sort of filler, so that participants do not get used to the same type of problems. Second of all, it acts as a control check, that is, participants who do not reach 75\% accuracy on the Unambiguous trials are excluded from the analysis.
 
 The trials were generated using 3 colors: red, green and blue, and 3 shapes: square, circle and triangle. In total there are 72 combinations of unique trials. The full list of trials can be found \TODO{insert link to apendix}. The code used to generate trials can be found at \TODO{insert link to the source code} For each condition every unique sent message was repeated exactly twice. Which results in 12 trials of every condition. Furthermore one simple and one complex trial was picked to be repeated once again in the very end of the experiment. These were so called strategy trials where we would ask the participants to explain their reasoning behind the choice of the object. All trials were randomly shuffled before the experiment, except for the strategy trials which were always at the end of the experiment.
 
@@ -168,7 +168,45 @@ Similarly to \cite{Vigneau_2006}, we will report the pairwise correlations of ey
 \label{sec:analysis:mixed_effects}
 
 The main analysis will be done using mixed effects logistic regressions. The models are designed to correspond to our hypothesis presented in \autoref{sec:research_questions}. For the hypothesis 1 and 2, the following model was preregistered:
+\begin{verbatim}
+    AnswerCorrect ~ Condition + TrgtPosition + Trial + 
+    PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + 
+    PropTimeOnSentMsg + PropTimeOnAvailableMsgs + 
+    PropTimeOnNonAOI + MsgType + 
+    (1 + Condition + TrgtPosition + Trial + PropTimeOnTrgt + 
+    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + 
+    PropTimeOnAvailableMsgs + MsgType | Subject)
+\end{verbatim}
 
+However, we quickly realized that the model is missing interaction between the condition of the trial and the eye tracking features. The interaction is important because the first two hypothesis are based on the differences of the accuracy and eye tracking feature based on different trial conditions. Therefore the starting model for the first two hypothesis was changed to the following:
+
+\begin{verbatim}
+    AnswerCorrect ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
+    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
+    PropTimeOnAvailableMsgs + PropTimeOnNonAOI + MsgType +
+    Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
+    Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
+    Condition:PropTimeOnAvailableMsgs + Condition:PropTimeOnNonAOI +
+    (1 + Condition + TrgtPosition + Trial + PropTimeOnTrgt + 
+    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + 
+    PropTimeOnAvailableMsgs + MsgType | Subject)
+\end{verbatim}
+
+Through this model we will be able to test the first two hypothesis. Mainly whether the distractor is positively associated with the accuracy on the complex trials. And, for the second hypothesis, whether the available messages become important on the simple trial comparing to unambiguous and maybe complex as well. The model will be fit on the trial level and predicts whether the answer was correct or not. The `Trial' feature was rescaled to be between 0 and 1, in order to match the scale of other features.
+
+As for the third and fourth hypothesis, each of them will be tested using a separate model. Both of them predict whether a gaze point was on a certain area of interest. Hence, the data to fit them is made on the fixation level. Only the gaze points from the correctly solved trials were added to the data to match the hypothesis. The third hypothesis will be tested using the following model:
+\begin{verbatim}
+    OnDist ~ Condition + Trial + MsgType + TrgtPos +
+    (1 + Condition + Trial + MsgType + TrgtPos | Subject)
+\end{verbatim}
+It predicts whether a gaze point was on the distractor or not based on the general information about the trial. 
+
+The fourth hypothesis will be tested using the following model:
+\begin{verbatim}
+    OnAvMsgs ~ Condition + Trial + MsgType + TrgtPos +
+    (1 + Condition + Trial + MsgType + TrgtPos | Subject)
+\end{verbatim}
+It predicts whether a gaze point was on the bank of available messages or not based on the general information about the trial. 
 
 \subsection{Exploratory Analysis}
 \label{sec:analysis:exploratory}
