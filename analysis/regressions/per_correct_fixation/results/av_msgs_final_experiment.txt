@@ -6,36 +6,36 @@ Formula: OnAvMsgs ~ Condition + Trial + MsgType + TrgtPos + (1 + TrgtPos |
    Data: df_av_msgs
 
      AIC      BIC   logLik deviance df.resid 
-182203.1 182338.7 -91088.5 182177.1   250451 
+181176.2 181311.7 -90575.1 181150.2   249509 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--0.8238 -0.4351 -0.3259 -0.2105 15.2621 
+-0.8257 -0.4348 -0.3256 -0.2100 15.4488 
 
 Random effects:
  Groups  Name        Variance Std.Dev. Corr       
- Subject (Intercept) 0.5075   0.7124              
-         TrgtPos2    0.4783   0.6916   -0.34      
-         TrgtPos3    0.7141   0.8450   -0.31  0.48
-Number of obs: 250464, groups:  Subject, 102
+ Subject (Intercept) 0.4971   0.7051              
+         TrgtPos2    0.4796   0.6925   -0.33      
+         TrgtPos3    0.7237   0.8507   -0.31  0.48
+Number of obs: 249522, groups:  Subject, 101
 
 Fixed effects:
              Estimate Std. Error z value Pr(>|z|)    
-(Intercept) -2.195390   0.070377 -31.195   <2e-16 ***
-Condition1  -0.062854   0.007040  -8.928   <2e-16 ***
-Condition2  -0.381134   0.006914 -55.127   <2e-16 ***
-Trial       -0.249918   0.020200 -12.372   <2e-16 ***
-MsgType1     0.086780   0.006549  13.251   <2e-16 ***
-TrgtPos2    -0.149097   0.070413  -2.117   0.0342 *  
-TrgtPos3    -0.139714   0.086217  -1.620   0.1051    
+(Intercept) -2.203479   0.071117 -30.984   <2e-16 ***
+Condition1  -0.063457   0.007055  -8.994   <2e-16 ***
+Condition2  -0.385249   0.006971 -55.266   <2e-16 ***
+Trial       -0.263086   0.020323 -12.945   <2e-16 ***
+MsgType1     0.085257   0.006572  12.973   <2e-16 ***
+TrgtPos2    -0.143026   0.071938  -1.988   0.0468 *  
+TrgtPos3    -0.140490   0.086600  -1.622   0.1047    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
            (Intr) Cndtn1 Cndtn2 Trial  MsgTy1 TrgtP2
 Condition1  0.002                                   
-Condition2  0.044 -0.025                            
-Trial      -0.122  0.027  0.112                     
-MsgType1   -0.010  0.092  0.000  0.030              
-TrgtPos2   -0.329 -0.005 -0.003 -0.005 -0.005       
-TrgtPos3   -0.290 -0.005 -0.003 -0.007 -0.006  0.437
+Condition2  0.047 -0.022                            
+Trial      -0.125  0.028  0.110                     
+MsgType1   -0.010  0.091  0.001  0.031              
+TrgtPos2   -0.325 -0.004 -0.004 -0.004 -0.004       
+TrgtPos3   -0.302 -0.004 -0.004 -0.004 -0.005  0.444
