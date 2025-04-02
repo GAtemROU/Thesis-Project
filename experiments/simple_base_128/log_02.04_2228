@@ -1,0 +1,525 @@
+Fold 1
+['5723714684458100120292f6', '5797564b70c76a0001245734', '58d62c1733fef30001189b75', '590ac40eb180c90001e08998', '599ab130b5566b0001aa85bb', '5a7226d9f660ae0001a9a547', '5a9c4b3d35237b000112a00e', '5ae31a8b9c97020001d1eaa7', '5bba0b4ce845ff0001e9aae7', '5bcdc51fad25080001447512', '5c446de311bc1c0001fff3fe', '5c8e905a40fb570016af2fb6', '5cab9c01291df900015c2849', '5cb3cdc781f3750001043bf2', '5cbcc928ec9b730018bad2a9', '5cdc5bc31f7a97001b6e5c31', '5d514a73f20feb00160b5e0e', '5d68c8aa40524c00189e8ac2', '5d76ac914c93440001c03fd7', '5d9b02cd4ce5d302eb84801d']
+Epoch [1], Loss: 41.1787, Val acc: 0.78
+Epoch [2], Loss: 27.6727, Val acc: 0.30
+Epoch [3], Loss: 19.1284, Val acc: 0.79
+Epoch [4], Loss: 11.9001, Val acc: 0.21
+Epoch [5], Loss: 11.3163, Val acc: 0.22
+Epoch [6], Loss: 7.0865, Val acc: 0.63
+Epoch [7], Loss: 1.5203, Val acc: 0.29
+Epoch [8], Loss: 2.4133, Val acc: 0.69
+Epoch [9], Loss: 0.4394, Val acc: 0.72
+Epoch [10], Loss: 0.2591, Val acc: 0.78
+Epoch [11], Loss: 0.1721, Val acc: 0.79
+Epoch [12], Loss: 0.1654, Val acc: 0.74
+Epoch [13], Loss: 0.0889, Val acc: 0.77
+Epoch [14], Loss: 0.0393, Val acc: 0.75
+Epoch [15], Loss: 0.1188, Val acc: 0.79
+Epoch [16], Loss: 0.1205, Val acc: 0.72
+Epoch [17], Loss: 0.1352, Val acc: 0.78
+Epoch [18], Loss: 0.0426, Val acc: 0.77
+Epoch [19], Loss: 0.0229, Val acc: 0.78
+Epoch [20], Loss: 0.0216, Val acc: 0.77
+Epoch [21], Loss: 3.0968, Val acc: 0.77
+Epoch [22], Loss: 1.8999, Val acc: 0.71
+Epoch [23], Loss: 1.6792, Val acc: 0.67
+Epoch [24], Loss: 0.8950, Val acc: 0.90
+Epoch [25], Loss: 0.2592, Val acc: 0.88
+Epoch [26], Loss: 0.3514, Val acc: 0.92
+Epoch [27], Loss: 0.1031, Val acc: 0.90
+Epoch [28], Loss: 0.0686, Val acc: 0.90
+Epoch [29], Loss: 0.0613, Val acc: 0.91
+Epoch [30], Loss: 0.0201, Val acc: 0.91
+Epoch [31], Loss: 0.0183, Val acc: 0.88
+Epoch [32], Loss: 0.0456, Val acc: 0.91
+Epoch [33], Loss: 0.0555, Val acc: 0.91
+Epoch [34], Loss: 0.0083, Val acc: 0.86
+Epoch [35], Loss: 0.0473, Val acc: 0.88
+Epoch [36], Loss: 0.1716, Val acc: 0.88
+Epoch [37], Loss: 0.0227, Val acc: 0.88
+Epoch [38], Loss: 0.0276, Val acc: 0.85
+Epoch [39], Loss: 0.0207, Val acc: 0.83
+Epoch [40], Loss: 0.0254, Val acc: 0.87
+Epoch [41], Loss: 0.5864, Val acc: 0.96
+Epoch [42], Loss: 0.3237, Val acc: 0.66
+Epoch [43], Loss: 1.0383, Val acc: 0.98
+Epoch [44], Loss: 0.1579, Val acc: 0.98
+Epoch [45], Loss: 0.1454, Val acc: 0.97
+Epoch [46], Loss: 0.1845, Val acc: 0.82
+Epoch [47], Loss: 0.3092, Val acc: 0.98
+Epoch [48], Loss: 0.1283, Val acc: 0.99
+Epoch [49], Loss: 0.0436, Val acc: 0.99
+Epoch [50], Loss: 0.0488, Val acc: 0.98
+Epoch [51], Loss: 0.0237, Val acc: 0.99
+Epoch [52], Loss: 0.0240, Val acc: 0.99
+Epoch [53], Loss: 0.0368, Val acc: 0.99
+Epoch [54], Loss: 0.0195, Val acc: 0.98
+Epoch [55], Loss: 0.0762, Val acc: 0.69
+Epoch [56], Loss: 0.3003, Val acc: 0.97
+Epoch [57], Loss: 0.0348, Val acc: 0.97
+Epoch [58], Loss: 0.0328, Val acc: 0.97
+Epoch [59], Loss: 0.0259, Val acc: 0.97
+Epoch [60], Loss: 0.0711, Val acc: 0.97
+Epoch [61], Loss: 0.1763, Val acc: 1.00
+Epoch [62], Loss: 0.1008, Val acc: 0.99
+Epoch [63], Loss: 0.0226, Val acc: 1.00
+Epoch [64], Loss: 0.0139, Val acc: 1.00
+Epoch [65], Loss: 0.0798, Val acc: 1.00
+Epoch [66], Loss: 0.0372, Val acc: 1.00
+Epoch [67], Loss: 0.0350, Val acc: 1.00
+Epoch [68], Loss: 0.0277, Val acc: 1.00
+Epoch [69], Loss: 0.0219, Val acc: 1.00
+Epoch [70], Loss: 0.0156, Val acc: 1.00
+Epoch [71], Loss: 0.0041, Val acc: 1.00
+Epoch [72], Loss: 0.0292, Val acc: 1.00
+Epoch [73], Loss: 0.0335, Val acc: 1.00
+Epoch [74], Loss: 0.0269, Val acc: 1.00
+Epoch [75], Loss: 0.0840, Val acc: 0.91
+Epoch [76], Loss: 0.1767, Val acc: 1.00
+Epoch [77], Loss: 0.0371, Val acc: 1.00
+Epoch [78], Loss: 0.0175, Val acc: 1.00
+Epoch [79], Loss: 0.0012, Val acc: 1.00
+Epoch [80], Loss: 0.0076, Val acc: 1.00
+Test accuracy: 0.8538, F1 score: 0.9202
+Confusion matrices:
+{'5723714684458100120292f6': array([[12,  0],
+       [ 1,  0]]), '5797564b70c76a0001245734': array([[12,  1],
+       [ 0,  0]]), '58d62c1733fef30001189b75': array([[13,  0],
+       [ 0,  0]]), '590ac40eb180c90001e08998': array([[7, 3],
+       [2, 1]]), '599ab130b5566b0001aa85bb': array([[10,  2],
+       [ 1,  0]]), '5a7226d9f660ae0001a9a547': array([[11,  2],
+       [ 0,  0]]), '5a9c4b3d35237b000112a00e': array([[9, 3],
+       [1, 0]]), '5ae31a8b9c97020001d1eaa7': array([[11,  1],
+       [ 1,  0]]), '5bba0b4ce845ff0001e9aae7': array([[12,  0],
+       [ 1,  0]]), '5bcdc51fad25080001447512': array([[13,  0],
+       [ 0,  0]]), '5c446de311bc1c0001fff3fe': array([[12,  1],
+       [ 0,  0]]), '5c8e905a40fb570016af2fb6': array([[12,  0],
+       [ 1,  0]]), '5cab9c01291df900015c2849': array([[12,  1],
+       [ 0,  0]]), '5cb3cdc781f3750001043bf2': array([[10,  3],
+       [ 0,  0]]), '5cbcc928ec9b730018bad2a9': array([[10,  0],
+       [ 1,  2]]), '5cdc5bc31f7a97001b6e5c31': array([[11,  0],
+       [ 2,  0]]), '5d514a73f20feb00160b5e0e': array([[9, 1],
+       [3, 0]]), '5d68c8aa40524c00189e8ac2': array([[12,  0],
+       [ 1,  0]]), '5d76ac914c93440001c03fd7': array([[9, 3],
+       [1, 0]]), '5d9b02cd4ce5d302eb84801d': array([[12,  1],
+       [ 0,  0]])}
+Fold 2
+['5db09b3a9611830016dd495b', '5df7f73b6d8cc7000a390c2e', '5dfcabf44b49a19b13dbb17f', '5e2ec5940038f248414fc400', '5e8d804740aaf4000a51d9e9', '5e909d6c5321c13abee11725', '5e9acf727a43c80009bab5bf', '5ec1129f45a5365297e63600', '5ed9ee3afd7ffe59917d3dfa', '5f262b3018c68e27aebdd170', '5f58970c75be84000bd26e43', '5ff32b1fb1111683f97a51b1', '6007421356226920359b5f3e', '60154af277ec314fd8fe1449', '609911e00dd4843e39cb88ac', '60b0015eb67dca63ffe16ae0', '60b235f65a20aec2984f4b80', '60bdf8d25b1738af456873e4', '60d4558116de644bde568dde', '60fc3a1e0eb578aa02590e27']
+Epoch [1], Loss: 46.0951, Val acc: 0.93
+Epoch [2], Loss: 29.9177, Val acc: 0.57
+Epoch [3], Loss: 15.8213, Val acc: 0.93
+Epoch [4], Loss: 13.6527, Val acc: 0.67
+Epoch [5], Loss: 7.5064, Val acc: 0.81
+Epoch [6], Loss: 4.3514, Val acc: 0.93
+Epoch [7], Loss: 4.7208, Val acc: 0.76
+Epoch [8], Loss: 1.1585, Val acc: 0.55
+Epoch [9], Loss: 0.9035, Val acc: 0.83
+Epoch [10], Loss: 0.6250, Val acc: 0.63
+Epoch [11], Loss: 0.4166, Val acc: 0.88
+Epoch [12], Loss: 0.1764, Val acc: 0.88
+Epoch [13], Loss: 0.2239, Val acc: 0.90
+Epoch [14], Loss: 0.1893, Val acc: 0.89
+Epoch [15], Loss: 0.1220, Val acc: 0.80
+Epoch [16], Loss: 0.0682, Val acc: 0.84
+Epoch [17], Loss: 0.0795, Val acc: 0.85
+Epoch [18], Loss: 0.0519, Val acc: 0.86
+Epoch [19], Loss: 0.0593, Val acc: 0.84
+Epoch [20], Loss: 0.0483, Val acc: 0.84
+Epoch [21], Loss: 18.3598, Val acc: 0.43
+Epoch [22], Loss: 14.7304, Val acc: 0.71
+Epoch [23], Loss: 8.8150, Val acc: 0.70
+Epoch [24], Loss: 6.6006, Val acc: 0.70
+Epoch [25], Loss: 3.8097, Val acc: 0.69
+Epoch [26], Loss: 2.2941, Val acc: 0.70
+Epoch [27], Loss: 2.7884, Val acc: 0.70
+Epoch [28], Loss: 0.6603, Val acc: 0.69
+Epoch [29], Loss: 0.3714, Val acc: 0.67
+Epoch [30], Loss: 0.3082, Val acc: 0.68
+Epoch [31], Loss: 0.6675, Val acc: 0.60
+Epoch [32], Loss: 0.7181, Val acc: 0.72
+Epoch [33], Loss: 0.1016, Val acc: 0.67
+Epoch [34], Loss: 0.1074, Val acc: 0.67
+Epoch [35], Loss: 0.0809, Val acc: 0.69
+Epoch [36], Loss: 0.1061, Val acc: 0.64
+Epoch [37], Loss: 0.0881, Val acc: 0.67
+Epoch [38], Loss: 0.1718, Val acc: 0.70
+Epoch [39], Loss: 0.3951, Val acc: 0.69
+Epoch [40], Loss: 0.0713, Val acc: 0.48
+Epoch [41], Loss: 20.8720, Val acc: 0.72
+Epoch [42], Loss: 15.0098, Val acc: 0.64
+Epoch [43], Loss: 9.1566, Val acc: 0.70
+Epoch [44], Loss: 5.3179, Val acc: 0.66
+Epoch [45], Loss: 3.4796, Val acc: 0.73
+Epoch [46], Loss: 3.8633, Val acc: 0.57
+Epoch [47], Loss: 2.1964, Val acc: 0.61
+Epoch [48], Loss: 1.6694, Val acc: 0.70
+Epoch [49], Loss: 0.2588, Val acc: 0.72
+Epoch [50], Loss: 0.5342, Val acc: 0.39
+Epoch [51], Loss: 1.5647, Val acc: 0.74
+Epoch [52], Loss: 0.1386, Val acc: 0.74
+Epoch [53], Loss: 0.1234, Val acc: 0.73
+Epoch [54], Loss: 0.1329, Val acc: 0.73
+Epoch [55], Loss: 0.0939, Val acc: 0.73
+Epoch [56], Loss: 0.0111, Val acc: 0.73
+Epoch [57], Loss: 0.0582, Val acc: 0.73
+Epoch [58], Loss: 0.0278, Val acc: 0.73
+Epoch [59], Loss: 0.0711, Val acc: 0.71
+Epoch [60], Loss: 0.0575, Val acc: 0.75
+Epoch [61], Loss: 28.0100, Val acc: 0.82
+Epoch [62], Loss: 15.1532, Val acc: 0.76
+Epoch [63], Loss: 8.6044, Val acc: 0.58
+Epoch [64], Loss: 4.1217, Val acc: 0.59
+Epoch [65], Loss: 1.8008, Val acc: 0.70
+Epoch [66], Loss: 1.4793, Val acc: 0.82
+Epoch [67], Loss: 2.7626, Val acc: 0.74
+Epoch [68], Loss: 0.6380, Val acc: 0.80
+Epoch [69], Loss: 1.6672, Val acc: 0.75
+Epoch [70], Loss: 0.7724, Val acc: 0.76
+Epoch [71], Loss: 0.2135, Val acc: 0.74
+Epoch [72], Loss: 0.1483, Val acc: 0.68
+Epoch [73], Loss: 0.0994, Val acc: 0.75
+Epoch [74], Loss: 0.1508, Val acc: 0.53
+Epoch [75], Loss: 0.2637, Val acc: 0.73
+Epoch [76], Loss: 0.1310, Val acc: 0.77
+Epoch [77], Loss: 0.0439, Val acc: 0.72
+Epoch [78], Loss: 0.1653, Val acc: 0.75
+Epoch [79], Loss: 0.1015, Val acc: 0.73
+Epoch [80], Loss: 0.0162, Val acc: 0.72
+Test accuracy: 0.7962, F1 score: 0.8850
+Confusion matrices:
+{'5db09b3a9611830016dd495b': array([[11,  0],
+       [ 2,  0]]), '5df7f73b6d8cc7000a390c2e': array([[7, 0],
+       [6, 0]]), '5dfcabf44b49a19b13dbb17f': array([[12,  0],
+       [ 1,  0]]), '5e2ec5940038f248414fc400': array([[13,  0],
+       [ 0,  0]]), '5e8d804740aaf4000a51d9e9': array([[13,  0],
+       [ 0,  0]]), '5e909d6c5321c13abee11725': array([[4, 1],
+       [5, 3]]), '5e9acf727a43c80009bab5bf': array([[11,  0],
+       [ 2,  0]]), '5ec1129f45a5365297e63600': array([[9, 0],
+       [4, 0]]), '5ed9ee3afd7ffe59917d3dfa': array([[11,  0],
+       [ 2,  0]]), '5f262b3018c68e27aebdd170': array([[5, 0],
+       [8, 0]]), '5f58970c75be84000bd26e43': array([[12,  0],
+       [ 1,  0]]), '5ff32b1fb1111683f97a51b1': array([[7, 0],
+       [6, 0]]), '6007421356226920359b5f3e': array([[12,  0],
+       [ 1,  0]]), '60154af277ec314fd8fe1449': array([[13,  0],
+       [ 0,  0]]), '609911e00dd4843e39cb88ac': array([[7, 0],
+       [6, 0]]), '60b0015eb67dca63ffe16ae0': array([[13,  0],
+       [ 0,  0]]), '60b235f65a20aec2984f4b80': array([[10,  0],
+       [ 3,  0]]), '60bdf8d25b1738af456873e4': array([[9, 0],
+       [4, 0]]), '60d4558116de644bde568dde': array([[12,  0],
+       [ 1,  0]]), '60fc3a1e0eb578aa02590e27': array([[13,  0],
+       [ 0,  0]])}
+Fold 3
+['6129f121d0c220eb7b6f1481', '612adba08b8235b31539c704', '616c98c5821cbeeffb348e40', '616f3496967585b2c7b39d2e', '6283e5cee0833a2307ddeb0f', '629f2d6a8d790f69182e8b3e', '62b44f66a16d45783569fad6', '62c5d0cfdf443d24e054d302', '62c9e5f7ad5a36ab331103bb', '62e023ae6d022e4d7bfc5db1', '6310c063bd0cce86b0289d20', '634957b2decaf2d2b47f1e85', '63cfee97e59ec37f870b287f', '63d161c9e0cf5f1b1f7bce5b', '6416533bd4ee6639c3df6040', '641ecfa9f83175a3d9f63636', '651282bee74e48b581f77d04', '651fbf405f6a2b4756a93b5a', '65a297db6bf9a9f5140b2b04', '65c900c7a7dc9db70e311289']
+Epoch [1], Loss: 34.6106, Val acc: 0.76
+Epoch [2], Loss: 19.6673, Val acc: 0.92
+Epoch [3], Loss: 11.1620, Val acc: 0.46
+Epoch [4], Loss: 4.6896, Val acc: 0.89
+Epoch [5], Loss: 3.5662, Val acc: 0.92
+Epoch [6], Loss: 3.3599, Val acc: 0.74
+Epoch [7], Loss: 1.5914, Val acc: 0.82
+Epoch [8], Loss: 0.7380, Val acc: 0.91
+Epoch [9], Loss: 0.4968, Val acc: 0.33
+Epoch [10], Loss: 0.9886, Val acc: 0.91
+Epoch [11], Loss: 0.4444, Val acc: 0.73
+Epoch [12], Loss: 0.1871, Val acc: 0.81
+Epoch [13], Loss: 0.0390, Val acc: 0.83
+Epoch [14], Loss: 0.0886, Val acc: 0.73
+Epoch [15], Loss: 0.0991, Val acc: 0.75
+Epoch [16], Loss: 0.0308, Val acc: 0.73
+Epoch [17], Loss: 0.0053, Val acc: 0.76
+Epoch [18], Loss: 0.0319, Val acc: 0.82
+Epoch [19], Loss: 0.0618, Val acc: 0.82
+Epoch [20], Loss: 0.0514, Val acc: 0.88
+Epoch [21], Loss: 12.2546, Val acc: 0.80
+Epoch [22], Loss: 6.8457, Val acc: 0.79
+Epoch [23], Loss: 5.2178, Val acc: 0.74
+Epoch [24], Loss: 2.7558, Val acc: 0.80
+Epoch [25], Loss: 1.4179, Val acc: 0.75
+Epoch [26], Loss: 0.7484, Val acc: 0.78
+Epoch [27], Loss: 0.3470, Val acc: 0.77
+Epoch [28], Loss: 0.1360, Val acc: 0.79
+Epoch [29], Loss: 0.0491, Val acc: 0.77
+Epoch [30], Loss: 0.0188, Val acc: 0.78
+Epoch [31], Loss: 0.1407, Val acc: 0.74
+Epoch [32], Loss: 0.0386, Val acc: 0.77
+Epoch [33], Loss: 0.0302, Val acc: 0.79
+Epoch [34], Loss: 0.0203, Val acc: 0.77
+Epoch [35], Loss: 0.0619, Val acc: 0.78
+Epoch [36], Loss: 0.0353, Val acc: 0.77
+Epoch [37], Loss: 0.0313, Val acc: 0.77
+Epoch [38], Loss: 0.0081, Val acc: 0.79
+Epoch [39], Loss: 0.0229, Val acc: 0.77
+Epoch [40], Loss: 0.0230, Val acc: 0.72
+Epoch [41], Loss: 10.0324, Val acc: 0.63
+Epoch [42], Loss: 5.8042, Val acc: 0.77
+Epoch [43], Loss: 2.7273, Val acc: 0.31
+Epoch [44], Loss: 4.0097, Val acc: 0.62
+Epoch [45], Loss: 1.2955, Val acc: 0.72
+Epoch [46], Loss: 0.2584, Val acc: 0.75
+Epoch [47], Loss: 0.0572, Val acc: 0.74
+Epoch [48], Loss: 0.1837, Val acc: 0.74
+Epoch [49], Loss: 0.0147, Val acc: 0.75
+Epoch [50], Loss: 0.1005, Val acc: 0.74
+Epoch [51], Loss: 0.0568, Val acc: 0.75
+Epoch [52], Loss: 0.1268, Val acc: 0.56
+Epoch [53], Loss: 0.6456, Val acc: 0.75
+Epoch [54], Loss: 0.0256, Val acc: 0.76
+Epoch [55], Loss: 0.0461, Val acc: 0.73
+Epoch [56], Loss: 0.0212, Val acc: 0.72
+Epoch [57], Loss: 0.0359, Val acc: 0.73
+Epoch [58], Loss: 0.0283, Val acc: 0.74
+Epoch [59], Loss: 0.0437, Val acc: 0.74
+Epoch [60], Loss: 0.0050, Val acc: 0.74
+Epoch [61], Loss: 8.8225, Val acc: 0.82
+Epoch [62], Loss: 10.8166, Val acc: 0.47
+Epoch [63], Loss: 5.4920, Val acc: 0.82
+Epoch [64], Loss: 1.9169, Val acc: 0.45
+Epoch [65], Loss: 2.6779, Val acc: 0.78
+Epoch [66], Loss: 0.7868, Val acc: 0.78
+Epoch [67], Loss: 0.3827, Val acc: 0.50
+Epoch [68], Loss: 0.4860, Val acc: 0.78
+Epoch [69], Loss: 0.1184, Val acc: 0.80
+Epoch [70], Loss: 0.1098, Val acc: 0.75
+Epoch [71], Loss: 0.1086, Val acc: 0.82
+Epoch [72], Loss: 0.0775, Val acc: 0.81
+Epoch [73], Loss: 0.0230, Val acc: 0.75
+Epoch [74], Loss: 0.0686, Val acc: 0.79
+Epoch [75], Loss: 0.0136, Val acc: 0.77
+Epoch [76], Loss: 0.0250, Val acc: 0.76
+Epoch [77], Loss: 0.0212, Val acc: 0.79
+Epoch [78], Loss: 0.0166, Val acc: 0.79
+Epoch [79], Loss: 0.0310, Val acc: 0.76
+Epoch [80], Loss: 0.0194, Val acc: 0.78
+Test accuracy: 0.7038, F1 score: 0.8262
+Confusion matrices:
+{'6129f121d0c220eb7b6f1481': array([[12,  0],
+       [ 1,  0]]), '612adba08b8235b31539c704': array([[ 1,  0],
+       [12,  0]]), '616c98c5821cbeeffb348e40': array([[13,  0],
+       [ 0,  0]]), '616f3496967585b2c7b39d2e': array([[5, 0],
+       [8, 0]]), '6283e5cee0833a2307ddeb0f': array([[12,  0],
+       [ 1,  0]]), '629f2d6a8d790f69182e8b3e': array([[7, 0],
+       [6, 0]]), '62b44f66a16d45783569fad6': array([[12,  0],
+       [ 1,  0]]), '62c5d0cfdf443d24e054d302': array([[11,  0],
+       [ 2,  0]]), '62c9e5f7ad5a36ab331103bb': array([[ 2,  0],
+       [11,  0]]), '62e023ae6d022e4d7bfc5db1': array([[7, 0],
+       [6, 0]]), '6310c063bd0cce86b0289d20': array([[7, 0],
+       [6, 0]]), '634957b2decaf2d2b47f1e85': array([[12,  0],
+       [ 1,  0]]), '63cfee97e59ec37f870b287f': array([[13,  0],
+       [ 0,  0]]), '63d161c9e0cf5f1b1f7bce5b': array([[13,  0],
+       [ 0,  0]]), '6416533bd4ee6639c3df6040': array([[13,  0],
+       [ 0,  0]]), '641ecfa9f83175a3d9f63636': array([[10,  0],
+       [ 3,  0]]), '651282bee74e48b581f77d04': array([[ 1,  0],
+       [12,  0]]), '651fbf405f6a2b4756a93b5a': array([[6, 0],
+       [7, 0]]), '65a297db6bf9a9f5140b2b04': array([[13,  0],
+       [ 0,  0]]), '65c900c7a7dc9db70e311289': array([[13,  0],
+       [ 0,  0]])}
+Fold 4
+['660a6b953836d16312814993', '665336b8da7328bc1558c1f6', '6658c4239af9537eefdfbcc9', '6658c518bb57e6360147f8e8', '6658c531f3fa1df02771f9d5', '6659beb07a900f403259c2d9', '6659f640c20a6f66b592e819', '6659fb37cee75e81ac1c8e5c', '665a23c501fc5542133be144', '665c5b5cb53983b0b6323300', '666208dc57b332c5dbcaac25', '66640059232bcc6a15b24803', '6666ddd2507ac4efb0d2cea4', '666aee590ad93e0d709d8a72', '66718bbb61a1ad0225968d18', '66847cc7c67232fae11af5b3', '6694f7d49935de46241d49b3', '66a7a51803838a2db051e980', '66d1a3beb6b1c3ca21b3229c', '66d2190b4f1152adfcdfa82e']
+Epoch [1], Loss: 29.2168, Val acc: 0.90
+Epoch [2], Loss: 15.0453, Val acc: 0.93
+Epoch [3], Loss: 10.3479, Val acc: 0.35
+Epoch [4], Loss: 8.9520, Val acc: 0.48
+Epoch [5], Loss: 4.8924, Val acc: 0.90
+Epoch [6], Loss: 3.0360, Val acc: 0.18
+Epoch [7], Loss: 2.5058, Val acc: 0.90
+Epoch [8], Loss: 1.0494, Val acc: 0.85
+Epoch [9], Loss: 0.3925, Val acc: 0.82
+Epoch [10], Loss: 0.3250, Val acc: 0.85
+Epoch [11], Loss: 0.1586, Val acc: 0.78
+Epoch [12], Loss: 0.1230, Val acc: 0.87
+Epoch [13], Loss: 0.0810, Val acc: 0.81
+Epoch [14], Loss: 0.0372, Val acc: 0.82
+Epoch [15], Loss: 0.0431, Val acc: 0.85
+Epoch [16], Loss: 0.0176, Val acc: 0.83
+Epoch [17], Loss: 0.0448, Val acc: 0.86
+Epoch [18], Loss: 0.1052, Val acc: 0.84
+Epoch [19], Loss: 0.0097, Val acc: 0.85
+Epoch [20], Loss: 0.1226, Val acc: 0.84
+Epoch [21], Loss: 9.5084, Val acc: 0.79
+Epoch [22], Loss: 6.3937, Val acc: 0.74
+Epoch [23], Loss: 4.6242, Val acc: 0.78
+Epoch [24], Loss: 3.5184, Val acc: 0.79
+Epoch [25], Loss: 1.0839, Val acc: 0.41
+Epoch [26], Loss: 2.3325, Val acc: 0.70
+Epoch [27], Loss: 0.6346, Val acc: 0.79
+Epoch [28], Loss: 1.8704, Val acc: 0.73
+Epoch [29], Loss: 0.1604, Val acc: 0.78
+Epoch [30], Loss: 0.2094, Val acc: 0.56
+Epoch [31], Loss: 0.3726, Val acc: 0.75
+Epoch [32], Loss: 0.0808, Val acc: 0.75
+Epoch [33], Loss: 0.0460, Val acc: 0.74
+Epoch [34], Loss: 0.0516, Val acc: 0.78
+Epoch [35], Loss: 0.0545, Val acc: 0.78
+Epoch [36], Loss: 0.0151, Val acc: 0.77
+Epoch [37], Loss: 0.0139, Val acc: 0.76
+Epoch [38], Loss: 0.0154, Val acc: 0.76
+Epoch [39], Loss: 0.0222, Val acc: 0.78
+Epoch [40], Loss: 0.0573, Val acc: 0.78
+Epoch [41], Loss: 9.8823, Val acc: 0.72
+Epoch [42], Loss: 5.9449, Val acc: 0.60
+Epoch [43], Loss: 3.8697, Val acc: 0.33
+Epoch [44], Loss: 5.6414, Val acc: 0.56
+Epoch [45], Loss: 1.6838, Val acc: 0.65
+Epoch [46], Loss: 1.0007, Val acc: 0.70
+Epoch [47], Loss: 0.1796, Val acc: 0.70
+Epoch [48], Loss: 0.1018, Val acc: 0.69
+Epoch [49], Loss: 0.1008, Val acc: 0.72
+Epoch [50], Loss: 0.1190, Val acc: 0.71
+Epoch [51], Loss: 0.0311, Val acc: 0.72
+Epoch [52], Loss: 0.0273, Val acc: 0.67
+Epoch [53], Loss: 0.0110, Val acc: 0.68
+Epoch [54], Loss: 0.0691, Val acc: 0.70
+Epoch [55], Loss: 0.0637, Val acc: 0.70
+Epoch [56], Loss: 0.0204, Val acc: 0.70
+Epoch [57], Loss: 0.0235, Val acc: 0.71
+Epoch [58], Loss: 0.0205, Val acc: 0.70
+Epoch [59], Loss: 0.0003, Val acc: 0.70
+Epoch [60], Loss: 0.0094, Val acc: 0.69
+Epoch [61], Loss: 11.1206, Val acc: 0.82
+Epoch [62], Loss: 11.5818, Val acc: 0.57
+Epoch [63], Loss: 5.9743, Val acc: 0.80
+Epoch [64], Loss: 1.9281, Val acc: 0.82
+Epoch [65], Loss: 3.2129, Val acc: 0.74
+Epoch [66], Loss: 1.0219, Val acc: 0.80
+Epoch [67], Loss: 0.5133, Val acc: 0.78
+Epoch [68], Loss: 0.3836, Val acc: 0.78
+Epoch [69], Loss: 0.1117, Val acc: 0.75
+Epoch [70], Loss: 0.0901, Val acc: 0.54
+Epoch [71], Loss: 0.5439, Val acc: 0.77
+Epoch [72], Loss: 0.0729, Val acc: 0.73
+Epoch [73], Loss: 0.0553, Val acc: 0.80
+Epoch [74], Loss: 0.1438, Val acc: 0.76
+Epoch [75], Loss: 0.0525, Val acc: 0.76
+Epoch [76], Loss: 0.0325, Val acc: 0.80
+Epoch [77], Loss: 0.0381, Val acc: 0.75
+Epoch [78], Loss: 0.0403, Val acc: 0.77
+Epoch [79], Loss: 0.0680, Val acc: 0.77
+Epoch [80], Loss: 0.0455, Val acc: 0.82
+Test accuracy: 0.7231, F1 score: 0.8378
+Confusion matrices:
+{'660a6b953836d16312814993': array([[5, 0],
+       [8, 0]]), '665336b8da7328bc1558c1f6': array([[13,  0],
+       [ 0,  0]]), '6658c4239af9537eefdfbcc9': array([[ 2,  0],
+       [11,  0]]), '6658c518bb57e6360147f8e8': array([[13,  0],
+       [ 0,  0]]), '6658c531f3fa1df02771f9d5': array([[11,  0],
+       [ 2,  0]]), '6659beb07a900f403259c2d9': array([[12,  0],
+       [ 1,  0]]), '6659f640c20a6f66b592e819': array([[13,  0],
+       [ 0,  0]]), '6659fb37cee75e81ac1c8e5c': array([[11,  0],
+       [ 2,  0]]), '665a23c501fc5542133be144': array([[13,  0],
+       [ 0,  0]]), '665c5b5cb53983b0b6323300': array([[10,  1],
+       [ 2,  0]]), '666208dc57b332c5dbcaac25': array([[13,  0],
+       [ 0,  0]]), '66640059232bcc6a15b24803': array([[6, 0],
+       [7, 0]]), '6666ddd2507ac4efb0d2cea4': array([[12,  0],
+       [ 1,  0]]), '666aee590ad93e0d709d8a72': array([[10,  0],
+       [ 3,  0]]), '66718bbb61a1ad0225968d18': array([[6, 0],
+       [6, 1]]), '66847cc7c67232fae11af5b3': array([[10,  0],
+       [ 3,  0]]), '6694f7d49935de46241d49b3': array([[13,  0],
+       [ 0,  0]]), '66a7a51803838a2db051e980': array([[8, 0],
+       [5, 0]]), '66d1a3beb6b1c3ca21b3229c': array([[4, 0],
+       [9, 0]]), '66d2190b4f1152adfcdfa82e': array([[ 1,  0],
+       [11,  1]])}
+Fold 5
+['66d4407f31981698998d25d8', '66f69dcc061074dacb886b52', '670d2513894d1c633eeb11a6', '6715682a3f3d91fd660c7dcc', '6720fbc84253185973cbe564', '67605aa52ae1b561f774d889', '6760acee7b448e51215b1910', '67673dfdc44eeefe882255ff', '676bd1cfc3f1883bb4629cdb', '6773d589c3198df1ab5f8887', '6773dce197117077340e2f22', '677419c65faa26e8ef6ba886', '6777b7ce13d1029c83d8d861', '677c0efa79651c19b0670a8d', '677dab3711ff8276e56c5d8f', '67a8cef17659f46eea91b2df', '67a9342e0002d1f843008bea', '67bcf386583b56fefb549fda', '67bd0a210300cd17904fcd28', '67c72c73eff356ed53ae559f']
+Epoch [1], Loss: 31.0743, Val acc: 0.78
+Epoch [2], Loss: 23.7291, Val acc: 0.90
+Epoch [3], Loss: 14.5715, Val acc: 0.24
+Epoch [4], Loss: 8.3032, Val acc: 0.67
+Epoch [5], Loss: 4.3637, Val acc: 0.57
+Epoch [6], Loss: 4.1726, Val acc: 0.47
+Epoch [7], Loss: 1.9287, Val acc: 0.78
+Epoch [8], Loss: 0.6856, Val acc: 0.91
+Epoch [9], Loss: 0.5914, Val acc: 0.70
+Epoch [10], Loss: 0.3276, Val acc: 0.70
+Epoch [11], Loss: 0.1202, Val acc: 0.82
+Epoch [12], Loss: 0.2779, Val acc: 0.92
+Epoch [13], Loss: 0.8111, Val acc: 0.81
+Epoch [14], Loss: 0.1297, Val acc: 0.86
+Epoch [15], Loss: 0.0585, Val acc: 0.87
+Epoch [16], Loss: 0.1139, Val acc: 0.86
+Epoch [17], Loss: 0.0834, Val acc: 0.85
+Epoch [18], Loss: 0.0651, Val acc: 0.86
+Epoch [19], Loss: 0.0142, Val acc: 0.81
+Epoch [20], Loss: 0.0144, Val acc: 0.83
+Epoch [21], Loss: 1.5574, Val acc: 0.94
+Epoch [22], Loss: 0.6702, Val acc: 0.79
+Epoch [23], Loss: 0.9407, Val acc: 0.96
+Epoch [24], Loss: 0.2339, Val acc: 0.96
+Epoch [25], Loss: 0.0754, Val acc: 0.94
+Epoch [26], Loss: 0.0617, Val acc: 0.94
+Epoch [27], Loss: 0.0736, Val acc: 0.86
+Epoch [28], Loss: 0.1170, Val acc: 0.95
+Epoch [29], Loss: 0.0513, Val acc: 0.94
+Epoch [30], Loss: 0.0754, Val acc: 0.94
+Epoch [31], Loss: 0.1039, Val acc: 0.93
+Epoch [32], Loss: 0.0983, Val acc: 0.94
+Epoch [33], Loss: 0.0270, Val acc: 0.94
+Epoch [34], Loss: 0.0325, Val acc: 0.92
+Epoch [35], Loss: 0.0113, Val acc: 0.95
+Epoch [36], Loss: 0.0004, Val acc: 0.95
+Epoch [37], Loss: 0.0306, Val acc: 0.92
+Epoch [38], Loss: 0.0239, Val acc: 0.92
+Epoch [39], Loss: 0.0186, Val acc: 0.95
+Epoch [40], Loss: 0.0219, Val acc: 0.90
+Epoch [41], Loss: 0.4181, Val acc: 0.99
+Epoch [42], Loss: 0.2627, Val acc: 0.87
+Epoch [43], Loss: 0.3833, Val acc: 0.99
+Epoch [44], Loss: 0.1114, Val acc: 0.97
+Epoch [45], Loss: 0.1327, Val acc: 0.75
+Epoch [46], Loss: 0.3471, Val acc: 0.96
+Epoch [47], Loss: 0.0559, Val acc: 0.97
+Epoch [48], Loss: 0.1524, Val acc: 0.97
+Epoch [49], Loss: 0.0892, Val acc: 0.95
+Epoch [50], Loss: 0.0156, Val acc: 0.97
+Epoch [51], Loss: 0.0280, Val acc: 0.93
+Epoch [52], Loss: 0.1387, Val acc: 0.97
+Epoch [53], Loss: 0.0160, Val acc: 0.97
+Epoch [54], Loss: 0.0390, Val acc: 0.98
+Epoch [55], Loss: 0.0359, Val acc: 0.95
+Epoch [56], Loss: 0.0154, Val acc: 0.97
+Epoch [57], Loss: 0.0447, Val acc: 0.96
+Epoch [58], Loss: 0.0209, Val acc: 0.97
+Epoch [59], Loss: 0.0351, Val acc: 0.98
+Epoch [60], Loss: 0.0155, Val acc: 0.98
+Epoch [61], Loss: 0.2625, Val acc: 0.70
+Epoch [62], Loss: 0.9704, Val acc: 0.77
+Epoch [63], Loss: 1.0018, Val acc: 0.85
+Epoch [64], Loss: 0.5262, Val acc: 0.82
+Epoch [65], Loss: 0.3717, Val acc: 0.97
+Epoch [66], Loss: 0.0958, Val acc: 0.98
+Epoch [67], Loss: 0.0634, Val acc: 0.98
+Epoch [68], Loss: 0.0759, Val acc: 0.93
+Epoch [69], Loss: 0.0306, Val acc: 0.96
+Epoch [70], Loss: 0.0070, Val acc: 0.95
+Epoch [71], Loss: 0.0207, Val acc: 0.96
+Epoch [72], Loss: 0.0169, Val acc: 0.97
+Epoch [73], Loss: 0.0293, Val acc: 0.97
+Epoch [74], Loss: 0.0105, Val acc: 0.98
+Epoch [75], Loss: 0.0349, Val acc: 0.97
+Epoch [76], Loss: 0.0221, Val acc: 0.97
+Epoch [77], Loss: 0.0021, Val acc: 0.97
+Epoch [78], Loss: 0.0020, Val acc: 0.98
+Epoch [79], Loss: 0.0229, Val acc: 0.97
+Epoch [80], Loss: 0.0054, Val acc: 0.96
+Test accuracy: 0.7500, F1 score: 0.8499
+Confusion matrices:
+{'66d4407f31981698998d25d8': array([[ 0,  0],
+       [12,  1]]), '66f69dcc061074dacb886b52': array([[13,  0],
+       [ 0,  0]]), '670d2513894d1c633eeb11a6': array([[9, 0],
+       [4, 0]]), '6715682a3f3d91fd660c7dcc': array([[10,  2],
+       [ 1,  0]]), '6720fbc84253185973cbe564': array([[9, 0],
+       [3, 1]]), '67605aa52ae1b561f774d889': array([[6, 1],
+       [5, 1]]), '6760acee7b448e51215b1910': array([[12,  1],
+       [ 0,  0]]), '67673dfdc44eeefe882255ff': array([[11,  0],
+       [ 2,  0]]), '676bd1cfc3f1883bb4629cdb': array([[6, 7],
+       [0, 0]]), '6773d589c3198df1ab5f8887': array([[11,  2],
+       [ 0,  0]]), '6773dce197117077340e2f22': array([[12,  0],
+       [ 1,  0]]), '677419c65faa26e8ef6ba886': array([[12,  1],
+       [ 0,  0]]), '6777b7ce13d1029c83d8d861': array([[4, 9],
+       [0, 0]]), '677c0efa79651c19b0670a8d': array([[9, 4],
+       [0, 0]]), '677dab3711ff8276e56c5d8f': array([[13,  0],
+       [ 0,  0]]), '67a8cef17659f46eea91b2df': array([[11,  0],
+       [ 2,  0]]), '67a9342e0002d1f843008bea': array([[7, 0],
+       [3, 3]]), '67bcf386583b56fefb549fda': array([[12,  0],
+       [ 0,  1]]), '67bd0a210300cd17904fcd28': array([[7, 1],
+       [2, 3]]), '67c72c73eff356ed53ae559f': array([[10,  0],
+       [ 2,  1]])}
