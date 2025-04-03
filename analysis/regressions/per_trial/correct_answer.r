@@ -2,6 +2,9 @@ library(stats)
 library(tidyverse)
 library(lme4)
 library(scales)
+library(emmeans)
+library(magrittr)
+
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
 # 'Subject', 'Trial', 'Condition', 'MsgType', 'TrgtPos', 'Time', 'AOI'
@@ -34,14 +37,14 @@ print(head(df_correct))
 
 # fitting logistic regression with an intercept plus 4 slopes,
 # and associated random effects by subject
-regression <- glmer(
+regression <- glm(
     Correct ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
     PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
-    PropTimeOnAvailableMsgs + PropTimeOnNonAOI + MsgType +
+    PropTimeOnAvailableMsgs + MsgType +
     Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
-    Condition:PropTimeOnAvailableMsgs + Condition:PropTimeOnNonAOI +
-    (1 | Subject),
+    Condition:PropTimeOnAvailableMsgs,
+    # (1 | Subject),
     # specify dataset
     data = df_correct,
     # specify to fit a logistic regression
@@ -53,3 +56,11 @@ regression <- glmer(
 print(summary(regression))
 
 saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
+
+emm = emmeans(regression, specs = pairwise ~ Condition|Condition)
+
+print(emm$emmeans)
+print(emm$contrasts)
+print(emm)
+emmip(regression, PropTimeOnTrgt ~ Condition)
+emmip(regression, PropTimeOnDist ~ Condition)

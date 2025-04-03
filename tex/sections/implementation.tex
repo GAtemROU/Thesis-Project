@@ -88,11 +88,11 @@ The polygons were defined using the following variables:
 \end{itemize}
 It is worth to note that the values of the variables can be easily computed using the coordinates of left top corner of an image and its' width and height. Finally, the polygons were defined via four points as follows:
 \begin{itemize}
-    \item sent message -- $((\frac{x_{23}+x_{12}}{2}, 0), (\frac{x_{12}}{2}, 0), (x_{12}, y_{12}), (x_{23}, y_{12}))$
-    \item left object  -- $((0, \frac{y_{12}}{2}), (x_{12}, y_{12}), (x_{12}, y_{23}), (0, \frac{y_{23}+y_{12}}{2}))$
+    \item sent message -- $((x_{23}+\frac{x_{12}}{2}, 0), (\frac{x_{12}}{2}, 0), (x_{12}, y_{12}), (x_{23}, y_{12}))$
+    \item left object  -- $((0, \frac{y_{12}}{2}), (x_{12}, y_{12}), (x_{12}, y_{23}), (0, y_{23}+\frac{y_{12}}{2}))$
     \item center object -- $((x_{12}, y_{12}), (x_{23}, y_{12}), (x_{23}, y_{23}), (x_{12}, y_{23}))$
     \item right object -- $((x_{23}, y_{12}), (x_{12}+x_{23}, \frac{y_{12}}{2}), (x_{12}+x_{23}, y_{23}+\frac{y_{12}}{2}), (x_{23}, y_{23}))$
-    \item available messages -- $((x_{12}, y_{23}), (x_{23}, y_{23}), (\frac{x_{23}+x_{12}}{2}, y_{12}+y_{23}), (\frac{x_{12}}{2}, y_{12}+y_{23}))$
+    \item available messages -- $((x_{12}, y_{23}), (x_{23}, y_{23}), (x_{23}+\frac{x_{12}}{2}, y_{12}+y_{23}), (\frac{x_{12}}{2}, y_{12}+y_{23}))$
 \end{itemize}
 \begin{figure}
     \centering
