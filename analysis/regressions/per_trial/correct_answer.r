@@ -15,13 +15,14 @@ df <- df %>%
     mutate(Condition = factor(Condition, levels = 
                 c("complex", "simple", "unambiguous"))) %>%
     mutate(MsgType = factor(MsgType, levels = c("shape", "color"))) %>%
-    mutate(TrgtPos = factor(TrgtPos, levels = c(1, 0, 2)))
+    mutate(TrgtPos = factor(TrgtPos, levels = c(1, 0, 2))) %>%
+    mutate(AnswerTime = rescale(AnswerTime))
 
 df_correct <- df %>%
   select(Subject, Trial, Condition, Correct, PropTimeOnComp,
          PropTimeOnSentMsg, PropTimeOnTrgt, PropTimeOnDist,
          PropTimeOnAvailableMsgs, PropTimeOnNonAOI, MsgType,
-         TrgtPos)
+         TrgtPos, AnswerTime)
 
 contrasts(df_correct$Condition) <- contr.helmert(3)
 contrasts(df_correct$Condition)
@@ -34,16 +35,13 @@ contrasts(df_correct$TrgtPos)
 
 print(head(df_correct))
 
-
-# fitting logistic regression with an intercept plus 4 slopes,
-# and associated random effects by subject
 regression <- glm(
     Correct ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
-    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
+    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + AnswerTime +
     PropTimeOnAvailableMsgs + MsgType +
     Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
-    Condition:PropTimeOnAvailableMsgs,
+    Condition:PropTimeOnAvailableMsgs + Condition:AnswerTime,
     # (1 | Subject),
     # specify dataset
     data = df_correct,
@@ -57,10 +55,11 @@ print(summary(regression))
 
 saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-emm = emmeans(regression, specs = pairwise ~ Condition|Condition)
+emm = emmeans(regression, specs = pairwise ~ PropTimeOnAvailableMsgs|Condition, type = "response")
 
 print(emm$emmeans)
 print(emm$contrasts)
 print(emm)
-emmip(regression, PropTimeOnTrgt ~ Condition)
+emmip(regression, )
 emmip(regression, PropTimeOnDist ~ Condition)
+emmip(regression, PropTimeOnComp ~ Condition)
