@@ -10,10 +10,11 @@ df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
 # 'Subject', 'Trial', 'Condition', 'MsgType', 'TrgtPos', 'Time', 'AOI'
 
 df <- df %>%
+    filter(Condition %in% c("complex", "simple")) %>%
     mutate(Subject = factor(Subject)) %>%
     mutate(Trial = scale(Trial)) %>%
     mutate(Condition = factor(Condition, levels = 
-                c("complex", "simple", "unambiguous"))) %>%
+                c("complex", "simple"))) %>%
     mutate(MsgType = factor(MsgType, levels = c("shape", "color"))) %>%
     mutate(TrgtPos = factor(TrgtPos, levels = c(1, 0, 2))) %>%
     mutate(AnswerTime = scale(AnswerTime)) %>%
@@ -29,7 +30,7 @@ df_correct <- df %>%
          PropTimeOnAvailableMsgs, PropTimeOnNonAOI, MsgType,
          TrgtPos, AnswerTime)
 
-contrasts(df_correct$Condition) <- contr.helmert(3)
+contrasts(df_correct$Condition) <- c(-1, 1)
 contrasts(df_correct$Condition)
 
 contrasts(df_correct$MsgType) <- c(-1, 1)
@@ -68,5 +69,5 @@ print(emtr$emtrends)
 print(emtr$contrasts)
 print(emm)
 emmip(regression, )
-emmip(regression, Condition ~ PropTimeOnSentMsg, cov.reduce = range)
+emmip(regression, Condition ~ AnswerTime, cov.reduce = range)
 emmip(regression, PropTimeOnComp ~ Condition)
