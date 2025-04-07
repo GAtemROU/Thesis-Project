@@ -43,8 +43,8 @@ print(head(df_correct))
 
 regression <- glm(
     Correct ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
-    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + AnswerTime +
-    PropTimeOnAvailableMsgs + MsgType +
+    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + 
+    PropTimeOnAvailableMsgs + MsgType + AnswerTime +
     Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
     Condition:PropTimeOnAvailableMsgs + Condition:AnswerTime,
