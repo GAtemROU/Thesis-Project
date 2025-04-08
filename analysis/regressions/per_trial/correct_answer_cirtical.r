@@ -7,7 +7,6 @@ library(magrittr)
 
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
-# 'Subject', 'Trial', 'Condition', 'MsgType', 'TrgtPos', 'Time', 'AOI'
 
 df <- df %>%
     filter(Condition %in% c("complex", "simple")) %>%
@@ -61,13 +60,7 @@ print(summary(regression))
 
 saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-emm = emmeans(regression, specs = pairwise ~ PropTimeOnTrgt|Condition, cov.reduce=range, trans='response')
-print(emm$emmeans)
-print(emm$contrasts)
 emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'PropTimeOnDist')
 print(emtr$emtrends)
 print(emtr$contrasts)
-print(emm)
-emmip(regression, )
 emmip(regression, Condition ~ PropTimeOnDist, cov.reduce = range)
-emmip(regression, PropTimeOnComp ~ Condition)

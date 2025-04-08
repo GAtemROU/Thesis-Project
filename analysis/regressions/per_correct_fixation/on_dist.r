@@ -8,7 +8,7 @@ df <- read.csv("/home/gatemrou/uds/thesis/Thesis-Project/analysis/data/final_dat
 
 df <- df %>%
     mutate(Subject = factor(Subject)) %>%
-    mutate(Trial = rescale(Trial)) %>%
+    mutate(Trial = scale(Trial)) %>%
     mutate(Condition = factor(Condition, levels = 
                 c("complex", "simple", "unambiguous"))) %>%
     mutate(MsgType = factor(MsgType, levels = c("shape", "color"))) %>%

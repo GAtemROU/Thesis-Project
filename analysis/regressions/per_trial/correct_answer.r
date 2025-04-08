@@ -7,7 +7,6 @@ library(magrittr)
 
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
-# 'Subject', 'Trial', 'Condition', 'MsgType', 'TrgtPos', 'Time', 'AOI'
 
 df <- df %>%
     mutate(Subject = factor(Subject)) %>%
@@ -60,14 +59,9 @@ print(summary(regression))
 
 saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-emm = emmeans(regression, specs = pairwise ~ PropTimeOnTrgt|Condition, cov.reduce=range, trans='response')
-print(emm$emmeans)
-print(emm$contrasts)
 emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'AnswerTime')
 print(emtr$emtrends)
 print(emtr$contrasts)
-print(emm)
-emmip(regression, )
 emmip(regression, Condition ~ PropTimeOnAvailableMsgs, cov.reduce = range, 
   xlab = "Proportion of time on available messages", ylab = "Prediction") +
   theme(
@@ -80,4 +74,3 @@ emmip(regression, Condition ~ PropTimeOnAvailableMsgs, cov.reduce = range,
   axis.text = element_text(size = 16), # Increase text size next to ticks
   axis.ticks = element_line(size = 1.2) # Make tick lines wider
   )
-emmip(regression, PropTimeOnComp ~ Condition)
