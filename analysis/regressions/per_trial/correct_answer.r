@@ -68,5 +68,12 @@ print(emtr$emtrends)
 print(emtr$contrasts)
 print(emm)
 emmip(regression, )
-emmip(regression, Condition ~ PropTimeOnDist, cov.reduce = range, trans='response')
+emmip(regression, Condition ~ PropTimeOnDist, cov.reduce = range, trans='response', 
+    xlab = "Proportion of time on distractor", ylab = "Prediction") +
+  theme(
+    legend.text = element_text(size = 20),
+    axis.title.x = element_text(size = 20),
+    axis.title.y = element_text(size = 20),
+    legend.title = element_text(size = 20)
+  )
 emmip(regression, PropTimeOnComp ~ Condition)
