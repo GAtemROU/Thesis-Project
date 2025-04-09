@@ -59,7 +59,7 @@ print(summary(regression))
 
 saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'AnswerTime')
+emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'PropTimeOnSentMsg')
 print(emtr$emtrends)
 print(emtr$contrasts)
 emmip(regression, Condition ~ PropTimeOnAvailableMsgs, cov.reduce = range, 
