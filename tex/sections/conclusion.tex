@@ -1,7 +1,20 @@
 ﻿\chapter{Conclusion and General Discussion}
 \label{sec:conclusion}
 
+
+
+
 \section{General Discussion}
 \label{sec:general-discussion}
 
-The way we assigned the fixations to the stimuli is not optimal as we clearly missed the timings of the gaze predictions as well as added some of the gaze points that are from saccades rather than from fixations. Both of the problems could have been solved with a fixation detection algorithm. A more advanced fixation detection algorithm could be implemented in the future to improve the preprocessing part of the data analysis. Currently as was discussed in \autoref{sec:analysis:eyetr} the fixation detection algorithm falls short in the case of low sampling rates that WebGazer demonstrates. The algorithm is not able to detect some of the fixations in the data, which would lead to a loss of information. Therefore, clearly the approach chosen by us in the end is not optimal and could be improved in the future.
+\subsection{Proportional Eye Tracking Features}
+\label{sec:general-discussion:proportional-eye-tracking-features}
+We suspect that the proportional eye tracking features might be influence by the very last look at one of the objects. Therefore, making them good predictors of accuracy, as we saw in \autoref{sec:accuracy_model} or \autoref{sec:pairwise_corr}. There Competitor and Distractor turned out decisive for the accuracy of the predictions. This indicates that people look more at the object they would choose. As for the future work, one should consider trimming the last saccade before the decision, this should make the proportional features more reliable. On the other hand, if this does not solve the issue, this would indicate that people tend to make a decision not in the end of the trial. This would be also be an interesting finding.
+
+The way we assigned the fixations to the stimuli is not optimal as we clearly disregarded the timings of the gaze predictions as well as added some of the gaze points that are from saccades rather than from fixations. Both of the problems could have been solved with a fixation detection algorithm. A more advanced fixation detection algorithm could be implemented in the future to improve the preprocessing part of the data analysis. Currently as was discussed in \autoref{sec:analysis:eyetr} the fixation detection algorithm falls short in the case of low sampling rates that WebGazer demonstrates. The algorithm is not able to detect some of the fixations in the data, which would lead to a loss of information. Therefore, clearly the approach chosen by us in the end is not optimal and could be improved in the future.
+
+\subsection{Eye Tracking}
+\label{sec:general-discussion:eye-tracking}
+The eye tracking data collected by WebGazer was definitely worse than one could collect in the lab. However, clearly this thesis is an example that it is possible to conduct an eye tracking experiment with WebGazer. The data is not perfect, but it is good enough to be able to draw some conclusions from it. However, the library is far from perfect and definitely needs a lot of adjustments to the specific setups one could be interested in. Designing the experiment took far more time than the actual analysis of the data. Each participant has a different setup. And, although, the calibration of the eye tracker must be conducted quite strictly, it is also important to make sure that the calibration is doable for the participants. We have achieved some balance between the two, but it is still not perfect. 
+
+On the other hand, WebGazer has a few clear advantages. First of all, the fact that it is possible to collect data from a large number of participants. This is something that is not possible in the lab, especially for an eye tracking study as it would require individual treatment of each participant, as oppose to each participant working in parallel in the online experiment. Secondly, WebGazer is free and open source, which makes it available for everyone. This is a clear advantage over the lab eye trackers that are expensive and not available for everyone. 
