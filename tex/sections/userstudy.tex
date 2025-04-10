@@ -9,6 +9,35 @@ It is worth noting that due to the nature of the experiment, the calibration was
 
 Due to the complexity of the mixed effects models, convergence issues arised. Therefore, the random effects were removed one by one from the models based on the least variance among the random effects. The process was repeated until the models converged. In the case of predicting accuracy, the random effects were removed from the model entirely. 
 
+The general information about the accuracy on the participant level can be seen in \autoref{fig:scatter_acc} and \autoref{fig:hist_acc}. The \autoref{fig:scatter_acc} demonstrates that $L_2$ reasoning takes the largest portion of the participants. This is the case due to the included feedback in the trials, which greatly improves the probability of a participant learning a strategy to solve the trials from all 3 conditions. However, generally the data follows similar pattern to the one reported in \cite{Franke_2016}, similar scatter plot can be seen in \autoref{fig:prob_stats}. It is worth to note that a few participants managed to get extremely low accuracy on Simple trials, while achieving relatively high accuracy on Complex trials. It is difficult to say one this turned out to be the case.
+
+The histogram in \autoref{fig:hist_acc} shows that the general pattern of people easily solving the Unambiguous trials, struggling more in the Simple condition and finding the Complex condition the most difficult to solve. There are a few people who managed to reach extremely low accuracy on Simple trials, while 
+
+\begin{figure}
+\centering
+\begin{floatrow}
+    \ffigbox[\FBwidth]{\includegraphics[width=0.55\textwidth]{images/scatter_acc.png}}{
+        \caption{Scatter plot of accuracy.}
+        \label{fig:scatter_acc}
+    }
+    \ffigbox[\FBwidth]{\includegraphics[width=0.385\textwidth]{images/hist_acc.png}}{
+        \caption{Histogram of accuracy.}
+        \label{fig:hist_acc}
+    }
+\end{floatrow}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Pairwise Correlations}
 \label{sec:pairwise_corr}
 
@@ -30,6 +59,10 @@ Accuracy & 0.8 (0.25) & --- & --- \\ \hline
 \label{tab:correlation_table_simple}
 \end{table}
 
+The pairwise correlations for the Simple and Complex conditions can be seen in \autoref{tab:correlation_table_simple} and \autoref{tab:correlation_table_complex} correspondingly. The correlations between the eye tracking features were excluded due to the way they were defined. Almost all of them have negative correlation because the features are proportional and increase in one of them means a decrease in some of the others. However, there was one exception to this general trend, it is a positive significant correlation of 0.2 between the \texttt{PropTimeOnDist} and \texttt{PropTimeOnNonAOI} on Complex condition. This indicates that on Complex trials, the more time a participant spends on the Distractor, the more time they spend on the Non-AOI. Generally the Non-AOI feature is extremely low comparing to other eye tracking features. The only reasonable explanation is that due to the increase in difficulty in the Complex trials, the participants are more likely to have a more of an equally distributed attention across the areas of interest.
+
+Looking at the correlations with accuracy, there are some significant correlations. For both conditions, the two less interesting ones are the correlations with \texttt{PropTimeOnTrgt} and \texttt{PropTimeOnComp}. In the former case, there is a significant positive correlation between \texttt{PropTimeOnTrgt} and \texttt{Accuracy}. The more participant look at the target, the more likely they are to answer correctly. This is not surprising as the target is the correct answer. A similar logic can be applied to the later, there is a significant negative correlation between \texttt{PropTimeOnComp} and \texttt{Accuracy}. The more time a participant spends looking at the Competitor, the more likely they are to choose it, therefore, answering incorrectly. In addition, we visually inspected the scanpaths of some participants. The effect might be coming from the last look at the object of choice, therefore, tipping the proportional time in favor of the chosen object and, hence, correlating the proportional time to the answer.
+
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|c|c|c|c|}
@@ -47,9 +80,6 @@ Accuracy & 0.7 (0.21) & --- & --- \\ \hline
 \caption{Complex condition. Correlation table showing the relationships between features, accuracy, and mean answer time. Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
 \label{tab:correlation_table_complex}
 \end{table}
-The pairwise correlations for the Simple and Complex conditions can be seen in \autoref{tab:correlation_table_simple} and \autoref{tab:correlation_table_complex} correspondingly. The correlations between the eye tracking features were excluded due to the way they were defined. Almost all of them have negative correlation because the features are proportional and increase in one of them means a decrease in some of the others. However, there was one exception to this general trend, it is a positive significant correlation of 0.2 between the \texttt{PropTimeOnDist} and \texttt{PropTimeOnNonAOI} on Complex condition. This indicates that on Complex trials, the more time a participant spends on the Distractor, the more time they spend on the Non-AOI. Generally the Non-AOI feature is extremely low comparing to other eye tracking features. The only reasonable explanation is that due to the increase in difficulty in the Complex trials, the participants are more likely to have a more of an equally distributed attention across the areas of interest.
-
-Looking at the correlations with accuracy, there are some significant correlations. For both conditions, the two less interesting ones are the correlations with \texttt{PropTimeOnTrgt} and \texttt{PropTimeOnComp}. In the former case, there is a significant positive correlation between \texttt{PropTimeOnTrgt} and \texttt{Accuracy}. The more participant look at the target, the more likely they are to answer correctly. This is not surprising as the target is the correct answer. A similar logic can be applied to the later, there is a significant negative correlation between \texttt{PropTimeOnComp} and \texttt{Accuracy}. The more time a participant spends looking at the Competitor, the more likely they are to choose it, therefore, answering incorrectly. In addition, we visually inspected the scanpaths of some participants. The effect might be coming from the last look at the object of choice, therefore, tipping the proportional time in favor of the chosen object and, hence, correlating the proportional time to the answer.
 
 Going further, the \texttt{PropTimeOnSentMsg} has a significant negative correlation with accuracy in both conditions. This indicates that the more time a participant spends looking at the sent message, the less likely they are to answer correctly. This can be explained by the fact that the sent message is important in the trial, however, spending more time looking at it would mean that less time is spent looking at the other crucial areas of interest. And a better accuracy is achieved probably by taking a quick look at the sent message and then focusing on the other areas of interest. 
 
@@ -66,6 +96,23 @@ The last but not least is the \texttt{PropTimeOnDist}. It has a significant posi
 \sloppy
 The pairwise correlations for the Unambiguous condition were not included in the tables as they have very few significant effects. There are not significant correlations with accuracy, however, the \texttt{PropTimeOnComp}, \texttt{PropTimeOnDist} and \texttt{PropTimeOnAvailableMsgs} have significant positive correlations with the answer time. This is because the Unambiguous trials are very easy to solve, therefore, the participants do not need to look at the Distractor, Competitor or available messages at all. The only feature that has a significant negative correlation with the answer time is \texttt{PropTimeOnSentMsg}. This is not surprising as the sent message is perhaps the most important feature in the Unambiguous trials. A more detailed explanation and the table can be found in \autoref{sec:pairwise_corr_unambiguous}.
 \sloppy
+
+\subsection*{Conclusion}
+The pariwise correlations gave us some general understanding about which features are important. The most important finding is, perhaps, the correlation of proporional time on available messages to the accuracy in both Simple and Complex conditions. As well as the absence of significant correlation between the proportional time on Distractor and accuracy. This hints us that participants look similarly on the trial, but still achieve different accuracy. From here we will move to the linear regression predicting accuracy. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Predicting Accuracy}
 \label{sec:accuracy_model}
@@ -238,6 +285,25 @@ Unambiguous        & -0.169                    & 0.1040      & -0.372           
 \label{tab:answertime_trends}
 \end{table}
 
+\subsection*{Conclusion}
+The first hypothesis with the Distractor was not confirmed by the main model. That is, the proporitonal time on Distractor is not positively associated with the accuracy on Complex trials. On the other hand, the proportional time on available messages is significantly positively associated with the accuracy on the Simple trials. 
+
+The full conclusion will be drawn later, however, the general pattern suggests that participants fail to solve the trial not due to the lack of information, but rather due to lack of depth during the reasoning process. While the proportional time on available messages might to some extent describe the reasoning process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{On Distractor}
 \label{sec:distractor_model}
 The final formula for the model predicting the likelihood of looking at the Distractor for the correctly solved trials is presented below. Most of the random effects were removed from the model due to convergence issues:
@@ -279,6 +345,19 @@ Starting from the Intercept, it is negative and significant, indicating that wit
 \label{sec:ondist_conclusion}
 The hypothesis 3 did not hold according to the model. The fact that the Distractor was not looked at more in the Complex trials can be explained by the fact that a skilled participant would apply the same strategy to both the Simple and Complex trials. Even though, the Distractor seems more important in the Complex trials, as was discussed in \autoref{sec:rsa}.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{On Available Messages}
 \label{sec:available_model}
 
@@ -319,4 +398,43 @@ As for the Target position, this time it does not play as important role as in t
 
 \subsection*{Conclusion}
 \label{sec:avmsgs_conclusion}
-While the hypothesis 4 did not hold according to the model, we still got important pieces of information. Mainly similarly to the previous model that predicted fixations on Distractor, we saw that the skilled participants do not look at the available messages more during the Simple trials comparing to Complex ones. The following is rather the case, the skilled participants tend to keep a similar attention profile in both Simple and Complex conditions, but adapt a different strategy for the Unambiguous trials. 
+While the hypothesis 4 did not hold according to the model, we still got important pieces of information. Mainly, similarly to the previous model, that predicted fixations on Distractor, we saw that the skilled participants do not look at the available messages more during the Simple trials comparing to Complex ones. The following is rather the case, the skilled participants tend to keep a similar attention profile in both Simple and Complex conditions, but adapt a different strategy for the Unambiguous trials. 
+
+
+
+
+
+
+
+
+
+\section{Strategies}
+
+As was discussed in \autoref{sec:data:ref_games} participants completed 2 strategy trials in the end of the experiment. One of Simple condition and one of Complex. We have annotated them similarly to how it was done in \cite{Mayn_2023}. Based on the annotations the labels corresponding to $L_0$, $L_1$ or $L_2$ listeners were assigned. The labels were assigned as follows, if the Complex trial is annotated as `correct\_reasoning', participant gets an $L_2$ label. If only the Simple trial is annotated with `correct\_reasoning', the participant would get an $L_1$ label. If neither of the previous were assigned, the participant gets the label $L_0$. Based on the labeling, the following plots were made \autoref{fig:barchart_simple}, \autoref{fig:barchart_complex} and \autoref{fig:barchart_unambiguous}. In order to match the scale of other features, the \texttt{MeanAnswerTime} feature was divided by 10 000, hence, value of one corresponds to spending 10 seconds on the trial.
+
+While the labeling was done solely based on the annotations of strategies that participants entered, there is a clear alignment between the listeners from RSA and the derived labels. That is, $L_2$ is capable of solving trials from all 3 conditions, while $L_1$ fails only the trials from the Complex condition and $L_0$ is only capable of solving the trials from Unambiguous condition. 
+
+Furthermore, the plots show similar patterns to the build models. For example, there is an increase in \texttt{PropTimeOnAvailableMsgs} as the label goes from $L_0$ to $L_1$ and to $L_2$. Indicating that more skilled participants comparing to less skilled ones, spend more time looking at the available messages, similarly to the findings from the main model in \autoref{sec:accuracy_model}. Again, we do not see any differences for the \texttt{PropTimeOnDist}, also aligning with the main model. In addition, the Unambiguous plot in \autoref{fig:barchart_unambiguous} suggests that participants do not vary in their attention profile in Unambiguous condition.
+
+\begin{figure}
+\centering
+\begin{floatrow}
+\ffigbox[\FBwidth]{\includegraphics[width=0.46\textwidth]{images/barchart_simple.png}}{
+    \vspace{0.5em} % Add padding
+    \caption{Comparison of features for different labels on trials of Simple condition.}
+    \label{fig:barchart_simple}
+}
+\ffigbox[\FBwidth]{\includegraphics[width=0.46\textwidth]{images/barchart_complex.png}}{
+    \vspace{0.5em} % Add padding
+    \caption{Comparison of features for different labels on trials of Complex condition.}
+    \label{fig:barchart_complex}
+}
+\end{floatrow}
+\begin{floatrow}
+\ffigbox[\FBwidth]{\includegraphics[width=0.48\textwidth]{images/barchart_unambiguous.png}}{
+    \vspace{0.5em} % Add padding
+    \caption{Comparison of features for different labels on trials of Unambiguous condition.}
+    \label{fig:barchart_unambiguous}
+}
+\end{floatrow}
+\end{figure}
