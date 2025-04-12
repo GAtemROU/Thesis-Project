@@ -62,8 +62,8 @@ saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models
 emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'PropTimeOnAvailableMsgs')
 print(emtr$emtrends)
 print(emtr$contrasts)
-emmip(regression, Condition ~ PropTimeOnAvailableMsgs, cov.reduce = range, 
-  xlab = "Proportion of time on available messages", ylab = "Prediction") +
+emmip(regression, Condition ~ PropTimeOnDist, cov.reduce = range, 
+  xlab = "Proportion of time on Distractor", ylab = "Prediction") +
   theme(
   legend.key.size = unit(2, "lines"), # Increase the size of legend keys
   aspect.ratio = 1,
