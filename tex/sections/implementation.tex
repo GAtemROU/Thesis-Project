@@ -170,7 +170,7 @@ Similarly to \cite{Vigneau_2006}, we will report the pairwise correlations of ey
 \subsection{Mixed Effects Logistic Regressions}
 \label{sec:analysis:mixed_effects}
 
-The main analysis will be done using mixed effects logistic regressions. The models are designed to correspond to our hypothesis presented in \autoref{sec:research_questions}. For the hypothesis 1 and 2, the following model was preregistered \citep{preregistration}:
+Throughout our modeling, we assume that the data are independent and identically distributed (i.i.d.), meaning that each trial is treated as an observation drawn from the same distribution and independent of other trials. The main analysis will be done using mixed effects logistic regressions. The models are designed to correspond to our hypothesis presented in \autoref{sec:research_questions}. For the hypothesis 1 and 2, the following model was preregistered \citep{preregistration}:
 \begin{verbatim}
     Correct ~ Condition + TrgtPos + Trial + 
     PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + 
@@ -198,7 +198,7 @@ However, we quickly realized that the model has a few issues. First of all, the 
 
 Through this model we will be able to test the first two hypothesis. Mainly whether the Distractor is positively associated with the accuracy on the Complex trials. And, for the second hypothesis, whether the available messages become important on the Simple trial comparing to Unambiguous and maybe Complex as well. The model will be fit on the trial level and predicts whether the answer was correct or not. The ``Trial'' and ``AnswerTime'' features were rescaled to be between -1 and 1, in order to match the scale of other features. All the eye-tracking features were centered to have mean 0 but not scaled. This approach was chosen because it would make the interpretability of the models easier.
 
-As for the third and fourth hypothesis, each of them will be tested using a separate model. Both of them predict whether a gaze point was on a certain area of interest. Hence, the data to fit them is made on the gaze point level. Only the gaze points from the correctly solved trials were added to the data to match the hypothesis. The third hypothesis will be tested using the following model:
+As for the third and fourth hypothesis, each of them will be tested using a separate model. These models treat each fixation as an independent observation. Accordingly, we assume the gaze data to be i.i.d., meaning that each fixation is considered to be drawn independently from the same probability distribution. Both of them predict whether a gaze point was on a certain area of interest. Hence, the data to fit them is made on the gaze point level. Only the gaze points from the correctly solved trials were added to the data to match the hypothesis. The third hypothesis will be tested using the following model:
 \begin{verbatim}
     OnDist ~ Condition + Trial + MsgType + TrgtPos +
     (1 + Condition + Trial + MsgType + TrgtPos | Subject)
