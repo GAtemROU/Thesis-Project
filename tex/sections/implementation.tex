@@ -4,7 +4,7 @@
 \section{Data Collection}
 \label{sec:data}
 The experiment was hosted through an open-source crowdsourcing client/system server system LingoTurk \citep{lingoturk}.
-The participants were recruited via Prolific \citep{prolific}, a subject pool for online experiments. The following criteria were used to filter the participants: native English speaker located in the UK, age in range 18-40, minimal approval rate of 95\%, number of previous submissions must be at least 20 studies, participants cannot have taken part in any of the related studies our group has conducted before. The estimated length of the experiment was 22 minutes, with the median completion time being 19 minutes and 30 seconds. The participants were paid 3.89 pounds which is equivalent to minimal hour wage in Germany. The participants were paid only in case of successful completion of the full experiment. The experiment was conducted in a web browser and the participants were asked to use a computer with functional webcam. 
+The participants were recruited via Prolific \citep{prolific}, a subject pool for online experiments. The following criteria were used to filter the participants: native English speaker located in the UK, age in range 18-40, minimal approval rate of 95\%, number of previous submissions must be at least 20 studies, participants cannot have taken part in any of the related studies our group has conducted before. The estimated length of the experiment was 22 minutes, with the median completion time being 19 minutes and 30 seconds. The participants were paid 3.89 pounds which is equivalent to minimal hour wage in Germany. The participants were paid only in case of successful completion of the full experiment. The experiment was conducted in a web browser and the participants were asked to use a computer with functional webcam. The project was approved by the Ethical Review Board of the Faculty of Mathematics and Computer Science at Saarland University.
 
 
 \subsection{Reference Games}
@@ -13,7 +13,7 @@ There were 3 conditions of the reference games used in this experiment: Simple, 
 
 The trials were generated using 3 colors: red, green and blue, and 3 shapes: square, circle and triangle. The code used to generate trials can be found under the folder ``trials'' \citep{github}. For each condition every unique sent message was repeated exactly twice. Which results in 12 trials of every condition. Another restriction we included was that available messages always have 2 shapes and 2 colors. Furthermore one Simple and one Complex trial was picked to be repeated once again in the very end of the experiment. These were, so called, strategy trials where we would ask the participants to explain their reasoning behind the choice of the object, a similar approach was incorporated in the study by \cite{Mayn_2023}. All trials were randomly shuffled before the experiment, except for the strategy trials which were always at the end of the experiment. The full list of trials is shown in in \autoref{tab:trials}. 
 
-In addition, a feedback system was incorporated in the trials. After every answer a pop up at the top of the screen would show up for 1200 ms. It would only show ``Correct'' or ``Incorrect'', based on whether the participant chose the Target or not. No other feedback was given. during the experiment. The strategy trials did not include this features at all. 
+In addition, a feedback system was incorporated in the trials. After every answer a pop up at the top of the screen would show up for 1200 ms. It would only show ``Correct'' or ``Incorrect'', based on whether the participant chose the Target or not. No other feedback was given during the experiment. The strategy trials did not include this feature at all. 
 
 \begin{figure}
     \centering
@@ -37,7 +37,7 @@ The eye tracking was done via library WebGazer \citep{webgazer}. The library was
 
 In order to successfully pass the calibration assessment, the participants must reach at least 65\% accuracy on each of the three calibration points. However, during the testing phase we noticed that the calibration assessment was too strict and difficult to pass. Therefore, it was determined that the left and right points should be made easier to calibrate via adjusting the calculation of the accuracy. A weighted accuracy calibration procedure was implemented. While the distance for the accuracy of the middle point was calculated via euclidean distance, the left and right points were calculated via the following formula: $\sqrt{(w_x\cdot(calib\_point\_x - gaze\_x))^2 + (w_y\cdot(calib\_point\_y - gaze\_y))^2}$. Where $w_x$ and $w_y$ are the coefficients that were adjusted during the testing phase. The final values were $w_x = 1$ and $w_y = 0.5$. The values were chosen based on the fact that left and right objects do not have any other objects on the vertical axes this can be seen in \autoref{fig:example_trial_webcam}. Therefore a slightly inaccurate result on the vertical axes would be relatively easy to correct during the analysis.
 
-The images were located on the screen as far as possible to reduce the errors as much as possible. For the same reason, the sent message were kept as a single block instead of being spread further apart. 
+The images were located on the screen as far as possible to reduce the errors as much as possible. For the same reason, the available messages were kept as a single block instead of being spread further apart. 
 
 Furthermore, a performance issue arised during the pilot phase. The issues was that the eye tracking became very slow and laggy towards the the second half of the experiment. The more clicks were made, the worse the performance became. Due to a drastic drop in sampling rate and increase in response time, the pilot data was clearly unacceptable. The issue was resolved by reducing the \text{DataWindow} size from 700 to 50 in source code and recreating the WebGazer source file afterwards. The issue was resolved and the performance was stable throughout the experiment. 
 
@@ -60,7 +60,7 @@ The calibration is highly dependent on the setup. Hence, the following pieces of
 Even with all the optimizations in place, the calibration procedure was still relatively difficult to pass. The participants were not restricted in number of attempts to calibrate. However, the participants were informed that the approval is only possible after successfully completing the calibration and the rest of the experiment.
 
 \subsection{Consent}
-The participants were informed about the eye-tracking procedure at the beginning of the experiment. They were informed that no video of them will be stored at any point of time. The participants were informed that they can stop the experiment at any point by exiting the website and none of their data will be saved. The exact formulation was: 
+The participants were informed about the eye-tracking procedure at the beginning of the experiment. They were informed that no video of them will be stored at any point of time. The participants were informed that they can stop the experiment at any point by exiting the website and none of their data will be saved. The project and the consent formulation was approved by the Ethical Review Board of the Faculty of Mathematics and Computer Science at Saarland University. The exact formulation was: 
 
 \begin{quote}
     This experiment is being conducted as part of ongoing research at Saarland University. If you have any questions or comments about the study, please contact us. You must be at least 18 years old to participate. Your participation in this research is voluntary. There are no risks or benefits to participating in this study. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Part of the data collections involves using your webcam to estimate your eye gaze. No video or audio is stored at any point during the experiment. We only use the video to store the estimated position of your eye gaze, as well as estimated size of your pupil. All data will be anonymized prior to analysis. 
@@ -170,7 +170,7 @@ Similarly to \cite{Vigneau_2006}, we will report the pairwise correlations of ey
 \subsection{Mixed Effects Logistic Regressions}
 \label{sec:analysis:mixed_effects}
 
-The main analysis will be done using mixed effects logistic regressions. The models are designed to correspond to our hypothesis presented in \autoref{sec:research_questions}. For the hypothesis 1 and 2, the following model was preregistered:
+The main analysis will be done using mixed effects logistic regressions. The models are designed to correspond to our hypothesis presented in \autoref{sec:research_questions}. For the hypothesis 1 and 2, the following model was preregistered \citep{preregistration}:
 \begin{verbatim}
     Correct ~ Condition + TrgtPos + Trial + 
     PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + 
