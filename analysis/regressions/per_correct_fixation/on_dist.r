@@ -3,7 +3,7 @@ library(tidyverse)
 library(lme4)
 library(scales)
 
-df <- read.csv("/home/gatemrou/uds/thesis/Thesis-Project/analysis/data/final_datasets/final_experiment_correct_fixations.csv")
+df <- read.csv("analysis/data/final_datasets/final_experiment_correct_fixations.csv")
 # 'Subject', 'Trial', 'Condition', 'MsgType', 'TrgtPos', 'Time', 'AOI'
 
 df <- df %>%
