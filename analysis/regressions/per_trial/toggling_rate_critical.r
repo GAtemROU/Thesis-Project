@@ -48,12 +48,15 @@ print(head(df_tog_rate))
 
 # Fit a linear regression model
 regression <- lm(
-  RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial + PropTimeOnTrgt +
-    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
-    PropTimeOnAvailableMsgs + StrategyLabel + Correct + MsgType + AnswerTime +
-    Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
-    Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
-    Condition:PropTimeOnAvailableMsgs + Condition:StrategyLabel + Condition:AnswerTime,
+  RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial + 
+  # PropTimeOnTrgt +
+    # PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
+    # PropTimeOnAvailableMsgs + 
+    StrategyLabel + Correct + MsgType + AnswerTime +
+    # Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
+    # Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
+    # Condition:PropTimeOnAvailableMsgs + 
+    Condition:StrategyLabel + Condition:AnswerTime,
   # specify dataset
   data = df_tog_rate
 )
@@ -66,4 +69,8 @@ print(summary(regression))
 emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'StrategyLabel')
 print(emtr$emtrends)
 print(emtr$contrasts)
+emmns = emmeans(regression, specs = pairwise ~ Condition : StrategyLabel)
+print(emmns$emmeans)
+print(emmns$contrasts)
+print(emmns)
 emmip(regression, Condition ~ StrategyLabel, cov.reduce = range)

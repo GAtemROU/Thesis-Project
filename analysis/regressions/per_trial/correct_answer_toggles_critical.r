@@ -45,7 +45,8 @@ print(head(df_correct))
 regression <- glm(
     Correct ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
     PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
-    PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs +
+    PropTimeOnAvailableMsgs + 
+    RateTogglingAvailableMsgs +
     MsgType + AnswerTime +
     Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
@@ -64,7 +65,7 @@ print(summary(regression))
 
 # saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'RateTogglingAvailableMsgs')
+emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'PropTimeOnAvailableMsgs')
 print(emtr$emtrends)
 print(emtr$contrasts)
-emmip(regression, Condition ~ RateTogglingAvailableMsgs, cov.reduce = range)
+emmip(regression, Condition ~ AnswerTime, cov.reduce = range)

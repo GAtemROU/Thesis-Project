@@ -23,8 +23,8 @@ df_av_msgs <- df %>%
 contrasts(df_av_msgs$Condition) <- contr.helmert(3)
 contrasts(df_av_msgs$Condition)
 
-contrasts(df_av_msgs$Condition) <- contr.helmert(3)
-contrasts(df_av_msgs$Condition)
+contrasts(df_av_msgs$StrategyLabel) <- contr.helmert(3)
+contrasts(df_av_msgs$StrategyLabel)
 
 contrasts(df_av_msgs$MsgType) <- c(-1, 1)
 contrasts(df_av_msgs$MsgType)
