@@ -40,6 +40,8 @@ class MarkovModel:
     def get_joint_probabilities(self) -> np.ndarray:
         return self.joint_probabilities
     
-    
+    staticmethod
+    def get_state_index(states: List[str]) -> Dict[str, int]:
+        return {state: index for index, state in enumerate(states)}
 
     
