@@ -12,21 +12,25 @@ class MarkovModel:
         self.joint_counts = np.zeros((len(states), len(states)))
         self.joint_probabilities = np.zeros((len(states), len(states)))
     
-    def fit(self, scanpaths: List[List[str]]):
+    def fit(self, scanpath: List[str]) -> np.ndarray:
         prior_counts = np.zeros(len(self.states))
-        join_counts = np.zeros((len(self.states), len(self.states)))
-        for scanpath in scanpaths:
-            for i in range(1, len(scanpath)):
-                current_state = scanpath[i - 1]
-                next_state = scanpath[i]
+        joint_counts = np.zeros((len(self.states), len(self.states)))
+        for i in range(1, len(scanpath)):
+            current_state = scanpath[i - 1]
+            next_state = scanpath[i]
+            if current_state in self.states:
                 prior_counts[self.state_index[current_state]] += 1
-                join_counts[self.state_index[current_state], self.state_index[next_state]] += 1
+            if current_state in self.states and next_state in self.states:
+                joint_counts[self.state_index[current_state], self.state_index[next_state]] += 1
         self.prior_counts = prior_counts
-        self.joint_counts = join_counts
-        self.prior_probabilities = prior_counts / np.sum(prior_counts)
-        self.joint_probabilities = join_counts / np.sum(join_counts, axis=1, keepdims=True)
+        self.joint_counts = joint_counts
+        self.prior_probabilities = prior_counts / len(scanpath)
+        self.joint_probabilities = joint_counts / len(scanpath)
         self.transition_matrix = self.joint_probabilities / self.prior_probabilities[:, np.newaxis]
-    
+        # Handle division by zero
+        self.transition_matrix[np.isnan(self.transition_matrix)] = 0
+        return self.transition_matrix
+
     def get_transition_matrix(self) -> np.ndarray:
         return self.transition_matrix
 
