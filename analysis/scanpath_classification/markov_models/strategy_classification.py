@@ -31,19 +31,23 @@ if __name__ == "__main__":
     if keep_non_aoi:
         states.append('non_aoi')
     MarkovModelConstr = MarkovModelConstructor(states)
-    df = MarkovModelConstr.create_markov_models(path, states, save=True, explode=False, per='participant')
-    # encode categorical features
-    df = pd.get_dummies(df, columns=['Condition', 'MsgType'], drop_first=True)
+    df = MarkovModelConstr.create_markov_models(path, states, include_non_aoi=False, save=False, explode=True, per='participant')
+    # print(df.iloc[0]['TransitionMatrix'])
+    assert df is not None, "DataFrame should not be None after Markov Model construction"
+    # only keep simple condition
+    df = df[df['Condition'] == 'simple']
+    df.drop(columns=['Condition'], inplace=True)
+    df = pd.get_dummies(df, columns=['MsgType'], drop_first=True)
     from sklearn.ensemble import RandomForestClassifier
     target = 'StrategyLabel'
     df.drop(columns=['Scanpath', 'TransitionMatrix', 'Subject', 'Correct'], inplace=True)
 
-    # model_forest = RandomForestClassifier(n_estimators=100, random_state=42, criterion='gini')
-    # fitted_model_forest = fit_classifier(df, model_forest, target)
-    # from sklearn.neighbors import KNeighborsClassifier
-    # model_knn = KNeighborsClassifier(n_neighbors=20)
-    # fitted_model_knn = fit_classifier(df, model_knn, target)
-    # from sklearn.neural_network import MLPClassifier
-    # model_nn = MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=500, random_state=42)
-    # fitted_model_nn = fit_classifier(df, model_nn, target)
+    model_forest = RandomForestClassifier(n_estimators=1, random_state=42, criterion='gini')
+    fitted_model_forest = fit_classifier(df, model_forest, target)
+    from sklearn.neighbors import KNeighborsClassifier
+    model_knn = KNeighborsClassifier(n_neighbors=20)
+    fitted_model_knn = fit_classifier(df, model_knn, target)
+    from sklearn.neural_network import MLPClassifier
+    model_nn = MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=500, random_state=42)
+    fitted_model_nn = fit_classifier(df, model_nn, target)
 

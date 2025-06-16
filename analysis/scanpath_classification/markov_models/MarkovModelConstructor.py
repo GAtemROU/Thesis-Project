@@ -1,5 +1,6 @@
 import pandas as pd
 from MarkovModel import MarkovModel
+import os
 
 class MarkovModelConstructor:
     def __init__(self, states):
@@ -38,15 +39,21 @@ class MarkovModelConstructor:
         return df
            
 
-    def create_markov_models(self, path, states, save=False, explode=False, per='participant'):
+    def create_markov_models(self, path, states, include_non_aoi=False, save=False, explode=False, per='participant', save_path=None):
+        if save_path is None:
+            save_path = "analysis/data/markov_models/"
+        assert per in ['trial', 'participant'], "Parameter 'per' must be either 'trial' or 'participant'."
         scanpaths = pd.read_csv(path)
+        if not include_non_aoi:
+            scanpaths = scanpaths[scanpaths['AOI'] != 'non_aoi']
         df = None
         if per == 'trial':
             df = self.create_markov_models_per_trial(scanpaths, states)
         elif per == 'participant':
             df = self.create_markov_models_per_participant(scanpaths, states)
-        if explode:
+        if explode and df is not None:
             df = self.explode_transition_matrix(df, states)
-        if save:
-            df.to_csv(f"analysis/data/markov_models/markov_models_{per}{'_exp_matrix' if explode else ""}.csv", index=False)
+        if save and df is not None:
+            os.makedirs(save_path, exist_ok=True)
+            df.to_csv(f"{save_path}/markov_models_{per}{'_exp_matrix' if explode else ""}.csv", index=False)
         return df
