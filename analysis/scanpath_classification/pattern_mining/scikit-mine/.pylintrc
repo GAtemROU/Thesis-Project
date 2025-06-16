@@ -1,0 +1,21 @@
+[MASTER]
+ignore-patterns=test.*?.py,docs/
+
+[MESSAGES CONTROL]
+disable=invalid-name,
+        too-few-public-methods,
+        arguments-differ,
+        cell-var-from-loop,
+        multiple-statements,
+        anomalous-backslash-in-string,
+        too-many-instance-attributes,
+        no-member,
+        attribute-defined-outside-init,
+        too-many-locals,
+        unused-argument,
+        unsubscriptable-object,
+        dangerous-default-value,
+        protected-access,
+
+[FORMAT]
+max-line-length=120

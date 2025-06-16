@@ -1,0 +1,11 @@
+pytest
+pytest-cov
+pylint
+asv
+jupyter
+pandoc
+sphinx
+nbsphinx
+sphinx_rtd_theme
+black
+pre-commit

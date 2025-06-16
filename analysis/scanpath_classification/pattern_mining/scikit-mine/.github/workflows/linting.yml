@@ -1,0 +1,18 @@
+name: linting
+on:
+  push:
+    paths:
+      - skmine/**
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.x
+      - name: Install dependencies for linting
+        run: pip install pylint
+      - name: linting
+        run: pylint --fail-under=8 --rcfile=.pylintrc --extension-pkg-whitelist=numpy --disable=E0401 skmine/

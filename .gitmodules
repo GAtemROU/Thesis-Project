@@ -1,0 +1,3 @@
+[submodule "scikit-mine"]
+	path = scikit-mine
+	url = https://github.com/scikit-mine/scikit-mine.git

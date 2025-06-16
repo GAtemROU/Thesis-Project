@@ -1,0 +1,88 @@
+*.vscode
+*.pkl
+*.pdf
+*.dot
+
+**/__pycache__/
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Distribution / packaging
+
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+doc/_build/
+doc/generated/
+
+# PyBuilder
+target/
+
+
+# Extras
+**/.ipynb_checkpoints/
+**/*.cpp
+**/*.so
+**/*.html
+.gitconfig
+*.doctree
+*.rst.txt
+*.js
+*.buildinfo
+*.inv
+*.pickle
+docs/_build/*
+docs/skmine*.rst
+docs/modules*.rst
+build/
+.vscode/
+.build/
+.pytest_cache/
+env/
+results/
+html/
+.dvcignore
+**/*.DS_Store
+/dev_HC/project-template/
