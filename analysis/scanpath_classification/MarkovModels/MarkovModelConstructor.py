@@ -1,5 +1,5 @@
 import pandas as pd
-from MarkovModels import MarkovModel
+from MarkovModels.MarkovModel import MarkovModel
 import os
 
 class MarkovModelConstructor:

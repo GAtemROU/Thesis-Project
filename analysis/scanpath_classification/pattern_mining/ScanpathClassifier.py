@@ -14,7 +14,7 @@ class ScanpathClassifier:
     
     def fit(self):
         self.slim = self.slim.fit(self.scanpaths)
-        # self.patterns = self.slim.transform(self.scanpaths)
+        self.patterns = self.slim.transform(self.scanpaths)
 
 
 
@@ -33,17 +33,13 @@ if __name__ == "__main__":
     df_simple_l1 = df_simple[df_simple['StrategyLabel'] == 1]['Scanpath'].tolist()
     df_simple_l2 = df_simple[df_simple['StrategyLabel'] == 2]['Scanpath'].tolist()
 
-    aois = ['trgt', 'comp', 'dist', 'sent_msg', 'av_msgs']
-    D = [
-    ['bananas', 'milk'],
-    ['milk', 'bananas', 'cookies'],
-    ['cookies', 'butter', 'tea'],
-    ['tea'], 
-    ['milk', 'bananas', 'tea'],
-    ]
-    miner_simple_l0 = ScanpathClassifier(D, target='StrategyLabel')
+    aois = ['trgt', 'comp', 'dist', 'sent_msg', 'av_msgs', 'non_aoi']
 
-    # miner_simple_l0 = ScanpathClassifier(df_simple_l0, target='StrategyLabel', aois=aois)
+    miner_simple_l0 = ScanpathClassifier(df_simple_l0, target='StrategyLabel', aois=aois)
     miner_simple_l0.fit()
     patterns_simple_l0 = miner_simple_l0.get_patterns()
+    miner_simple_l2 = ScanpathClassifier(df_simple_l2, target='StrategyLabel', aois=aois)
+    miner_simple_l2.fit()
+    patterns_simple_l2 = miner_simple_l2.get_patterns()
     print("Patterns for simple L0:", patterns_simple_l0)
+    print("Patterns for simple L2:", patterns_simple_l2)
