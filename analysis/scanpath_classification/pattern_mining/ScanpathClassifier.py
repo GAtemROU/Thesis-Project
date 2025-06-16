@@ -23,6 +23,7 @@ class ScanpathClassifier:
         Returns the discovered patterns.
         """
         return self.patterns
+
     
 
 if __name__ == "__main__":
