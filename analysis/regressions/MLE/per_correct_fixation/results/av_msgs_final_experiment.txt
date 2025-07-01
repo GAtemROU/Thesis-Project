@@ -1,0 +1,39 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: OnAvMsgs ~ Condition + Trial + MsgType + TrgtPos + (1 + TrgtPos |
+    Subject)
+   Data: df_av_msgs
+
+      AIC       BIC    logLik -2*log(L)  df.resid
+ 181176.2  181311.7  -90575.1  181150.2    249509
+
+Scaled residuals:
+    Min      1Q  Median      3Q     Max 
+-0.8257 -0.4348 -0.3256 -0.2100 15.4487
+
+Random effects:
+ Groups  Name        Variance Std.Dev. Corr
+ Subject (Intercept) 0.4971   0.7051
+         TrgtPos2    0.4796   0.6925   -0.33
+         TrgtPos3    0.7237   0.8507   -0.31  0.48
+Number of obs: 249522, groups:  Subject, 101
+
+Fixed effects:
+             Estimate Std. Error z value Pr(>|z|)
+(Intercept) -2.330044   0.071251 -32.702   <2e-16 ***
+Condition1  -0.063455   0.007056  -8.993   <2e-16 ***
+Condition2  -0.385246   0.006972 -55.260   <2e-16 ***
+Trial       -0.085418   0.006603 -12.936   <2e-16 ***
+MsgType1     0.085259   0.006573  12.972   <2e-16 ***
+TrgtPos2    -0.143025   0.072737  -1.966   0.0493 *
+TrgtPos3    -0.140503   0.088966  -1.579   0.1143
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Random effects:
+ Groups  Name        Variance Std.Dev. Corr
+ Subject (Intercept) 0.4971   0.7051
+         TrgtPos2    0.4796   0.6925   -0.33
+         TrgtPos3    0.7237   0.8507   -0.31  0.48
+Number of obs: 249522, groups:  Subject, 101

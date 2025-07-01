@@ -1,0 +1,29 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: OnDist ~ Condition + Trial + MsgType + TrgtPos + (1 | Subject)
+   Data: df_on_dist
+
+      AIC       BIC    logLik -2*log(L)  df.resid
+ 206591.8  206675.2 -103287.9  206575.8    249514
+
+Scaled residuals:
+    Min      1Q  Median      3Q     Max 
+-0.8342 -0.5342 -0.3253 -0.1917  6.6865
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ Subject (Intercept) 0.1302   0.3609
+Number of obs: 249522, groups:  Subject, 101
+
+Fixed effects:
+             Estimate Std. Error z value Pr(>|z|)
+(Intercept) -3.056241   0.039379 -77.611   <2e-16 ***
+Condition1   0.013373   0.006440   2.076   0.0379 *
+Condition2  -0.086425   0.004691 -18.425   <2e-16 ***
+Trial       -0.053649   0.005713  -9.391   <2e-16 ***
+MsgType1    -0.017492   0.005713  -3.062   0.0022 **
+TrgtPos2     1.772965   0.018094  97.986   <2e-16 ***
+TrgtPos3     1.795716   0.018151  98.931   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

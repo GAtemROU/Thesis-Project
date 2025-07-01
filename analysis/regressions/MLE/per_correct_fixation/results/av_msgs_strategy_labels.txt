@@ -1,0 +1,43 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: OnAvMsgs ~ Condition + Trial + MsgType + TrgtPos + StrategyLabel +  
+    (1 | Subject)
+   Data: df_av_msgs
+
+     AIC      BIC   logLik deviance df.resid 
+183237.6 183341.8 -91608.8 183217.6   249512 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-0.7846 -0.4379 -0.3434 -0.2198  9.9192 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ Subject (Intercept) 0.2981   0.5459  
+Number of obs: 249522, groups:  Subject, 101
+
+Fixed effects:
+                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)    -2.384581   0.061519 -38.762  < 2e-16 ***
+Condition1     -0.062108   0.006597  -9.414  < 2e-16 ***
+Condition2     -0.375252   0.006719 -55.852  < 2e-16 ***
+Trial          -0.080982   0.006182 -13.101  < 2e-16 ***
+MsgType1        0.088485   0.006201  14.269  < 2e-16 ***
+TrgtPos2       -0.093858   0.015149  -6.196 5.80e-10 ***
+TrgtPos3       -0.045711   0.015025  -3.042  0.00235 ** 
+StrategyLabel1  0.163767   0.083550   1.960  0.04998 *  
+StrategyLabel2  0.159689   0.037042   4.311 1.62e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Cndtn1 Cndtn2 Trial  MsgTy1 TrgtP2 TrgtP3 StrtL1
+Condition1   0.011                                                 
+Condition2   0.070 -0.020                                          
+Trial        0.015  0.022  0.094                                   
+MsgType1    -0.004  0.080  0.005  0.012                            
+TrgtPos2    -0.115 -0.061 -0.018 -0.023 -0.042                     
+TrgtPos3    -0.113 -0.076 -0.025 -0.008 -0.067  0.462              
+StratgyLbl1  0.085 -0.007  0.010  0.000 -0.003 -0.006 -0.004       
+StratgyLbl2 -0.417  0.004  0.010 -0.007  0.003  0.000 -0.002 -0.069
