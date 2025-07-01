@@ -1,0 +1,67 @@
+Family: binomial 
+  Links: mu = logit 
+Formula: Correct | trials(1) ~ Condition + TrgtPos + Trial + PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + MsgType + AnswerTime + Condition:PropTimeOnTrgt + Condition:PropTimeOnComp + Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg + Condition:PropTimeOnAvailableMsgs + Condition:RateTogglingAvailableMsgs + Condition:AnswerTime + (1 + TrgtPos | Subject) 
+   Data: df_correct (Number of observations: 2626) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Multilevel Hyperparameters:
+~Subject (Number of levels: 101) 
+                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
+sd(Intercept)               1.22      0.18     0.89     1.60 1.00     1508
+sd(TrgtPos2)                0.78      0.27     0.21     1.30 1.01      408
+sd(TrgtPos3)                0.69      0.26     0.16     1.19 1.01      509
+cor(Intercept,TrgtPos2)     0.29      0.29    -0.28     0.81 1.00      984
+cor(Intercept,TrgtPos3)     0.40      0.29    -0.20     0.89 1.00     1032
+cor(TrgtPos2,TrgtPos3)      0.42      0.33    -0.38     0.90 1.01      575
+                        Tail_ESS
+sd(Intercept)               2258
+sd(TrgtPos2)                 510
+sd(TrgtPos3)                 905
+cor(Intercept,TrgtPos2)     1222
+cor(Intercept,TrgtPos3)     1410
+cor(TrgtPos2,TrgtPos3)       937
+
+Regression Coefficients:
+                                     Estimate Est.Error l-95% CI u-95% CI Rhat
+Intercept                               -0.20      0.16    -0.51     0.11 1.00
+Condition1                               0.29      0.06     0.18     0.40 1.00
+TrgtPos2                                 1.92      0.26     1.41     2.45 1.00
+TrgtPos3                                 1.61      0.24     1.14     2.09 1.00
+Trial                                    0.28      0.06     0.17     0.39 1.00
+PropTimeOnTrgt                           5.33      1.31     2.76     7.91 1.00
+PropTimeOnComp                          -2.55      1.30    -5.15    -0.07 1.00
+PropTimeOnDist                          -0.35      1.30    -2.91     2.14 1.00
+PropTimeOnSentMsg                        0.96      1.28    -1.54     3.45 1.00
+PropTimeOnAvailableMsgs                  1.97      1.39    -0.78     4.62 1.00
+RateTogglingAvailableMsgs                2.16      2.30    -2.31     6.58 1.00
+MsgType1                                -0.09      0.06    -0.20     0.02 1.00
+AnswerTime                              -0.18      0.07    -0.33    -0.03 1.00
+Condition1:PropTimeOnTrgt               -2.47      1.27    -4.94     0.08 1.01
+Condition1:PropTimeOnComp               -1.54      1.26    -3.97     1.02 1.01
+Condition1:PropTimeOnDist               -1.55      1.26    -4.04     0.93 1.01
+Condition1:PropTimeOnSentMsg            -1.37      1.27    -3.85     1.19 1.01
+Condition1:PropTimeOnAvailableMsgs      -0.83      1.34    -3.49     1.90 1.01
+Condition1:RateTogglingAvailableMsgs     5.07      2.17     0.97     9.38 1.00
+Condition1:AnswerTime                   -0.10      0.06    -0.22     0.02 1.00
+                                     Bulk_ESS Tail_ESS
+Intercept                                2545     2875
+Condition1                               6268     3054
+TrgtPos2                                 2720     2809
+TrgtPos3                                 2593     2601
+Trial                                    5945     2911
+PropTimeOnTrgt                           1063     1827
+PropTimeOnComp                           1001     1739
+PropTimeOnDist                            993     1645
+PropTimeOnSentMsg                        1008     1727
+PropTimeOnAvailableMsgs                  1159     1696
+RateTogglingAvailableMsgs                4795     2484
+MsgType1                                 6174     3238
+AnswerTime                               3896     2914
+Condition1:PropTimeOnTrgt                1026     1933
+Condition1:PropTimeOnComp                1094     1960
+Condition1:PropTimeOnDist                1084     1825
+Condition1:PropTimeOnSentMsg             1117     2025
+Condition1:PropTimeOnAvailableMsgs       1040     1973
+Condition1:RateTogglingAvailableMsgs     4517     2674
+Condition1:AnswerTime                    4152     3008
