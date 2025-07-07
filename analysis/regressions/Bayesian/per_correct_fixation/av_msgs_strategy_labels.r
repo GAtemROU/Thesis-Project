@@ -2,6 +2,7 @@ library(stats)
 library(tidyverse)
 library(lme4)
 library(scales)
+library(brms)
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_correct_fixations.csv")
 
@@ -18,6 +19,7 @@ df <- df %>%
 
 df_av_msgs <- df %>%
     mutate(OnAvMsgs = AOI == "available_msgs") %>%
+    mutate(OnAvMsgs = OnAvMsgs*1) %>%
     select(Subject, Trial, Condition, MsgType, TrgtPos, StrategyLabel, Time, OnAvMsgs)
 
 contrasts(df_av_msgs$Condition) <- contr.helmert(3)
@@ -36,17 +38,25 @@ print(head(df_av_msgs))
 
 # fitting logistic regression with an intercept plus 4 slopes,
 # and associated random effects by subject
-regression <- glmer(
-    OnAvMsgs ~ Condition + Trial + MsgType + TrgtPos + StrategyLabel +
-        (1| Subject),
+regression <- brm(
+    OnAvMsgs | trials(1) ~ Condition + Trial + MsgType + TrgtPos + StrategyLabel +
+        (1 + TrgtPos + StrategyLabel | Subject),
     # specify dataset
     data = df_av_msgs,
     # specify to fit a logistic regression
     family = binomial(link = "logit"),
-    verbose = TRUE
+    prior = c(prior(normal(0, 1), class="Intercept"),
+              prior(normal(0, 5), class="b")),
+    cores = 6,
+    save_pars = save_pars(all = TRUE),
+    iter = 5000,
+    chains = 6,
+    warmup = 500
 )
+
+
 
 
 print(summary(regression))
 
-# saveRDS(regression, file = paste0("/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/per_correct_fixation/trained_models/av_msgs_regr_", format(Sys.time(), "%F_%R"), ".rds"))
+saveRDS(regression, file = paste0("//home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_correct_fixation/trained_models/av_msgs_regr_", format(Sys.time(), "%F_%R"), ".rds"))

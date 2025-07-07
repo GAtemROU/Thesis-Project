@@ -4,6 +4,7 @@ library(lme4)
 library(scales)
 library(emmeans)
 library(magrittr)
+library(brms)
 
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
@@ -49,9 +50,6 @@ print(head(df_tog_rate))
 # Fit a linear regression model
 regression <- lm(
   RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial + 
-  # PropTimeOnTrgt +
-    # PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
-    # PropTimeOnAvailableMsgs + 
     StrategyLabel + Correct + MsgType + AnswerTime +
     # Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
     # Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
@@ -61,10 +59,32 @@ regression <- lm(
   data = df_tog_rate
 )
 
+regression <- brm(
+    RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial +
+    StrategyLabel + Correct + MsgType + AnswerTime +
+    Condition:StrategyLabel + Condition:AnswerTime +
+    (1 + Condition + TrgtPos + Trial +
+    StrategyLabel + Correct + MsgType + AnswerTime | Subject),
+    # specify dataset
+    data = df_tog_rate,
+    # specify to fit a logistic regression
+    prior = c(prior(normal(0, 1), class="Intercept"),
+              prior(normal(0, 5), class="b")),
+    cores = 6,
+    save_pars = save_pars(all = TRUE),
+    iter = 5000,
+    chains = 6,
+    warmup = 500
+
+)
+
 
 print(summary(regression))
 
-# saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
+saveRDS(regression, file = paste0("analysis/regressions/Bayesian/per_correct_fixation/trained_models/tog_rate__", format(Sys.time(), "%F_%R"), ".rds"))
+
+# saved_regr = readRDS(file = "/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_2025-07-03_10:38.rds")
+# print(summary(saved_regr))
 
 emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'StrategyLabel')
 print(emtr$emtrends)

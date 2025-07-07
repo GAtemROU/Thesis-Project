@@ -5,7 +5,19 @@ library(scales)
 library(emmeans)
 library(magrittr)
 library(brms)
+# library(beepr)
 
+condEffects <- function(model, x, facet_by = c()){
+  if (length(facet_by)>0) {
+    conditions <- make_conditions(model, facet_by)  } else {
+    conditions <- NULL
+  }
+  
+  effects <- conditional_effects(model, effects = x, 
+                                 conditions = conditions)
+  
+  return(effects)
+}
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
 
@@ -54,23 +66,34 @@ regression <- brm(
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
     Condition:PropTimeOnAvailableMsgs +
     Condition:RateTogglingAvailableMsgs + Condition:AnswerTime +
-    (1 + TrgtPos | Subject),
+    (1 + Condition + TrgtPos + Trial + PropTimeOnTrgt +
+    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
+    PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + MsgType | Subject),
     # specify dataset
     data = df_correct,
     # specify to fit a logistic regression
     family = binomial(link = "logit"),
-    prior = c(prior(uniform(0, 1), class=Intercept, lb=0, ub=1)),
+    prior = c(prior(normal(1, 2), class="Intercept"),
+              prior(normal(0, 5), class="b")),
+    cores = 6,
+    save_pars = save_pars(all = TRUE),
+    iter = 5000,
+    chains = 6,
+    warmup = 500
 
 )
-
+# beep(sound = 3)
 
 print(summary(regression))
 
 saveRDS(regression, file = paste0("analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-# emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'PropTimeOnAvailableMsgs')
-# print(emtr$emtrends)
-# print(emtr$contrasts)
-# emmip(regression, Condition ~ AnswerTime, cov.reduce = range)
-# summary(df$RateTogglingAvailableMsgs)
+saved_regr = readRDS("/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_2025-07-01_15:44.rds")
+as_draws_df(fit_press)
+condEffects(saved_regr, "Condition")
+print(summary(saved_regr))
+emtr = emtrends(saved_regr, specs = pairwise ~ Condition, var = 'RateTogglingAvailableMsgs')
+print(emtr$emtrends)
+print(emtr$contrasts)
+emmip(regression, Condition ~ AnswerTime, cov.reduce = range)
 

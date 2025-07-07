@@ -1,67 +1,311 @@
 Family: binomial 
   Links: mu = logit 
-Formula: Correct | trials(1) ~ Condition + TrgtPos + Trial + PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + MsgType + AnswerTime + Condition:PropTimeOnTrgt + Condition:PropTimeOnComp + Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg + Condition:PropTimeOnAvailableMsgs + Condition:RateTogglingAvailableMsgs + Condition:AnswerTime + (1 + TrgtPos | Subject) 
+Formula: Correct | trials(1) ~ Condition + TrgtPos + Trial + 
+PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + 
+PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + MsgType + AnswerTime + 
+Condition:PropTimeOnTrgt + Condition:PropTimeOnComp + Condition:PropTimeOnDist + 
+Condition:PropTimeOnSentMsg + Condition:PropTimeOnAvailableMsgs + 
+Condition:RateTogglingAvailableMsgs + Condition:AnswerTime + 
+(1 + Condition + TrgtPos + Trial + PropTimeOnTrgt + PropTimeOnComp + 
+PropTimeOnDist + PropTimeOnSentMsg + PropTimeOnAvailableMsgs + 
+RateTogglingAvailableMsgs + MsgType | Subject) 
    Data: df_correct (Number of observations: 2626) 
-  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
-         total post-warmup draws = 4000
+  Draws: 6 chains, each with iter = 5000; warmup = 500; thin = 1;
+         total post-warmup draws = 27000
 
 Multilevel Hyperparameters:
 ~Subject (Number of levels: 101) 
-                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-sd(Intercept)               1.22      0.18     0.89     1.60 1.00     1508
-sd(TrgtPos2)                0.78      0.27     0.21     1.30 1.01      408
-sd(TrgtPos3)                0.69      0.26     0.16     1.19 1.01      509
-cor(Intercept,TrgtPos2)     0.29      0.29    -0.28     0.81 1.00      984
-cor(Intercept,TrgtPos3)     0.40      0.29    -0.20     0.89 1.00     1032
-cor(TrgtPos2,TrgtPos3)      0.42      0.33    -0.38     0.90 1.01      575
-                        Tail_ESS
-sd(Intercept)               2258
-sd(TrgtPos2)                 510
-sd(TrgtPos3)                 905
-cor(Intercept,TrgtPos2)     1222
-cor(Intercept,TrgtPos3)     1410
-cor(TrgtPos2,TrgtPos3)       937
+                                                       Estimate Est.Error
+sd(Intercept)                                              1.47      0.19
+sd(Condition1)                                             0.81      0.12
+sd(TrgtPos2)                                               0.76      0.36
+sd(TrgtPos3)                                               0.75      0.35
+sd(Trial)                                                  0.40      0.12
+sd(PropTimeOnTrgt)                                         3.16      0.80
+sd(PropTimeOnComp)                                         1.10      0.63
+sd(PropTimeOnDist)                                         0.65      0.47
+sd(PropTimeOnSentMsg)                                      1.64      0.80
+sd(PropTimeOnAvailableMsgs)                                1.00      0.74
+sd(RateTogglingAvailableMsgs)                              2.35      1.97
+sd(MsgType1)                                               0.51      0.11
+cor(Intercept,Condition1)                                  0.50      0.13
+cor(Intercept,TrgtPos2)                                    0.03      0.23
+cor(Condition1,TrgtPos2)                                   0.11      0.23
+cor(Intercept,TrgtPos3)                                    0.13      0.23
+cor(Condition1,TrgtPos3)                                   0.09      0.23
+cor(TrgtPos2,TrgtPos3)                                     0.15      0.28
+cor(Intercept,Trial)                                       0.49      0.17
+cor(Condition1,Trial)                                      0.27      0.19
+cor(TrgtPos2,Trial)                                        0.05      0.25
+cor(TrgtPos3,Trial)                                        0.16      0.24
+cor(Intercept,PropTimeOnTrgt)                             -0.19      0.18
+cor(Condition1,PropTimeOnTrgt)                            -0.00      0.19
+cor(TrgtPos2,PropTimeOnTrgt)                               0.19      0.25
+cor(TrgtPos3,PropTimeOnTrgt)                               0.14      0.25
+cor(Trial,PropTimeOnTrgt)                                 -0.12      0.22
+cor(Intercept,PropTimeOnComp)                              0.29      0.26
+cor(Condition1,PropTimeOnComp)                             0.27      0.26
+cor(TrgtPos2,PropTimeOnComp)                               0.08      0.27
+cor(TrgtPos3,PropTimeOnComp)                               0.10      0.26
+cor(Trial,PropTimeOnComp)                                  0.12      0.26
+cor(PropTimeOnTrgt,PropTimeOnComp)                        -0.05      0.25
+cor(Intercept,PropTimeOnDist)                             -0.09      0.27
+cor(Condition1,PropTimeOnDist)                            -0.16      0.28
+cor(TrgtPos2,PropTimeOnDist)                              -0.07      0.28
+cor(TrgtPos3,PropTimeOnDist)                              -0.05      0.28
+cor(Trial,PropTimeOnDist)                                 -0.08      0.27
+cor(PropTimeOnTrgt,PropTimeOnDist)                         0.09      0.27
+cor(PropTimeOnComp,PropTimeOnDist)                         0.02      0.28
+cor(Intercept,PropTimeOnSentMsg)                          -0.20      0.24
+cor(Condition1,PropTimeOnSentMsg)                         -0.22      0.24
+cor(TrgtPos2,PropTimeOnSentMsg)                           -0.10      0.26
+cor(TrgtPos3,PropTimeOnSentMsg)                           -0.04      0.26
+cor(Trial,PropTimeOnSentMsg)                              -0.01      0.25
+cor(PropTimeOnTrgt,PropTimeOnSentMsg)                     -0.24      0.24
+cor(PropTimeOnComp,PropTimeOnSentMsg)                     -0.02      0.26
+cor(PropTimeOnDist,PropTimeOnSentMsg)                      0.06      0.28
+cor(Intercept,PropTimeOnAvailableMsgs)                     0.05      0.27
+cor(Condition1,PropTimeOnAvailableMsgs)                    0.09      0.27
+cor(TrgtPos2,PropTimeOnAvailableMsgs)                      0.06      0.28
+cor(TrgtPos3,PropTimeOnAvailableMsgs)                     -0.02      0.27
+cor(Trial,PropTimeOnAvailableMsgs)                         0.06      0.27
+cor(PropTimeOnTrgt,PropTimeOnAvailableMsgs)                0.08      0.28
+cor(PropTimeOnComp,PropTimeOnAvailableMsgs)                0.02      0.27
+cor(PropTimeOnDist,PropTimeOnAvailableMsgs)               -0.00      0.28
+cor(PropTimeOnSentMsg,PropTimeOnAvailableMsgs)            -0.01      0.27
+cor(Intercept,RateTogglingAvailableMsgs)                   0.07      0.27
+cor(Condition1,RateTogglingAvailableMsgs)                  0.13      0.28
+cor(TrgtPos2,RateTogglingAvailableMsgs)                    0.06      0.28
+cor(TrgtPos3,RateTogglingAvailableMsgs)                    0.02      0.27
+cor(Trial,RateTogglingAvailableMsgs)                       0.07      0.27
+cor(PropTimeOnTrgt,RateTogglingAvailableMsgs)              0.04      0.27
+cor(PropTimeOnComp,RateTogglingAvailableMsgs)              0.05      0.28
+cor(PropTimeOnDist,RateTogglingAvailableMsgs)             -0.03      0.28
+cor(PropTimeOnSentMsg,RateTogglingAvailableMsgs)          -0.03      0.27
+cor(PropTimeOnAvailableMsgs,RateTogglingAvailableMsgs)    -0.00      0.28
+cor(Intercept,MsgType1)                                   -0.20      0.18
+cor(Condition1,MsgType1)                                  -0.02      0.18
+cor(TrgtPos2,MsgType1)                                    -0.01      0.24
+cor(TrgtPos3,MsgType1)                                     0.08      0.24
+cor(Trial,MsgType1)                                       -0.08      0.22
+cor(PropTimeOnTrgt,MsgType1)                               0.37      0.19
+cor(PropTimeOnComp,MsgType1)                              -0.04      0.25
+cor(PropTimeOnDist,MsgType1)                               0.00      0.27
+cor(PropTimeOnSentMsg,MsgType1)                           -0.16      0.24
+cor(PropTimeOnAvailableMsgs,MsgType1)                      0.05      0.27
+cor(RateTogglingAvailableMsgs,MsgType1)                    0.05      0.27
+                                                       l-95% CI u-95% CI Rhat
+sd(Intercept)                                              1.12     1.86 1.00
+sd(Condition1)                                             0.60     1.06 1.00
+sd(TrgtPos2)                                               0.07     1.47 1.00
+sd(TrgtPos3)                                               0.08     1.42 1.00
+sd(Trial)                                                  0.16     0.64 1.00
+sd(PropTimeOnTrgt)                                         1.60     4.78 1.00
+sd(PropTimeOnComp)                                         0.06     2.40 1.00
+sd(PropTimeOnDist)                                         0.03     1.74 1.00
+sd(PropTimeOnSentMsg)                                      0.16     3.26 1.00
+sd(PropTimeOnAvailableMsgs)                                0.04     2.74 1.00
+sd(RateTogglingAvailableMsgs)                              0.08     7.42 1.00
+sd(MsgType1)                                               0.30     0.73 1.00
+cor(Intercept,Condition1)                                  0.22     0.74 1.00
+cor(Intercept,TrgtPos2)                                   -0.41     0.49 1.00
+cor(Condition1,TrgtPos2)                                  -0.35     0.54 1.00
+cor(Intercept,TrgtPos3)                                   -0.33     0.56 1.00
+cor(Condition1,TrgtPos3)                                  -0.38     0.53 1.00
+cor(TrgtPos2,TrgtPos3)                                    -0.42     0.63 1.00
+cor(Intercept,Trial)                                       0.10     0.78 1.00
+cor(Condition1,Trial)                                     -0.12     0.62 1.00
+cor(TrgtPos2,Trial)                                       -0.45     0.52 1.00
+cor(TrgtPos3,Trial)                                       -0.34     0.61 1.00
+cor(Intercept,PropTimeOnTrgt)                             -0.53     0.18 1.00
+cor(Condition1,PropTimeOnTrgt)                            -0.37     0.37 1.00
+cor(TrgtPos2,PropTimeOnTrgt)                              -0.35     0.63 1.00
+cor(TrgtPos3,PropTimeOnTrgt)                              -0.38     0.59 1.00
+cor(Trial,PropTimeOnTrgt)                                 -0.53     0.32 1.00
+cor(Intercept,PropTimeOnComp)                             -0.28     0.71 1.00
+cor(Condition1,PropTimeOnComp)                            -0.30     0.69 1.00
+cor(TrgtPos2,PropTimeOnComp)                              -0.45     0.57 1.00
+cor(TrgtPos3,PropTimeOnComp)                              -0.43     0.58 1.00
+cor(Trial,PropTimeOnComp)                                 -0.40     0.59 1.00
+cor(PropTimeOnTrgt,PropTimeOnComp)                        -0.54     0.44 1.00
+cor(Intercept,PropTimeOnDist)                             -0.60     0.45 1.00
+cor(Condition1,PropTimeOnDist)                            -0.65     0.41 1.00
+cor(TrgtPos2,PropTimeOnDist)                              -0.58     0.47 1.00
+cor(TrgtPos3,PropTimeOnDist)                              -0.57     0.50 1.00
+cor(Trial,PropTimeOnDist)                                 -0.59     0.46 1.00
+cor(PropTimeOnTrgt,PropTimeOnDist)                        -0.47     0.59 1.00
+cor(PropTimeOnComp,PropTimeOnDist)                        -0.52     0.54 1.00
+cor(Intercept,PropTimeOnSentMsg)                          -0.63     0.31 1.00
+cor(Condition1,PropTimeOnSentMsg)                         -0.64     0.29 1.00
+cor(TrgtPos2,PropTimeOnSentMsg)                           -0.59     0.42 1.00
+cor(TrgtPos3,PropTimeOnSentMsg)                           -0.53     0.47 1.00
+cor(Trial,PropTimeOnSentMsg)                              -0.49     0.48 1.00
+cor(PropTimeOnTrgt,PropTimeOnSentMsg)                     -0.67     0.28 1.00
+cor(PropTimeOnComp,PropTimeOnSentMsg)                     -0.53     0.49 1.00
+cor(PropTimeOnDist,PropTimeOnSentMsg)                     -0.48     0.58 1.00
+cor(Intercept,PropTimeOnAvailableMsgs)                    -0.48     0.55 1.00
+cor(Condition1,PropTimeOnAvailableMsgs)                   -0.46     0.60 1.00
+cor(TrgtPos2,PropTimeOnAvailableMsgs)                     -0.49     0.58 1.00
+cor(TrgtPos3,PropTimeOnAvailableMsgs)                     -0.55     0.51 1.00
+cor(Trial,PropTimeOnAvailableMsgs)                        -0.47     0.57 1.00
+cor(PropTimeOnTrgt,PropTimeOnAvailableMsgs)               -0.48     0.59 1.00
+cor(PropTimeOnComp,PropTimeOnAvailableMsgs)               -0.51     0.54 1.00
+cor(PropTimeOnDist,PropTimeOnAvailableMsgs)               -0.53     0.53 1.00
+cor(PropTimeOnSentMsg,PropTimeOnAvailableMsgs)            -0.54     0.52 1.00
+cor(Intercept,RateTogglingAvailableMsgs)                  -0.47     0.57 1.00
+cor(Condition1,RateTogglingAvailableMsgs)                 -0.43     0.64 1.00
+cor(TrgtPos2,RateTogglingAvailableMsgs)                   -0.49     0.57 1.00
+cor(TrgtPos3,RateTogglingAvailableMsgs)                   -0.51     0.54 1.00
+cor(Trial,RateTogglingAvailableMsgs)                      -0.48     0.57 1.00
+cor(PropTimeOnTrgt,RateTogglingAvailableMsgs)             -0.49     0.55 1.00
+cor(PropTimeOnComp,RateTogglingAvailableMsgs)             -0.50     0.57 1.00
+cor(PropTimeOnDist,RateTogglingAvailableMsgs)             -0.55     0.52 1.00
+cor(PropTimeOnSentMsg,RateTogglingAvailableMsgs)          -0.55     0.50 1.00
+cor(PropTimeOnAvailableMsgs,RateTogglingAvailableMsgs)    -0.53     0.53 1.00
+cor(Intercept,MsgType1)                                   -0.53     0.15 1.00
+cor(Condition1,MsgType1)                                  -0.37     0.32 1.00
+cor(TrgtPos2,MsgType1)                                    -0.47     0.47 1.00
+cor(TrgtPos3,MsgType1)                                    -0.39     0.53 1.00
+cor(Trial,MsgType1)                                       -0.50     0.35 1.00
+cor(PropTimeOnTrgt,MsgType1)                              -0.03     0.70 1.00
+cor(PropTimeOnComp,MsgType1)                              -0.52     0.45 1.00
+cor(PropTimeOnDist,MsgType1)                              -0.51     0.52 1.00
+cor(PropTimeOnSentMsg,MsgType1)                           -0.60     0.33 1.00
+cor(PropTimeOnAvailableMsgs,MsgType1)                     -0.49     0.56 1.00
+cor(RateTogglingAvailableMsgs,MsgType1)                   -0.48     0.56 1.00
+                                                       Bulk_ESS Tail_ESS
+sd(Intercept)                                             10052    15384
+sd(Condition1)                                            12032    17046
+sd(TrgtPos2)                                               2665     4863
+sd(TrgtPos3)                                               2419     4719
+sd(Trial)                                                  6123     4606
+sd(PropTimeOnTrgt)                                         4753     7864
+sd(PropTimeOnComp)                                         6962    10157
+sd(PropTimeOnDist)                                         9875    13280
+sd(PropTimeOnSentMsg)                                      5678     6942
+sd(PropTimeOnAvailableMsgs)                                9847    12767
+sd(RateTogglingAvailableMsgs)                             13375    15303
+sd(MsgType1)                                              11050    12759
+cor(Intercept,Condition1)                                 10271    15126
+cor(Intercept,TrgtPos2)                                   19751    18993
+cor(Condition1,TrgtPos2)                                  13771    16713
+cor(Intercept,TrgtPos3)                                   18618    15630
+cor(Condition1,TrgtPos3)                                  13494    16079
+cor(TrgtPos2,TrgtPos3)                                     4682    10860
+cor(Intercept,Trial)                                      13655    11182
+cor(Condition1,Trial)                                     20806    19739
+cor(TrgtPos2,Trial)                                       12662    19539
+cor(TrgtPos3,Trial)                                       12365    17209
+cor(Intercept,PropTimeOnTrgt)                             14963    18795
+cor(Condition1,PropTimeOnTrgt)                            15288    18686
+cor(TrgtPos2,PropTimeOnTrgt)                               4840     8703
+cor(TrgtPos3,PropTimeOnTrgt)                               4550     9847
+cor(Trial,PropTimeOnTrgt)                                  9922    16360
+cor(Intercept,PropTimeOnComp)                             14770    17952
+cor(Condition1,PropTimeOnComp)                            17758    20215
+cor(TrgtPos2,PropTimeOnComp)                              19444    21082
+cor(TrgtPos3,PropTimeOnComp)                              21004    19470
+cor(Trial,PropTimeOnComp)                                 22509    21721
+cor(PropTimeOnTrgt,PropTimeOnComp)                        22666    23542
+cor(Intercept,PropTimeOnDist)                             25435    20263
+cor(Condition1,PropTimeOnDist)                            24173    19797
+cor(TrgtPos2,PropTimeOnDist)                              22575    20186
+cor(TrgtPos3,PropTimeOnDist)                              26229    21637
+cor(Trial,PropTimeOnDist)                                 26147    19446
+cor(PropTimeOnTrgt,PropTimeOnDist)                        24802    21494
+cor(PropTimeOnComp,PropTimeOnDist)                        23121    22990
+cor(Intercept,PropTimeOnSentMsg)                          20750    17804
+cor(Condition1,PropTimeOnSentMsg)                         20774    17780
+cor(TrgtPos2,PropTimeOnSentMsg)                           11779    19176
+cor(TrgtPos3,PropTimeOnSentMsg)                           13445    19200
+cor(Trial,PropTimeOnSentMsg)                              19322    21418
+cor(PropTimeOnTrgt,PropTimeOnSentMsg)                     18081    20958
+cor(PropTimeOnComp,PropTimeOnSentMsg)                     18364    21282
+cor(PropTimeOnDist,PropTimeOnSentMsg)                     17299    22407
+cor(Intercept,PropTimeOnAvailableMsgs)                    35415    19522
+cor(Condition1,PropTimeOnAvailableMsgs)                   30320    21376
+cor(TrgtPos2,PropTimeOnAvailableMsgs)                     27789    19711
+cor(TrgtPos3,PropTimeOnAvailableMsgs)                     26997    21794
+cor(Trial,PropTimeOnAvailableMsgs)                        30700    21136
+cor(PropTimeOnTrgt,PropTimeOnAvailableMsgs)               26472    20983
+cor(PropTimeOnComp,PropTimeOnAvailableMsgs)               22815    23442
+cor(PropTimeOnDist,PropTimeOnAvailableMsgs)               20771    22414
+cor(PropTimeOnSentMsg,PropTimeOnAvailableMsgs)            23273    23771
+cor(Intercept,RateTogglingAvailableMsgs)                  34945    19946
+cor(Condition1,RateTogglingAvailableMsgs)                 29101    20074
+cor(TrgtPos2,RateTogglingAvailableMsgs)                   29875    21075
+cor(TrgtPos3,RateTogglingAvailableMsgs)                   29516    21936
+cor(Trial,RateTogglingAvailableMsgs)                      31322    21516
+cor(PropTimeOnTrgt,RateTogglingAvailableMsgs)             32432    23450
+cor(PropTimeOnComp,RateTogglingAvailableMsgs)             24858    21783
+cor(PropTimeOnDist,RateTogglingAvailableMsgs)             20977    22646
+cor(PropTimeOnSentMsg,RateTogglingAvailableMsgs)          22943    23052
+cor(PropTimeOnAvailableMsgs,RateTogglingAvailableMsgs)    18241    21917
+cor(Intercept,MsgType1)                                   13043    18544
+cor(Condition1,MsgType1)                                  19549    21548
+cor(TrgtPos2,MsgType1)                                     6038    11168
+cor(TrgtPos3,MsgType1)                                     6297    10980
+cor(Trial,MsgType1)                                        9708    17276
+cor(PropTimeOnTrgt,MsgType1)                              11581    17506
+cor(PropTimeOnComp,MsgType1)                              10407    17163
+cor(PropTimeOnDist,MsgType1)                              10673    18441
+cor(PropTimeOnSentMsg,MsgType1)                           11795    18399
+cor(PropTimeOnAvailableMsgs,MsgType1)                     12613    19154
+cor(RateTogglingAvailableMsgs,MsgType1)                   15248    21498
 
 Regression Coefficients:
                                      Estimate Est.Error l-95% CI u-95% CI Rhat
-Intercept                               -0.20      0.16    -0.51     0.11 1.00
-Condition1                               0.29      0.06     0.18     0.40 1.00
-TrgtPos2                                 1.92      0.26     1.41     2.45 1.00
-TrgtPos3                                 1.61      0.24     1.14     2.09 1.00
-Trial                                    0.28      0.06     0.17     0.39 1.00
-PropTimeOnTrgt                           5.33      1.31     2.76     7.91 1.00
-PropTimeOnComp                          -2.55      1.30    -5.15    -0.07 1.00
-PropTimeOnDist                          -0.35      1.30    -2.91     2.14 1.00
-PropTimeOnSentMsg                        0.96      1.28    -1.54     3.45 1.00
-PropTimeOnAvailableMsgs                  1.97      1.39    -0.78     4.62 1.00
-RateTogglingAvailableMsgs                2.16      2.30    -2.31     6.58 1.00
-MsgType1                                -0.09      0.06    -0.20     0.02 1.00
-AnswerTime                              -0.18      0.07    -0.33    -0.03 1.00
-Condition1:PropTimeOnTrgt               -2.47      1.27    -4.94     0.08 1.01
-Condition1:PropTimeOnComp               -1.54      1.26    -3.97     1.02 1.01
-Condition1:PropTimeOnDist               -1.55      1.26    -4.04     0.93 1.01
-Condition1:PropTimeOnSentMsg            -1.37      1.27    -3.85     1.19 1.01
-Condition1:PropTimeOnAvailableMsgs      -0.83      1.34    -3.49     1.90 1.01
-Condition1:RateTogglingAvailableMsgs     5.07      2.17     0.97     9.38 1.00
-Condition1:AnswerTime                   -0.10      0.06    -0.22     0.02 1.00
+Intercept                                0.74      0.25     0.26     1.24 1.00
+Condition1                               0.57      0.12     0.34     0.82 1.00
+TrgtPos2                                 2.21      0.33     1.58     2.87 1.00
+TrgtPos3                                 1.93      0.32     1.33     2.57 1.00
+Trial                                    0.45      0.09     0.28     0.64 1.00
+PropTimeOnTrgt                           6.50      1.41     3.74     9.30 1.00
+PropTimeOnComp                          -2.51      1.31    -5.08     0.06 1.00
+PropTimeOnDist                           0.20      1.31    -2.37     2.76 1.00
+PropTimeOnSentMsg                        0.83      1.31    -1.78     3.39 1.00
+PropTimeOnAvailableMsgs                  2.72      1.42    -0.05     5.50 1.00
+RateTogglingAvailableMsgs                1.67      2.40    -3.01     6.42 1.00
+MsgType1                                -0.17      0.09    -0.36     0.01 1.00
+AnswerTime                              -0.20      0.09    -0.37    -0.03 1.00
+Condition1:PropTimeOnTrgt               -2.61      1.27    -5.10    -0.14 1.00
+Condition1:PropTimeOnComp               -1.83      1.26    -4.28     0.63 1.00
+Condition1:PropTimeOnDist               -1.45      1.26    -3.90     0.98 1.00
+Condition1:PropTimeOnSentMsg            -1.10      1.26    -3.54     1.36 1.00
+Condition1:PropTimeOnAvailableMsgs      -0.55      1.37    -3.20     2.17 1.00
+Condition1:RateTogglingAvailableMsgs     4.24      2.31    -0.29     8.76 1.00
+Condition1:AnswerTime                   -0.12      0.08    -0.28     0.04 1.00
                                      Bulk_ESS Tail_ESS
-Intercept                                2545     2875
-Condition1                               6268     3054
-TrgtPos2                                 2720     2809
-TrgtPos3                                 2593     2601
-Trial                                    5945     2911
-PropTimeOnTrgt                           1063     1827
-PropTimeOnComp                           1001     1739
-PropTimeOnDist                            993     1645
-PropTimeOnSentMsg                        1008     1727
-PropTimeOnAvailableMsgs                  1159     1696
-RateTogglingAvailableMsgs                4795     2484
-MsgType1                                 6174     3238
-AnswerTime                               3896     2914
-Condition1:PropTimeOnTrgt                1026     1933
-Condition1:PropTimeOnComp                1094     1960
-Condition1:PropTimeOnDist                1084     1825
-Condition1:PropTimeOnSentMsg             1117     2025
-Condition1:PropTimeOnAvailableMsgs       1040     1973
-Condition1:RateTogglingAvailableMsgs     4517     2674
-Condition1:AnswerTime                    4152     3008
+Intercept                               10436    15663
+Condition1                              13469    18171
+TrgtPos2                                 8399    13999
+TrgtPos3                                 7717    12936
+Trial                                   16990    18166
+PropTimeOnTrgt                           9694    14497
+PropTimeOnComp                           9423    13901
+PropTimeOnDist                           9369    14291
+PropTimeOnSentMsg                        9884    14347
+PropTimeOnAvailableMsgs                 10595    16166
+RateTogglingAvailableMsgs               28875    20495
+MsgType1                                22578    20096
+AnswerTime                              21779    20450
+Condition1:PropTimeOnTrgt                8394    13050
+Condition1:PropTimeOnComp                8334    12908
+Condition1:PropTimeOnDist                8497    13144
+Condition1:PropTimeOnSentMsg             8769    12946
+Condition1:PropTimeOnAvailableMsgs       9949    15320
+Condition1:RateTogglingAvailableMsgs    32692    21472
+Condition1:AnswerTime                   24389    20777
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+ Condition PropTimeOnTrgt.trend lower.HPD upper.HPD
+ complex                   9.11     5.528     12.75
+ simple                    3.89     0.156      7.73
+
+Results are averaged over the levels of: TrgtPos, MsgType 
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ contrast         estimate lower.HPD upper.HPD
+ complex - simple     5.23      0.19      10.1

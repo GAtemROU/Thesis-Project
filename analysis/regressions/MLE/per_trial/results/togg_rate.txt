@@ -1,0 +1,30 @@
+Call:
+lm(formula = RateTogglingAvailableMsgs ~ Condition + TrgtPos + 
+    Trial + StrategyLabel + Correct + MsgType + AnswerTime + 
+    Condition:StrategyLabel + Condition:AnswerTime, data = df_tog_rate)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.126947 -0.026205 -0.006116  0.018990  0.260370 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)               -0.0029954  0.0019191  -1.561   0.1187    
+Condition1                 0.0002728  0.0008223   0.332   0.7401    
+TrgtPos2                  -0.0006883  0.0017975  -0.383   0.7018    
+TrgtPos3                  -0.0011122  0.0018002  -0.618   0.5367    
+Trial                      0.0009647  0.0007431   1.298   0.1943    
+StrategyLabel1             0.0067149  0.0011221   5.984 2.48e-09 ***
+StrategyLabel2             0.0036427  0.0005288   6.889 7.02e-12 ***
+Correct                    0.0022492  0.0018622   1.208   0.2272    
+MsgType1                   0.0019133  0.0007402   2.585   0.0098 ** 
+AnswerTime                 0.0091699  0.0007972  11.503  < 2e-16 ***
+Condition1:StrategyLabel1  0.0015700  0.0011196   1.402   0.1609    
+Condition1:StrategyLabel2  0.0008650  0.0005040   1.716   0.0862 .  
+Condition1:AnswerTime      0.0013664  0.0007882   1.734   0.0831 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.03753 on 2613 degrees of freedom
+Multiple R-squared:  0.1074,    Adjusted R-squared:  0.1033 
+F-statistic: 26.19 on 12 and 2613 DF,  p-value: < 2.2e-16

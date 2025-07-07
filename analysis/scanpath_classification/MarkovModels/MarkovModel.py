@@ -26,8 +26,10 @@ class MarkovModel:
         self.joint_counts = joint_counts
         self.prior_probabilities = prior_counts / len(scanpath)
         self.joint_probabilities = joint_counts / len(scanpath)
-        self.transition_matrix = self.joint_probabilities / self.prior_probabilities[:, np.newaxis]
-        # Handle division by zero
+        # ignore zero division warning, handle nan later
+        with np.errstate(divide='ignore', invalid='ignore'):
+            self.transition_matrix = self.joint_probabilities / self.prior_probabilities[:, np.newaxis]
+        # handle division by zero
         self.transition_matrix[np.isnan(self.transition_matrix)] = 0
         return self.transition_matrix
 
@@ -40,7 +42,7 @@ class MarkovModel:
     def get_joint_probabilities(self) -> np.ndarray:
         return self.joint_probabilities
     
-    staticmethod
+    @staticmethod
     def get_state_index(states: List[str]) -> Dict[str, int]:
         return {state: index for index, state in enumerate(states)}
 

@@ -1,6 +1,9 @@
 import pandas as pd
 from MarkovModels.MarkovModel import MarkovModel
+import json
 import os
+import numpy as np
+from copy import deepcopy
 
 class MarkovModelConstructor:
     def __init__(self, states):
@@ -54,6 +57,9 @@ class MarkovModelConstructor:
         if explode and df is not None:
             df = self.explode_transition_matrix(df, states)
         if save and df is not None:
+            df_to_save = deepcopy(df)
             os.makedirs(save_path, exist_ok=True)
-            df.to_csv(f"{save_path}/markov_models_{per}{'_exp_matrix' if explode else ""}.csv", index=False)
+            df_to_save['TransitionMatrix'] = df_to_save['TransitionMatrix'].apply(lambda x: x.tolist() if isinstance(x, np.ndarray) else x)
+            df_to_save['TransitionMatrix'] = df_to_save['TransitionMatrix'].apply(lambda x: json.dumps(x) if isinstance(x, list) else x)
+            df_to_save.to_csv(f"{save_path}/markov_models_{per}{'_exp_matrix' if explode else ""}.csv", index=False)
         return df
