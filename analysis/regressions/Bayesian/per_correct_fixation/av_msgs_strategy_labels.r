@@ -40,7 +40,7 @@ print(head(df_av_msgs))
 # and associated random effects by subject
 regression <- brm(
     OnAvMsgs | trials(1) ~ Condition + Trial + MsgType + TrgtPos + StrategyLabel +
-        (1 + TrgtPos + StrategyLabel | Subject),
+        (1 + Condition + Trial + MsgType + TrgtPos | Subject),
     # specify dataset
     data = df_av_msgs,
     # specify to fit a logistic regression

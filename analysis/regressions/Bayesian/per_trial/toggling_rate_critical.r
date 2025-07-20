@@ -48,16 +48,16 @@ contrasts(df_tog_rate$TrgtPos)
 print(head(df_tog_rate))
 
 # Fit a linear regression model
-regression <- lm(
-  RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial + 
-    StrategyLabel + Correct + MsgType + AnswerTime +
-    # Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
-    # Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
-    # Condition:PropTimeOnAvailableMsgs + 
-    Condition:StrategyLabel + Condition:AnswerTime,
-  # specify dataset
-  data = df_tog_rate
-)
+# regression <- lm(
+#   RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial + 
+#     StrategyLabel + Correct + MsgType + AnswerTime +
+#     # Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
+#     # Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
+#     # Condition:PropTimeOnAvailableMsgs + 
+#     Condition:StrategyLabel + Condition:AnswerTime,
+#   # specify dataset
+#   data = df_tog_rate
+# )
 
 regression <- brm(
     RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial +

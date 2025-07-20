@@ -1,0 +1,121 @@
+Family: binomial 
+  Links: mu = logit 
+Formula: Correct | trials(1) ~ Condition + Trial + PropTimeOnTrgt + PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + AnswerTime + Condition:PropTimeOnTrgt + Condition:PropTimeOnComp + Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg + Condition:PropTimeOnAvailableMsgs + Condition:RateTogglingAvailableMsgs + Condition:AnswerTime + (1 | Subject) 
+   Data: df_correct (Number of observations: 192000) 
+  Draws: 6 chains, each with iter = 5000; warmup = 500; thin = 1;
+         total post-warmup draws = 27000
+
+Multilevel Hyperparameters:
+~Subject (Number of levels: 2000) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     0.52      0.01     0.50     0.55 1.00     8271    15016
+
+Regression Coefficients:
+                                     Estimate Est.Error l-95% CI u-95% CI Rhat
+Intercept                                0.85      0.01     0.82     0.87 1.00
+Condition1                               0.23      0.01     0.22     0.24 1.00
+Trial                                    0.15      0.01     0.14     0.16 1.00
+PropTimeOnTrgt                           0.82      0.05     0.71     0.92 1.00
+PropTimeOnComp                           0.75      0.05     0.65     0.86 1.00
+PropTimeOnDist                           0.72      0.05     0.61     0.82 1.00
+PropTimeOnSentMsg                        6.34      0.29     5.78     6.90 1.00
+PropTimeOnAvailableMsgs                 -1.79      0.09    -1.97    -1.61 1.00
+RateTogglingAvailableMsgs                3.44      4.63    -5.46    12.48 1.00
+AnswerTime                               1.22      0.03     1.17     1.27 1.00
+Condition1:PropTimeOnTrgt               -0.74      0.05    -0.83    -0.65 1.00
+Condition1:PropTimeOnComp               -0.83      0.05    -0.93    -0.74 1.00
+Condition1:PropTimeOnDist               -0.73      0.05    -0.82    -0.64 1.00
+Condition1:PropTimeOnSentMsg            -3.09      0.25    -3.58    -2.60 1.00
+Condition1:PropTimeOnAvailableMsgs       1.46      0.08     1.31     1.62 1.00
+Condition1:RateTogglingAvailableMsgs     1.19      4.65    -7.87    10.22 1.00
+Condition1:AnswerTime                   -0.25      0.02    -0.30    -0.21 1.00
+                                     Bulk_ESS Tail_ESS
+Intercept                                6745    12462
+Condition1                              54883    19660
+Trial                                   42261    18897
+PropTimeOnTrgt                          11522    16920
+PropTimeOnComp                          11823    16731
+PropTimeOnDist                          11901    17922
+PropTimeOnSentMsg                       22474    20703
+PropTimeOnAvailableMsgs                 11532    16774
+RateTogglingAvailableMsgs               49969    19681
+AnswerTime                              19583    20139
+Condition1:PropTimeOnTrgt               16951    19773
+Condition1:PropTimeOnComp               17714    21423
+Condition1:PropTimeOnDist               17840    21059
+Condition1:PropTimeOnSentMsg            27283    20157
+Condition1:PropTimeOnAvailableMsgs      15952    19302
+Condition1:RateTogglingAvailableMsgs    43652    20248
+Condition1:AnswerTime                   22354    20451
+
+
+
+Decomposition by Condition
+ Condition PropTimeOnTrgt.trend lower.HPD upper.HPD
+ complex                 1.5552    1.4197     1.688
+ simple                  0.0741   -0.0625     0.208
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ contrast         estimate lower.HPD upper.HPD
+ complex - simple     1.48       1.3      1.65
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ Condition PropTimeOnComp.trend lower.HPD upper.HPD
+ complex                 1.5848     1.451    1.7281
+ simple                 -0.0831    -0.226    0.0547
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ contrast         estimate lower.HPD upper.HPD
+ complex - simple     1.67      1.49      1.85
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ Condition PropTimeOnDist.trend lower.HPD upper.HPD
+ complex                 1.4442     1.310     1.585
+ simple                 -0.0114    -0.152     0.125
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ contrast         estimate lower.HPD upper.HPD
+ complex - simple     1.46      1.27      1.64
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ Condition PropTimeOnSentMsg.trend lower.HPD upper.HPD
+ complex                      9.43      8.70     10.18
+ simple                       3.25      2.51      3.98
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ contrast         estimate lower.HPD upper.HPD
+ complex - simple     6.19      5.23      7.17
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ Condition PropTimeOnAvailableMsgs.trend lower.HPD upper.HPD
+ complex                          -3.253    -3.485   -3.0157
+ simple                           -0.327    -0.566   -0.0925
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+ contrast         estimate lower.HPD upper.HPD
+ complex - simple    -2.93     -3.25     -2.62
+
+Point estimate displayed: median 
+HPD interval probability: 0.95
+
+Condition RateTogglingAvailableMsgs.trend lower.HPD upper.HPD
+ complex                              2.21     -10.8      15.0
+ simple                               4.64      -8.0      17.6
+
+Point estimate displayed: median 
+HPD interval probability: 0.95 
+> print(emtr$contrasts)
+ contrast         estimate lower.HPD upper.HPD
+ complex - simple    -2.38     -20.3      15.8
+
+Point estimate displayed: median 
+HPD interval probability: 0.95
