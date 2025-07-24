@@ -1,0 +1,45 @@
+                                      lambda.min
+(Intercept)                           0.30778586
+Condition1                            0.24051742
+TrgtPos2                              1.63669928
+TrgtPos3                              1.40745722
+Trial                                 0.23686418
+PropTimeOnTrgt                        5.17657009
+PropTimeOnComp                       -1.78547368
+PropTimeOnDist                        .         
+PropTimeOnSentMsg                     .         
+PropTimeOnAvailableMsgs               1.84396493
+RateTogglingAvailableMsgs             4.25596309
+MsgType1                             -0.08582888
+AnswerTime                           -0.08971355
+Condition1:PropTimeOnTrgt            -0.72464392
+Condition1:PropTimeOnComp            -0.13906522
+Condition1:PropTimeOnDist             .         
+Condition1:PropTimeOnSentMsg          0.23508170
+Condition1:PropTimeOnAvailableMsgs    0.38370214
+Condition1:RateTogglingAvailableMsgs  5.99362194
+Condition1:AnswerTime                -0.09847628
+
+
+
+                                      lambda.1se
+(Intercept)                           0.87491044
+Condition1                            0.19722858
+TrgtPos2                              0.62667106
+TrgtPos3                              0.45010223
+Trial                                 0.19342624
+PropTimeOnTrgt                        2.98335970
+PropTimeOnComp                       -1.50419931
+PropTimeOnDist                        .         
+PropTimeOnSentMsg                    -0.13812558
+PropTimeOnAvailableMsgs               0.90630594
+RateTogglingAvailableMsgs             3.04819656
+MsgType1                             -0.03375463
+AnswerTime                            .         
+Condition1:PropTimeOnTrgt            -0.43263837
+Condition1:PropTimeOnComp             .         
+Condition1:PropTimeOnDist             .         
+Condition1:PropTimeOnSentMsg          .         
+Condition1:PropTimeOnAvailableMsgs    .         
+Condition1:RateTogglingAvailableMsgs  3.91928522
+Condition1:AnswerTime                -0.02370421

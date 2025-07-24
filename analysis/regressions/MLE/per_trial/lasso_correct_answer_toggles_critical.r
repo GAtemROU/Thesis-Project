@@ -4,20 +4,8 @@ library(lme4)
 library(scales)
 library(emmeans)
 library(magrittr)
-library(brms)
-# library(beepr)
+library(glmnet)
 
-condEffects <- function(model, x, facet_by = c()){
-  if (length(facet_by)>0) {
-    conditions <- make_conditions(model, facet_by)  } else {
-    conditions <- NULL
-  }
-  
-  effects <- conditional_effects(model, effects = x, 
-                                 conditions = conditions)
-  
-  return(effects)
-}
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
 
@@ -44,7 +32,6 @@ df_correct <- df %>%
          RateTogglingAvailableMsgs, MsgType,
          TrgtPos, AnswerTime)
 
-
 contrasts(df_correct$Condition) <- c(-1, 1)
 contrasts(df_correct$Condition)
 
@@ -56,44 +43,53 @@ contrasts(df_correct$TrgtPos)
 
 print(head(df_correct))
 
-regression <- brm(
-    Correct ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
+# Correct ~ Condition + TrgtPos + Trial +  PropTimeOnTrgt +
+#     PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
+#     PropTimeOnAvailableMsgs + 
+#     RateTogglingAvailableMsgs +
+#     MsgType + AnswerTime +
+#     Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
+#     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
+#     Condition:PropTimeOnAvailableMsgs +
+#     Condition:RateTogglingAvailableMsgs + Condition:AnswerTime
+
+lasso_formula <- Correct ~ Condition + TrgtPos + Trial + PropTimeOnTrgt +
     PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
-    PropTimeOnAvailableMsgs + 
-    RateTogglingAvailableMsgs +
+    PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs +
     MsgType + AnswerTime +
     Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
     Condition:PropTimeOnAvailableMsgs +
-    Condition:RateTogglingAvailableMsgs + Condition:AnswerTime +
-    (1 + Condition + TrgtPos + Trial + PropTimeOnTrgt +
-    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
-    PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + MsgType | Subject),
-    # specify dataset
-    data = df_correct,
-    # specify to fit a logistic regression
-    family = "bernoulli",
-    prior = c(prior(normal(1, 2), class="Intercept"),
-              prior(normal(0, 5), class="b")),
-    # cores = 1,
-    save_pars = save_pars(all = TRUE),
-    iter = 2000,
-    chains = 1,
-    warmup = 500
+    Condition:RateTogglingAvailableMsgs + Condition:AnswerTime
 
-)
-# beep(sound = 3)
+# Create model matrix and response for lasso
+X_lasso <- model.matrix(lasso_formula, df_correct)[, -1] # remove intercept
+y_lasso <- df_correct$Correct
 
-print(summary(regression))
+lasso <- glmnet(X_lasso, y_lasso,
+    family = "binomial",
+    alpha = 1)
 
-saveRDS(regression, file = paste0("analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
+print(lasso)
+plot(lasso)
 
-saved_regr = readRDS("/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_2025-07-01_15:44.rds")
-as_draws_df(fit_press)
-condEffects(saved_regr, "Condition")
-print(summary(saved_regr))
-emtr = emtrends(saved_regr, specs = pairwise ~ Condition, var = 'RateTogglingAvailableMsgs')
+cvfit <- cv.glmnet(X_lasso, y_lasso,
+    family = "binomial",
+    alpha = 1)
+
+print(cvfit)
+plot(cvfit)
+
+coef(cvfit, s = "lambda.min")
+coef(cvfit, s = "lambda.1se")
+
+plot(lasso)
+
+print(summary(lasso))
+
+# saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
+
+emtr = emtrends(lasso, specs = pairwise ~ Condition, var = 'PropTimeOnAvailableMsgs')
 print(emtr$emtrends)
 print(emtr$contrasts)
-emmip(regression, Condition ~ AnswerTime, cov.reduce = range)
-
+emmip(lasso, Condition ~ AnswerTime, cov.reduce = range)

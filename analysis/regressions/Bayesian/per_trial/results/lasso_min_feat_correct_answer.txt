@@ -1,0 +1,50 @@
+ Family: bernoulli 
+  Links: mu = logit 
+Formula: Correct ~ Condition + TrgtPos + Trial + PropTimeOnTrgt + PropTimeOnComp + PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + MsgType + AnswerTime + Condition:PropTimeOnTrgt + Condition:PropTimeOnComp + Condition:PropTimeOnSentMsg + Condition:PropTimeOnAvailableMsgs + Condition:RateTogglingAvailableMsgs + Condition:AnswerTime + (1 + Condition + TrgtPos + Trial + PropTimeOnTrgt + PropTimeOnComp + PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs + MsgType | Subject) 
+   Data: df_correct (Number of observations: 2626) 
+  Draws: 1 chains, each with iter = 2000; warmup = 500; thin = 1;
+         total post-warmup draws = 1500
+
+Regression Coefficients:
+                                     Estimate Est.Error l-95% CI u-95% CI Rhat
+Intercept                                0.75      0.25     0.28     1.23 1.00
+Condition1                               0.58      0.12     0.36     0.83 1.00
+TrgtPos2                                 2.20      0.32     1.59     2.85 1.00
+TrgtPos3                                 1.93      0.32     1.33     2.58 1.00
+Trial                                    0.45      0.09     0.28     0.64 1.00
+PropTimeOnTrgt                           6.21      0.89     4.50     8.02 1.00
+PropTimeOnComp                          -2.64      0.45    -3.52    -1.75 1.00
+PropTimeOnAvailableMsgs                  2.50      0.85     0.96     4.17 1.00
+RateTogglingAvailableMsgs                1.45      2.41    -3.19     6.18 1.00
+MsgType1                                -0.17      0.09    -0.35     0.00 1.00
+AnswerTime                              -0.20      0.09    -0.36    -0.03 1.00
+Condition1:PropTimeOnTrgt               -1.20      0.43    -2.02    -0.35 1.00
+Condition1:PropTimeOnComp               -0.40      0.39    -1.14     0.37 1.00
+Conditioncomplex:PropTimeOnSentMsg       0.51      0.66    -0.80     1.74 1.00
+Conditionsimple:PropTimeOnSentMsg        1.02      0.81    -0.57     2.59 1.00
+Condition1:PropTimeOnAvailableMsgs       0.73      0.78    -0.77     2.29 1.00
+Condition1:RateTogglingAvailableMsgs     4.33      2.27    -0.20     8.78 1.00
+Condition1:AnswerTime                   -0.12      0.08    -0.28     0.04 1.00
+                                     Bulk_ESS Tail_ESS
+Intercept                                 845     1149
+Condition1                               1108     1240
+TrgtPos2                                  666      726
+TrgtPos3                                  605     1129
+Trial                                    1717     1003
+PropTimeOnTrgt                           1035      981
+PropTimeOnComp                           1902     1408
+PropTimeOnAvailableMsgs                  2038     1255
+RateTogglingAvailableMsgs                2576     1321
+MsgType1                                 1756     1408
+AnswerTime                               1972      868
+Condition1:PropTimeOnTrgt                2370     1248
+Condition1:PropTimeOnComp                2212     1174
+Conditioncomplex:PropTimeOnSentMsg       2262     1088
+Conditionsimple:PropTimeOnSentMsg        2094     1131
+Condition1:PropTimeOnAvailableMsgs       2013     1241
+Condition1:RateTogglingAvailableMsgs     2561     1172
+Condition1:AnswerTime                    2244     1452
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
