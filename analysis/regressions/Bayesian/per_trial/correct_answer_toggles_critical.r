@@ -75,11 +75,11 @@ regression <- brm(
     family = "bernoulli",
     prior = c(prior(normal(1, 2), class="Intercept"),
               prior(normal(0, 5), class="b")),
-    # cores = 1,
+    cores = 6,
     save_pars = save_pars(all = TRUE),
-    iter = 2000,
-    chains = 1,
-    warmup = 500
+    iter = 5000,
+    chains = 6,
+    warmup = 1000
 
 )
 # beep(sound = 3)
@@ -88,11 +88,21 @@ print(summary(regression))
 
 saveRDS(regression, file = paste0("analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-saved_regr = readRDS("/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_2025-07-01_15:44.rds")
+saved_regr = readRDS("/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_2025-08-07_21:49.rds")
 as_draws_df(fit_press)
 condEffects(saved_regr, "Condition")
 print(summary(saved_regr))
-emtr = emtrends(saved_regr, specs = pairwise ~ Condition, var = 'RateTogglingAvailableMsgs')
+
+for (aoi in c("PropTimeOnTrgt", "PropTimeOnComp", "PropTimeOnDist", "PropTimeOnSentMsg", "PropTimeOnAvailableMsgs")) {
+  emtr = emtrends(regression, specs = pairwise ~ Condition, var = aoi, 
+                mode = "latent", 
+                data = df_correct)
+  print(emtr$emtrends)
+  print(emtr$contrasts)
+}
+emtr = emtrends(regression, specs = pairwise ~ Condition, var = "RateTogglingAvailableMsgs", 
+                mode = "latent", 
+                data = df_correct)
 print(emtr$emtrends)
 print(emtr$contrasts)
 emmip(regression, Condition ~ AnswerTime, cov.reduce = range)

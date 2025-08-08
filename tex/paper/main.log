@@ -1,0 +1,1336 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.7.3)  9 AUG 2025 01:09
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/gatemrou/uds/thesis/Thesis-Project/tex/paper/main.tex
+(/home/gatemrou/uds/thesis/Thesis-Project/tex/paper/main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./umtlreport.cls
+Document Class: umtlreport 1999/06/04 A variant report class
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box51
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen141
+\ttl@minus=\dimen142
+\ttl@toksa=\toks17
+\titlewidth=\dimen143
+\titlewidthlast=\dimen144
+\titlewidthfirst=\dimen145
+)
+\marginWidth=\skip52
+\fullWidth=\skip53
+\mp@chapnoht=\skip54
+\mp@chaptlht=\skip55
+\EX=\skip56
+) (./sections/c0/header.tex (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count196
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count197
+)
+\@linkdim=\dimen146
+\Hy@linkcounter=\count198
+\Hy@pagecounter=\count199
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count266
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count267
+ (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen147
+ (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count268
+\Field@Width=\dimen148
+\Fld@charsize=\dimen149
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring ON on input line 6081.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count269
+\c@Item=\count270
+\c@Hfootnote=\count271
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count272
+\c@bookmark@seq@number=\count273
+ (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip57
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
+\MT@toks=\toks21
+\MT@tempbox=\box52
+\MT@count=\count274
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
+LaTeX Info: Redefining \leftprotrusion on input line 1060.
+\MT@prot@toks=\toks22
+LaTeX Info: Redefining \rightprotrusion on input line 1078.
+LaTeX Info: Redefining \textls on input line 1368.
+\MT@outer@kern=\dimen150
+LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+\MT@listname@count=\count275
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 902.
+LaTeX Info: Redefining \lslig on input line 902.
+\MT@outer@space=\skip58
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
+)) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip59
+\f@nch@O@elh=\skip60
+\f@nch@O@erh=\skip61
+\f@nch@O@olh=\skip62
+\f@nch@O@orh=\skip63
+\f@nch@O@elf=\skip64
+\f@nch@O@erf=\skip65
+\f@nch@O@olf=\skip66
+\f@nch@O@orf=\skip67
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/palatino.sty
+Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count276
+\lst@gtempboxa=\box53
+\lst@token=\toks23
+\lst@length=\count277
+\lst@currlwidth=\dimen153
+\lst@column=\count278
+\lst@pos=\count279
+\lst@lostspace=\dimen154
+\lst@width=\dimen155
+\lst@newlines=\count280
+\lst@lineno=\count281
+\lst@maxwidth=\dimen156
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count282
+\lst@skipnumbers=\count283
+\lst@framebox=\box54
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count284
+\c@@ppsavesec=\count285
+\c@@ppsaveapp=\count286
+) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/remreset.sty
+
+Package remreset Warning: The remreset package is obsolete:
+(remreset)                \@removefromreset is defined.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/qtree/qtree.sty
+Package: 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+Package: qtree 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+ (/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
+ (/usr/share/texlive/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks24
+\@arclen=\dimen157
+\@arcrad=\dimen158
+\pIIe@tempdima=\dimen159
+\pIIe@tempdimb=\dimen160
+\pIIe@tempdimc=\dimen161
+\pIIe@tempdimd=\dimen162
+\pIIe@tempdime=\dimen163
+\pIIe@tempdimf=\dimen164
+)
+\c@treecount=\count287
+\c@branchcount=\count288
+\parentbox=\box55
+\treebox=\box56
+\treeboxone=\box57
+\treeboxtwo=\box58
+\treeboxthree=\box59
+\treeboxfour=\box60
+\treeboxfive=\box61
+\treeboxsix=\box62
+\treeboxseven=\box63
+\treeboxeight=\box64
+\treeboxnine=\box65
+\treeboxten=\box66
+\treeboxeleven=\box67
+\treeboxtwelve=\box68
+\treeboxthirteen=\box69
+\treeboxfourteen=\box70
+\treeboxfifteen=\box71
+\treeboxsixteen=\box72
+\treeboxseventeen=\box73
+\treeboxeighteen=\box74
+\treeboxnineteen=\box75
+\treeboxtwenty=\box76
+\treeoffsetone=\skip68
+\treeoffsettwo=\skip69
+\treeoffsetthree=\skip70
+\treeoffsetfour=\skip71
+\treeoffsetfive=\skip72
+\treeoffsetsix=\skip73
+\treeoffsetseven=\skip74
+\treeoffseteight=\skip75
+\treeoffsetnine=\skip76
+\treeoffsetten=\skip77
+\treeoffseteleven=\skip78
+\treeoffsettwelve=\skip79
+\treeoffsetthirteen=\skip80
+\treeoffsetfourteen=\skip81
+\treeoffsetfifteen=\skip82
+\treeoffsetsixteen=\skip83
+\treeoffsetseventeen=\skip84
+\treeoffseteighteen=\skip85
+\treeoffsetnineteen=\skip86
+\treeoffsettwenty=\skip87
+\treeshiftone=\skip88
+\treeshifttwo=\skip89
+\treeshiftthree=\skip90
+\treeshiftfour=\skip91
+\treeshiftfive=\skip92
+\treeshiftsix=\skip93
+\treeshiftseven=\skip94
+\treeshifteight=\skip95
+\treeshiftnine=\skip96
+\treeshiftten=\skip97
+\treeshifteleven=\skip98
+\treeshifttwelve=\skip99
+\treeshiftthirteen=\skip100
+\treeshiftfourteen=\skip101
+\treeshiftfifteen=\skip102
+\treeshiftsixteen=\skip103
+\treeshiftseventeen=\skip104
+\treeshifteighteen=\skip105
+\treeshiftnineteen=\skip106
+\treeshifttwenty=\skip107
+\treewidthone=\skip108
+\treewidthtwo=\skip109
+\treewidththree=\skip110
+\treewidthfour=\skip111
+\treewidthfive=\skip112
+\treewidthsix=\skip113
+\treewidthseven=\skip114
+\treewidtheight=\skip115
+\treewidthnine=\skip116
+\treewidthten=\skip117
+\treewidtheleven=\skip118
+\treewidthtwelve=\skip119
+\treewidththirteen=\skip120
+\treewidthfourteen=\skip121
+\treewidthfifteen=\skip122
+\treewidthsixteen=\skip123
+\treewidthseventeen=\skip124
+\treewidtheighteen=\skip125
+\treewidthnineteen=\skip126
+\treewidthtwenty=\skip127
+\daughteroffsetone=\skip128
+\daughteroffsettwo=\skip129
+\daughteroffsetthree=\skip130
+\daughteroffsetfour=\skip131
+\branchwidthone=\skip132
+\branchwidthtwo=\skip133
+\branchwidththree=\skip134
+\branchwidthfour=\skip135
+\parentoffset=\skip136
+\treeoffset=\skip137
+\daughteroffset=\skip138
+\branchwidth=\skip139
+\parentwidth=\skip140
+\treewidth=\skip141
+\qta=\toks25
+\qtb=\toks26
+\nbranches=\count289
+\qroofx=\count290
+\qroofy=\count291
+\@qrscratchbox=\box77
+) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen165
+\WF@size=\dimen166
+\c@WF@wrappedlines=\count292
+\WF@box=\box78
+\WF@everypar=\toks27
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen167
+\ar@mcellbox=\box79
+\extrarowheight=\dimen168
+\NC@list=\toks28
+\extratabsurround=\skip142
+\backup@length=\skip143
+\ar@cellbox=\box80
+) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip144
+\multirow@cntb=\count293
+\multirow@dima=\skip145
+\bigstrutjot=\dimen169
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip146
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks29
+\ex@=\dimen170
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen171
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count294
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count295
+\leftroot@=\count296
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count297
+\DOTSCASE@=\count298
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box81
+\strutbox@=\box82
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen172
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count299
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count300
+\dotsspace@=\muskip17
+\c@parentequation=\count301
+\dspbrk@lvl=\count302
+\tag@help=\toks30
+\row@=\count303
+\column@=\count304
+\maxfields@=\count305
+\andhelp@=\toks31
+\eqnshift@=\dimen173
+\alignsep@=\dimen174
+\tagshift@=\dimen175
+\tagwidth@=\dimen176
+\totwidth@=\dimen177
+\lineht@=\dimen178
+\@envbody=\toks32
+\multlinegap=\skip147
+\multlinetaggap=\skip148
+\mathdisplay@stack=\toks33
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen179
+\captionmargin=\dimen180
+\caption@leftmargin=\dimen181
+\caption@rightmargin=\dimen182
+\caption@width=\dimen183
+\caption@indent=\dimen184
+\caption@parindent=\dimen185
+\caption@hangindent=\dimen186
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count306
+\c@continuedfloat=\count307
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count308
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count309
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count310
+\calc@Bcount=\count311
+\calc@Adimen=\dimen187
+\calc@Bdimen=\dimen188
+\calc@Askip=\skip149
+\calc@Bskip=\skip150
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count312
+\calc@Cskip=\skip151
+) (/usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count313
+\bibleftmargin=\skip152
+\bibindent=\skip153
+\bibparsep=\skip154
+\bibitemsep=\skip155
+\biblabelsep=\skip156
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip157
+\bibsep=\skip158
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count314
+)
+LaTeX Info: Redefining \BBA on input line 23.
+ (/usr/share/texlive/texmf-dist/tex/latex/floatrow/floatrow.sty
+Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
+\c@float@type=\count315
+\float@exts=\toks34
+\float@box=\box83
+\@floatcapt=\box84
+Package floatrow Info: Modified float package code loaded on input line 455.
+Package floatrow Info: Modified rotfloat package code loaded on input line 473.
+\FR@everyfloat=\toks35
+\flrow@foot=\insert252
+\FB@wd=\dimen189
+\FBo@wd=\dimen190
+\FBc@wd=\dimen191
+\FBo@ht=\skip159
+\FBc@ht=\skip160
+\FBf@ht=\skip161
+\FBo@max=\skip162
+\FBc@max=\skip163
+\FBf@max=\skip164
+\c@FBl@b=\count316
+\floatbox@depth=\count317
+\c@FRobj=\count318
+\c@FRsobj=\count319
+\Xhsize=\skip165
+\sXhsize=\skip166
+\Zhsize=\skip167
+\sZhsize=\skip168
+\flrow@rowbox=\box85
+\FR@Zunitlength=\dimen192
+\c@FBcnt=\count320
+\FPOScnt=\count321
+\LTleft=\skip169
+\LTright=\skip170
+\LTleft=\skip171
+\LTright=\skip172
+\flrow@types=\toks36
+)
+\myheight=\skip173
+\mydepth=\skip174
+)
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 7.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count322
+\l__pdf_internal_box=\box86
+) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+Package hyperref Info: Link coloring ON on input line 7.
+ (./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+LaTeX Info: Redefining \microtypecontext on input line 7.
+Package microtype Info: Applying patch `item' on input line 7.
+Package microtype Info: Applying patch `toc' on input line 7.
+Package microtype Info: Applying patch `eqnum' on input line 7.
+Package microtype Info: Applying patch `footnote' on input line 7.
+Package microtype Info: Applying patch `verbatim' on input line 7.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 7.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
+) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count323
+\scratchdimen=\dimen193
+\scratchbox=\box87
+\nofMPsegments=\count324
+\nofMParguments=\count325
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count326
+\MPscratchDim=\dimen194
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
+\everyMPtoPDFconversion=\toks38
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\c@lstlisting=\count329
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: floatrow package is loaded.
+Package caption Info: floatrow package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@maskedRefs=\count330
+ (/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (./sections/c0/titlepage.tex
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 20.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+)
+<images/c0/uds_owl.png, id=171, 583.61433pt x 654.52075pt>
+File: images/c0/uds_owl.png Graphic file (type png)
+<use images/c0/uds_owl.png>
+Package pdftex.def Info: images/c0/uds_owl.png  used on input line 22.
+(pdftex.def)             Requested size: 71.03699pt x 79.66771pt.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 41.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.50006pt on input line 41.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `phv' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 21.14815pt on input line 41.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./images/c0/uds_owl.png>]) (./sections/c0/secondpage.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
+
+ []
+
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.18 \clearpage
+                [1] (./sections/c0/declaration.tex) [2
+
+] (./sections/c0/acks.tex) [3
+
+] (./sections/c0/abstract.tex) [4
+
+]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 69.70029pt on input line 33.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 69.70029pt on input line 33.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.50006pt on input line 33.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 21.14815pt on input line 33.
+ (./main.toc (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [5
+
+
+])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [6] (./sections/introduction.tex [1
+
+]
+<images/intro_complex.png, id=271, 1743.51375pt x 480.29437pt>
+File: images/intro_complex.png Graphic file (type png)
+<use images/intro_complex.png>
+Package pdftex.def Info: images/intro_complex.png  used on input line 18.
+(pdftex.def)             Requested size: 230.46965pt x 63.48845pt.
+) (./sections/relatedWork.tex [2 <./images/intro_complex.png>]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 23.23343pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 23.23343pt on input line 1.
+<images/simple.png, id=290, 888.31876pt x 714.41907pt>
+File: images/simple.png Graphic file (type png)
+<use images/simple.png>
+Package pdftex.def Info: images/simple.png  used on input line 9.
+(pdftex.def)             Requested size: 192.05609pt x 154.4583pt.
+<images/complex.png, id=291, 888.31876pt x 714.41907pt>
+File: images/complex.png Graphic file (type png)
+<use images/complex.png>
+Package pdftex.def Info: images/complex.png  used on input line 15.
+(pdftex.def)             Requested size: 192.05609pt x 154.4583pt.
+ [3
+
+
+]
+<images/shapes_and_colors/blue_square.png, id=308, 1030.85126pt x 1026.83624pt>
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 50.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+<images/shapes_and_colors/blue_circle.png, id=309, 1030.85126pt x 1026.83624pt>
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 50.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+<images/shapes_and_colors/green_triangle.png, id=310, 1030.85126pt x 1026.83624pt>
+File: images/shapes_and_colors/green_triangle.png Graphic file (type png)
+<use images/shapes_and_colors/green_triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/green_triangle.png  used on input line 50.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+<images/shapes_and_colors/blue.png, id=311, 1009.7725pt x 1012.78375pt>
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 50.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+<images/shapes_and_colors/circle.png, id=312, 1009.7725pt x 1012.78375pt>
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 50.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+<images/shapes_and_colors/green.png, id=313, 1009.7725pt x 1012.78375pt>
+File: images/shapes_and_colors/green.png Graphic file (type png)
+<use images/shapes_and_colors/green.png>
+Package pdftex.def Info: images/shapes_and_colors/green.png  used on input line 50.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+<images/shapes_and_colors/triangle.png, id=314, 1030.85126pt x 1026.83624pt>
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 50.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 80.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 80.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/green_triangle.png Graphic file (type png)
+<use images/shapes_and_colors/green_triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/green_triangle.png  used on input line 80.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 80.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 80.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/green.png Graphic file (type png)
+<use images/shapes_and_colors/green.png>
+Package pdftex.def Info: images/shapes_and_colors/green.png  used on input line 80.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 80.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+ [4 <./images/simple.png> <./images/complex.png> <./images/shapes_and_colors/blue_square.png> <./images/shapes_and_colors/blue_circle.png> <./images/shapes_and_colors/green_triangle.png> <./images/shapes_and_colors/blue.png> <./images/shapes_and_colors/circle.png> <./images/shapes_and_colors/green.png> <./images/shapes_and_colors/triangle.png>]
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 106.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 106.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/green_triangle.png Graphic file (type png)
+<use images/shapes_and_colors/green_triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/green_triangle.png  used on input line 106.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 106.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 106.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/green.png Graphic file (type png)
+<use images/shapes_and_colors/green.png>
+Package pdftex.def Info: images/shapes_and_colors/green.png  used on input line 106.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 106.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 134.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 134.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/green_triangle.png Graphic file (type png)
+<use images/shapes_and_colors/green_triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/green_triangle.png  used on input line 134.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 134.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 134.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/green.png Graphic file (type png)
+<use images/shapes_and_colors/green.png>
+Package pdftex.def Info: images/shapes_and_colors/green.png  used on input line 134.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 134.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 162.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 162.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+<images/shapes_and_colors/green_square.png, id=349, 1030.85126pt x 1026.83624pt>
+File: images/shapes_and_colors/green_square.png Graphic file (type png)
+<use images/shapes_and_colors/green_square.png>
+Package pdftex.def Info: images/shapes_and_colors/green_square.png  used on input line 162.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 162.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 162.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+<images/shapes_and_colors/square.png, id=350, 1030.85126pt x 1026.83624pt>
+File: images/shapes_and_colors/square.png Graphic file (type png)
+<use images/shapes_and_colors/square.png>
+Package pdftex.def Info: images/shapes_and_colors/square.png  used on input line 162.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 162.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 190.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 190.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/green_square.png Graphic file (type png)
+<use images/shapes_and_colors/green_square.png>
+Package pdftex.def Info: images/shapes_and_colors/green_square.png  used on input line 190.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 190.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 190.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/square.png Graphic file (type png)
+<use images/shapes_and_colors/square.png>
+Package pdftex.def Info: images/shapes_and_colors/square.png  used on input line 190.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 190.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+ [5 <./images/shapes_and_colors/green_square.png> <./images/shapes_and_colors/square.png>]
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 218.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 218.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/green_square.png Graphic file (type png)
+<use images/shapes_and_colors/green_square.png>
+Package pdftex.def Info: images/shapes_and_colors/green_square.png  used on input line 218.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 218.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 218.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/square.png Graphic file (type png)
+<use images/shapes_and_colors/square.png>
+Package pdftex.def Info: images/shapes_and_colors/square.png  used on input line 218.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 218.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+<images/trials_stats.png, id=364, 710.655pt x 439.6425pt>
+File: images/trials_stats.png Graphic file (type png)
+<use images/trials_stats.png>
+Package pdftex.def Info: images/trials_stats.png  used on input line 225.
+(pdftex.def)             Requested size: 192.05609pt x 118.8124pt.
+<images/l1_l2_stats.png, id=365, 621.82312pt x 404.26031pt>
+File: images/l1_l2_stats.png Graphic file (type png)
+<use images/l1_l2_stats.png>
+Package pdftex.def Info: images/l1_l2_stats.png  used on input line 231.
+(pdftex.def)             Requested size: 192.05609pt x 124.85675pt.
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 268.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 268.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 268.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 268.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/green.png Graphic file (type png)
+<use images/shapes_and_colors/green.png>
+Package pdftex.def Info: images/shapes_and_colors/green.png  used on input line 268.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 268.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+ [6 <./images/trials_stats.png> <./images/l1_l2_stats.png>]
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 294.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 294.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 294.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 294.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/square.png Graphic file (type png)
+<use images/shapes_and_colors/square.png>
+Package pdftex.def Info: images/shapes_and_colors/square.png  used on input line 294.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 294.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 322.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 322.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 322.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 322.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/green.png Graphic file (type png)
+<use images/shapes_and_colors/green.png>
+Package pdftex.def Info: images/shapes_and_colors/green.png  used on input line 322.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 322.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_square.png Graphic file (type png)
+<use images/shapes_and_colors/blue_square.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 350.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
+<use images/shapes_and_colors/blue_circle.png>
+Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 350.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/blue.png Graphic file (type png)
+<use images/shapes_and_colors/blue.png>
+Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 350.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/circle.png Graphic file (type png)
+<use images/shapes_and_colors/circle.png>
+Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 350.
+(pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
+File: images/shapes_and_colors/square.png Graphic file (type png)
+<use images/shapes_and_colors/square.png>
+Package pdftex.def Info: images/shapes_and_colors/square.png  used on input line 350.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+File: images/shapes_and_colors/triangle.png Graphic file (type png)
+<use images/shapes_and_colors/triangle.png>
+Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 350.
+(pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
+<images/raven_carpenter_1990.png, id=391, 867.99281pt x 898.85812pt>
+File: images/raven_carpenter_1990.png Graphic file (type png)
+<use images/raven_carpenter_1990.png>
+Package pdftex.def Info: images/raven_carpenter_1990.png  used on input line 361.
+(pdftex.def)             Requested size: 192.05609pt x 198.87405pt.
+ [7] [8 <./images/raven_carpenter_1990.png>]
+<images/tracker_comparison.png, id=417, 1305.37688pt x 588.69937pt>
+File: images/tracker_comparison.png Graphic file (type png)
+<use images/tracker_comparison.png>
+Package pdftex.def Info: images/tracker_comparison.png  used on input line 379.
+(pdftex.def)             Requested size: 384.1122pt x 173.22464pt.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 385.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)) (./sections/concept.tex [9 <./images/tracker_comparison.png>] [10] [11
+
+
+]) (./sections/implementation.tex [12] [13
+
+
+]
+<images/example_trial_webcam.png, id=482, 1930.96407pt x 1014.79124pt>
+File: images/example_trial_webcam.png Graphic file (type png)
+<use images/example_trial_webcam.png>
+Package pdftex.def Info: images/example_trial_webcam.png  used on input line 20.
+(pdftex.def)             Requested size: 307.29092pt x 161.4873pt.
+ [14 <./images/example_trial_webcam.png>]
+<images/calibration_webcam.png, id=498, 1930.96407pt x 1015.54407pt>
+File: images/calibration_webcam.png Graphic file (type png)
+<use images/calibration_webcam.png>
+Package pdftex.def Info: images/calibration_webcam.png  used on input line 33.
+(pdftex.def)             Requested size: 307.29092pt x 161.6071pt.
+ [15 <./images/calibration_webcam.png>]
+<images/inbetween_calibration_webcam.png, id=507, 1787.92969pt x 942.52126pt>
+File: images/inbetween_calibration_webcam.png Graphic file (type png)
+<use images/inbetween_calibration_webcam.png>
+Package pdftex.def Info: images/inbetween_calibration_webcam.png  used on input line 46.
+(pdftex.def)             Requested size: 307.29092pt x 161.98106pt.
+<images/calibration_instr.png, id=508, 687.56876pt x 125.46875pt>
+File: images/calibration_instr.png Graphic file (type png)
+<use images/calibration_instr.png>
+Package pdftex.def Info: images/calibration_instr.png  used on input line 53.
+(pdftex.def)             Requested size: 307.29092pt x 56.07367pt.
+ [16 <./images/inbetween_calibration_webcam.png> <./images/calibration_instr.png (PNG copy)>] [17]
+<images/polygons.png, id=545, 565.8741pt x 369.2997pt>
+File: images/polygons.png Graphic file (type png)
+<use images/polygons.png>
+Package pdftex.def Info: images/polygons.png  used on input line 102.
+(pdftex.def)             Requested size: 307.29092pt x 200.5515pt.
+<images/fixations.png, id=547, 565.8741pt x 369.2997pt>
+File: images/fixations.png Graphic file (type png)
+<use images/fixations.png>
+Package pdftex.def Info: images/fixations.png  used on input line 111.
+(pdftex.def)             Requested size: 268.87737pt x 175.48116pt.
+<images/scanpath.png, id=548, 565.8741pt x 369.2997pt>
+File: images/scanpath.png Graphic file (type png)
+<use images/scanpath.png>
+Package pdftex.def Info: images/scanpath.png  used on input line 117.
+(pdftex.def)             Requested size: 268.87737pt x 175.48116pt.
+ [18]
+File: images/scanpath.png Graphic file (type png)
+<use images/scanpath.png>
+Package pdftex.def Info: images/scanpath.png  used on input line 137.
+(pdftex.def)             Requested size: 184.37221pt x 120.32526pt.
+File: images/scanpath.png Graphic file (type png)
+<use images/scanpath.png>
+Package pdftex.def Info: images/scanpath.png  used on input line 137.
+(pdftex.def)             Requested size: 184.37221pt x 120.32526pt.
+ [19 <./images/polygons.png>] [20 <./images/fixations.png> <./images/scanpath.png>]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 174.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [21]) (./sections/results.tex [22] [23
+
+
+]
+<images/scatter_acc.png, id=607, 548.5293pt x 395.3169pt>
+File: images/scatter_acc.png Graphic file (type png)
+<use images/scatter_acc.png>
+Package pdftex.def Info: images/scatter_acc.png  used on input line 22.
+(pdftex.def)             Requested size: 211.26288pt x 152.25478pt.
+File: images/scatter_acc.png Graphic file (type png)
+<use images/scatter_acc.png>
+Package pdftex.def Info: images/scatter_acc.png  used on input line 22.
+(pdftex.def)             Requested size: 211.26288pt x 152.25478pt.
+File: images/scatter_acc.png Graphic file (type png)
+<use images/scatter_acc.png>
+Package pdftex.def Info: images/scatter_acc.png  used on input line 22.
+(pdftex.def)             Requested size: 211.26288pt x 152.25478pt.
+<images/hist_acc.png, id=608, 383.7537pt x 395.3169pt>
+File: images/hist_acc.png Graphic file (type png)
+<use images/hist_acc.png>
+Package pdftex.def Info: images/hist_acc.png  used on input line 26.
+(pdftex.def)             Requested size: 147.88107pt x 152.33319pt.
+File: images/hist_acc.png Graphic file (type png)
+<use images/hist_acc.png>
+Package pdftex.def Info: images/hist_acc.png  used on input line 26.
+(pdftex.def)             Requested size: 147.88107pt x 152.33319pt.
+File: images/hist_acc.png Graphic file (type png)
+<use images/hist_acc.png>
+Package pdftex.def Info: images/hist_acc.png  used on input line 26.
+(pdftex.def)             Requested size: 147.88107pt x 152.33319pt.
+ [24 <./images/scatter_acc.png> <./images/hist_acc.png>] [25] [26]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[27]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/proptimeondist_trends.png, id=647, 740.0147pt x 557.08125pt>
+File: images/proptimeondist_trends.png Graphic file (type png)
+<use images/proptimeondist_trends.png>
+Package pdftex.def Info: images/proptimeondist_trends.png  used on input line 257.
+(pdftex.def)             Requested size: 307.29092pt x 231.32892pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28] [29] [30 <./images/proptimeondist_trends.png>]
+Overfull \hbox (9.2543pt too wide) in paragraph at lines 316--343
+ [][] 
+ []
+
+[31] [32]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[33] [34]
+
+LaTeX Warning: Reference `tab:model_coefficients_rate_toggling' on page 35 undefined on input line 478.
+
+[35]
+<images/barchart_simple.png, id=720, 395.3169pt x 450.9648pt>
+File: images/barchart_simple.png Graphic file (type png)
+<use images/barchart_simple.png>
+Package pdftex.def Info: images/barchart_simple.png  used on input line 544.
+(pdftex.def)             Requested size: 176.69418pt x 201.56293pt.
+File: images/barchart_simple.png Graphic file (type png)
+<use images/barchart_simple.png>
+Package pdftex.def Info: images/barchart_simple.png  used on input line 544.
+(pdftex.def)             Requested size: 176.69418pt x 201.56293pt.
+File: images/barchart_simple.png Graphic file (type png)
+<use images/barchart_simple.png>
+Package pdftex.def Info: images/barchart_simple.png  used on input line 544.
+(pdftex.def)             Requested size: 176.69418pt x 201.56293pt.
+<images/barchart_complex.png, id=721, 395.3169pt x 450.9648pt>
+File: images/barchart_complex.png Graphic file (type png)
+<use images/barchart_complex.png>
+Package pdftex.def Info: images/barchart_complex.png  used on input line 549.
+(pdftex.def)             Requested size: 176.69418pt x 201.56293pt.
+File: images/barchart_complex.png Graphic file (type png)
+<use images/barchart_complex.png>
+Package pdftex.def Info: images/barchart_complex.png  used on input line 549.
+(pdftex.def)             Requested size: 176.69418pt x 201.56293pt.
+File: images/barchart_complex.png Graphic file (type png)
+<use images/barchart_complex.png>
+Package pdftex.def Info: images/barchart_complex.png  used on input line 549.
+(pdftex.def)             Requested size: 176.69418pt x 201.56293pt.
+<images/barchart_unambiguous.png, id=722, 395.3169pt x 450.9648pt>
+File: images/barchart_unambiguous.png Graphic file (type png)
+<use images/barchart_unambiguous.png>
+Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 556.
+(pdftex.def)             Requested size: 184.37221pt x 210.32265pt.
+File: images/barchart_unambiguous.png Graphic file (type png)
+<use images/barchart_unambiguous.png>
+Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 556.
+(pdftex.def)             Requested size: 184.37221pt x 210.32265pt.
+File: images/barchart_unambiguous.png Graphic file (type png)
+<use images/barchart_unambiguous.png>
+Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 556.
+(pdftex.def)             Requested size: 184.37221pt x 210.32265pt.
+) (./sections/conclusion.tex [36] [37 <./images/barchart_simple.png> <./images/barchart_complex.png> <./images/barchart_unambiguous.png>] [38
+
+
+] [39]) [40] (./sections/appendixA.tex [41
+
+
+]
+<images/pairwise_corr.png, id=765, 1680.2775pt x 1736.6481pt>
+File: images/pairwise_corr.png Graphic file (type png)
+<use images/pairwise_corr.png>
+Package pdftex.def Info: images/pairwise_corr.png  used on input line 29.
+(pdftex.def)             Requested size: 364.90541pt x 377.13493pt.
+) (./sections/appendixB.tex [42
+
+
+] [43 <./images/pairwise_corr.png>]) [44
+
+
+] [45] (./main.bbl
+Underfull \hbox (badness 5726) in paragraph at lines 317--329
+[]\T1/ppl/m/n/10 (+20) Mykhalievskyi, T., Duff, J., & Dem-berg, V.  (2025).  \T1/ppl/m/it/10 (+20) Pre-reg-is-tra-tion for
+ []
+
+
+Underfull \hbox (badness 6220) in paragraph at lines 317--329
+\T1/ppl/m/it/10 (+20) the-sis project.  \T1/ppl/m/n/10 (+20) Re-trieved from [][]$\T1/pcr/m/n/10 https :// osf [] .io / hf4vs / []?view [] []only =
+ []
+
+[46
+
+
+]) [47] (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 41428FD5071600830F0AF72F834045FB;6132.
+ ) 
+Here is how much of TeX's memory you used:
+ 18593 strings out of 476106
+ 294655 string characters out of 5793934
+ 1967975 words of memory out of 5000000
+ 39839 multiletter control sequences out of 15000+600000
+ 609285 words of font info for 255 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 80i,20n,82p,2724b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on main.pdf (54 pages, 3727683 bytes).
+PDF statistics:
+ 923 PDF objects out of 1000 (max. 8388607)
+ 760 compressed objects within 8 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 69612 words of extra memory for PDF output out of 74296 (max. 10000000)
+

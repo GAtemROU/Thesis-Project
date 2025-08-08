@@ -1,0 +1,55 @@
+\thispagestyle {plain}
+\vspace {-.45cm}
+\vspace {.175cm}
+\contentsline {chapter}{\numberline {1} Related Work}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Reference Games}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Rational Speech Act Model}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}How Eye Tracking is Useful}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Out of Lab Eye Tracking}{9}{section.1.4}%
+\vspace {.175cm}
+\contentsline {chapter}{\numberline {2} Concept}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Research Questions}{11}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Estimating the Posterior}{11}{subsection.2.1.1}%
+\contentsline {subsubsection}{Research Hypothesis 1}{11}{subsubsection*.7}%
+\contentsline {subsubsection}{Research Hypothesis 2}{12}{subsubsection*.8}%
+\contentsline {subsection}{\numberline {2.1.2}Estimating the Likelihood}{12}{subsection.2.1.2}%
+\contentsline {subsubsection}{Research Hypothesis 3}{12}{subsubsection*.9}%
+\contentsline {subsubsection}{Research Hypothesis 4}{12}{subsubsection*.10}%
+\vspace {.175cm}
+\contentsline {chapter}{\numberline {3} Method}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Collection}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Reference Games}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Eye Tracking}{14}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Consent}{17}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Analysis}{17}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Features}{17}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Data Preprocessing}{18}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Eye Tracking Features}{18}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Pairwise Correlations}{19}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Mixed Effects Logistic Regressions}{21}{subsection.3.2.5}%
+\vspace {.175cm}
+\contentsline {chapter}{\numberline {4} Results}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}General Information}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Pairwise Correlations}{24}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Predicting Accuracy}{27}{section.4.3}%
+\contentsline {section}{\numberline {4.4}On Distractor}{32}{section.4.4}%
+\contentsline {section}{\numberline {4.5}On Available Messages}{33}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Rate of Toggling}{35}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Strategies}{36}{section.4.7}%
+\vspace {.175cm}
+\contentsline {chapter}{\numberline {5} Conclusion and General Discussion}{38}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusion}{38}{section.5.1}%
+\contentsline {section}{\numberline {5.2}General Discussion}{39}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Scanpaths}{39}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Peripheral Vision}{39}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Toggling}{40}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Proportional Eye Tracking Features}{40}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Eye Tracking}{40}{subsection.5.2.5}%
+\contentsline {chapter}{Appendices}{41}{subsection.5.2.5}%
+\vspace {.175cm}
+\contentsline {chapter}{\numberline {A} Appendix A: Additional Details}{42}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Pairwise Correlations}{42}{section.A.1}%
+\vspace {.175cm}
+\contentsline {chapter}{\numberline {B} Appendix B: Supplementary Material}{44}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Trials}{45}{section.B.1}%
+\contentsline {chapter}{Bibliography}{46}{section*.41}%

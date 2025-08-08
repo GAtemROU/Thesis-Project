@@ -49,7 +49,7 @@ contrasts(df_correct$Condition)
 print(head(df_correct))
 
 regression <- brm(
-    Correct | trials(1) ~ Condition + Trial +  PropTimeOnTrgt +
+    Correct ~ Condition + Trial +  PropTimeOnTrgt +
     PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
     PropTimeOnAvailableMsgs + 
     RateTogglingAvailableMsgs + AnswerTime +
@@ -57,15 +57,15 @@ regression <- brm(
     Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
     Condition:PropTimeOnAvailableMsgs +
     Condition:RateTogglingAvailableMsgs + Condition:AnswerTime,
-    # (1 
-    # # + Condition + Trial + PropTimeOnTrgt +
+    # (1 + Condition
+    #  + Trial + PropTimeOnTrgt +
     # # PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg +
     # # PropTimeOnAvailableMsgs + RateTogglingAvailableMsgs 
     # | Subject),
     # specify dataset
     data = df_correct,
     # specify to fit a logistic regression
-    family = binomial(link = "logit"),
+    family = 'bernoulli',
     prior = c(prior(normal(1, 2), class="Intercept"),
               prior(normal(0, 5), class="b")),
     cores = 6,

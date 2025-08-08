@@ -5,6 +5,7 @@ library(scales)
 library(emmeans)
 library(magrittr)
 library(brms)
+library(xtable)
 
 
 df <- read.csv("analysis/data/final_datasets/final_experiment_trials.csv")
@@ -70,27 +71,49 @@ regression <- brm(
     # specify to fit a logistic regression
     prior = c(prior(normal(0, 1), class="Intercept"),
               prior(normal(0, 5), class="b")),
-    cores = 6,
+    cores = 5,
     save_pars = save_pars(all = TRUE),
     iter = 5000,
-    chains = 6,
-    warmup = 500
+    chains = 5,
+    warmup = 500,
+    control = list(adapt_delta = 0.9),
 
 )
 
 
+
 print(summary(regression))
+plot(pairs(regression))
+saveRDS(regression, file = paste0("analysis/regressions/Bayesian/per_trial/trained_models/tog_rate__", format(Sys.time(), "%F_%R"), ".rds"))
 
-saveRDS(regression, file = paste0("analysis/regressions/Bayesian/per_correct_fixation/trained_models/tog_rate__", format(Sys.time(), "%F_%R"), ".rds"))
-
-# saved_regr = readRDS(file = "/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_trial/trained_models/cor_ans_regr_2025-07-03_10:38.rds")
-# print(summary(saved_regr))
-
-emtr = emtrends(regression, specs = pairwise ~ Condition, var = 'StrategyLabel')
+saved_regr = readRDS(file = "/home/gatemrou/uds/thesis/Thesis-Project/analysis/regressions/Bayesian/per_trial/trained_models/tog_rate__2025-08-08_23:38.rds")
+print(summary(saved_regr), digits = 5)
+    
+emtr = emtrends(saved_regr, specs = pairwise ~ Condition, var = 'StrategyLabel')
 print(emtr$emtrends)
 print(emtr$contrasts)
-emmns = emmeans(regression, specs = pairwise ~ Condition : StrategyLabel)
+emmns = emmeans(saved_regr, specs = pairwise ~ Condition : StrategyLabel)
 print(emmns$emmeans)
 print(emmns$contrasts)
 print(emmns)
 emmip(regression, Condition ~ StrategyLabel, cov.reduce = range)
+
+
+
+
+# TeX
+
+coef_table <- posterior_summary(saved_regr, variables = "^b_")  # only fixed effects
+coef_df <- as.data.frame(coef_table)
+coef_df$Term <- rownames(coef_df)
+
+# Optional: reorder columns and round
+coef_df <- coef_df[, c("Term", "Estimate", "Est.Error", "Q2.5", "Q97.5")]
+coef_df <- round(coef_df, 5)  # exactly 5 decimal places
+
+# Create LaTeX table
+print(xtable(coef_df,
+             caption = "Regression coefficients from brms model",
+             label = "tab:brms_coefs"),
+      include.rownames = FALSE,
+      sanitize.text.function = identity) 

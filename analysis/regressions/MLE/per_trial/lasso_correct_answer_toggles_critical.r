@@ -89,7 +89,7 @@ print(summary(lasso))
 
 # saveRDS(regression, file = paste0("analysis/regressions/per_trial/trained_models/cor_ans_regr_", format(Sys.time(), "%F_%R"), ".rds"))
 
-emtr = emtrends(lasso, specs = pairwise ~ Condition, var = 'PropTimeOnAvailableMsgs')
+emtr = emtrends(coef(cvfit, s = "lambda.min"), specs = pairwise ~ Condition, var = 'PropTimeOnAvailableMsgs')
 print(emtr$emtrends)
 print(emtr$contrasts)
 emmip(lasso, Condition ~ AnswerTime, cov.reduce = range)

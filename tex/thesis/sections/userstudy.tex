@@ -1,0 +1,441 @@
+﻿\chapter{Results}
+\label{chap:results}
+
+\section{General Information}
+\label{sec:general_info}
+In total there were 120 participants in the study who made a submission according to Prolific. 12 were removed due to technical issues with the submissions, either their submissions were not received due to technical issues or they actually did not fully complete the experiment. Another 3 were removed due to having missing data in some of the trials and another 4 were removed due to having accuracy on Unambiguous trials below 75\% according to our preregistration \citep{preregistration}. This left us with 101 participants for the analysis. 
+
+It is worth noting that due to the nature of the experiment, the calibration was challenging to pass, making the experiment difficult to complete. 120 participants completed the experiment, however, there were around 150 submission attempts that were not completed. This mainly happened because of the calibration difficulties, according to feedback from some participants. This information gives us an idea about the completion rate of the experiment, which amounted to around 40\%. However, this allowed us to collect a large amount of good quality data, which is the most important aspect of the experiment.
+
+Due to the complexity of the mixed effects models, convergence issues arose. Therefore, the random effects were removed one by one from the models based on the least variance among the random effects. The process was repeated until the models converged. In the case of predicting accuracy, the random effects were removed from the model entirely. 
+
+The general information about the accuracy on the participant level can be seen in \autoref{fig:scatter_acc} and \autoref{fig:hist_acc}. The \autoref{fig:scatter_acc} demonstrates that $L_2$ reasoning takes the largest portion of the participants. This is probably the case due to the included feedback in the trials, which greatly improves the probability of a participant learning a strategy to solve the trials from all 3 conditions. However, generally the data follows similar pattern to the one reported in \cite{Franke_2016}, similar scatter plot can be seen in \autoref{fig:prob_stats}. It is worth to note that a few participants achieved extremely low accuracy on Simple trials, while performing relatively better on Complex trials. The cause of this is unclear.
+
+The histogram in \autoref{fig:hist_acc} shows that the general pattern of people easily solving the Unambiguous trials, struggling more in the Simple condition and finding the Complex condition the most difficult to solve.
+
+\begin{figure}
+\centering
+\begin{floatrow}
+    \ffigbox[\FBwidth]{\includegraphics[width=0.55\textwidth]{images/scatter_acc.png}}{
+        \caption{Scatter plot of accuracy.}
+        \label{fig:scatter_acc}
+    }
+    \ffigbox[\FBwidth]{\includegraphics[width=0.385\textwidth]{images/hist_acc.png}}{
+        \caption{Histogram of accuracy.}
+        \label{fig:hist_acc}
+    }
+\end{floatrow}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Pairwise Correlations}
+\label{sec:pairwise_corr}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Feature} & \textbf{Mean (SD)} & \textbf{Accuracy} & \textbf{Mean Answer Time} \\ \hline
+PropTimeOnSentMsg & 0.29 (0.09) & -0.33 *** & -0.57 *** \\ \hline
+PropTimeOnAvailableMsgs & 0.11 (0.07) & 0.35 *** & 0.38 *** \\ \hline
+PropTimeOnTrgt & 0.24 (0.06) & 0.35 *** & 0.18 \\ \hline
+PropTimeOnDist & 0.16 (0.06) & -0.03 & 0.29 ** \\ \hline
+PropTimeOnComp & 0.18 (0.06) & -0.24 * & -0.07 \\ \hline
+PropTimeOnNonAOI & 0.02 (0.01) & -0.02 & 0.04 \\ \hline
+MeanAnswerTime (ms) & 5188 (2586) & 0.08 & --- \\ \hline
+Accuracy & 0.8 (0.25) & --- & --- \\ \hline
+\end{tabular}
+\caption{Simple condition. Correlation table showing the relationships between features, accuracy, and mean answer time. Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
+\label{tab:correlation_table_simple}
+\end{table}
+
+The pairwise correlations for the Simple and Complex conditions can be seen in \autoref{tab:correlation_table_simple} and \autoref{tab:correlation_table_complex} correspondingly. The correlations between the eye-tracking features were excluded due to the way they were defined. Almost all of them have negative correlation because the features are proportional and increase in one of them means a decrease in some of the others. However, there was one exception to this general trend, it is a positive significant correlation of 0.2 between the \texttt{PropTimeOnDist} and \texttt{PropTimeOnNonAOI} on Complex condition. This indicates that on Complex trials, the more time a participant spends on the Distractor, the more time they spend outside of the AOI. Generally the Non-AOI feature is extremely low comparing to other eye-tracking features. The only reasonable explanation is that due to the increase in difficulty in the Complex trials, the participants are more likely to have a more of an equally distributed attention across the areas of interest.
+
+Looking at the correlations with accuracy, there are some significant correlations. For both conditions, the two less interesting ones are the correlations with \texttt{PropTimeOnTrgt} and \texttt{PropTimeOnComp}. In the former case, there is a significant positive correlation between \texttt{PropTimeOnTrgt} and \texttt{Accuracy}. The more participant look at the Target, the more likely they are to answer correctly. This is not surprising as the Target is the correct answer. A similar logic can be applied to the later, there is a significant negative correlation between \texttt{PropTimeOnComp} and \texttt{Accuracy}. The more time a participant spends looking at the Competitor, the more likely they are to choose it, therefore, answering incorrectly. In addition, we visually inspected the scanpaths of some participants. The effect might be coming from the last look at the object of choice, therefore, tipping the proportional time in favor of the chosen object and, hence, correlating the proportional time to the answer.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Feature} & \textbf{Mean (SD)} & \textbf{Accuracy} & \textbf{Mean Answer Time} \\ \hline
+PropTimeOnSentMsg & 0.26 (0.09) & -0.35 *** & -0.61 *** \\ \hline
+PropTimeOnAvailableMsgs & 0.13 (0.07) & 0.22 * & 0.51 *** \\ \hline
+PropTimeOnTrgt & 0.23 (0.07) & 0.56 *** & 0.02 \\ \hline
+PropTimeOnDist & 0.15 (0.06) & -0.08 & 0.19 \\ \hline
+PropTimeOnComp & 0.21 (0.06) & -0.26 ** & 0.11 \\ \hline
+PropTimeOnNonAOI & 0.02 (0.02) & -0.01 & 0.01 \\ \hline
+MeanAnswerTime (ms) & 6565 (4022) & 0.18 & --- \\ \hline
+Accuracy & 0.7 (0.21) & --- & --- \\ \hline
+\end{tabular}
+\caption{Complex condition. Correlation table showing the relationships between features, accuracy, and mean answer time. Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
+\label{tab:correlation_table_complex}
+\end{table}
+
+Going further, the \texttt{PropTimeOnSentMsg} has a significant negative correlation with accuracy in both conditions. This indicates that the more time a participant spends looking at the sent message, the less likely they are to answer correctly. This can be explained by the fact that the sent message is important in the trial, however, spending more time looking at it would mean that less time is spent looking at the other crucial areas of interest. And a better accuracy is achieved probably by taking a quick look at the sent message and then focusing on the other areas of interest. 
+
+As for the \texttt{PropTimeOnAvailableMsgs}, it has a significant positive correlation with accuracy in both conditions. This indicates that the more time a participant spends looking at the available messages, the more likely they are to answer correctly. This is not surprising as the available messages are extremely important to solve the Simple trials. It is worth noting that the effect is much stronger in the Simple condition, where the correlation is 0.35, comparing to the Complex condition, where the correlation is 0.22. This partially aligns with the second hypothesis described in \autoref{sec:h2}. The effect is significant in both conditions. While we anticipated that the Simple condition would benefit from the available messages more, the Complex condition also benefits from it. This is probably due to the fact that the available messages are still important for the participants in the Complex trials.
+
+\sloppy
+Now, looking at the column of \texttt{MeanAnswerTime}. We did not make any hypothesis about how answer time would relate to the eye-tracking features, however, it can still give us some general information about participant-level patterns. The \texttt{PropTimeOnSentMsg} has a significant negative correlation with the answer time. The reason for this is probably related to the interpretation of the correlation with the accuracy. Participants might adapt a suboptimal strategy where they would not look at the available messages which works perfectly for the Unambiguous trials, however, completely fails on the Simple trials. That is why the proportional increase in time spent looking at the sent message indicates a quick answer and low accuracy. 
+\sloppy
+
+The \texttt{PropTimeOnAvailableMsgs} has a significant positive correlation with the answer time. This indicates that the more time a participant spends looking at the available messages, the more time they would spend on the trial in general. This is not surprising as proportionally spending more time looking at the available messages indicates more reasoning involved in the problem solving process, which leads to more time spent on the trial. Especially taking into account the fact that the available messages has second to lowest average time spent on it in both conditions. 
+
+Last but not least is the \texttt{PropTimeOnDist}. It has a significant positive correlation with the answer time only in the Simple trials. This indicates that the more time a participant spends looking at the Distractor, the more time they would spend on the trial in general. This is not surprising as the Distractor is not an important feature in the Simple trials, however, spending more time looking at it would mean that less time is spent looking at the other crucial areas of interest.
+
+\sloppy
+The pairwise correlations for the Unambiguous condition were not included in the tables because there were very few significant effects. There were no significant correlations with accuracy, however, the \texttt{PropTimeOnComp}, \texttt{PropTimeOnDist} and \texttt{PropTimeOnAvailableMsgs} have significant positive correlations with the answer time. This is because the Unambiguous trials are very easy to solve, therefore, the participants do not need to look at the Distractor, Competitor or available messages at all. The only feature that has a significant negative correlation with the answer time is \texttt{PropTimeOnSentMsg}. This is not surprising as the sent message is perhaps the most important feature in the Unambiguous trials. A more detailed explanation and the table can be found in \autoref{sec:pairwise_corr_unambiguous}.
+\sloppy
+
+\subsection*{Conclusion}
+The pairwise correlations gave us some general understanding about which features are important. The most important finding is, the significant correlation of proportional time on available messages to the accuracy in both Simple and Complex conditions. As well as the absence of significant correlation between the proportional time on Distractor and accuracy. This hints us that participants look similarly on the trial, but still achieve different accuracy. From here we will move to the linear regression predicting accuracy. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Predicting Accuracy}
+\label{sec:accuracy_model}
+
+The final formula for the model predicting accuracy is presented below. All random effects were removed from the model due to convergence issues:
+\begin{verbatim}
+    Correct ~ Condition + TrgtPos + Trial + PropTimeOnTrgt +
+    PropTimeOnComp + PropTimeOnDist + PropTimeOnSentMsg + 
+    PropTimeOnAvailableMsgs + MsgType + AnswerTime + 
+    Condition:PropTimeOnTrgt + Condition:PropTimeOnComp +
+    Condition:PropTimeOnDist + Condition:PropTimeOnSentMsg +
+    Condition:PropTimeOnAvailableMsgs + Condition:AnswerTime
+\end{verbatim}
+The model had the following encodings for the categorical variables \autoref{tab:msgtype_encoding}, \autoref{tab:trgtpos_encoding} and \autoref{tab:condition_encoding}. The Target position can be interpreted as comparing left to center or right and right to center or left for features ``TrgtPos1'' and ``TrgtPos2'' respectively. The condition can be interpreted as comparing the Simple condition to the Complex condition and the Unambiguous condition to the Simple and Complex conditions together. The model was trained using the \texttt{lme4} package in R. The model was trained using the \texttt{glm} function with the following parameters: \texttt{family = binomial(link = "logit")}. The resulting coefficients can be seen in \autoref{tab:model_coefficients_acc}. 
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    Message Type & MsgType \\ \hline
+    Shape        & -1       \\ \hline
+    Color        & 1        \\ \hline
+    \end{tabular}
+    \caption{Encoding of the message type categorical variable.}
+    \label{tab:msgtype_encoding}
+    \end{table}
+    \hfill
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    Target Position & TrgtPos1 & TrgtPos2\\ \hline
+    0               & 1    & 0    \\ \hline
+    1               & 0    & 0    \\ \hline
+    2               & 0    & 1    \\ \hline
+    \end{tabular}
+    \caption{Encoding of the Target position categorical variable.}
+    \label{tab:trgtpos_encoding}
+    \end{table}
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Condition     & Condition1 & Condition2 \\ \hline
+    Complex       & -1   & -1   \\ \hline
+    Simple        & 1    & -1   \\ \hline
+    Unambiguous   & 0    & 2    \\ \hline
+    \end{tabular}
+    \caption{Encoding of the condition categorical variable.}
+    \label{tab:condition_encoding}
+\end{table}
+
+
+Looking at some general findings from \autoref{tab:model_coefficients_acc}, starting from the Intercept, it is positive and significant, indicating that having no information about any of the features, the trial is more likely to be solved correctly. This is unsurprising as the average accuracy across all trials amounted to 82.5\%. 
+
+One can see from \texttt{Condition1} that the Complex trials are predicted to have significantly lower accuracy comparing to the Simple ones. However, the effect is not fully captured by this coefficient due to the inclusion of the interaction terms. \texttt{Condition2} indicates that Unambiguous trials have a higher probability of being solved correctly comparing to Simple and Complex ones, the effect is also significant. So far, the findings fully align with how the trials were designed. 
+
+\texttt{TrgtPos1} and \texttt{TrgtPos2} effects are harder to interpret. The findings suggest that the when the Target is on the left or right side, the probability of correctly answering increases, the effect is significant. This might be somehow related to the fact that the objects are split far apart from each other.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Coefficient} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\ \hline
+(Intercept)                          & 1.23265 & 0.18460 & 6.677 & 2.43e-11 *** \\ \hline
+Condition1                           & 0.22087 & 0.05499 & 4.017 & 5.91e-05 *** \\ \hline
+Condition2                           & 1.10938 & 0.14302 & 7.757 & 8.69e-15 *** \\ \hline
+TrgtPos1                             & 1.92305 & 0.21183 & 9.078 & < 2e-16 *** \\ \hline
+TrgtPos2                             & 1.69844 & 0.20450 & 8.305 & < 2e-16 *** \\ \hline
+Trial                                & 0.22635 & 0.04825 & 4.691 & 2.72e-06 *** \\ \hline
+PropTimeOnTrgt                      & -6.09992 & 6.15675 & -0.991 & 0.3218 \\ \hline
+PropTimeOnComp                     & -12.92581 & 6.16769 & -2.096 & 0.0361 * \\ \hline
+PropTimeOnDist                     & -11.95582 & 6.14733 & -1.945 & 0.0518 . \\ \hline
+PropTimeOnSentMsg                   & -9.95567 & 6.06806 & -1.641 & 0.1009 \\ \hline
+PropTimeOnAvailableMsgs             & -8.69726 & 6.27784 & -1.385 & 0.1659 \\ \hline
+MsgType                            & -0.11506 & 0.04888 & -2.354 & 0.0186 * \\ \hline
+AnswerTime                          & -0.12537 & 0.05186 & -2.418 & 0.0156 * \\ \hline
+Condition1:PropTimeOnTrgt           & -1.93730 & 1.09696 & -1.766 & 0.0774 . \\ \hline
+Condition2:PropTimeOnTrgt          & -12.13074 & 6.12982 & -1.979 & 0.0478 * \\ \hline
+Condition1:PropTimeOnComp           & -1.30711 & 1.08177 & -1.208 & 0.2269 \\ \hline
+Condition2:PropTimeOnComp          & -11.30869 & 6.12510 & -1.846 & 0.0649 . \\ \hline
+Condition1:PropTimeOnDist           & -1.13168 & 1.08619 & -1.042 & 0.2975 \\ \hline
+Condition2:PropTimeOnDist          & -12.16270 & 6.10435 & -1.992 & 0.0463 * \\ \hline
+Condition1:PropTimeOnSentMsg        & -0.97657 & 1.09161 & -0.895 & 0.3710 \\ \hline
+Condition2:PropTimeOnSentMsg       & -10.26290 & 6.03306 & -1.701 & 0.0889 . \\ \hline
+Condition1:PropTimeOnAvMsgs   & 0.70963 & 1.13710 & 0.624 & 0.5326 \\ \hline
+Condition2:PropTimeOnAvMsgs & -12.08512 & 6.24131 & -1.936 & 0.0528 . \\ \hline
+Condition1:AnswerTime               & -0.11566 & 0.05769 & -2.005 & 0.0450 * \\ \hline
+Condition2:AnswerTime               & -0.02166 & 0.03973 & -0.545 & 0.5856 \\ \hline
+\end{tabular}
+\caption{Summary of the trained model coefficients. Significance levels: . $p < 0.1$, * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
+\label{tab:model_coefficients_acc}
+\end{table}
+
+The coefficient for \texttt{Trial} suggests that people get better as they progress through the experiment. This is expected as the participants have feedback after they answer, which tells whether their answer is correct or not. This finding also aligns with some of the findings from the previous work \citep{Mayn_2023, Mayn_2025}. 
+
+Moving to the eye-tracking features, the \texttt{PropTimeOnComp} has a significant negative effect, indicating that the more participants looks at the Competitor, the more likely they are to answer incorrectly. This effect probably comes from the last look that people do before selecting the object which tips the proportional feature. If a participant cannot derive the correct answer through the reasoning, they will most likely guess among the Target and the Competitor as they both share the sent message feature, making looking at the Competitor negatively correlated to the accuracy.
+
+Furthermore, the \texttt{PropTimeOnDist} has a large negative effect, it is almost significant. The effect is most likely coming from the Unambiguous trials which we will discuss later more in details. 
+
+The \texttt{MsgType} indicates that trials where the sent message is a shape are more likely to be solved correctly. The effect is significant, although relatively small.
+
+Regarding the \texttt{AnswerTime}, the general term suggests that the longer one stays on the trial, the more likely they are to answer incorrectly. However, this term should be interpreted together with the interaction terms. We will discuss it further in more details.
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Condition} & \textbf{PropTimeOnDist.trend} & \textbf{SE} & \textbf{asymp.LCL} & \textbf{asymp.UCL} \\ \hline
+Complex            & 1.339                        & 1.46        & -1.53              & 4.204              \\ \hline
+Simple             & -0.925                       & 1.63        & -4.11              & 2.265              \\ \hline
+Unambiguous        & -36.281                      & 18.30       & -72.13             & -0.434             \\ \hline
+\end{tabular}
+\caption{Trends for proportional time on Distractor based on condition.}
+\label{tab:proptimeondist_trends}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/proptimeondist_trends.png}
+    \caption{Visualization of trends for proportional time on Distractor based on condition.}
+    \label{fig:proptimeondist_trends}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Contrast} & \textbf{Estimate} & \textbf{SE} & \textbf{z.ratio} & \textbf{p.value} \\ \hline
+Complex - Simple & 2.26 & 2.17 & 1.042 & 0.5504 \\ \hline
+Complex - Unambiguous & 37.62 & 18.30 & 2.051 & 0.1003 \\ \hline
+Simple - Unambiguous & 35.36 & 18.30 & 1.927 & 0.1311 \\ \hline
+\end{tabular}
+\caption{Contrasts for proportional time on Distractor based on condition.}
+\label{tab:proptimeondist_contrasts}
+\end{table}
+
+The first hypothesis we were interested in was that proportional time on Distractor is positively associated with accuracy on Complex trials, described in \autoref{sec:h1}. Even though the coefficient for the interaction term ``Condition1:PropTimeOnDist'' is not significant, due to how interaction terms work, we can still interpret how model prediction changes based on the value of the interaction term. First of all, we can take a look at \autoref{tab:proptimeondist_trends} which shows the trends of the Proportional time on Distractor for each condition. As well as the plot \autoref{fig:proptimeondist_trends} which visualizes the trends of the proportional time on Distractor for each condition. The \autoref{tab:proptimeondist_trends} indicates the trends we anticipated, however, the columns \texttt{asymp.LCL} and \texttt{asymp.UCL} indicate the asymptotic lower and upper confidence limits -- that is, the 95\% confidence interval around the slope estimate. In Simple and Complex cases the interval includes 0, making the slopes not significant. It is worth noting that the slope for the Unambiguous trials is very large and ends up as significant in the end. However, the main issue is that the amount of incorrectly solved Unambiguous trials is extremely low, as the average accuracy on Unambiguous trials amounted to 98\%. This fact makes the slope have very large standard error and subsequently the confidence interval is also very spread. To address the potential that the high uncertainty in the Unambiguous conditions affected model fit and quality, we also fit models to only critical conditions, that is only Simple and Complex ones. Convergence difficulties were found to the same degree, and final model estimates for the trends were comparable, with no changes in significance. We continue with the conclusions we drew from the larger model.
+Furthermore, we can look at \autoref{tab:proptimeondist_contrasts}. The table indicates the differences between the slopes and gives corresponding p values for them. The row corresponding to our hypothesis is the first one ``Complex - Simple''. the findings indicate that the Complex trials will benefit more from the proportional time on Distractor than the Simple ones. However, again, the effect is not significant. In addition, the estimates for the contrasts that include Unambiguous trials are close to being significant, however, these estimates are likely unreliable due to the reasons we discussed earlier.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Condition} & \textbf{PropTimeOnAvMsgs.trend} & \textbf{SE} & \textbf{asymp.LCL} & \textbf{asymp.UCL} \\ \hline
+Complex            & 2.68                                  & 1.51        & -0.281             & 5.64              \\ \hline
+Simple             & 4.10                                  & 1.70        & 0.761              & 7.43              \\ \hline
+Unambiguous        & -32.87                                & 18.70       & -69.502            & 3.77              \\ \hline
+\end{tabular}
+\caption{Trends for proportional time on available messages based on condition.}
+\label{tab:proptimeonavmsgs_trends}
+\end{table}
+
+The second hypothesis goes as follows, proportional time on available messages is positively associated with accuracy on Simple trials, described in \autoref{sec:h2}. Similarly to how we interpreted the findings for the first hypothesis, we will look at the actual predictions of the model and not solely at the coefficients to capture the whole relation between the interaction terms and the regular ones. The trends are presented in \autoref{tab:proptimeonavmsgs_trends}. From the table we can indeed see a positive effect of proportional time on available messages on Simple condition. Therefore, the findings support the second hypothesis. In addition, the confidence interval does not include 0, suggesting that the effect is significant. As for the Complex and Unambiguous trials, neither of the effects are significant, however, the trend for the Complex trial is also positive, suggesting that the available messages are still important for the participants in the Complex trials. It is worth noting, that the Complex trials can be solved without knowing the available messages at all as was described in \autoref{sec:h2}. Hence, the available messages might not be as important in the Complex condition.
+
+
+Taking into account the fact that \texttt{AnswerTime} and one of the interaction terms including it have significant effects, we will also interpret the trends for this feature.  The trends can be seen in \autoref{tab:answertime_trends}. From the table we can conclude that the answer time on the Simple condition has a significant negative effect. This means, that the longer one takes to solve the Simple case, the more likely they are to answer incorrectly. The slopes for the other conditions are not significant.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Condition} & \textbf{AnswerTime.trend} & \textbf{SE} & \textbf{asymp.LCL} & \textbf{asymp.UCL} \\ \hline
+Complex            & 0.012                     & 0.0678      & -0.121             & 0.1449             \\ \hline
+Simple             & -0.219                    & 0.0938      & -0.403             & -0.0356            \\ \hline
+Unambiguous        & -0.169                    & 0.1040      & -0.372             & 0.0351             \\ \hline
+\end{tabular}
+\caption{Trends for Answer Time based on condition.}
+\label{tab:answertime_trends}
+\end{table}
+
+\subsection*{Conclusion}
+The first hypothesis with the Distractor was not confirmed by the main model. That is, the proportional time on Distractor is not positively associated with the accuracy on Complex trials. On the other hand, the proportional time on available messages is significantly positively associated with the accuracy on Simple trials. 
+
+The full conclusion will be drawn later, however, the general pattern suggests that participants fail to solve the trial not due to the lack of information, but rather due to lack of depth during the reasoning process. While the proportional time on available messages might to some extent describe the reasoning process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{On Distractor}
+\label{sec:distractor_model}
+
+The model presented here predicts the likelihood (binary outcome) of participants gazing at the Distractor during correctly solved trials. The final formula for the model predicting the likelihood of looking at the Distractor for the correctly solved trials is presented below. Most of the random effects were removed from the model due to convergence issues:
+\begin{verbatim}
+    OnDist ~ Condition + Trial + MsgType + TrgtPos +
+        (1 | Subject)
+\end{verbatim}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Coefficient} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\ \hline
+(Intercept)          & -3.056241         & 0.039379            & -77.611          & <2e-16 ***        \\ \hline
+Condition1           & 0.013373          & 0.006440            & 2.076            & 0.0379 *          \\ \hline
+Condition2           & -0.086425         & 0.004691            & -18.425          & <2e-16 ***        \\ \hline
+Trial                & -0.053649         & 0.005713            & -9.391           & <2e-16 ***        \\ \hline
+MsgType             & -0.017492         & 0.005713            & -3.062           & 0.0022 **         \\ \hline
+TrgtPos1             & 1.772965          & 0.018094            & 97.986           & <2e-16 ***        \\ \hline
+TrgtPos2             & 1.795716          & 0.018151            & 98.931           & <2e-16 ***        \\ \hline
+\end{tabular}
+\caption{Summary of the model predicting the likelihood of looking at the Distractor for the correctly solved trials. Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
+\label{tab:model_coefficients_distractor}
+\end{table}
+
+In this case, no interaction terms were included in the model. Hence, the model coefficients can be interpreted directly as each coefficient is the effect of the corresponding feature that appears only once in the whole model. The encodings for the categorical variables are the same as in \autoref{tab:msgtype_encoding}, \autoref{tab:trgtpos_encoding} and \autoref{tab:condition_encoding}. The model was trained using the \texttt{lme4} package in R. The model was trained using the \texttt{glmer} function with the following parameters: \texttt{family = binomial(link = "logit")}. The resulting coefficients can be seen in \autoref{tab:model_coefficients_distractor}.
+
+Starting from the Intercept, it is negative and significant, indicating that without any information about the correctly solved trial, the predicted gaze point is likely to be not on the Distractor. This is unsurprising as the average time spent looking at the Distractor was 14.3\% across all correctly solved trials. 
+
+\texttt{Condition1} indicates that the Distractor is more likely to be looked at in the Simple trials than in the Complex ones. This finding is the opposite of what we expected according to the hypothesis 3 described in \autoref{sec:h3}. The effect is small but significant. This indicates that taking into account the correctly solved trials, not only the Distractor was not looked at more in the Complex trials, but it was actually looked at more in the Simple trials. A possible explanation is that a skilled participant would apply the same strategy to both the Simple and Complex trials. \texttt{Condition2} indicates that the Distractor is less likely to be looked at in the Unambiguous trials than in the Simple and Complex ones. The effect is significant and large, indicating that the Distractor is not looked at as much in the Unambiguous trials. This finding is not surprising as the Distractor is not important in the Unambiguous trials. More importantly this implies that skilled participants tend to use different strategies in Unambiguous trials comparing to Simple and Complex ones.
+
+\texttt{Trial} indicates that the Distractor is less likely to be looked at as the trial number increases. This is expected as the participants get more efficient as they progress through the experiment. While closer to the beginning they would explore the trials more thoroughly, later on they would be more likely to look at other areas of interest and not at the Distractor, which is not as important. 
+
+\texttt{MsgType} indicates that the Distractor is less likely to be looked at when the sent message is a color. The effect is significant but relatively small. We were unable to find a reasonable explanation for this effect.
+
+\texttt{TrgtPos1} and \texttt{TrgtPos2} indicate that the Distractor is more likely to be looked at when the Target is on the left or right side. The effect is significant and large. There are two possible explanations for that. The first one is that the participants are more likely to look at the center by default and the Distractor is more likely to be located in the center when the Target is on the left or right side. The second one is that due to the fact that the central area is the closest to other areas of interest and, therefore, is more likely to get a gaze point there due to inaccuracy of WebGazer. In this case, the gaze points could be coming from the available messages, sent message or any of the other main objects on the screen. By the same logic, if the Target is on the left or right, the Distractor is more likely to be in the center and, therefore, more likely to get a gaze point.
+
+\subsection*{Conclusion}
+\label{sec:ondist_conclusion}
+The hypothesis 3 did not hold according to the model. The fact that the Distractor was not looked at more in the Complex trials can be explained by the fact that a skilled participant would apply the same strategy to both the Simple and Complex trials. Even though, the Distractor is important in the Complex trials, as was discussed in \autoref{sec:rsa}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{On Available Messages}
+\label{sec:available_model}
+
+The model presented here predicts the likelihood (binary outcome) of participants gazing at the bank of available messages during correctly solved trials. The final formula for the model predicting the likelihood of looking at the available messages for the correctly solved trials is presented below. Most of the random effects were removed from the model due to convergence issues:
+\begin{verbatim}
+    OnAvMsgs ~ Condition + Trial + MsgType + TrgtPos +
+        (1 + TrgtPos | Subject)
+\end{verbatim}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Coefficient} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\ \hline
+(Intercept)          & -2.330044         & 0.071251            & -32.702          & <2e-16 ***        \\ \hline
+Condition1           & -0.063455         & 0.007056            & -8.993           & <2e-16 ***        \\ \hline
+Condition2           & -0.385246         & 0.006972            & -55.260          & <2e-16 ***        \\ \hline
+Trial                & -0.085418         & 0.006603            & -12.936          & <2e-16 ***        \\ \hline
+MsgType             & 0.085259          & 0.006573            & 12.972           & <2e-16 ***        \\ \hline
+TrgtPos1             & -0.143025         & 0.072737            & -1.966           & 0.0493 *          \\ \hline
+TrgtPos2             & -0.140503         & 0.088966            & -1.579           & 0.1143            \\ \hline
+\end{tabular}
+\caption{Summary of the model predicting the likelihood of looking at the available messages for the correctly solved trials.Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
+\label{tab:model_coefficients_available}
+\end{table}
+
+The model was trained using the \texttt{lme4} package in R. The model was trained using the \texttt{glmer} function with the following parameters: \texttt{family = binomial(link = "logit")}. The resulting coefficients can be seen in \autoref{tab:model_coefficients_available}. The encodings for the categorical variables are the same as in \autoref{tab:msgtype_encoding}, \autoref{tab:trgtpos_encoding} and \autoref{tab:condition_encoding}.
+
+The Intercept is negative and significant, indicating that without any information about the correctly solved trial, the predicted gaze point is likely to be not on the available messages. This is unsurprising as the average time spent looking at the available messages was 9\% across all correctly solved trials. 
+
+\texttt{Condition1} indicates that the available messages are more likely to be looked at in the Complex trials than in the Simple ones. The effect is small but significant. This does not align with our hypothesis 4 described in \autoref{sec:h4}. This can be explained similarly to why the the hypothesis 3 did not hold. Skilled participants tend to use a similar approach to both the Simple and Complex trials. However, clearly, the available messages are still important for the participants in the Complex condition even though they could theoretically be solved without the available messages. \texttt{Condition2} indicates that the available messages are less likely to be looked at in the Unambiguous trials than in the Simple and Complex ones. The effect is significant and large, indicating that the available messages are not looked at as much in the Unambiguous trials. This finding is expected as the available messages are not important in the Unambiguous trials.
+
+Similarly to the Distractor model, \texttt{Trial} indicates that the available messages are less likely to be looked at as the trial number increases. This is expected as the participants get more efficient as they progress through the experiment. While closer to the beginning they would explore the trials more thoroughly, later on they would be adapt a more efficient strategy, which would decrease the time spent looking at the available messages.
+
+\texttt{MsgType} indicates that the available messages are less likely to be looked at when the sent message is a shape. The effect is significant. A possible explanation is that when the message is a shape, the Competitor would differ from the Target by color. Noticing the distinct feature of the Competitor is crucial when solving the Simple trials. The color might be easier to see with a peripheral vision than a shape. This would make the available messages more likely to be looked at when the sent message is a shape.
+
+As for the Target position, this time it does not play as important role as in the Distractor model. However, taking into account the findings from the Distractor model, it would be reasonable to assume that the Target position in the middle would make the available messages more likely to get a gaze point. However, the effect is not significant for the \texttt{TrgtPos2} and is relatively low for both features. 
+
+\subsection*{Conclusion}
+\label{sec:avmsgs_conclusion}
+While the hypothesis 4 did not hold according to the model, we still got important pieces of information. Mainly, similarly to the previous model, that predicted fixations on Distractor, we saw that the skilled participants do not look at the available messages more during the Simple trials comparing to Complex ones. The following is rather the case, the skilled participants tend to keep a similar attention profile in both Simple and Complex conditions, but adapt a different strategy for the Unambiguous trials. 
+
+
+
+
+
+
+
+
+
+\section{Strategies}
+
+As was discussed in \autoref{sec:data:ref_games} participants completed 2 strategy trials in the end of the experiment. One of the Simple condition and one of the Complex one. We have annotated them similarly to how it was done in \cite{Mayn_2023}. Based on the annotations the labels corresponding to $L_0$, $L_1$ or $L_2$ listeners were assigned. The labels were assigned as follows, if the Complex trial is annotated as ``correct\_reasoning'', participant gets an $L_2$ label. If only the Simple trial is annotated with ``correct\_reasoning'', the participant would get an $L_1$ label. If neither of the previous were assigned, the participant gets the label $L_0$. Based on the labeling, the following plots were made \autoref{fig:barchart_simple}, \autoref{fig:barchart_complex} and \autoref{fig:barchart_unambiguous}. In order to match the scale of other features, the \texttt{MeanAnswerTime} feature was divided by 10 000, hence, value of one corresponds to spending 10 seconds on the trial.
+
+While the labeling was done solely based on the annotations of strategies that participants entered, there is a clear alignment between the listeners from RSA and the derived labels. That is, $L_2$ listeners are capable of solving trials from all 3 conditions, while $L_1$ fail only the trials from the Complex condition and $L_0$ are only capable of solving the trials from Unambiguous condition. 
+
+Furthermore, the plots show similar patterns to the models. For example, there is an increase in \texttt{PropTimeOnAvailableMsgs} as the label goes from $L_0$ to $L_1$ and to $L_2$. Indicating that more skilled participants comparing to less skilled ones, spend more time looking at the available messages, similarly to the findings from the main model in \autoref{sec:accuracy_model}. Again, we do not see any differences for the \texttt{PropTimeOnDist}, also aligning with the main model. In addition, the Unambiguous plot in \autoref{fig:barchart_unambiguous} suggests that participants do not vary in their attention profile in Unambiguous condition.
+
+\begin{figure}
+\centering
+\begin{floatrow}
+\ffigbox[\FBwidth]{\includegraphics[width=0.46\textwidth]{images/barchart_simple.png}}{
+    \vspace{0.5em} % Add padding
+    \caption{Comparison of features for different labels on trials of Simple condition.}
+    \label{fig:barchart_simple}
+}
+\ffigbox[\FBwidth]{\includegraphics[width=0.46\textwidth]{images/barchart_complex.png}}{
+    \vspace{0.5em} % Add padding
+    \caption{Comparison of features for different labels on trials of Complex condition.}
+    \label{fig:barchart_complex}
+}
+\end{floatrow}
+\begin{floatrow}
+\ffigbox[\FBwidth]{\includegraphics[width=0.48\textwidth]{images/barchart_unambiguous.png}}{
+    \vspace{0.5em} % Add padding
+    \caption{Comparison of features for different labels on trials of Unambiguous condition.}
+    \label{fig:barchart_unambiguous}
+}
+\end{floatrow}
+\end{figure}
