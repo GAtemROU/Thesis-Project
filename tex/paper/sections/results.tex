@@ -472,7 +472,7 @@ The model presented here predicts the rate of toggling between the available mes
     StrategyLabel + Correct + MsgType + AnswerTime +
     Condition:StrategyLabel + Condition:AnswerTime +
     (1 + Condition + TrgtPos + Trial +
-    StrategyLabel + Correct + MsgType + AnswerTime | Subject),
+    StrategyLabel + Correct + MsgType + AnswerTime | Subject)
 \end{verbatim}
 
 where \texttt{StrategyLabel} is a categorical variable that indicates the strategy label of the participant, which was derived from the annotations of the strategies that participants entered in the end of the experiment. The \texttt{Correct} variable indicates whether the trial was solved correctly or not. The model was trained using the \texttt{brms} package in R. The model was trained using the \texttt{brm} function. The resulting coefficients can be seen in \autoref{tab:model_coefficients_rate_toggling}.
@@ -501,9 +501,11 @@ Condition1:StrategyLabel2   & 0.00092 & 0.00047 & -0.00002 & 0.00184 \\
 Condition1:AnswerTime       & 0.00057 & 0.00084 & -0.00108 & 0.00223 \\
 \hline
 \end{tabular}
+\label{tab:model_coefficients_rate_toggling}
 \end{table}
 
 
+The coefficients demonstrate that the rate of toggling is positively associated with the \texttt{AnswerTime} feature, which is also supported by the correlation analysis in \autoref{sec:analysis:corr}. Moreover, the general coefficients of \texttt{StrategyLabel} are significant and indicate that more skilled participants according to the labels toggle with a higher rate than less skilled ones. Furthermore, one can look at the decomposition according to condition in \autoref{tab:rate_toggling_emmeans}. The results indicate that the rate of toggling has a significant negative effect for $L_0$ listeners in Simple condition. As well as positive significant effect for $L_2$ listeners in both Simple and Complex conditions. Further supporting the idea that more skilled participants toggle more often than less skilled ones. 
 
 \begin{table}[ht]
 \centering
@@ -520,7 +522,7 @@ simple  & 2 &  0.00987 &  0.00495 &  0.01443 \\
 \hline
 \end{tabular}
 \caption{Estimated marginal means (emmean) with 95\% HPD intervals by condition and strategy label.}
-\label{tab:emmean}
+\label{tab:rate_toggling_emmeans}
 \end{table}
 
 
@@ -556,3 +558,25 @@ Furthermore, the plots show similar patterns to the models. For example, there i
 }
 \end{floatrow}
 \end{figure}
+
+
+
+\section{Scanpath Analysis}
+\label{sec:scanpath_analysis}
+The scanpath analysis is a difficult analysis as the data itself has different lengths. This means that one cannot directly use similar models as we did for the other features. Hence, we resort to the following approach of modeling the scanpaths as Markov Models.
+
+
+\subsection{Markov Model}
+\label{sec:markov_model}
+The Markov Model is a statistical model that describes the scanpath with a matrix of transition conditional probabilities. That is, the model describes the probability of transitioning from one area of interest to another. The approach is similar to the one used by \cite{Coutrot_2018}. The main difference is that we do not use the hidden Markov Model, as we defined the areas of interest ourselves. \autoref{fig:trans_mat} presents the transition matrices for the $L_0$, $L_1$ and $L_2$ listeners. It is important to note that due to the fact that no fixation detection was done, the diagonal elements of the matrices are very high comparing to other elements. This is expected as the participants are likely to look at the same area of interest multiple times during one fixation which is not compressed to one event. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/trans_mat_l0.png}
+    \includegraphics[width=0.3\textwidth]{images/trans_mat_l1.png}
+    \includegraphics[width=0.3\textwidth]{images/trans_mat_l2.png}
+    \caption{Average transition matrices for the $L_0$, $L_1$ and $L_2$ listeners.}
+    \label{fig:trans_mat}
+\end{figure}
+
+

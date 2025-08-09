@@ -59,6 +59,36 @@ Carpenter, P\BPBI A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Coutrot%
+, Hsiao%
+\BCBL {}\ \BBA {} Chan%
+}{%
+Coutrot%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Coutrot_2018}
+\APACinsertmetastar {%
+Coutrot_2018}%
+\begin{APACrefauthors}%
+Coutrot, A.%
+, Hsiao, J\BPBI H.%
+\BCBL {}\ \BBA {} Chan, A\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Scanpath modeling and classification with hidden Markov models} {Scanpath modeling and classification with hidden markov models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Behavior Research Methods}{50}{1}{362--379}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.3758/s13428-017-0876-8} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3758/s13428-017-0876-8} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Duff%
 , Mayn%
 \BCBL {}\ \BBA {} Demberg%

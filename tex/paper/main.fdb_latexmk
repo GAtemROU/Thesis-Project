@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1754694580.54209 "main.aux" "main.bbl" "main" 1754694583.11984 0
-  "./references.bib" 1754598557.59058 19008 408ba5b443a9d8ff0fab7b72d30f51e1 ""
+["bibtex main"] 1754776025.16504 "main.aux" "main.bbl" "main" 1754776027.86428 0
+  "./references.bib" 1754757026.42987 21309 a2afa07aa5694ff04771ab6fbf62ab79 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
-  "main.aux" 1754694583.01262 29345 6aa875ea4beb4baaf4d33b28ed769e4f "pdflatex"
+  "main.aux" 1754776027.75281 30392 41aaa3512d936fca6ae275c6fe938369 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1754694580.56014 "/home/gatemrou/uds/thesis/Thesis-Project/tex/paper/main.tex" "main.pdf" "main" 1754694583.12001 0
+["pdflatex"] 1754776025.18362 "/home/gatemrou/uds/thesis/Thesis-Project/tex/paper/main.tex" "main.pdf" "main" 1754776027.86445 0
   "/etc/texmf/web2c/texmf.cnf" 1740155027.73492 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/gatemrou/uds/thesis/Thesis-Project/tex/paper/main.tex" 1754599206.24126 2455 9e86bb14df520037755ae37d917e23e4 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -159,9 +159,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740155031.82687 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1751558827 6831103 ba17675d7bf01c9c59bf6a67ad9cd42a ""
-  "images/barchart_complex.png" 1754599157.18145 33282 c41289dac0906753ad909425730a701d ""
-  "images/barchart_simple.png" 1754599157.18145 27884 8640a1cab7f4a842753238d810d733bf ""
-  "images/barchart_unambiguous.png" 1754599157.18145 33798 48d9c2699104e2c6489f6ef8d77568e7 ""
+  "images/barchart_complex.png" 1754756216.51607 37425 9be7310386b6d966945c5b4e311dc7a4 ""
+  "images/barchart_simple.png" 1754756202.33224 37269 80949524b32343620d3f6233599c3834 ""
+  "images/barchart_unambiguous.png" 1754756225.99196 37943 4dae436dea2d2c237998cc913cba7aa2 ""
   "images/c0/uds_owl.png" 1754599157.18545 28080 81964489105dda345dee8124398da569 ""
   "images/calibration_instr.png" 1754599157.18545 163148 f32e84cafff2c27a99d47231559c025e ""
   "images/calibration_webcam.png" 1754599157.18545 150772 0c714b7a8d6a738c64f8931d7a4caaa0 ""
@@ -189,12 +189,15 @@
   "images/shapes_and_colors/triangle.png" 1754599157.18945 37257 43db0c6f3425876527cfe3ab8cbfdb12 ""
   "images/simple.png" 1754599157.18945 63049 2ba8cdd7696f342cfa0aaffdf2ba571c ""
   "images/tracker_comparison.png" 1754599157.19345 843687 7e0751ca36109a7f506bd52c0af2dfb8 ""
+  "images/trans_mat_l0.png" 1754757402.60704 46197 c6276406b7b318e47e7af57bd130f95b ""
+  "images/trans_mat_l1.png" 1754757388.19211 45918 7356bdb67e0c34d81b6289b0b50a8434 ""
+  "images/trans_mat_l2.png" 1754757371.0404 44514 b0869a6c22da42f009a6d6c9abd66ee8 ""
   "images/trials_stats.png" 1754599157.19345 104957 d15cc08eda9dc1f6b237fd16335691d4 ""
-  "main.aux" 1754694583.01262 29345 6aa875ea4beb4baaf4d33b28ed769e4f "pdflatex"
-  "main.bbl" 1754694580.55264 15054 974225dbc2433b42303bc867f919f171 "bibtex main"
-  "main.out" 1754694583.01262 6132 41428fd5071600830f0af72f834045fb "pdflatex"
+  "main.aux" 1754776027.75281 30392 41aaa3512d936fca6ae275c6fe938369 "pdflatex"
+  "main.bbl" 1754776025.17685 15875 690b9e11282fec8a6854ed2dd3cff0e6 "bibtex main"
+  "main.out" 1754776027.75281 6400 ae7a08da00ffa6c429a197cff7fff22d "pdflatex"
   "main.tex" 1754599206.24126 2455 9e86bb14df520037755ae37d917e23e4 ""
-  "main.toc" 1754694583.01262 3843 fce5f5300e0ab6df2d486d19f299cb94 "pdflatex"
+  "main.toc" 1754776027.75281 4004 0f3aa974e242228656cf86797e7fe503 "pdflatex"
   "sections/appendixA.tex" 1754599157.20145 2381 45514cd6eef44d4f13678c916dd5b148 ""
   "sections/appendixB.tex" 1754599157.20145 3273 9415069d8dc97eff141e0a8f55658122 ""
   "sections/c0/abstract.tex" 1754599157.20145 1080 556fce3968760edcea7e7dcdbfebd39c ""
@@ -208,7 +211,7 @@
   "sections/implementation.tex" 1754599157.20145 25553 a3920b39a6db4abab59cc9fb8e98e06e ""
   "sections/introduction.tex" 1754599157.20145 4656 8264378e7914cb8ab51d7c96ca622f8d ""
   "sections/relatedWork.tex" 1754599157.20145 24715 fb00fb631e0ae7cb86e3f30f27fd3da2 ""
-  "sections/results.tex" 1754694577.73267 47907 f5177d52b4ef4aeafa4f54db88e64484 ""
+  "sections/results.tex" 1754776022.26889 50353 031b69268a2d3c7c4d300fa83c42b44e ""
   "umtlreport.cls" 1754600258.83876 3899 f4adaa34eea350e1b4a7ee761ee195d8 ""
   (generated)
   "main.aux"

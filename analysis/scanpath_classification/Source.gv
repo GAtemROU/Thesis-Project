@@ -1,0 +1,17 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<PropTimeOnAvailableMsgs &le; 0.067<br/>gini = 0.667<br/>samples = 101<br/>value = [33.667, 33.667, 33.667]<br/>class = 0>, fillcolor="#ffffff"] ;
+1 [label=<gini = 0.464<br/>samples = 24<br/>value = [20.2, 5.05, 3.607]<br/>class = 0>, fillcolor="#eeaf81"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<PropTimeOnSentMsg &le; 0.181<br/>gini = 0.634<br/>samples = 77<br/>value = [13.467, 28.617, 30.06]<br/>class = 2>, fillcolor="#fbf8fe"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label=<gini = 0.309<br/>samples = 21<br/>value = [2.693, 0.0, 11.423]<br/>class = 2>, fillcolor="#9f68eb"] ;
+2 -> 3 ;
+4 [label=<PropTimeOnComp &le; 0.184<br/>gini = 0.619<br/>samples = 56<br/>value = [10.773, 28.617, 18.637]<br/>class = 1>, fillcolor="#cdf8df"] ;
+2 -> 4 ;
+5 [label=<gini = 0.476<br/>samples = 19<br/>value = [2.693, 1.683, 9.619]<br/>class = 2>, fillcolor="#b286ef"] ;
+4 -> 5 ;
+6 [label=<gini = 0.55<br/>samples = 37<br/>value = [8.08, 26.933, 9.018]<br/>class = 1>, fillcolor="#9af2bf"] ;
+4 -> 6 ;
+}
