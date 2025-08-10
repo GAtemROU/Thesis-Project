@@ -38,20 +38,21 @@
 \contentsline {section}{\numberline {4.7}Strategies}{36}{section.4.7}%
 \contentsline {section}{\numberline {4.8}Scanpath Analysis}{38}{section.4.8}%
 \contentsline {subsection}{\numberline {4.8.1}Markov Model}{38}{subsection.4.8.1}%
+\contentsline {section}{\numberline {4.9}ACT-R Model}{39}{section.4.9}%
 \vspace {.175cm}
-\contentsline {chapter}{\numberline {5} Conclusion and General Discussion}{39}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusion}{39}{section.5.1}%
-\contentsline {section}{\numberline {5.2}General Discussion}{40}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Scanpaths}{40}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Peripheral Vision}{40}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Toggling}{41}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Proportional Eye Tracking Features}{41}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Eye Tracking}{41}{subsection.5.2.5}%
-\contentsline {chapter}{Appendices}{42}{subsection.5.2.5}%
+\contentsline {chapter}{\numberline {5} Conclusion and General Discussion}{40}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusion}{40}{section.5.1}%
+\contentsline {section}{\numberline {5.2}General Discussion}{41}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Scanpaths}{41}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Peripheral Vision}{41}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Toggling}{42}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Proportional Eye Tracking Features}{42}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Eye Tracking}{42}{subsection.5.2.5}%
+\contentsline {chapter}{Appendices}{43}{subsection.5.2.5}%
 \vspace {.175cm}
-\contentsline {chapter}{\numberline {A} Appendix A: Additional Details}{43}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Pairwise Correlations}{43}{section.A.1}%
+\contentsline {chapter}{\numberline {A} Appendix A: Additional Details}{44}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Pairwise Correlations}{44}{section.A.1}%
 \vspace {.175cm}
-\contentsline {chapter}{\numberline {B} Appendix B: Supplementary Material}{45}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Trials}{46}{section.B.1}%
-\contentsline {chapter}{Bibliography}{47}{section*.42}%
+\contentsline {chapter}{\numberline {B} Appendix B: Supplementary Material}{46}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Trials}{47}{section.B.1}%
+\contentsline {chapter}{Bibliography}{48}{section*.44}%

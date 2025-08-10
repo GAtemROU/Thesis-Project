@@ -579,4 +579,35 @@ The Markov Model is a statistical model that describes the scanpath with a matri
     \label{fig:trans_mat}
 \end{figure}
 
+The resulting entries of transition matrices were used as features to predict the labels of the listeners. Due to the three classes of listeners, we used tree classifiers, one for each critical condition. The trees' hyperparameters were tuned using the \texttt{GridSearchCV} function from the \texttt{sklearn} package in Python. 
+In order to keep interpretability of the results, we limited the search space of max\_depth up to 4. The cross validation had 5 folds. The best mean f1 weighted score for the Simple condition amounted at 0.47 and for the Complex condition at 0.51. Further we present the visualization of the trees trained on the whole data using the best found hyperparameters in \autoref{fig:scanp_trees}. The trees were trained based on Gini impurity. It can be seen at every node indicating its purity. The top part of the node indicates the feature that was used to split the data at that node. Furthermore, the value gives us insight into the current distribution of the labels at that node. The higher the value for a certain class is the more likely the class is to be predicted at that node.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/tree_classifier_scanp_simple.png}
+    \includegraphics[width=0.45\textwidth]{images/tree_classifier_scanp_complex.png}
+    \caption{Scanpath based trees for the Simple (left) and Complex (right) conditions.}
+    \label{fig:scanp_trees}
+\end{figure}
+
+Even though the scores are not particularly impressive, we would like to interpret some of the splits made by the decision trees along the way. The Simple condition tree in \autoref{fig:scanp_trees} indicates that the the available messages features allow for good splits in the data, 
+firstly identifying $L_0$ listeners with low \texttt{comp\_to\_av\_msgs} values. And yet another split on the same feature allows to identify $L_2$ listeners with high \texttt{comp\_to\_av\_msgs} values.
+
+The Complex condition tree, on the other hand, involves Distractor features at the top levels. The root node splits on \texttt{dist\_to\_sent\_msg} feature, while the following node splits on \texttt{sent\_msg\_to\_dist}, low values at both splits indicate $L_0$ listeners. It is not particularly clear how the Distractor and sent message interact in this setting, however, the Distractor is clearly important for the Complex condition.
+
+
+Furthermore, we compared the features derived from transition matrices to the proportional features we used in the main model. The best mean f1 weighted score for the Simple condition amounted at 0.5 and for the Complex condition at 0.56. Potentially indicating that the proportional features are more informative than the transition matrices. The visualizations of the trees trained on the proportional features can be seen in \autoref{fig:scanp_trees_prop}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/tree_classifier_prop_simple.png}
+    \includegraphics[width=0.45\textwidth]{images/tree_classifier_prop_complex.png}
+    \caption{\texttt{PropTimeOn} based trees for the Simple (left) and Complex (right) conditions based on proportional features.}
+    \label{fig:scanp_trees_prop}
+\end{figure}
+
+The trees in this case look very similar for both conditions, potentially indicating that the transition matrices were able to make a better distinguish between them. Available messages are again found to be important, in this case, for both conditions, being on the very top of the tree, their split distinguishes $L_0$ listeners from $L_1$ and $L_2$. In contrast to the scanpath based trees, the Distractor is not found to be important in this case. 
+
+
+\section{ACT-R Model}
+\label{sec:actr_model}
