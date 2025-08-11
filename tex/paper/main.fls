@@ -773,6 +773,11 @@ INPUT ./images/proptimeondist_trends.png
 INPUT ./images/proptimeondist_trends.png
 INPUT ./images/proptimeondist_trends.png
 INPUT ./images/proptimeondist_trends.png
+INPUT ./images/lasso_plot_correct.png
+INPUT ./images/lasso_plot_correct.png
+INPUT ./images/lasso_plot_correct.png
+INPUT ./images/lasso_plot_correct.png
+INPUT ./images/lasso_plot_correct.png
 INPUT ./images/barchart_simple.png
 INPUT ./images/barchart_simple.png
 INPUT ./images/barchart_simple.png
@@ -847,6 +852,11 @@ INPUT ./images/tree_classifier_prop_complex.png
 INPUT ./images/tree_classifier_prop_complex.png
 INPUT ./images/tree_classifier_prop_complex.png
 INPUT ./images/tree_classifier_prop_complex.png
+INPUT ./images/sim_av_msgs_plot.png
+INPUT ./images/sim_av_msgs_plot.png
+INPUT ./images/sim_av_msgs_plot.png
+INPUT ./images/sim_av_msgs_plot.png
+INPUT ./images/sim_av_msgs_plot.png
 INPUT ./sections/conclusion.tex
 INPUT ./sections/conclusion.tex
 INPUT ./sections/conclusion.tex

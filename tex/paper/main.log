@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.7.3)  10 AUG 2025 23:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.7.3)  11 AUG 2025 17:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -665,7 +665,7 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-<images/c0/uds_owl.png, id=183, 583.61433pt x 654.52075pt>
+<images/c0/uds_owl.png, id=191, 583.61433pt x 654.52075pt>
 File: images/c0/uds_owl.png Graphic file (type png)
 <use images/c0/uds_owl.png>
 Package pdftex.def Info: images/c0/uds_owl.png  used on input line 22.
@@ -758,7 +758,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
  [6] (./sections/introduction.tex [1
 
 ]
-<images/intro_complex.png, id=286, 1743.51375pt x 480.29437pt>
+<images/intro_complex.png, id=296, 1743.51375pt x 480.29437pt>
 File: images/intro_complex.png Graphic file (type png)
 <use images/intro_complex.png>
 Package pdftex.def Info: images/intro_complex.png  used on input line 18.
@@ -768,12 +768,12 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 23.23343pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 23.23343pt on input line 1.
-<images/simple.png, id=305, 888.31876pt x 714.41907pt>
+<images/simple.png, id=315, 888.31876pt x 714.41907pt>
 File: images/simple.png Graphic file (type png)
 <use images/simple.png>
 Package pdftex.def Info: images/simple.png  used on input line 9.
 (pdftex.def)             Requested size: 192.05609pt x 154.4583pt.
-<images/complex.png, id=306, 888.31876pt x 714.41907pt>
+<images/complex.png, id=316, 888.31876pt x 714.41907pt>
 File: images/complex.png Graphic file (type png)
 <use images/complex.png>
 Package pdftex.def Info: images/complex.png  used on input line 15.
@@ -782,37 +782,37 @@ Package pdftex.def Info: images/complex.png  used on input line 15.
 
 
 ]
-<images/shapes_and_colors/blue_square.png, id=323, 1030.85126pt x 1026.83624pt>
+<images/shapes_and_colors/blue_square.png, id=334, 1030.85126pt x 1026.83624pt>
 File: images/shapes_and_colors/blue_square.png Graphic file (type png)
 <use images/shapes_and_colors/blue_square.png>
 Package pdftex.def Info: images/shapes_and_colors/blue_square.png  used on input line 50.
 (pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
-<images/shapes_and_colors/blue_circle.png, id=324, 1030.85126pt x 1026.83624pt>
+<images/shapes_and_colors/blue_circle.png, id=335, 1030.85126pt x 1026.83624pt>
 File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
 <use images/shapes_and_colors/blue_circle.png>
 Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 50.
 (pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
-<images/shapes_and_colors/green_triangle.png, id=325, 1030.85126pt x 1026.83624pt>
+<images/shapes_and_colors/green_triangle.png, id=336, 1030.85126pt x 1026.83624pt>
 File: images/shapes_and_colors/green_triangle.png Graphic file (type png)
 <use images/shapes_and_colors/green_triangle.png>
 Package pdftex.def Info: images/shapes_and_colors/green_triangle.png  used on input line 50.
 (pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
-<images/shapes_and_colors/blue.png, id=326, 1009.7725pt x 1012.78375pt>
+<images/shapes_and_colors/blue.png, id=337, 1009.7725pt x 1012.78375pt>
 File: images/shapes_and_colors/blue.png Graphic file (type png)
 <use images/shapes_and_colors/blue.png>
 Package pdftex.def Info: images/shapes_and_colors/blue.png  used on input line 50.
 (pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
-<images/shapes_and_colors/circle.png, id=327, 1009.7725pt x 1012.78375pt>
+<images/shapes_and_colors/circle.png, id=338, 1009.7725pt x 1012.78375pt>
 File: images/shapes_and_colors/circle.png Graphic file (type png)
 <use images/shapes_and_colors/circle.png>
 Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 50.
 (pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
-<images/shapes_and_colors/green.png, id=328, 1009.7725pt x 1012.78375pt>
+<images/shapes_and_colors/green.png, id=339, 1009.7725pt x 1012.78375pt>
 File: images/shapes_and_colors/green.png Graphic file (type png)
 <use images/shapes_and_colors/green.png>
 Package pdftex.def Info: images/shapes_and_colors/green.png  used on input line 50.
 (pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
-<images/shapes_and_colors/triangle.png, id=329, 1030.85126pt x 1026.83624pt>
+<images/shapes_and_colors/triangle.png, id=340, 1030.85126pt x 1026.83624pt>
 File: images/shapes_and_colors/triangle.png Graphic file (type png)
 <use images/shapes_and_colors/triangle.png>
 Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 50.
@@ -910,7 +910,7 @@ File: images/shapes_and_colors/blue_circle.png Graphic file (type png)
 <use images/shapes_and_colors/blue_circle.png>
 Package pdftex.def Info: images/shapes_and_colors/blue_circle.png  used on input line 162.
 (pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
-<images/shapes_and_colors/green_square.png, id=364, 1030.85126pt x 1026.83624pt>
+<images/shapes_and_colors/green_square.png, id=374, 1030.85126pt x 1026.83624pt>
 File: images/shapes_and_colors/green_square.png Graphic file (type png)
 <use images/shapes_and_colors/green_square.png>
 Package pdftex.def Info: images/shapes_and_colors/green_square.png  used on input line 162.
@@ -923,7 +923,7 @@ File: images/shapes_and_colors/circle.png Graphic file (type png)
 <use images/shapes_and_colors/circle.png>
 Package pdftex.def Info: images/shapes_and_colors/circle.png  used on input line 162.
 (pdftex.def)             Requested size: 9.70695pt x 9.74988pt.
-<images/shapes_and_colors/square.png, id=365, 1030.85126pt x 1026.83624pt>
+<images/shapes_and_colors/square.png, id=375, 1030.85126pt x 1026.83624pt>
 File: images/shapes_and_colors/square.png Graphic file (type png)
 <use images/shapes_and_colors/square.png>
 Package pdftex.def Info: images/shapes_and_colors/square.png  used on input line 162.
@@ -989,12 +989,12 @@ File: images/shapes_and_colors/triangle.png Graphic file (type png)
 <use images/shapes_and_colors/triangle.png>
 Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 218.
 (pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
-<images/trials_stats.png, id=379, 710.655pt x 439.6425pt>
+<images/trials_stats.png, id=389, 710.655pt x 439.6425pt>
 File: images/trials_stats.png Graphic file (type png)
 <use images/trials_stats.png>
 Package pdftex.def Info: images/trials_stats.png  used on input line 225.
 (pdftex.def)             Requested size: 192.05609pt x 118.8124pt.
-<images/l1_l2_stats.png, id=380, 621.82312pt x 404.26031pt>
+<images/l1_l2_stats.png, id=390, 621.82312pt x 404.26031pt>
 File: images/l1_l2_stats.png Graphic file (type png)
 <use images/l1_l2_stats.png>
 Package pdftex.def Info: images/l1_l2_stats.png  used on input line 231.
@@ -1096,13 +1096,13 @@ File: images/shapes_and_colors/triangle.png Graphic file (type png)
 <use images/shapes_and_colors/triangle.png>
 Package pdftex.def Info: images/shapes_and_colors/triangle.png  used on input line 350.
 (pdftex.def)             Requested size: 9.78374pt x 9.74988pt.
-<images/raven_carpenter_1990.png, id=406, 867.99281pt x 898.85812pt>
+<images/raven_carpenter_1990.png, id=416, 867.99281pt x 898.85812pt>
 File: images/raven_carpenter_1990.png Graphic file (type png)
 <use images/raven_carpenter_1990.png>
 Package pdftex.def Info: images/raven_carpenter_1990.png  used on input line 361.
 (pdftex.def)             Requested size: 192.05609pt x 198.87405pt.
  [7] [8 <./images/raven_carpenter_1990.png>]
-<images/tracker_comparison.png, id=432, 1305.37688pt x 588.69937pt>
+<images/tracker_comparison.png, id=442, 1305.37688pt x 588.69937pt>
 File: images/tracker_comparison.png Graphic file (type png)
 <use images/tracker_comparison.png>
 Package pdftex.def Info: images/tracker_comparison.png  used on input line 379.
@@ -1117,40 +1117,40 @@ File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 
 
 ]
-<images/example_trial_webcam.png, id=497, 1930.96407pt x 1014.79124pt>
+<images/example_trial_webcam.png, id=507, 1930.96407pt x 1014.79124pt>
 File: images/example_trial_webcam.png Graphic file (type png)
 <use images/example_trial_webcam.png>
 Package pdftex.def Info: images/example_trial_webcam.png  used on input line 20.
 (pdftex.def)             Requested size: 307.29092pt x 161.4873pt.
  [14 <./images/example_trial_webcam.png>]
-<images/calibration_webcam.png, id=513, 1930.96407pt x 1015.54407pt>
+<images/calibration_webcam.png, id=523, 1930.96407pt x 1015.54407pt>
 File: images/calibration_webcam.png Graphic file (type png)
 <use images/calibration_webcam.png>
 Package pdftex.def Info: images/calibration_webcam.png  used on input line 33.
 (pdftex.def)             Requested size: 307.29092pt x 161.6071pt.
  [15 <./images/calibration_webcam.png>]
-<images/inbetween_calibration_webcam.png, id=522, 1787.92969pt x 942.52126pt>
+<images/inbetween_calibration_webcam.png, id=532, 1787.92969pt x 942.52126pt>
 File: images/inbetween_calibration_webcam.png Graphic file (type png)
 <use images/inbetween_calibration_webcam.png>
 Package pdftex.def Info: images/inbetween_calibration_webcam.png  used on input line 46.
 (pdftex.def)             Requested size: 307.29092pt x 161.98106pt.
-<images/calibration_instr.png, id=523, 687.56876pt x 125.46875pt>
+<images/calibration_instr.png, id=533, 687.56876pt x 125.46875pt>
 File: images/calibration_instr.png Graphic file (type png)
 <use images/calibration_instr.png>
 Package pdftex.def Info: images/calibration_instr.png  used on input line 53.
 (pdftex.def)             Requested size: 307.29092pt x 56.07367pt.
  [16 <./images/inbetween_calibration_webcam.png> <./images/calibration_instr.png (PNG copy)>] [17]
-<images/polygons.png, id=560, 565.8741pt x 369.2997pt>
+<images/polygons.png, id=568, 565.8741pt x 369.2997pt>
 File: images/polygons.png Graphic file (type png)
 <use images/polygons.png>
 Package pdftex.def Info: images/polygons.png  used on input line 102.
 (pdftex.def)             Requested size: 307.29092pt x 200.5515pt.
-<images/fixations.png, id=562, 565.8741pt x 369.2997pt>
+<images/fixations.png, id=570, 565.8741pt x 369.2997pt>
 File: images/fixations.png Graphic file (type png)
 <use images/fixations.png>
 Package pdftex.def Info: images/fixations.png  used on input line 111.
 (pdftex.def)             Requested size: 268.87737pt x 175.48116pt.
-<images/scanpath.png, id=563, 565.8741pt x 369.2997pt>
+<images/scanpath.png, id=571, 565.8741pt x 369.2997pt>
 File: images/scanpath.png Graphic file (type png)
 <use images/scanpath.png>
 Package pdftex.def Info: images/scanpath.png  used on input line 117.
@@ -1177,7 +1177,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 ]
-<images/scatter_acc.png, id=622, 548.5293pt x 395.3169pt>
+<images/scatter_acc.png, id=630, 548.5293pt x 395.3169pt>
 File: images/scatter_acc.png Graphic file (type png)
 <use images/scatter_acc.png>
 Package pdftex.def Info: images/scatter_acc.png  used on input line 22.
@@ -1190,7 +1190,7 @@ File: images/scatter_acc.png Graphic file (type png)
 <use images/scatter_acc.png>
 Package pdftex.def Info: images/scatter_acc.png  used on input line 22.
 (pdftex.def)             Requested size: 211.26288pt x 152.25478pt.
-<images/hist_acc.png, id=623, 383.7537pt x 395.3169pt>
+<images/hist_acc.png, id=631, 383.7537pt x 395.3169pt>
 File: images/hist_acc.png Graphic file (type png)
 <use images/hist_acc.png>
 Package pdftex.def Info: images/hist_acc.png  used on input line 26.
@@ -1214,7 +1214,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/proptimeondist_trends.png, id=662, 740.0147pt x 557.08125pt>
+<images/proptimeondist_trends.png, id=670, 740.0147pt x 557.08125pt>
 File: images/proptimeondist_trends.png Graphic file (type png)
 <use images/proptimeondist_trends.png>
 Package pdftex.def Info: images/proptimeondist_trends.png  used on input line 257.
@@ -1227,106 +1227,124 @@ Overfull \hbox (9.2543pt too wide) in paragraph at lines 316--343
  [][] 
  []
 
-[31] [32]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[33] [34] [35]
-<images/barchart_simple.png, id=739, 395.3169pt x 454.5783pt>
+[31]
+<images/lasso_plot_correct.png, id=705, 867.24pt x 578.16pt>
+File: images/lasso_plot_correct.png Graphic file (type png)
+<use images/lasso_plot_correct.png>
+Package pdftex.def Info: images/lasso_plot_correct.png  used on input line 355.
+(pdftex.def)             Requested size: 307.29092pt x 204.86447pt.
+ [32 <./images/lasso_plot_correct.png>] [33] [34] [35] [36]
+<images/barchart_simple.png, id=756, 395.3169pt x 454.5783pt>
 File: images/barchart_simple.png Graphic file (type png)
 <use images/barchart_simple.png>
-Package pdftex.def Info: images/barchart_simple.png  used on input line 546.
+Package pdftex.def Info: images/barchart_simple.png  used on input line 567.
 (pdftex.def)             Requested size: 176.69418pt x 203.17801pt.
 File: images/barchart_simple.png Graphic file (type png)
 <use images/barchart_simple.png>
-Package pdftex.def Info: images/barchart_simple.png  used on input line 546.
+Package pdftex.def Info: images/barchart_simple.png  used on input line 567.
 (pdftex.def)             Requested size: 176.69418pt x 203.17801pt.
 File: images/barchart_simple.png Graphic file (type png)
 <use images/barchart_simple.png>
-Package pdftex.def Info: images/barchart_simple.png  used on input line 546.
+Package pdftex.def Info: images/barchart_simple.png  used on input line 567.
 (pdftex.def)             Requested size: 176.69418pt x 203.17801pt.
-<images/barchart_complex.png, id=740, 395.3169pt x 454.5783pt>
+<images/barchart_complex.png, id=757, 395.3169pt x 454.5783pt>
 File: images/barchart_complex.png Graphic file (type png)
 <use images/barchart_complex.png>
-Package pdftex.def Info: images/barchart_complex.png  used on input line 551.
-(pdftex.def)             Requested size: 176.69418pt x 203.17801pt.
-File: images/barchart_complex.png Graphic file (type png)
-<use images/barchart_complex.png>
-Package pdftex.def Info: images/barchart_complex.png  used on input line 551.
+Package pdftex.def Info: images/barchart_complex.png  used on input line 572.
 (pdftex.def)             Requested size: 176.69418pt x 203.17801pt.
 File: images/barchart_complex.png Graphic file (type png)
 <use images/barchart_complex.png>
-Package pdftex.def Info: images/barchart_complex.png  used on input line 551.
+Package pdftex.def Info: images/barchart_complex.png  used on input line 572.
 (pdftex.def)             Requested size: 176.69418pt x 203.17801pt.
-<images/barchart_unambiguous.png, id=741, 395.3169pt x 454.5783pt>
+File: images/barchart_complex.png Graphic file (type png)
+<use images/barchart_complex.png>
+Package pdftex.def Info: images/barchart_complex.png  used on input line 572.
+(pdftex.def)             Requested size: 176.69418pt x 203.17801pt.
+<images/barchart_unambiguous.png, id=758, 395.3169pt x 454.5783pt>
 File: images/barchart_unambiguous.png Graphic file (type png)
 <use images/barchart_unambiguous.png>
-Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 558.
+Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 579.
 (pdftex.def)             Requested size: 184.37221pt x 212.00792pt.
 File: images/barchart_unambiguous.png Graphic file (type png)
 <use images/barchart_unambiguous.png>
-Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 558.
+Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 579.
 (pdftex.def)             Requested size: 184.37221pt x 212.00792pt.
 File: images/barchart_unambiguous.png Graphic file (type png)
 <use images/barchart_unambiguous.png>
-Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 558.
+Package pdftex.def Info: images/barchart_unambiguous.png  used on input line 579.
 (pdftex.def)             Requested size: 184.37221pt x 212.00792pt.
- [36] [37 <./images/barchart_simple.png> <./images/barchart_complex.png> <./images/barchart_unambiguous.png>]
-<images/trans_mat_l0.png, id=759, 430.7292pt x 395.3169pt>
+ [37] [38 <./images/barchart_simple.png> <./images/barchart_complex.png> <./images/barchart_unambiguous.png>]
+<images/trans_mat_l0.png, id=776, 430.7292pt x 395.3169pt>
 File: images/trans_mat_l0.png Graphic file (type png)
 <use images/trans_mat_l0.png>
-Package pdftex.def Info: images/trans_mat_l0.png  used on input line 575.
+Package pdftex.def Info: images/trans_mat_l0.png  used on input line 608.
 (pdftex.def)             Requested size: 115.23482pt x 105.75978pt.
-<images/trans_mat_l1.png, id=760, 430.7292pt x 395.3169pt>
+<images/trans_mat_l1.png, id=777, 430.7292pt x 395.3169pt>
 File: images/trans_mat_l1.png Graphic file (type png)
 <use images/trans_mat_l1.png>
-Package pdftex.def Info: images/trans_mat_l1.png  used on input line 576.
+Package pdftex.def Info: images/trans_mat_l1.png  used on input line 609.
 (pdftex.def)             Requested size: 115.23482pt x 105.75978pt.
-<images/trans_mat_l2.png, id=761, 430.7292pt x 395.3169pt>
+<images/trans_mat_l2.png, id=778, 430.7292pt x 395.3169pt>
 File: images/trans_mat_l2.png Graphic file (type png)
 <use images/trans_mat_l2.png>
-Package pdftex.def Info: images/trans_mat_l2.png  used on input line 577.
+Package pdftex.def Info: images/trans_mat_l2.png  used on input line 610.
 (pdftex.def)             Requested size: 115.23482pt x 105.75978pt.
-<images/tree_classifier_scanp_simple.png, id=763, 796.9775pt x 579.16376pt>
+<images/tree_classifier_scanp_simple.png, id=780, 796.9775pt x 579.16376pt>
 File: images/tree_classifier_scanp_simple.png Graphic file (type png)
 <use images/tree_classifier_scanp_simple.png>
-Package pdftex.def Info: images/tree_classifier_scanp_simple.png  used on input line 587.
+Package pdftex.def Info: images/tree_classifier_scanp_simple.png  used on input line 620.
 (pdftex.def)             Requested size: 172.8493pt x 125.60477pt.
-<images/tree_classifier_scanp_complex.png, id=764, 1267.73625pt x 738.76pt>
+<images/tree_classifier_scanp_complex.png, id=781, 1267.73625pt x 738.76pt>
 File: images/tree_classifier_scanp_complex.png Graphic file (type png)
 <use images/tree_classifier_scanp_complex.png>
-Package pdftex.def Info: images/tree_classifier_scanp_complex.png  used on input line 588.
+Package pdftex.def Info: images/tree_classifier_scanp_complex.png  used on input line 621.
 (pdftex.def)             Requested size: 172.8493pt x 100.72028pt.
- [38 <./images/trans_mat_l0.png> <./images/trans_mat_l1.png> <./images/trans_mat_l2.png>]
-<images/tree_classifier_prop_simple.png, id=777, 995.72pt x 579.16376pt>
+ [39 <./images/trans_mat_l0.png> <./images/trans_mat_l1.png> <./images/trans_mat_l2.png> <./images/tree_classifier_scanp_simple.png> <./images/tree_classifier_scanp_complex.png>]
+<images/tree_classifier_prop_simple.png, id=792, 995.72pt x 579.16376pt>
 File: images/tree_classifier_prop_simple.png Graphic file (type png)
 <use images/tree_classifier_prop_simple.png>
-Package pdftex.def Info: images/tree_classifier_prop_simple.png  used on input line 603.
+Package pdftex.def Info: images/tree_classifier_prop_simple.png  used on input line 636.
 (pdftex.def)             Requested size: 172.8493pt x 100.5333pt.
-<images/tree_classifier_prop_complex.png, id=778, 955.57pt x 579.16376pt>
+<images/tree_classifier_prop_complex.png, id=793, 955.57pt x 579.16376pt>
 File: images/tree_classifier_prop_complex.png Graphic file (type png)
 <use images/tree_classifier_prop_complex.png>
-Package pdftex.def Info: images/tree_classifier_prop_complex.png  used on input line 604.
+Package pdftex.def Info: images/tree_classifier_prop_complex.png  used on input line 637.
 (pdftex.def)             Requested size: 172.8493pt x 104.75754pt.
-) (./sections/conclusion.tex [39 <./images/tree_classifier_scanp_simple.png> <./images/tree_classifier_scanp_complex.png> <./images/tree_classifier_prop_simple.png> <./images/tree_classifier_prop_complex.png>] [40
+
+Overfull \hbox (1.7543pt too wide) in paragraph at lines 656--679
+ [][] 
+ []
 
 
-] [41]) [42] (./sections/appendixA.tex [43
+Underfull \hbox (badness 1484) in paragraph at lines 685--686
+[]\T1/ppl/m/n/10 (+20) Due to ab-sence of the rea-son-ing pro-cess, we fur-ther in-ves-ti-gate the value of
+ []
+
+[40 <./images/tree_classifier_prop_simple.png> <./images/tree_classifier_prop_complex.png>]
+<images/sim_av_msgs_plot.png, id=803, 722.7pt x 433.62pt>
+File: images/sim_av_msgs_plot.png Graphic file (type png)
+<use images/sim_av_msgs_plot.png>
+Package pdftex.def Info: images/sim_av_msgs_plot.png  used on input line 689.
+(pdftex.def)             Requested size: 307.29092pt x 184.37538pt.
+) (./sections/conclusion.tex [41] [42 <./images/sim_av_msgs_plot.png>] [43
+
+
+] [44]) [45] (./sections/appendixA.tex [46
 
 
 ]
-<images/pairwise_corr.png, id=813, 1680.2775pt x 1736.6481pt>
+<images/pairwise_corr.png, id=843, 1680.2775pt x 1736.6481pt>
 File: images/pairwise_corr.png Graphic file (type png)
 <use images/pairwise_corr.png>
 Package pdftex.def Info: images/pairwise_corr.png  used on input line 29.
 (pdftex.def)             Requested size: 364.90541pt x 377.13493pt.
-) (./sections/appendixB.tex [44
+) (./sections/appendixB.tex [47
 
 
-] [45 <./images/pairwise_corr.png>]) [46
+] [48 <./images/pairwise_corr.png>]) [49
 
 
-] [47] (./main.bbl
+] [50] (./main.bbl
 Underfull \hbox (badness 5726) in paragraph at lines 347--359
 []\T1/ppl/m/n/10 (+20) Mykhalievskyi, T., Duff, J., & Dem-berg, V.  (2025).  \T1/ppl/m/it/10 (+20) Pre-reg-is-tra-tion for
  []
@@ -1336,30 +1354,30 @@ Underfull \hbox (badness 6220) in paragraph at lines 347--359
 \T1/ppl/m/it/10 (+20) the-sis project.  \T1/ppl/m/n/10 (+20) Re-trieved from [][]$\T1/pcr/m/n/10 https :// osf [] .io / hf4vs / []?view [] []only =
  []
 
-[48
+[51
 
 
-]) [49] (./main.aux)
+]) [52] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EF154E66A5A34827F8B737CFA826CEE1;6513.
+(rerunfilecheck)             Checksum: 9584E67FA3A914BD1B8BC01AD9F8CD4D;6893.
  ) 
 Here is how much of TeX's memory you used:
- 18667 strings out of 476106
- 296958 string characters out of 5793934
+ 18699 strings out of 476106
+ 297738 string characters out of 5793934
  1967975 words of memory out of 5000000
- 39901 multiletter control sequences out of 15000+600000
- 609440 words of font info for 257 fonts, out of 8000000 for 9000
+ 39922 multiletter control sequences out of 15000+600000
+ 609525 words of font info for 259 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  80i,20n,82p,2724b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (56 pages, 4156928 bytes).
+Output written on main.pdf (59 pages, 4718270 bytes).
 PDF statistics:
- 974 PDF objects out of 1000 (max. 8388607)
- 799 compressed objects within 8 object streams
- 176 named destinations out of 1000 (max. 500000)
- 69671 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1006 PDF objects out of 1200 (max. 8388607)
+ 825 compressed objects within 9 object streams
+ 184 named destinations out of 1000 (max. 500000)
+ 69697 words of extra memory for PDF output out of 74296 (max. 10000000)
 

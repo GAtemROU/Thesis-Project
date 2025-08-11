@@ -51,8 +51,12 @@ contrasts(df_correct$Condition)
 print(head(df_correct))
 
 
-ggplot(data = df_correct) + aes(x = PropTimeOnAvailableMsgs) + geom_histogram() +
+av_msgs_plot <- ggplot(data = df_correct) + aes(x = PropTimeOnAvailableMsgs) + geom_histogram() +
   facet_grid(rows = vars(Condition, Correct), cols = vars(StrategyLabel))
+
+# save av_msgs_plot
+ggsave("analysis/regressions/MLE/sim_plots/sim_av_msgs_plot.png", plot = av_msgs_plot, width = 10, height = 6)
+
 
 ggplot(data = df_correct) + aes(x = RateTogglingAvailableMsgs) + geom_histogram() +
   facet_grid(rows = vars(Condition, Correct), cols = vars(StrategyLabel))
