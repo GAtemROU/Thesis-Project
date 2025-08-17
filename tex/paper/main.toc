@@ -37,24 +37,25 @@
 \contentsline {section}{\numberline {4.5}On Available Messages}{34}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Rate of Toggling}{35}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Strategies}{36}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Predicting Accuracy via Strategies}{37}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Scanpath Analysis}{37}{section.4.9}%
-\contentsline {subsection}{\numberline {4.9.1}Markov Model}{37}{subsection.4.9.1}%
-\contentsline {section}{\numberline {4.10}ACT-R Model}{40}{section.4.10}%
+\contentsline {section}{\numberline {4.8}Predicting Accuracy via Strategies}{38}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Predicting Rate of Toggling via Strategies}{39}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Scanpath Analysis}{39}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Markov Model}{40}{subsection.4.10.1}%
+\contentsline {section}{\numberline {4.11}ACT-R Model}{42}{section.4.11}%
 \vspace {.175cm}
-\contentsline {chapter}{\numberline {5} Conclusion and General Discussion}{43}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusion}{43}{section.5.1}%
-\contentsline {section}{\numberline {5.2}General Discussion}{44}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Scanpaths}{44}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Peripheral Vision}{44}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Toggling}{45}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Proportional Eye Tracking Features}{45}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Eye Tracking}{45}{subsection.5.2.5}%
-\contentsline {chapter}{Appendices}{46}{subsection.5.2.5}%
+\contentsline {chapter}{\numberline {5} Conclusion and General Discussion}{44}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusion}{44}{section.5.1}%
+\contentsline {section}{\numberline {5.2}General Discussion}{45}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Scanpaths}{45}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Peripheral Vision}{45}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Toggling}{46}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Proportional Eye Tracking Features}{46}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Eye Tracking}{46}{subsection.5.2.5}%
+\contentsline {chapter}{Appendices}{47}{subsection.5.2.5}%
 \vspace {.175cm}
-\contentsline {chapter}{\numberline {A} Appendix A: Additional Details}{47}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Pairwise Correlations}{47}{section.A.1}%
+\contentsline {chapter}{\numberline {A} Appendix A: Additional Details}{48}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Pairwise Correlations}{48}{section.A.1}%
 \vspace {.175cm}
-\contentsline {chapter}{\numberline {B} Appendix B: Supplementary Material}{49}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Trials}{50}{section.B.1}%
-\contentsline {chapter}{Bibliography}{51}{section*.47}%
+\contentsline {chapter}{\numberline {B} Appendix B: Supplementary Material}{50}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Trials}{51}{section.B.1}%
+\contentsline {chapter}{Bibliography}{52}{section*.50}%

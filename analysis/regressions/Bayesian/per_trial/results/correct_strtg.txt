@@ -1,0 +1,166 @@
+ Family: bernoulli 
+  Links: mu = logit 
+Formula: Correct ~ Condition + TrgtPos + Trial + StrategyLabel + MsgType + AnswerTime + Condition:StrategyLabel + Condition:AnswerTime + (1 + Condition + TrgtPos + Trial + StrategyLabel + MsgType + AnswerTime | Subject) 
+   Data: df_correct (Number of observations: 2626) 
+  Draws: 6 chains, each with iter = 5000; warmup = 1000; thin = 1;
+         total post-warmup draws = 24000
+
+Multilevel Hyperparameters:
+~Subject (Number of levels: 101) 
+                                   Estimate Est.Error l-95% CI u-95% CI Rhat
+sd(Intercept)                          0.47      0.22     0.04     0.88 1.00
+sd(Condition1)                         0.56      0.10     0.37     0.76 1.00
+sd(TrgtPos2)                           0.67      0.23     0.17     1.10 1.00
+sd(TrgtPos3)                           0.83      0.24     0.33     1.28 1.00
+sd(Trial)                              0.22      0.13     0.01     0.48 1.00
+sd(StrategyLabel1)                     0.27      0.19     0.01     0.70 1.00
+sd(StrategyLabel2)                     0.39      0.12     0.13     0.61 1.00
+sd(MsgType1)                           0.47      0.10     0.28     0.67 1.00
+sd(AnswerTime)                         0.40      0.13     0.16     0.68 1.00
+cor(Intercept,Condition1)              0.39      0.26    -0.23     0.80 1.00
+cor(Intercept,TrgtPos2)               -0.03      0.29    -0.57     0.55 1.00
+cor(Condition1,TrgtPos2)               0.04      0.24    -0.42     0.49 1.00
+cor(Intercept,TrgtPos3)               -0.05      0.28    -0.56     0.50 1.00
+cor(Condition1,TrgtPos3)              -0.04      0.23    -0.48     0.40 1.00
+cor(TrgtPos2,TrgtPos3)                -0.00      0.26    -0.52     0.48 1.00
+cor(Intercept,Trial)                   0.04      0.30    -0.56     0.60 1.00
+cor(Condition1,Trial)                  0.06      0.28    -0.49     0.59 1.00
+cor(TrgtPos2,Trial)                   -0.02      0.29    -0.57     0.54 1.00
+cor(TrgtPos3,Trial)                   -0.01      0.29    -0.56     0.55 1.00
+cor(Intercept,StrategyLabel1)          0.05      0.30    -0.55     0.62 1.00
+cor(Condition1,StrategyLabel1)        -0.09      0.30    -0.64     0.52 1.00
+cor(TrgtPos2,StrategyLabel1)          -0.05      0.30    -0.62     0.54 1.00
+cor(TrgtPos3,StrategyLabel1)           0.12      0.30    -0.50     0.65 1.00
+cor(Trial,StrategyLabel1)             -0.04      0.32    -0.63     0.57 1.00
+cor(Intercept,StrategyLabel2)         -0.08      0.29    -0.62     0.50 1.00
+cor(Condition1,StrategyLabel2)        -0.24      0.24    -0.66     0.27 1.00
+cor(TrgtPos2,StrategyLabel2)           0.29      0.26    -0.26     0.73 1.00
+cor(TrgtPos3,StrategyLabel2)           0.11      0.26    -0.40     0.59 1.00
+cor(Trial,StrategyLabel2)             -0.08      0.29    -0.62     0.48 1.00
+cor(StrategyLabel1,StrategyLabel2)    -0.04      0.31    -0.61     0.56 1.00
+cor(Intercept,MsgType1)               -0.16      0.26    -0.63     0.40 1.00
+cor(Condition1,MsgType1)              -0.04      0.20    -0.43     0.35 1.00
+cor(TrgtPos2,MsgType1)                -0.35      0.23    -0.75     0.17 1.00
+cor(TrgtPos3,MsgType1)                -0.17      0.22    -0.58     0.29 1.00
+cor(Trial,MsgType1)                    0.09      0.27    -0.46     0.60 1.00
+cor(StrategyLabel1,MsgType1)          -0.02      0.30    -0.59     0.56 1.00
+cor(StrategyLabel2,MsgType1)          -0.12      0.24    -0.58     0.36 1.00
+cor(Intercept,AnswerTime)              0.07      0.29    -0.51     0.61 1.00
+cor(Condition1,AnswerTime)             0.01      0.26    -0.49     0.51 1.00
+cor(TrgtPos2,AnswerTime)              -0.20      0.28    -0.69     0.38 1.00
+cor(TrgtPos3,AnswerTime)              -0.01      0.27    -0.53     0.51 1.00
+cor(Trial,AnswerTime)                  0.05      0.30    -0.54     0.62 1.00
+cor(StrategyLabel1,AnswerTime)        -0.01      0.31    -0.60     0.58 1.00
+cor(StrategyLabel2,AnswerTime)        -0.33      0.26    -0.75     0.24 1.00
+cor(MsgType1,AnswerTime)               0.21      0.26    -0.32     0.67 1.00
+                                   Bulk_ESS Tail_ESS
+sd(Intercept)                          2449     4269
+sd(Condition1)                        10012    15306
+sd(TrgtPos2)                           4732     4702
+sd(TrgtPos3)                           4030     3795
+sd(Trial)                              4540     9058
+sd(StrategyLabel1)                     3758     8983
+sd(StrategyLabel2)                     2734     3242
+sd(MsgType1)                           9321     9841
+sd(AnswerTime)                         7362     8462
+cor(Intercept,Condition1)              3102     3041
+cor(Intercept,TrgtPos2)                5968    11281
+cor(Condition1,TrgtPos2)              14254    17802
+cor(Intercept,TrgtPos3)                5443    10015
+cor(Condition1,TrgtPos3)              12143    16919
+cor(TrgtPos2,TrgtPos3)                 6856    11700
+cor(Intercept,Trial)                  13930    16464
+cor(Condition1,Trial)                 20365    17448
+cor(TrgtPos2,Trial)                   17212    18029
+cor(TrgtPos3,Trial)                   20169    17957
+cor(Intercept,StrategyLabel1)         17758    16154
+cor(Condition1,StrategyLabel1)        16482    18604
+cor(TrgtPos2,StrategyLabel1)          18960    19254
+cor(TrgtPos3,StrategyLabel1)          19593    17520
+cor(Trial,StrategyLabel1)             15975    18820
+cor(Intercept,StrategyLabel2)          3227     7379
+cor(Condition1,StrategyLabel2)         8121    10978
+cor(TrgtPos2,StrategyLabel2)           6343     9788
+cor(TrgtPos3,StrategyLabel2)           8509    14378
+cor(Trial,StrategyLabel2)              8525    15088
+cor(StrategyLabel1,StrategyLabel2)     7872    13724
+cor(Intercept,MsgType1)                4116     5935
+cor(Condition1,MsgType1)              12780    18763
+cor(TrgtPos2,MsgType1)                 5902     8849
+cor(TrgtPos3,MsgType1)                 9865    14527
+cor(Trial,MsgType1)                    8493    13029
+cor(StrategyLabel1,MsgType1)           8153    14693
+cor(StrategyLabel2,MsgType1)           9299    14154
+cor(Intercept,AnswerTime)              7014    13254
+cor(Condition1,AnswerTime)            15068    18462
+cor(TrgtPos2,AnswerTime)               9415    14004
+cor(TrgtPos3,AnswerTime)              11638    16670
+cor(Trial,AnswerTime)                 10210    15823
+cor(StrategyLabel1,AnswerTime)         9573    16163
+cor(StrategyLabel2,AnswerTime)         9768    13187
+cor(MsgType1,AnswerTime)              17258    20255
+
+Regression Coefficients:
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
+Intercept                     1.78      0.15     1.49     2.08 1.00    18110
+Condition1                    0.51      0.10     0.32     0.70 1.00    15713
+TrgtPos2                     -0.51      0.17    -0.84    -0.16 1.00    19791
+TrgtPos3                     -0.64      0.18    -0.99    -0.27 1.00    18561
+Trial                         0.40      0.07     0.27     0.54 1.00    22662
+StrategyLabel1                0.65      0.14     0.37     0.94 1.00    17333
+StrategyLabel2                0.66      0.08     0.50     0.82 1.00    18085
+MsgType1                     -0.13      0.08    -0.30     0.02 1.00    20195
+AnswerTime                   -0.06      0.11    -0.26     0.16 1.00    18445
+Condition1:StrategyLabel1     0.66      0.12     0.43     0.90 1.00    16969
+Condition1:StrategyLabel2     0.10      0.06    -0.03     0.23 1.00    14529
+Condition1:AnswerTime        -0.09      0.08    -0.24     0.07 1.00    24834
+                          Tail_ESS
+Intercept                    17795
+Condition1                   17524
+TrgtPos2                     18016
+TrgtPos3                     16431
+Trial                        16585
+StrategyLabel1               17018
+StrategyLabel2               18121
+MsgType1                     18326
+AnswerTime                   18912
+Condition1:StrategyLabel1    16177
+Condition1:StrategyLabel2    18214
+Condition1:AnswerTime        18605
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+ Condition StrategyLabel emmean lower.HPD upper.HPD
+ complex   0              0.334   -0.0392     0.720
+ simple    0             -0.161   -0.7093     0.379
+ complex   1              0.323   -0.1381     0.780
+ simple    1              2.443    1.7746     3.150
+ complex   2              1.997    1.5830     2.439
+ simple    2              3.392    2.8847     3.953
+
+Results are averaged over the levels of: TrgtPos, MsgType 
+Point estimate displayed: median 
+Results are given on the logit (not the response) scale. 
+HPD interval probability: 0.95 
+ contrast                                        estimate lower.HPD upper.HPD
+ complex StrategyLabel0 - simple StrategyLabel0   0.49538   -0.0993     1.089
+ complex StrategyLabel0 - complex StrategyLabel1  0.00966   -0.5676     0.589
+ complex StrategyLabel0 - simple StrategyLabel1  -2.11129   -2.9349    -1.381
+ complex StrategyLabel0 - complex StrategyLabel2 -1.66720   -2.2492    -1.090
+ complex StrategyLabel0 - simple StrategyLabel2  -3.05697   -3.7367    -2.438
+ simple StrategyLabel0 - complex StrategyLabel1  -0.48630   -1.1995     0.217
+ simple StrategyLabel0 - simple StrategyLabel1   -2.60429   -3.4962    -1.777
+ simple StrategyLabel0 - complex StrategyLabel2  -2.16179   -2.8447    -1.473
+ simple StrategyLabel0 - simple StrategyLabel2   -3.55365   -4.3358    -2.792
+ complex StrategyLabel1 - simple StrategyLabel1  -2.12228   -2.8777    -1.400
+ complex StrategyLabel1 - complex StrategyLabel2 -1.67674   -2.3250    -1.061
+ complex StrategyLabel1 - simple StrategyLabel2  -3.07379   -3.7858    -2.390
+ simple StrategyLabel1 - complex StrategyLabel2   0.44127   -0.3818     1.239
+ simple StrategyLabel1 - simple StrategyLabel2   -0.95259   -1.7879    -0.095
+ complex StrategyLabel2 - simple StrategyLabel2  -1.39130   -1.9885    -0.822
+
+Results are averaged over the levels of: TrgtPos, MsgType 
+Point estimate displayed: median 
+Results are given on the log odds ratio (not the response) scale. 
+HPD interval probability: 0.95 

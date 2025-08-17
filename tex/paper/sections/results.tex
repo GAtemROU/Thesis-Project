@@ -474,77 +474,51 @@ Similarly to the Distractor model, \texttt{Trial} indicates that the available m
 
 As for the Target position, this time it does not play as important role as in the Distractor model. However, taking into account the findings from the Distractor model, it would be reasonable to assume that the Target position in the middle would make the available messages more likely to get a gaze point. However, the effect is not significant for the \texttt{TrgtPos3} and is relatively low for both features. 
 
+
+
+
+\section{Rate of Toggling}
+\label{sec:rate_toggling}
+Similarly to the previous sections, we investigate the likelihood of rate of toggling given that trial is correctly solved. The model is described by the following formula:
+
+\begin{verbatim}
+    RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial +
+    MsgType + AnswerTime + (1 + Condition + TrgtPos + Trial +
+    MsgType + AnswerTime | Subject)
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrrrr}
+\hline
+\textbf{Predictor} & \textbf{Estimate} & \textbf{Est. Error} & \textbf{2.5\% CI} & \textbf{97.5\% CI} \\
+\hline
+Intercept   &  0.00057 & 0.00200 & -0.00336 &  0.00445 \\
+Condition1  &  0.00216 & 0.00084 &  0.00051 &  0.00379 \\
+TrgtPos2    & -0.00095 & 0.00199 & -0.00487 &  0.00297 \\
+TrgtPos3    &  0.00125 & 0.00203 & -0.00276 &  0.00518 \\
+Trial       &  0.00161 & 0.00102 & -0.00039 &  0.00365 \\
+MsgType1    &  0.00086 & 0.00087 & -0.00085 &  0.00258 \\
+AnswerTime  &  0.01299 & 0.00183 &  0.00955 &  0.01674 \\
+\hline
+\end{tabular}
+\caption{Regression coefficients with estimates, standard errors and credible intervals. All $\hat{R}$ values were close to 1, indicating convergence.}
+\label{tab:rate_toggling}
+\end{table}
+
+The coefficients from \autoref{tab:rate_toggling} indicate the following findings. Condition predictor is positive and significant indicating that the Simple, correctly solved trials are associated with a higher rate of toggling compared to Complex trials. Furthermore, similarly to the findings from the correlations, answer time is significantly positively associated with rate of toggling.
+
+
+
+
+
+
 \subsection*{Conclusion}
 \label{sec:avmsgs_conclusion}
 While the hypothesis 4 did not hold according to the model, we still got important pieces of information. Mainly, similarly to the previous model, that predicted fixations on Distractor, we saw that the skilled participants do not look at the available messages more during the Simple trials comparing to Complex ones. The following is rather the case, the skilled participants tend to keep a similar attention profile in both Simple and Complex conditions, but adapt a different strategy for the Unambiguous trials. 
 
 
 
-
-
-
-\section{Rate of Toggling}
-\label{sec:rate_toggling}
-
-The model presented here predicts the rate of toggling between the available messages during correctly solved trials. The final formula for the model predicting the rate of toggling is presented below.
-
-\begin{verbatim}
-    RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial +
-    StrategyLabel + Correct + MsgType + AnswerTime +
-    Condition:StrategyLabel + Condition:AnswerTime +
-    (1 + Condition + TrgtPos + Trial +
-    StrategyLabel + Correct + MsgType + AnswerTime | Subject)
-\end{verbatim}
-
-where \texttt{StrategyLabel} is a categorical variable that indicates the strategy label of the participant, which was derived from the annotations of the strategies that participants entered in the end of the experiment. The \texttt{Correct} variable indicates whether the trial was solved correctly or not. The model was trained using the \texttt{brms} package in R. The model was trained using the \texttt{brm} function. The resulting coefficients can be seen in \autoref{tab:model_coefficients_rate_toggling}.
-
-
-
-\begin{table}[ht]
-\centering
-\caption{Regression coefficients from the model. All $\hat{R}$ values were close to 1, indicating convergence.}
-\begin{tabular}{lrrrr}
-\hline
-\textbf{Predictor} & \textbf{Estimate} & \textbf{Est. Error} & \textbf{2.5\% CI} & \textbf{95\% CI} \\
-\hline
-Intercept                  & 0.00161 & 0.00238 & -0.00304 & 0.00629 \\
-Condition1                 & 0.00035 & 0.00078 & -0.00118 & 0.00186 \\
-TrgtPos2                    & -0.00122 & 0.00169 & -0.00451 & 0.00206 \\
-TrgtPos3                    & -0.00058 & 0.00173 & -0.00398 & 0.00276 \\
-Trial                       & 0.00152 & 0.00088 & -0.00021 & 0.00327 \\
-StrategyLabel1              & 0.00560 & 0.00230 & 0.00102  & 0.01009 \\
-StrategyLabel2              & 0.00317 & 0.00105 & 0.00110  & 0.00523 \\
-Correct                     & 0.00062 & 0.00184 & -0.00300 & 0.00426 \\
-MsgType1                    & 0.00136 & 0.00071 & -0.00003 & 0.00276 \\
-AnswerTime                  & 0.01541 & 0.00197 & 0.01171  & 0.01948 \\
-Condition1:StrategyLabel1   & 0.00182 & 0.00106 & -0.00028 & 0.00392 \\
-Condition1:StrategyLabel2   & 0.00092 & 0.00047 & -0.00002 & 0.00184 \\
-Condition1:AnswerTime       & 0.00057 & 0.00084 & -0.00108 & 0.00223 \\
-\hline
-\end{tabular}
-\label{tab:model_coefficients_rate_toggling}
-\end{table}
-
-
-The coefficients demonstrate that the rate of toggling is positively associated with the \texttt{AnswerTime} feature, which is also supported by the correlation analysis in \autoref{sec:analysis:corr}. Moreover, the general coefficients of \texttt{StrategyLabel} are significant and indicate that more skilled participants according to the labels toggle with a higher rate than less skilled ones. Furthermore, one can look at the decomposition according to condition in \autoref{tab:rate_toggling_emmeans}. The results indicate that the rate of toggling has a significant negative effect for $L_0$ listeners in Simple condition. As well as positive significant effect for $L_2$ listeners in both Simple and Complex conditions. Further supporting the idea that more skilled participants toggle more often than less skilled ones. 
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{l c r r r}
-\hline
-Condition & StrategyLabel & emmean & lower.HPD & upper.HPD \\
-\hline
-complex & 0 & -0.00505 & -0.01208 &  0.00175 \\
-simple  & 0 & -0.00983 & -0.01690 & -0.00315 \\
-complex & 1 &  0.00253 & -0.00458 &  0.00975 \\
-simple  & 1 &  0.00506 & -0.00228 &  0.01228 \\
-complex & 2 &  0.00547 &  0.00089 &  0.01023 \\
-simple  & 2 &  0.00987 &  0.00495 &  0.01443 \\
-\hline
-\end{tabular}
-\caption{Estimated marginal means (emmean) with 95\% HPD intervals by condition and strategy label.}
-\label{tab:rate_toggling_emmeans}
-\end{table}
 
 
 
@@ -584,11 +558,130 @@ Furthermore, the plots show similar patterns to the models. For example, there i
 \section{Predicting Accuracy via Strategies}
 \label{sec:predicting_accuracy_strategies}
 
-\TODO{Add analysis results for the corresponding model}
+In order to verify that strategy labels correspond to the $L_0$, $L_1$ and $L_2$ listeners, we present the following model. The model predicts whether a trial is correctly solved based on the strategy label of the participant and some general information about the trial. Similarly to previous models we train the model only on the critical trails. 
+
+\begin{verbatim}
+    Correct ~ Condition + TrgtPos + Trial +
+    StrategyLabel + MsgType + AnswerTime +
+    Condition:StrategyLabel +
+    (1 + Condition + TrgtPos + Trial +
+    StrategyLabel + MsgType + AnswerTime | Subject)
+\end{verbatim}
 
 
 
 
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrr}
+\hline
+\textbf{Predictor} & \textbf{Estimate} & \textbf{Est. Error} & \textbf{2.5\% CI} & \textbf{95\% CI} \\
+\hline
+Intercept                  &  1.78 & 0.15 &  1.49 &  2.08 \\
+Condition1                 &  0.51 & 0.10 &  0.32 &  0.70 \\
+TrgtPos2                   & -0.51 & 0.17 & -0.84 & -0.16 \\
+TrgtPos3                   & -0.64 & 0.18 & -0.99 & -0.27 \\
+Trial                      &  0.40 & 0.07 &  0.27 &  0.54 \\
+StrategyLabel1             &  0.65 & 0.14 &  0.37 &  0.94 \\
+StrategyLabel2             &  0.66 & 0.08 &  0.50 &  0.82 \\
+MsgType1                   & -0.13 & 0.08 & -0.30 &  0.02 \\
+AnswerTime                 & -0.06 & 0.11 & -0.26 &  0.16 \\
+Condition1:StrategyLabel1  &  0.66 & 0.12 &  0.43 &  0.90 \\
+Condition1:StrategyLabel2  &  0.10 & 0.06 & -0.03 &  0.23 \\
+Condition1:AnswerTime      & -0.09 & 0.08 & -0.24 &  0.07 \\
+\hline
+\end{tabular}
+\caption{Regression coefficients with estimates, errors, and 95\% credible intervals. All \texttt{Rhat} values were sufficiently close to 1, indicating convergence.}
+\label{tab:cor_strtgy}
+\end{table}
+
+
+The general coefficients are presented in \autoref{tab:cor_strtgy}, while the strategy labels effects decomposed by condition are presented in \autoref{tab:cor_strtgy_cond}.
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{llrrr}
+\hline
+\textbf{Condition} & \textbf{StrategyLabel} & \textbf{Emmean} & \textbf{Lower HPD} & \textbf{Upper HPD} \\
+\hline
+complex & 0 &  0.334 & -0.0392 &  0.720 \\
+simple  & 0 & -0.161 & -0.7093 &  0.379 \\
+complex & 1 &  0.323 & -0.1381 &  0.780 \\
+simple  & 1 &  2.443 &  1.7746 &  3.150 \\
+complex & 2 &  1.997 &  1.5830 &  2.439 \\
+simple  & 2 &  3.392 &  2.8847 &  3.953 \\
+\hline
+\end{tabular}
+\caption{Estimated marginal means (emmean) with 95\% HPD intervals by Condition and Strategy Label.}
+\label{tab:cor_strtgy_cond}
+\end{table}
+
+The results of \autoref{tab:cor_strtgy_cond} demonstrate that the last three rows are significant. Those are $L_1$ having positive effect for Simple condition and $L_2$ having positive effect for both critical conditions.
+
+
+
+\section{Predicting Rate of Toggling via Strategies}
+\label{sec:rate_toggling_strtg}
+
+The model presented here predicts the rate of toggling between the available messages during correctly solved trials. The final formula for the model predicting the rate of toggling is presented below.
+
+\begin{verbatim}
+    RateTogglingAvailableMsgs ~ Condition + TrgtPos + Trial +
+    StrategyLabel + Correct + MsgType + AnswerTime +
+    Condition:StrategyLabel +
+    (1 + Condition + TrgtPos + Trial +
+    StrategyLabel + Correct + MsgType + AnswerTime | Subject)
+\end{verbatim}
+
+where \texttt{StrategyLabel} is a categorical variable that indicates the strategy label of the participant, which was derived from the annotations of the strategies that participants entered in the end of the experiment. The \texttt{Correct} variable indicates whether the trial was solved correctly or not. The model was trained using the \texttt{brms} package in R. The model was trained using the \texttt{brm} function. The resulting coefficients can be seen in \autoref{tab:model_coefficients_rate_toggling}.
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Regression coefficients from the model. All $\hat{R}$ values were close to 1, indicating convergence.}
+\begin{tabular}{lrrrr}
+\hline
+\textbf{Predictor} & \textbf{Estimate} & \textbf{Est. Error} & \textbf{2.5\% CI} & \textbf{97.5\% CI} \\
+\hline
+Intercept                  & 0.00160 & 0.00240 & -0.00314 & 0.00631 \\
+Condition1                 & 0.00027 & 0.00076 & -0.00123 & 0.00177 \\
+TrgtPos2                   & -0.00121 & 0.00171 & -0.00456 & 0.00211 \\
+TrgtPos3                   & -0.00063 & 0.00175 & -0.00407 & 0.00279 \\
+Trial                      & 0.00151 & 0.00087 & -0.00022 & 0.00321 \\
+StrategyLabel1             & 0.00558 & 0.00230 & 0.00108  & 0.01010 \\
+StrategyLabel2             & 0.00317 & 0.00105 & 0.00111  & 0.00523 \\
+Correct                    & 0.00061 & 0.00184 & -0.00295 & 0.00424 \\
+MsgType1                   & 0.00138 & 0.00071 & -0.00001 & 0.00277 \\
+AnswerTime                 & 0.01530 & 0.00199 & 0.01152  & 0.01934 \\
+Condition1:StrategyLabel1  & 0.00183 & 0.00105 & -0.00023 & 0.00394 \\
+Condition1:StrategyLabel2  & 0.00097 & 0.00046 & 0.00006  & 0.00189 \\
+\hline
+\end{tabular}
+\label{tab:model_coefficients_rate_toggling}
+\end{table}
+
+
+The coefficients demonstrate that the rate of toggling is positively associated with the \texttt{AnswerTime} feature, which is also supported by the correlation analysis in \autoref{sec:analysis:corr}. Moreover, the general coefficients of \texttt{StrategyLabel} are significant and indicate that more skilled participants according to the labels toggle with a higher rate than less skilled ones. Furthermore, one can look at the decomposition according to condition in \autoref{tab:rate_toggling_emmeans}. The results indicate that the rate of toggling has a significant negative effect for $L_0$ listeners in Simple condition. As well as positive significant effect for $L_2$ listeners in both Simple and Complex conditions. Further supporting the idea that more skilled participants toggle more often than less skilled ones. 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{l c r r r}
+\hline
+\textbf{Condition} & \textbf{StrategyLabel} & \textbf{Emmean} & \textbf{Lower.HPD} & \textbf{Upper.HPD} \\
+complex & 0 & -0.00494 & -0.01197 &  0.00197 \\
+simple  & 0 & -0.00999 & -0.01701 & -0.00308 \\
+complex & 1 &  0.00259 & -0.00454 &  0.00975 \\
+simple  & 1 &  0.00485 & -0.00238 &  0.01203 \\
+complex & 2 &  0.00545 &  0.00061 &  0.00994 \\
+simple  & 2 &  0.00984 &  0.00519 &  0.01467 \\
+\hline
+\end{tabular}
+\caption{Estimated marginal means (emmean) with 95\% HPD intervals by condition and strategy label.}
+\label{tab:rate_toggling_emmeans}
+\end{table}
 
 
 
@@ -640,9 +733,6 @@ Furthermore, we compared the features derived from transition matrices to the pr
 \end{figure}
 
 The trees in this case look very similar for both conditions, potentially indicating that the transition matrices were able to make a better distinguish between them. Available messages are again found to be important, in this case, for both conditions, being on the very top of the tree, their split distinguishes $L_0$ listeners from $L_1$ and $L_2$. In contrast to the scanpath based trees, the Distractor is not found to be important in this case. 
-
-
-\TODO{add pattern mining?}
 
 
 
