@@ -1,0 +1,105 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: OnDist ~ Condition + TrgtPos + Trial + StrategyLabel + Correct +  
+    MsgType + Condition:StrategyLabel + (1 | Subject)
+   Data: df_on_dist
+
+      AIC       BIC    logLik  deviance  df.resid 
+ 217399.8  217525.4 -108687.9  217375.8    260971 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-0.8784 -0.5362 -0.3797 -0.1899  6.8087 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ Subject (Intercept) 0.1082   0.329   
+Number of obs: 260983, groups:  Subject, 101
+
+Fixed effects:
+                           Estimate Std. Error z value Pr(>|z|)    
+(Intercept)               -3.250896   0.041131 -79.039  < 2e-16 ***
+Condition1                 0.041971   0.006335   6.626 3.46e-11 ***
+TrgtPos2                   1.874304   0.018256 102.667  < 2e-16 ***
+TrgtPos3                   1.827264   0.018278  99.972  < 2e-16 ***
+Trial                      0.034939   0.005549   6.296 3.05e-10 ***
+StrategyLabel1            -0.068655   0.050414  -1.362 0.173251    
+StrategyLabel2            -0.006919   0.022417  -0.309 0.757579    
+Correct                    0.238582   0.014827  16.092  < 2e-16 ***
+MsgType1                   0.020405   0.005554   3.674 0.000239 ***
+Condition1:StrategyLabel1 -0.060739   0.008747  -6.944 3.82e-12 ***
+Condition1:StrategyLabel2  0.009269   0.003747   2.474 0.013362 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Cndtn1 TrgtP2 TrgtP3 Trial  StrtL1 StrtL2 Corrct MsgTy1
+Condition1   0.035                                                        
+TrgtPos2    -0.357 -0.001                                                 
+TrgtPos3    -0.361  0.012  0.783                                          
+Trial        0.024  0.004 -0.010  0.023                                   
+StratgyLbl1  0.099  0.014 -0.005 -0.002  0.003                            
+StratgyLbl2 -0.353  0.007  0.000 -0.003  0.002 -0.079                     
+Correct     -0.266 -0.137  0.029  0.053 -0.112 -0.039 -0.055              
+MsgType1    -0.008  0.090 -0.024 -0.011  0.006 -0.005  0.000  0.015       
+Cndtn1:StL1  0.046  0.106 -0.001 -0.012  0.009  0.010  0.000 -0.142  0.004
+Cndtn1:StL2  0.008 -0.462 -0.008 -0.025  0.005 -0.008  0.006 -0.011 -0.008
+            C1:SL1
+Condition1        
+TrgtPos2          
+TrgtPos3          
+Trial             
+StratgyLbl1       
+StratgyLbl2       
+Correct           
+MsgType1          
+Cndtn1:StL1       
+Cndtn1:StL2 -0.071
+ Condition StrategyLabel emmean     SE  df asymp.LCL asymp.UCL
+ complex   0              -1.92 0.0683 Inf     -2.05     -1.78
+ simple    0              -1.73 0.0682 Inf     -1.86     -1.60
+ complex   1              -1.93 0.0759 Inf     -2.08     -1.78
+ simple    1              -1.99 0.0765 Inf     -2.14     -1.84
+ complex   2              -1.97 0.0455 Inf     -2.06     -1.88
+ simple    2              -1.85 0.0458 Inf     -1.94     -1.76
+
+Results are averaged over the levels of: TrgtPos, Correct, MsgType 
+Results are given on the logit (not the response) scale. 
+Confidence level used: 0.95 
+ contrast                                        estimate     SE  df z.ratio
+ complex StrategyLabel0 - simple StrategyLabel0   -0.1869 0.0233 Inf  -8.008
+ complex StrategyLabel0 - complex StrategyLabel1   0.0158 0.1020 Inf   0.155
+ complex StrategyLabel0 - simple StrategyLabel1    0.0719 0.1030 Inf   0.701
+ complex StrategyLabel0 - complex StrategyLabel2   0.0565 0.0819 Inf   0.690
+ complex StrategyLabel0 - simple StrategyLabel2   -0.0645 0.0821 Inf  -0.786
+ simple StrategyLabel0 - complex StrategyLabel1    0.2027 0.1020 Inf   1.986
+ simple StrategyLabel0 - simple StrategyLabel1     0.2588 0.1020 Inf   2.525
+ simple StrategyLabel0 - complex StrategyLabel2    0.2434 0.0818 Inf   2.974
+ simple StrategyLabel0 - simple StrategyLabel2     0.1223 0.0820 Inf   1.492
+ complex StrategyLabel1 - simple StrategyLabel1    0.0561 0.0260 Inf   2.157
+ complex StrategyLabel1 - complex StrategyLabel2   0.0406 0.0883 Inf   0.461
+ complex StrategyLabel1 - simple StrategyLabel2   -0.0804 0.0884 Inf  -0.909
+ simple StrategyLabel1 - complex StrategyLabel2   -0.0154 0.0885 Inf  -0.174
+ simple StrategyLabel1 - simple StrategyLabel2    -0.1364 0.0886 Inf  -1.541
+ complex StrategyLabel2 - simple StrategyLabel2   -0.1210 0.0145 Inf  -8.356
+ p.value
+  <.0001
+  1.0000
+  0.9819
+  0.9832
+  0.9699
+  0.3505
+  0.1169
+  0.0349
+  0.6697
+  0.2584
+  0.9974
+  0.9443
+  1.0000
+  0.6377
+  <.0001
+
+Results are averaged over the levels of: TrgtPos, Correct, MsgType 
+Results are given on the log odds ratio (not the response) scale. 
+P value adjustment: tukey method for comparing a family of 6 estimates 

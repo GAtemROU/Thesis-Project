@@ -392,16 +392,18 @@ The model presented here predicts the likelihood (binary outcome) of participant
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|l|c|c|c|c|}
+\begin{tabular}{lcccc}
 \hline
-\textbf{Coefficient} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\ \hline
-(Intercept)          & -3.056241         & 0.039379            & -77.611          & <2e-16 ***        \\ \hline
-Condition1           & 0.013373          & 0.006440            & 2.076            & 0.0379 *          \\ \hline
-Condition2           & -0.086425         & 0.004691            & -18.425          & <2e-16 ***        \\ \hline
-Trial                & -0.053649         & 0.005713            & -9.391           & <2e-16 ***        \\ \hline
-MsgType             & -0.017492         & 0.005713            & -3.062           & 0.0022 **         \\ \hline
-TrgtPos2             & 1.772965          & 0.018094            & 97.986           & <2e-16 ***        \\ \hline
-TrgtPos3             & 1.795716          & 0.018151            & 98.931           & <2e-16 ***        \\ \hline
+\textbf{Predictor} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\
+\hline
+(Intercept)          & -3.056241         & 0.039379            & -77.611          & <2e-16 ***        \\
+Condition1           & 0.013373          & 0.006440            & 2.076            & 0.0379 *          \\
+Condition2           & -0.086425         & 0.004691            & -18.425          & <2e-16 ***        \\
+Trial                & -0.053649         & 0.005713            & -9.391           & <2e-16 ***        \\
+MsgType             & -0.017492         & 0.005713            & -3.062           & 0.0022 **         \\
+TrgtPos2             & 1.772965          & 0.018094            & 97.986           & <2e-16 ***        \\
+TrgtPos3             & 1.795716          & 0.018151            & 98.931           & <2e-16 ***        \\
+\hline
 \end{tabular}
 \caption{Summary of the model predicting the likelihood of looking at the Distractor for the correctly solved trials. Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
 \label{tab:model_coefficients_distractor}
@@ -447,16 +449,18 @@ The model presented here predicts the likelihood (binary outcome) of participant
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|l|c|c|c|c|}
+\begin{tabular}{lcccc}
 \hline
-\textbf{Coefficient} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\ \hline
-(Intercept)          & -2.330044         & 0.071251            & -32.702          & <2e-16 ***        \\ \hline
-Condition1           & -0.063455         & 0.007056            & -8.993           & <2e-16 ***        \\ \hline
-Condition2           & -0.385246         & 0.006972            & -55.260          & <2e-16 ***        \\ \hline
-Trial                & -0.085418         & 0.006603            & -12.936          & <2e-16 ***        \\ \hline
-MsgType             & 0.085259          & 0.006573            & 12.972           & <2e-16 ***        \\ \hline
-TrgtPos2             & -0.143025         & 0.072737            & -1.966           & 0.0493 *          \\ \hline
-TrgtPos3             & -0.140503         & 0.088966            & -1.579           & 0.1143            \\ \hline
+\textbf{Predictor} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\
+\hline
+(Intercept)          & -2.330044         & 0.071251            & -32.702          & <2e-16 ***        \\
+Condition1           & -0.063455         & 0.007056            & -8.993           & <2e-16 ***        \\
+Condition2           & -0.385246         & 0.006972            & -55.260          & <2e-16 ***        \\
+Trial                & -0.085418         & 0.006603            & -12.936          & <2e-16 ***        \\
+MsgType             & 0.085259          & 0.006573            & 12.972           & <2e-16 ***        \\
+TrgtPos2             & -0.143025         & 0.072737            & -1.966           & 0.0493 *          \\
+TrgtPos3             & -0.140503         & 0.088966            & -1.579           & 0.1143            \\
+\hline
 \end{tabular}
 \caption{Summary of the model predicting the likelihood of looking at the available messages for the correctly solved trials.Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
 \label{tab:model_coefficients_available}
@@ -619,6 +623,84 @@ simple  & 2 &  3.392 &  2.8847 &  3.953 \\
 \end{table}
 
 The results of \autoref{tab:cor_strtgy_cond} demonstrate that the last three rows are significant. Those are $L_1$ having positive effect for Simple condition and $L_2$ having positive effect for both critical conditions.
+
+
+\section{Predicting On Available Messages via Strategies}
+
+We further investigate how strategy labels influence the likelihood of looking at the available messages. Comparing to the similar model from the \autoref{sec:available_model}, this model is trained on both correctly solved and incorrectly solved critical trials. This allows us to see how the strategy labels impact the use of available messages in different contexts. The following model is used to predict the likelihood of looking at the available messages.
+
+\begin{verbatim}
+    OnAvMsgs ~ Condition + TrgtPos + Trial +
+    StrategyLabel + Correct + MsgType +
+    Condition:StrategyLabel + (1| Subject)
+\end{verbatim}
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcccc}
+\hline
+\textbf{Predictor} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{z value} & \textbf{Pr(>|z|)} \\
+\hline
+(Intercept)                & -2.106563 & 0.059665 & -35.307 & <2e-16 *** \\
+Condition1                 & -0.026499 & 0.007123 &  -3.720 & 0.000199 *** \\
+TrgtPos2                   & -0.058141 & 0.014061 &  -4.135 & 3.55e-05 *** \\
+TrgtPos3                   & -0.050772 & 0.013973 &  -3.634 & 0.000280 *** \\
+Trial                      & -0.043610 & 0.005774 &  -7.553 & 4.25e-14 *** \\
+StrategyLabel1             &  0.251976 & 0.079983 &   3.150 & 0.001631 **  \\
+StrategyLabel2             &  0.183987 & 0.035532 &   5.178 & 2.24e-07 *** \\
+Correct                    &  0.045921 & 0.015388 &   2.984 & 0.002843 **  \\
+MsgType1                   &  0.098617 & 0.005732 &  17.204 & <2e-16 *** \\
+Condition1:StrategyLabel1  &  0.024673 & 0.010113 &   2.440 & 0.014697 *   \\
+Condition1:StrategyLabel2  & -0.037777 & 0.004073 &  -9.276 & <2e-16 *** \\
+\hline
+\end{tabular}
+\caption{Summary of the model predicting the likelihood of looking at the available messages messages. 
+Significance levels: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$.}
+\label{tab:av_msgs_strtg}
+\end{table}
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Condition} & \textbf{StrategyLabel} & \textbf{Emmean} & \textbf{SE} & \textbf{df} & \textbf{Asymp.LCL} & \textbf{Asymp.UCL} \\
+\hline
+complex & 0 & -2.54 & 0.1080 & Inf & -2.75 & -2.33 \\
+simple  & 0 & -2.57 & 0.1080 & Inf & -2.78 & -2.36 \\
+complex & 1 & -2.09 & 0.1190 & Inf & -2.32 & -1.85 \\
+simple  & 1 & -2.02 & 0.1200 & Inf & -2.25 & -1.78 \\
+complex & 2 & -1.65 & 0.0711 & Inf & -1.79 & -1.51 \\
+simple  & 2 & -1.85 & 0.0715 & Inf & -1.99 & -1.71 \\
+\hline
+\end{tabular}
+\caption{Estimated marginal means by Condition and StrategyLabel.}
+\label{tab:av_msgs_strtg_cond}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/av_msgs_strategy_labels_plot.png}
+    \caption{Visualization of trends for Strategy Labels for likelihood of looking at available messages by condition.}
+    \label{fig:av_msgs_strtg_cond}
+\end{figure}
+
+
+
+The results presented in \autoref{tab:av_msgs_strtg} mostly indicate similar results to the model from \autoref{sec:available_model}. However, the main focus of this section is strategy labels, hence, to further interpret them we present a decomposed by condition table in \autoref{tab:av_msgs_strtg_cond}. Each combination of condition and strategy label is negative and significant, one can further visualize the trends for comparison via the following plot in \autoref{fig:av_msgs_strtg_cond}. The overall trend suggests that the likelihood of a fixation being on the bank of available messages increases as one goes from $L_0$ to $L_1$ and then to $L_2$. This is expected as the more skilled participants are, the more likely they are to look at the available messages. On the other hand, the contrasts are significant only between $L_0$ and $L_2$ listeners for both conditions. As well as another significant positive contrast between Simple and Complex conditions for $L_2$ listeners, indicating that $L_2$ listeners are more likely to look at the available messages in the Complex condition.
+
+
+
+
+
+
+
+
+
+
 
 
 
